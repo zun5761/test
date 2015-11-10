@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>test</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<style>
+body {
+  background-color: black;
+}
+
+.container {
+  width: 700px;
+  height: 400px;
+  margin: 3% auto;
+  position: relative;
+}
+.container .line {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  left: 0;
+  top: -40px;
+  background-color: white;
+  width: 1px;
+  height: 0px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #F0C27B), color-stop(100%, #4B1248));
+  background-image: -webkit-linear-gradient(#F0C27B, #4B1248);
+  background-size: 200% 200%;
+  animation: AnimationName 5s ease infinite;
+}
+.container .line-1 {
+  border-left: 20px solid black;
+  -webkit-backface-visibility: hidden;
+  left: -25px;
+}
+.container .line-2 {
+  border-right: 22px solid black;
+  left: 14px;
+}
+.container .text {
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 75px;
+  text-align: left;
+  width: 0px;
+  margin-top: 150px;
+  margin-left: 290px;
+  overflow: hidden;
+  transform: rotate(35deg);
+  position: relative;
+  height: 100%;
+}
+.container .text span {
+  transform: rotate(-35deg);
+  position: absolute;
+  top: 27px;
+  right: 0;
+  left: -7px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #F0C27B), color-stop(100%, #4B1248));
+  background-image: -webkit-linear-gradient(#F0C27B, #4B1248);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  background-size: 200% 200%;
+  animation: AnimationName 5s ease infinite;
+}
+
+/*Gradient animation from http://www.gradient-animator.com/*/
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 88%;
+  }
+  50% {
+    background-position: 100% 13%;
+  }
+  100% {
+    background-position: 0% 88%;
+  }
+}
+
+	</style>
+	<script>
+	$(function(){
+		var line = $('.line');
+		var line1 = $('.line-1');
+		var line2 = $('.line-2');
+		var text = $('.text');
+		var tl = new TimelineMax();
+	
+		tl.to(line, 2, {height:300, ease:  Power4.easeInOut})
+		  .to(line, 2, {rotation:35}, "-=0.5")
+		  .to(line2, 0.2, {top:-30}, "=-2")
+		  .to(line1, 2.5, {left:-300, ease: Power4.easeInOut})
+		  .to(line2, 2.5, {left:300, ease: Power3.easeInOut}, "-=2.5")
+		  .to(text, 2.5, { width:230, marginLeft:175, ease: Power4.easeInOut }, "=-2.5");
+	});
+	</script>
+</head>
+<body>
+	<div class="container">
+	  <div class="line line-1"></div>
+	  <div class="line line-2"></div>
+	  <div class="text"><span>Joke Gysen</span></div>
+	</div>
+</body>
+</html>

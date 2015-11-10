@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<style>
+body {
+    background-color: #000;
+    color:#fff;
+}
+#demo {
+    width: 692px;
+    height: 100px;
+    background-color: #333;
+    padding: 8px;
+}
+#demoBackground {
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+    width: 692px;
+    height: 100px;
+    visibility:hidden;
+}
+#logo {
+    position: absolute;
+    background: url(img/logo_black.jpg) no-repeat;
+    height: 60px;
+    width: 60px;
+    top: 6px;
+}
+.sliderHolder{
+    margin-top:16px;
+    float:left;
+    width:280px;
+     
+}
+.sliderHolder p{
+    margin:0px;
+    font-size:14px;
+}
+.slider {
+    width: 270px;
+    margin: 4px 0px 8px 6px;    
+}
+#txtContainer {
+    position: absolute;
+    left: 55px;
+    top: 14px;
+}
+.txt {
+    font: 36px monospace;
+    position: absolute;
+    color: #afafaf;
+    font-weight: bold;
+    left: 0px;
+    top: 0;
+}
+</style>
+
+</head>
+<body>
+	<div id="demo">
+	  <div id="demoBackground">
+		<div id="logo"></div>
+		<div id="txtContainer"></div>
+	  </div>
+	</div>
+	 
+	<div class="sliderHolder">
+	  <p class="output">progress(): <span id="progressValue"></span><span  style="float:right;">time(): <span id="timeValue"></span></span></p>
+	  <div id="progressSlider" class="slider"></div>
+	</div>
+	 
+	<div class="sliderHolder" style="margin-left:80px;">
+	  <p class="output">totalProgress(): <span id="totalProgressValue"></span><span style="float:right;">totalTime(): <span id="totalTimeValue"></span></span></p>
+	  <div id="totalProgressSlider" class="slider"></div>
+	</div>
+	 
+	<input type="button" id="restartBtn" style="margin:30px;" value="restart()">    
+	 
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script>
+ 
+$(window).load(function() {
+    var logo = $("#logo"),
+        progressValue = $("#progressValue"),
+        totalProgressValue = $("#totalProgressValue"),
+        timeValue = $("#timeValue"),
+        totalTimeValue = $("#totalTimeValue"),
+        restartBtn = $("#restartBtn"),
+        txtContainer = $("#txtContainer"),
+        tl, 
+        progressSlider, 
+        totalProgressSlider, 
+        txt;
+     
+        /* config sliders */
+     
+        progressSlider = $("#progressSlider").slider({
+            range: false,
+            min: 0,
+            max: 100,
+            step:.1,
+            slide: function ( event, ui ) {
+                tl.pause();
+                tl.progress( ui.value/100 );
+            }
+        });
+         
+        totalProgressSlider = $("#totalProgressSlider").slider({
+            range: false,
+            min: 0,
+            max: 100,
+            step:.1,
+            slide: function ( event, ui ) {
+                tl.totalProgress( ui.value/100 ).pause();
+            }
+        });        
+         
+     
+      
+     /* build DOM elements*/
+      
+    function splitText(phrase) {
+        var prevLetter, sentence,
+            sentence = phrase.split("");
+        $.each(sentence, function(index, val) {
+            if(val === " "){
+                val = "&nbsp;";
+            }
+            var letter = $("<div/>", {
+                        id : "txt" + index
+            }).addClass('txt').html(val).appendTo(txtContainer);
+     
+            if(prevLetter) {
+                $(letter).css("left", ($(prevLetter).position().left + $(letter).width()) + "px");
+            };
+            prevLetter = letter;
+        });
+        txt = $(".txt");
+    }
+       
+    function buildTimeline() {
+         
+        //note this timeline uses 3D transforms which will only work in recent versions of Safari, Chrome, and FireFox. IE10 will support 3D transforms as well. All other browsers simply will not show those properties being tweened. 
+         
+        TweenLite.set(txtContainer, {perspective:500});
+         
+        tl = new TimelineMax({onUpdate:updateUI, repeat:2, repeatDelay:1, yoyo:true});
+        tl.from(logo, 0.5, {left:'-=60px', ease:Back.easeOut})
+		  .staggerFrom(txt, 0.1, {alpha:0}, 0.02, "textEffect")
+		  .staggerFrom(txt, 0.8, {rotationY:"-270deg", top:"100px", transformOrigin: "50% 50% -80", ease:Back.easeOut}, 0.02, "textEffect")
+		  .staggerTo(txt, 0.6, {rotationX:"+=360deg", transformOrigin:"50% 50% 10", color:"#90e500"}, 0.02);  
+    } 
+      
+    /* callbacks */
+     
+    function updateUI() {
+        //change slider value
+        progressSlider.slider("value", tl.progress() *100);
+        totalProgressSlider.slider("value", tl.totalProgress() *100);
+         
+        //update display of values
+        progressValue.html(tl.progress().toFixed(2));
+        totalProgressValue.html(tl.totalProgress().toFixed(2));
+        timeValue.html(tl.time().toFixed(2));
+        totalTimeValue.html(tl.totalTime().toFixed(2));
+    }                   
+               
+    restartBtn.click(function() {
+        //Start playing from a progress of 0.
+        tl.restart();
+    });
+     
+    function init() {
+        splitText("We Hope You Enjoyed the Tour");
+        buildTimeline();
+        //show the demoBackground div after DOM is ready and all images loaded
+        TweenLite.set($("#demoBackground"), {visibility:"visible"});
+    }
+        
+    init();
+});
+ 
+</script>
+</body>
+</html>

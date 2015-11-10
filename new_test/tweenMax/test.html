@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		.box_wrap{margin:50px;text-align:center;}
+		.box{position:relative;width:100px;height:100px;background:blue;display:inline-block;overflow:visible;}
+		.box2{width:100px;height:100px;background:red;margin:50px;}
+		.box3{width:100px;height:100px;background:black;margin:50px;}
+		.box4{width:100px;height:100px;background:green;margin:50px;}
+		.box5{width:100px;height:100px;background:yellow;margin:50px;}
+	</style>
+</head>
+<body>
+<div class="box_wrap">
+	<div class="box"></div>
+</div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+
+<script>
+$(function(){
+    TweenMax.to('.box', 3, {rotationY:360, transformOrigin:"50% 50% 200"})
+    //TweenMax.from($('.box2'), 1, {rotation:"-45deg"});
+	TweenMax.to('.box2', 3, {rotationY:360, transformOrigin:"left 50% -200"})
+	TweenMax.fromTo('.box3', 1, {marginTop:100},{marginTop:50,delay:1});
+	TweenMax.to('.box4', 0.5, {skewY:"180deg",scaleY:2,x:100});
+	TweenLite.to('.box5', 2, {rotationX:45, scaleX:0.8, z:-300});
+});
+</script>
+</body>
+</html>

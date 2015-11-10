@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		div{position:relative;}
+		.blue{width:100px;height:100px;background:blue;margin:50px;}
+		.red{width:100px;height:100px;background:red;margin:50px;}
+		.black{width:100px;height:100px;background:black;margin:50px;}
+		.green{width:100px;height:100px;background:green;margin:50px;}
+		.yellow{width:100px;height:100px;background:yellow;margin:50px;}
+		.orange{width:100px;height:100px;background:orange;margin:50px;}
+	</style>
+</head>
+<body>
+	<div class="red"></div>	
+	<div class="blue"></div>
+	<div class="orange"></div>	
+	<div class="green"></div>
+	<div class="yellow"></div>
+	<div class="black"></div>	
+	
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+
+<script>
+$(function(){
+    var tl = new TimelineLite();
+	tl.from('.red', 1, {x:750})	  
+	  .from('.blue', 2, {x:750},'+=1')
+	  .from('.orange', 2, {x:750},'-=1')
+	  .from('.green', 1, {x:750},3)
+	  .add('spin', '+=1')
+	  .from('.yellow', 2, {x:750, rotation:360}, 'spin')
+	  .from('.black', 2, {x:750, rotation:360}, 'spin+=0.5')
+});
+</script>
+</body>
+</html>

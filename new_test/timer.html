@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+body{margin:0px;padding:0px;}
+.clock{width:100%;height:100vh;background-color:#FCFFF5;position:realtive;top:0px;}
+.clock p{font-family:'Montserrat';font-size:3em;opacity:1.0;position:relative;width:100%;text-align:right;margin-top:31px;}
+.clock h2{font-family:'Montserrat';font-size:1em;opacity:1.0;position:absolute;margin-top:-5px;width:100%;right:2px;text-align:right;}
+.day{width:100%;height:100%;background-color:#D1DBBD;position:absolute;top:0px;}
+.hour{width:0%;height:100%;background-color:#91AA9D;position:absolute;top:0px;overflow:hidden;}
+.hour > h2{color:#D1DBBD;top:40px;}
+.hour > p{color:#D1DBBD;top:-40px;}
+.minute{width:0%;height:100%;background-color:#3E606F;position:absolute;top:0px;mix-blend-mode:hard-light;overflow:hidden;}
+.minute > h2{color:#91AA9D;top:100px;}
+.minute > p{color:#91AA9D;mix-blend-mode:lighten;top:20px;}
+.second{width:0%;height:100%;background-color:#193441;position:absolute;top:0px;opacity:1.0;mix-blend-mode:hard-light;overflow:hidden;}
+.second > h2{color:#3E606F;top:160px;}
+.second > p{color:#3E606F;mix-blend-mode:lighten;top:80px;}
+</style>
+
+</head>
+<body>
+	<div class="clock">
+	  <div class="day">
+		<div class="hour">
+		  <p>hr</p>
+		  <h2>hours</h2>
+		  <div class="minute">
+			<p>min</p>
+			<h2>minutes</h2>
+			<div class="second">
+			  <p>sec</p>
+			  <h2>seconds</h2>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+	
+		setInterval(time_timer, 1000);
+
+		function time_timer() {
+		  var dt = new Date();
+		  
+		  var s = dt.getSeconds();
+		  var s_p = ((s/60) * 100) + '%'; 
+		  
+		  var m = dt.getMinutes();
+		  var m_p = ((m/60) * 100) + '%';
+		  
+		  var h = dt.getHours();
+		  var h_p = ((h/24) * 100) + '%';
+		  
+		  $('.hour').find('p').text(h);
+		  $('.minute').find('p').text(m);
+		  $('.second').find('p').text(s);
+									  
+		   TweenMax.to($('.second'), 0.5, {
+			  ease: Bounce.easeOut,
+			  width:s_p,
+		  })
+			TweenMax.to($('.minute'), 0.5, {
+			  ease: Bounce.easeOut,
+			  width:m_p,
+		  })
+			 TweenMax.to($('.hour'), 0.5, {
+			  ease: Bounce.easeOut,
+			  width:h_p,
+		  })
+		}
+
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css">
+.logo{position:absolute;left:0;right:0;top:0;bottom:0;width:196px;height:89px;margin:auto;overflow:hidden;transition:width .5s ease}
+	.logo.active{width:194px;}
+.logo p{position:relative;float:left;display:block;height:36px;margin-left:2px;text-align:center;overflow:hidden;transition:all .5s ease}
+.logo p:before,.logo p:after{position:absolute;display:block;content:'';width:13px;height:36px;background:#23b400;transition:all .5s ease}
+.logo p span{display:inline-block;text-indent:-999em;width:13px;height:36px;background:#23b400;transition:all .5s ease}
+.logo p i{transition:all .5s ease}
+.logo div{clear:both;text-align:center;font-size:12px;}
+
+.logo p.n{width:43px;}
+.logo p.n:before,.logo p.n:after{position:absolute;top:0;}
+.logo p.n:before{left:0;}
+.logo p.n:after{right:0;}
+.logo p.n span{transform:skewX(0deg);}
+	.logo.active p.n{width:39px;}
+	.logo.active p.n span{transform:skewX(32deg);}
+.logo p.a{width:43px;}
+.logo p.a:before,.logo p.a:after{position:absolute;bottom:0;}
+.logo p.a:before{left:0;transform:skewX(0deg);transform-origin:left bottom;}
+.logo p.a:after{right:0;transform:skewX(0deg);transform-origin:right bottom;}
+.logo p.a span{transform:rotate(0deg);margin-top:0px;}
+	.logo.active p.a{width:44px;}
+	.logo.active p.a:before{transform:skewX(-23deg);}
+	.logo.active p.a:after{transform:skewX(23deg);}
+	.logo.active p.a span{width:8px;height:32px;transform:rotate(90deg);margin-top:10px;}
+.logo p.v{width:28px;}
+.logo p.v:before,.logo p.v:after{position:absolute;top:0;}
+.logo p.v:before{left:0;transform:skewX(0deg);transform-origin:left top;}
+.logo p.v:after{right:0;transform:skewX(0deg);transform-origin:right top;}
+.logo p.v span{width:0;height:0;overflow:hidden;}
+	.logo.active p.v{width:43px;margin-left:-8px;}
+	.logo.active p.v:before{transform:skewX(23deg);}
+	.logo.active p.v:after{transform:skewX(-23deg);}
+.logo p.e{width:44px;}
+.logo p.e:before, .logo p.e:after, .logo p.e span{width:28px;height:9px;right:0;left:auto}
+.logo p.e:before{top:0;}
+.logo p.e:after{bottom:0;}
+.logo p.e span{position:absolute;top:14px;height:8px;right:0;}
+.logo p.e i{display:block;width:14px;height:36px;background:#23b400;}
+	.logo.active p.e{width:28px;}
+	.logo.active p.e span{right:2px;width:26px;}
+.logo p.r{width:28px;}
+.logo p.r:before{display:none;}
+.logo p.r i{width:13px;height:24px;position:absolute;right:0;top:0;background:#23b400;border-radius:0px;}
+.logo p.r i:before{content:'';display:block;position:absolute;width:7px;height:7px;left:-2px;top:9px;background:#fff;border-radius:0 5px 5px 0;opacity:0;transition:all 0.5s ease }
+.logo p.r:after{right:0;bottom:0;height:14px;width:13px;transform:skewX(0deg);transform-origin:right bottom;}
+.logo p.r span{display:block;position:relative;z-index:1;}
+	.logo.active p.r{width:37px;margin-left:5px;}
+	.logo.active p.r i{width:34px;right:3px;border-top-right-radius:14px 11px;border-bottom-right-radius:14px 11px;}
+	.logo.active p.r i:before{left:13px;opacity:1;}
+	.logo.active p.r:after{width:16px;transform:skewX(34deg);}
+
+.box{width:100px;height:100px;margin:50px;display:inline-block;background:#23b400;}
+.box.active{transform:perspective(800px) rotateX(45deg) skewX(34deg);}
+</style>
+</head>
+<body>
+<div class="logo">
+	<p class="n"><span>N</span></p>
+	<p class="a"><span>A</span></p>
+	<p class="v"><span>v</span></p>
+	<p class="e"><span>E</span><i></i></p>
+	<p class="r"><span>R</span><i></i></p>
+	<div>클릭하면 로고로 변환</div>
+</div>
+<div class="box"></div>
+<div class="box active"></div>
+<script type="text/javascript">
+	$(function(){
+		$('.logo').click(function(){
+			$(this).toggleClass('active');
+		})
+	})
+</script>
+</body>
+</html>
