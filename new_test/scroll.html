@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css">
+	html,body{margin:0;padding:0;height:100%;}
+	.wrap{min-height:100%;}
+	.header{position:fixed;top:0;left:0;width:100%;background:#333;color:#fff;overflow:hidden;z-index:1;}
+	.header h1{margin-left:20px;float:left;}
+	.header .gnb{float:left;margin-left:100px;}
+	.header .gnb ul{overflow:hidden;}
+	.header .gnb ul li{float:left;margin-right:15px;list-style:none;}
+	.header .gnb ul li a{color:#fff;}
+	.header .gnb ul li.active a{color:red;}
+	.navi{float:right;padding:20px;}
+	.navi a{color:#fff;}
+	.container>div{position:relative;}	
+	.container>div > div{position:absolute;left:0;right:0;top:0;bottom:0;width:200px;height:106px;padding:30px;margin:auto;font-size:80px;color:#fff;text-align:center;text-shadow: -1px -1px 0 #222,1px -1px 0 #222,-1px 1px 0 #222,1px 1px 0 #222,2px 2px 0 #fff,3px 3px 0 #fff,4px 4px 0 #fff}
+	.footer{padding:50px 0;background:#eee;text-align:center;}
+	.index{height:300px;background:#ddd;text-align:center;}
+	.sec1{background:#ED527F;}
+	.sec2{background:#FAB445;}
+	.sec3{background:#EB5A4B;}
+	.sec4{background:#96CA3A;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<h1>LOGO</h1>
+			<nav class="gnb">
+				<ul>
+					<li><a href="#sec1">sec1</a></li>
+					<li><a href="#sec2">sec2</a></li>
+					<li><a href="#sec3">sec3</a></li>
+					<li><a href="#sec4">sec4</a></li>
+				</ul>
+			</nav>
+			<nav class="navi">
+				<a href="#" class="up">up</a>
+				<a href="#" class="down">down</a>
+			</nav>
+		</div>
+		<div class="container">
+			<div id="index" class="index"><div>index</div></div>
+			<div id="sec1" class="section sec1"><div>sec1</div></div>
+			<div id="sec2" class="section sec2"><div>sec2</div></div>
+			<div id="sec3" class="section sec3"><div>sec3</div></div>
+			<div id="sec4" class="section sec4"><div>sec4</div></div>
+		</div>
+		<div class="footer">footer</div>
+	</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+<script type="text/javascript">
+	$(function(){		
+		var $scrollSpeed = 500;
+		var $scrolling = false;
+		var $body = $('body');
+		var $head = $('.header');
+		var $headH = $head.height();
+		var $section = $('.section');
+		var $length = $section.length;
+		var $sectionPos = new Array();
+
+		sectionHeight();
+		sectionPos();
+		$(window).resize(function(){
+			sectionHeight();
+			sectionPos();
+			var $active = $('.gnb').find('.active');
+			if($active.size() > 0){
+				delay(function(){
+					$active.find('a').trigger('click');
+				}, 500);
+			}
+
+		})
+		var delay = (function(){
+			var timer = 0;
+			return function(callback, ms){
+				clearTimeout (timer);
+				timer = setTimeout(callback, ms);
+			};
+		})();		
+		
+		//sectoin 높이값 설정
+		function sectionHeight(){
+			var $bodyH = $body.height();			
+			$section.css('height',($bodyH-$headH))
+			$('.container').css('padding-top',($headH))
+		}
+		//sectoin 위치값(top) 설정
+		function sectionPos(){
+			$section.each(function(i){
+				$sectionPos[i] = Math.round($(this).position().top + $headH);
+			});
+		}
+
+		//gnb
+		$(window).scroll(function(){
+			var $bodyH = $body.height();
+			var $scrollTop = $(this).scrollTop();
+			var $top = ($bodyH/2) + $scrollTop;
+			//console.log($scrollTop,$top,$sectionPos[0])
+			if($scrollTop < $sectionPos[0]/2 ){
+				$('.gnb ul li').removeClass('active');
+			}else{
+				for (i=0; i < $length; i++ ) {			
+					if($top >= ($sectionPos[i] )){
+						$('.gnb ul li').eq(i).addClass('active').siblings().removeClass('active');
+					}
+				}
+			}
+		});
+		$('.gnb a').click(function(){
+			var _href = $(this).attr('href');
+			scrollMove(_href)
+			return false;
+		})
+		$('.navi a').click(function(){
+			var idx = $('.gnb .active').index();
+			var $last = $length-1;
+			if($(this).hasClass('down')){
+				if(idx == $last){
+					idx = 0;
+				}else{
+					idx = idx + 1;
+				}
+			}else{
+				if(idx <= 0){
+					idx = $last;
+				}else{
+					idx = idx - 1;
+				}
+			}
+			console.log(idx)
+			$('.gnb').find('li').eq(idx).find('a').trigger('click');
+			return false;
+		})
+
+		//mousewheel 이벤트
+		$section.bind('mousewheel', function(e){			
+			var $idx = $(this).index('.section');
+			var $last = $length-1;
+			var tar
+			var $scrollTop = $(window).scrollTop();
+			var $firstTop = $section.first().offset().top;
+			var $lastTop = $section.last().offset().top;
+			//console.log($firstTop, $scrollTop);
+
+			if(e.originalEvent.wheelDelta /120 > 0){				
+				if($idx > 0){
+					if($lastTop > $scrollTop){
+						$idx = $idx-1;
+					}
+					tar = $section.eq($idx);
+					scrollMove(tar);
+					return false;
+				}
+				//console.log('scrolling up ! ,'+$idx);
+			}else{
+				if($idx < $last){
+					if($firstTop <= $scrollTop+$headH){
+						$idx = $idx+1;
+					}
+					tar = $section.eq($idx);
+					scrollMove(tar);
+					return false;
+				}
+				//console.log('scrolling down ! ,'+$idx);				
+			}
+		});
+		$('.index').bind('mousewheel', function(e){
+			if(e.originalEvent.wheelDelta /120 > 0){				
+				
+			}else{				
+				tar = $section.first();
+				scrollMove(tar);
+				return false;				
+			}
+		});
+		
+		//scroll 이벤트
+		function scrollMove(e){			
+			if($scrolling == false){
+				$scrolling = true;				
+				$body.stop().scrollTo($(e),$scrollSpeed,{
+					offset:{top:-$headH},
+					onAfter:function(){
+						$scrolling = false;
+					}
+				});
+
+			}
+		}
+	})
+</script>
+</body>
+</html>
