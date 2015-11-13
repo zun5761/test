@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+body{background-color:#222;color:white;font-size:21px;overflow:hidden;}
+.text{position:absolute;left:50%;top:50%;  transform:translate(-50%,-50%);white-space: nowrap;width:300px;}
+.text div{position:absolute;font-family: tahoma;}
+.text #txt2{color:#88CE02;}
+.bg_txt{color:#000;position:absolute;left:50%;top:50%;font-family:'Oswald',tahoma;font-size:30vw;text-align:center;white-space: nowrap;opacity:0.2;letter-spacing:-2vw;transform:translate(-50%,-50%);}
+	</style>
+</head>
+<body>
+	<span class="bg_txt">ANOJU</span>
+	<div class="text">
+	  <div id="txt1">ANOJU is&nbsp;</div>
+	  <div id="txt2">'Web Publishing'</div>
+	  <div id="txt3">&nbsp;professionally!!!</div>
+	</div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/TextPlugin.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var words=["'HTML5'","'CSS3'","'Javascript'","'Cross Browsing'","'web accessibility'","'Responsive Web'","'Web Publishing'"],
+    centerT=document.getElementById('txt2'),
+	leftT=document.getElementById('txt1');
+    W1=leftT.offsetWidth,W2=centerT.offsetWidth,
+	tl=new TimelineMax({repeat:-1});
+
+	TweenLite.set('#txt2',{left:W1});
+	TweenLite.set('#txt3',{left:W1+W2});
+
+	for(var i=0;i<words.length;i++){
+	  centerT.innerHTML=words[i];
+	  var W3=centerT.offsetWidth;
+	  tl.to('#txt3',1,{x:120,ease:Sine.easeOut},'+=3')
+		.to('#txt2',1,{text:{value:words[i]},ease:Sine.easeOut},'-=0.7')
+		.to('#txt3',1.7,{x:W3-W2,ease:Bounce.easeOut},'-=0.1')
+	};
+})
+</script>
+</body>
+</html>
