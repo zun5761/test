@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<link rel="stylesheet" href="http://www.jaykayess.com/flapper/css/flapper.css" />
+</head>
+<body>
+<input id="display" />
+
+<script type="text/javascript" src="http://www.jaykayess.com/flapper/src/jquery.flapper.js"></script>
+<script type="text/javascript" src="http://www.jaykayess.com/flapper/transform/dist/jquery.transform-0.9.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#display').flapper({
+		width : 5,
+		timing : 500,
+		chars : ['', '0','1','2','3','4','5','6','7','8','9']
+	}).val(12345).change();
+})
+</script>
+</body>
+</html>

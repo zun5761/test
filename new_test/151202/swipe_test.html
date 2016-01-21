@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css">
+	html,body{height:100%;}
+	#wrap{height:100%;background:#eee;}
+	.swipetxt{overflow:hidden;}
+	.img_wrap{
+		overflow: hidden;
+		position: relative;
+		border: 1px solid black;}
+	#imgs{
+		padding: 0;
+		margin: 0;
+		overflow:hidden;
+		transition-property: transform;
+		transition-duration: 0.5s;
+		transition-timing-function: ease-out;
+		transform: translate(0, 0);}
+	#imgs li{
+		float:left;
+		padding: 0;
+		margin: 0;
+		list-style:none;
+		text-align:center;
+		transform: translate(0, 0);}
+	#imgs li img{max-width:100%}
+	button.disabled{opacity:0.5;}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="swipetxt">
+			<h1>swipe test</h1>	
+		</div>
+		<div class="img_wrap">
+			<ul id="imgs">
+				<li><img src="https://lh4.googleusercontent.com/_D9-nzLCi9qU/TNQ2hYNqQEI/AAAAAAAADtI/TcqCdc6N26A/s500/twick_pool_stairs~.jpg"></li>
+				<li><img src="https://lh6.googleusercontent.com/_D9-nzLCi9qU/TNQ2gdP8JYI/AAAAAAAADtI/NU2WBbaXpgU/s500/twick_pool_stairsAndChanginRoom~.jpg"></li>
+				<li><img src="https://lh4.googleusercontent.com/_D9-nzLCi9qU/TNQ2UWpqLgI/AAAAAAAADtI/-OG4z6RxHwA/s500/twick_pool_hall~.jpg"></li>
+			</ul>
+		</div>
+		<button class="ui-button disabled" disabled="disabled">prev</button>
+		<button class="ui-button">next</button>
+	</div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.swipetxt').swipe({
+        swipeLeft: function() {
+            $('h1').text('left')
+        },
+        swipeRight: function() {
+            $('h1').text('right')
+        }
+	});
+
+	var imgs = $("#imgs");
+	//var IMG_WIDTH = 500;
+	var IMG_WIDTH
+	//console.log(IMG_WIDTH);
+	var currentImg = 0;
+	//var maxImages = 3;
+	var maxImages = imgs.children().length;
+	var speed = 500;
+
+	widthSetting();
+	$(window).resize(function(){
+		widthSetting();
+		scrollImages(IMG_WIDTH * currentImg, speed);
+	})
+	var btnIdx = 1;
+	$('.ui-button').click(function(){		
+		var _class = $(this).text();
+		$(this).siblings().removeAttr('disabled').removeClass('disabled');
+
+		switch (_class){
+			case 'prev':
+				previousImage();
+				btnIdx = btnIdx-1;
+				if(btnIdx==1){
+					$(this).attr('disabled','disabled').addClass('disabled');
+				}
+				break;
+			case 'next':
+				nextImage();
+				btnIdx = btnIdx+1;
+				if(btnIdx==maxImages){
+					$(this).attr('disabled','disabled').addClass('disabled');
+				}				
+				break;
+		}		
+	})
+	
+	function widthSetting(){
+		IMG_WIDTH = imgs.parent().width();
+		imgs.css('width',IMG_WIDTH*maxImages)
+		imgs.children('li').css('width',IMG_WIDTH)
+	}
+
+	var swipeOptions = {
+		triggerOnTouchEnd: true,
+		swipeStatus: swipeStatus,
+		allowPageScroll: "vertical",
+		threshold: 75
+	};
+	
+	imgs.swipe(swipeOptions);
+
+	/**
+	 * Catch each phase of the swipe.
+	 * move : we drag the div
+	 * cancel : we animate back to where we were
+	 * end : we animate to the next image
+	 */
+	function swipeStatus(event, phase, direction, distance) {
+		//If we are moving before swipe, and we are going L or R in X mode, or U or D in Y mode then drag.
+		if (phase == "move" && (direction == "left" || direction == "right")) {
+			var duration = 0;
+
+			if (direction == "left") {
+				scrollImages((IMG_WIDTH * currentImg) + distance, duration);
+			} else if (direction == "right") {
+				scrollImages((IMG_WIDTH * currentImg) - distance, duration);
+			}
+
+		} else if (phase == "cancel") {
+			scrollImages(IMG_WIDTH * currentImg, speed);
+		} else if (phase == "end") {
+			if (direction == "right") {
+				previousImage();
+			} else if (direction == "left") {
+				nextImage();
+			}
+		}
+	}
+
+	function previousImage() {
+		currentImg = Math.max(currentImg - 1, 0);
+		scrollImages(IMG_WIDTH * currentImg, speed);
+	}
+
+	function nextImage() {
+		currentImg = Math.min(currentImg + 1, maxImages - 1);
+		scrollImages(IMG_WIDTH * currentImg, speed);
+	}
+
+	/**
+	 * Manually update the position of the imgs on drag
+	 */
+	function scrollImages(distance, duration) {
+		imgs.css("transition-duration", (duration / 1000).toFixed(1) + "s");
+
+		//inverse the number we set in the css
+		var value = (distance < 0 ? "" : "-") + Math.abs(distance).toString();
+		imgs.css("transform", "translate(" + value + "px,0)");
+	}
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Lusitana);
+body {
+  background-color: #fcfcf4;
+  font-family: "Lusitana", sans-serif;
+}
+
+p {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0 0 18px;
+}
+p span {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px;
+}
+p span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  margin: auto;
+  background-color: #98B296;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3px;
+}
+p span:after {
+  content: '↖';
+  color: #fcfcf4;
+  font-size: 17px;
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -8px;
+  margin: auto;
+  height: 18px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+@media (min-width: 700px) {
+  p span:after {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 44px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+@media (min-width: 500px) {
+  h1 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  cursor: pointer;
+  padding: 6px 20px;
+  font-size: 48px;
+}
+
+button {
+  opacity: 0.6;
+  background-color: transparent;
+  position: fixed;
+  z-index: 2;
+  top: 24px;
+  left: 24px;
+  border: none;
+  width: 36px;
+  height: 30px;
+  outline: none;
+  -webkit-transition: opacity 0.2s ease-out;
+          transition: opacity 0.2s ease-out;
+}
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: auto;
+  width: 100%;
+  background: -webkit-linear-gradient(top, #98B296, #98B296 20%, transparent 20%, transparent 40%, #98B296 40%, #98B296 60%, transparent 60%, transparent 80%, #98B296 80%, #98B296 100%);
+  background: linear-gradient(to bottom, #98B296, #98B296 20%, transparent 20%, transparent 40%, #98B296 40%, #98B296 60%, transparent 60%, transparent 80%, #98B296 80%, #98B296 100%);
+  -webkit-transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
+          transition: opacity 0.2s ease-out, width 0.2s 0.2s ease-out;
+}
+button:after {
+  opacity: 0;
+  content: '×';
+  color: white;
+  position: absolute;
+  top: 16px;
+  left: -4px;
+  font-family: Arial, sans-serif;
+  font-size: 76px;
+  line-height: 0;
+  -webkit-transition: opacity 0.4s ease-out;
+          transition: opacity 0.4s ease-out;
+}
+button:active {
+  -webkit-transform: translateY(2px);
+      -ms-transform: translateY(2px);
+          transform: translateY(2px);
+}
+button:hover {
+  opacity: 1;
+}
+.open button {
+  opacity: 1;
+}
+.open button:before {
+  opacity: 0;
+  width: 0;
+}
+.open button:after {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) rotate(360deg);
+          transform: translate3d(0, 0, 0) rotate(360deg);
+  -webkit-transition: 0.4s 0.9s ease-out;
+          transition: 0.4s 0.9s ease-out;
+}
+
+nav {
+  z-index: 1;
+  position: fixed;
+  top: -100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+nav:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: rgba(123, 156, 121, 0.98);
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 100%;
+  -webkit-transform: scale(0.04) translateY(9999px);
+      -ms-transform: scale(0.04) translateY(9999px);
+          transform: scale(0.04) translateY(9999px);
+}
+.open nav {
+  top: 0;
+}
+.open nav:before {
+  height: 100%;
+  padding-bottom: 0;
+  border-radius: 0;
+  -webkit-animation: menu-animation 0.8s ease-out forwards;
+          animation: menu-animation 0.8s ease-out forwards;
+  -webkit-transition: border-radius 0.3s 0.8s ease-out, height 0.3s 0.8s ease-out, padding 0.3s 0.8s ease-out;
+          transition: border-radius 0.3s 0.8s ease-out, height 0.3s 0.8s ease-out, padding 0.3s 0.8s ease-out;
+}
+
+ul.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+}
+ul.menu li {
+  opacity: 0;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 36px, 0);
+          transform: translate3d(0, 36px, 0);
+}
+ul.menu li:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  left: auto;
+  background-color: white;
+  height: 100%;
+  width: 0;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: width 0.14s ease-out;
+          transition: width 0.14s ease-out;
+}
+ul.menu li:after {
+  opacity: 0;
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  color: #98B296;
+  overflow: hidden;
+  -webkit-transform: translate(-24px, 6px);
+      -ms-transform: translate(-24px, 6px);
+          transform: translate(-24px, 6px);
+  -webkit-transition: 0.1s ease-out;
+          transition: 0.1s ease-out;
+}
+ul.menu li:hover:before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+ul.menu li:hover:after {
+  opacity: 1;
+  padding: 0 20px;
+  -webkit-transform: translate(0px, 6px);
+      -ms-transform: translate(0px, 6px);
+          transform: translate(0px, 6px);
+  -webkit-transition: 0.2s 0.14s ease-out;
+          transition: 0.2s 0.14s ease-out;
+}
+.open{overflow:hidden;}
+.open ul.menu li {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: 0.2s ease-out;
+          transition: 0.2s ease-out;
+}
+.open ul.menu li:nth-child(1) {
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+.open ul.menu li:nth-child(2) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+.open ul.menu li:nth-child(3) {
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+.open ul.menu li:nth-child(4) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.open ul.menu li:nth-child(5) {
+  -webkit-transition-delay: 1.1s;
+          transition-delay: 1.1s;
+}
+.open ul.menu li:nth-child(6) {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+.open ul.menu li:nth-child(7) {
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
+}
+.open ul.menu li:nth-child(8) {
+  -webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
+}
+.open ul.menu li:nth-child(9) {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+.open ul.menu li:nth-child(10) {
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+.open ul.menu li:nth-child(11) {
+  -webkit-transition-delay: 1.7s;
+          transition-delay: 1.7s;
+}
+
+article {
+  padding: 24px;
+  max-width: 600px;
+  margin: 60px auto;
+  -webkit-transition: 0.2s ease-out;
+          transition: 0.2s ease-out;
+}
+.open article {
+  -webkit-transform: scale(0.92);
+      -ms-transform: scale(0.92);
+          transform: scale(0.92);
+  -webkit-transition: -webkit-transform 0.2s 0.41s ease-out;
+          transition: transform 0.2s 0.41s ease-out;
+}
+
+@-webkit-keyframes menu-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.04) translateY(300%);
+            transform: scale(0.04) translateY(300%);
+  }
+  40% {
+    -webkit-transform: scale(0.04) translateY(0);
+            transform: scale(0.04) translateY(0);
+    -webkit-transition: ease-out;
+            transition: ease-out;
+  }
+  40% {
+    -webkit-transform: scale(0.04) translateY(0);
+            transform: scale(0.04) translateY(0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.02) translateY(0px);
+            transform: scale(0.02) translateY(0px);
+  }
+  61% {
+    -webkit-transform: scale(0.04);
+            transform: scale(0.04);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes menu-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.04) translateY(300%);
+            transform: scale(0.04) translateY(300%);
+  }
+  40% {
+    -webkit-transform: scale(0.04) translateY(0);
+            transform: scale(0.04) translateY(0);
+    -webkit-transition: ease-out;
+            transition: ease-out;
+  }
+  40% {
+    -webkit-transform: scale(0.04) translateY(0);
+            transform: scale(0.04) translateY(0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(0.02) translateY(0px);
+            transform: scale(0.02) translateY(0px);
+  }
+  61% {
+    -webkit-transform: scale(0.04);
+            transform: scale(0.04);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+</style>
+</head>
+<body>	
+	<button class="menu-toggle"></button>
+	<nav>
+	  <ul class="menu">
+		<li data-text="Home">Home</li>
+		<li data-text="Projects">Projects</li>
+		<li data-text="About">About</li>
+		<li data-text="Contact">Contact</li>
+	  </ul>
+	</nav>
+	<article>
+	  <h1>This is an Article About Something</h1>
+	  <h3>by Lauren Ipsum</h3>
+	  <p><span>Toggle the menu by clicking on the infamous hamburger icon in the top left corner!  It could be the most fun you will ever have.</span></p>
+	  <p>Maybe it was the other George Michael. You know, the singer-songwriter. This was a big get for God. I'm a scholar. I enjoy scholarly pursuits. Suddenly playing with yourself is a scholarly pursuit? Wow. We're just blowing through nap time, aren't we? I need a fake passport, preferably to France… I like the way they think. Butterscotch! Want a lick?</p>
+	  <p>I made a huge tiny mistake. What's gotten into you? Have you been eating cheese? One of the guys told me to take my head out of my BOTTOM and get back to work…my BOTTOM! Hahahaha. Go ahead, touch the Cornballer. She's always got to wedge herself in the middle of us so that she can control everything. Yeah. Mom's awesome.</p>
+	  <p>No, no, it's pronounced a-nal-ra-pist. It wasn't really the pronunciation that bothered me. Heyyyyyy, Uncle Father Oscar. Are you at all concerned about an uprising? I know what an erection feels like, Michael. We need a name. Maybe 'Operation Hot Mother'. A flower in my garden, a mystery in my panties. She's not that Mexican, Mom. She's my Mexican. And she's Columbian or something.</p>
+	  <p>Well excuse me, Judge Reinhold. Well excuse me, Judge Reinhold! I could use a leather jacket for when I'm on my hog and have to go into a controlled slide. Happy. Family Love Michael. That's my son, you pothead! I'll sacrifice anything for my children. There's a new daddy in town. A discipline daddy.</p>
+	  <p>I deceived you, mom. Tricked makes it sound like we have a playful relationship. That coat costs more than your house! I've got a nice hard cot with his name on it. You'd do that to your own brother? I said "cot." The only thing I found in the fridge was a dead dove in a bag. Gob: You didn't eat that, did you?</p>
+	</article>
+
+<script type="text/javascript">
+	$(function(){
+		$('button').on('click', function(){
+		  $('body').toggleClass('open');
+		});
+	})
+</script>
+</body>
+</html>
