@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<style type="text/css">
+	img{max-width:100%;max-height:100%;vertical-align:middle;}
+	.photo{position:relative;width:540px;padding:0 50px;margin:0 auto;}
+	.photo .big_img_wrap{position:relative;}
+	.photo .big_img{width:520px;height:520px;padding:10px;background:rgba(0,0,0,.5);display:table-cell;vertical-align:middle;text-align:center;}
+	.photo nav button{position:absolute;top:0;bottom:0;opacity:0.3;}
+	.photo nav button:hover,
+	.photo nav button:focus,
+	.photo nav button:active{opacity:0.6;}
+	.photo nav button:first-child{left:0;}
+	.photo nav button:last-child{right:0;}
+	.photo .list_wrap{overflow:hidden;}
+	.photo ul{position:relative;margin:20px 0 10px;padding:0;}
+	.photo ul:after{content:'';display:block;clear:both;}
+	.photo ul li{position:relative;float:left;margin-right:10px;list-style:none;}
+	.photo ul li a{display:table-cell;width:100px;height:100px;text-align:center;vertical-align:middle;background:#eee;}
+	.photo ul li a img{}
+	.photo ul li a:after{display:block;content:'';position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid #333;opacity:0.5;}
+	.photo ul li a:hover:after,
+	.photo ul li a:focus:after,
+	.photo ul li a:active:after,
+	.photo ul li.on a:after{border:5px solid red;opacity:1;}	
+	.photo p{text-align:center;}
+	.photo p input{text-align:center;border:0;color:#f6931f;font-weight:bold;}
+</style>
+</head>
+<body>
+	<div class="photo">
+		<div class="big_img_wrap">
+			<div class="big_img"></div>
+			<nav>
+				<button>prev</button>
+				<button>next</button>
+			</nav>
+		</div>
+		<div class="list_wrap">
+			<ul class="list">
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/mrpizza_co_kr_20141113_123437.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/mrpizza_co_kr_20141113_123512.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/pji_co_kr_20141113_164813.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/main_html_20141113_125515.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/pelicana_co_kr_20141113_124005.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/mrpizza_co_kr_20141113_123437.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/mrpizza_co_kr_20141113_123512.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/pji_co_kr_20141113_164813.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/main_html_20141113_125515.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/pelicana_co_kr_20141113_124005.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/mrpizza_co_kr_20141113_123437.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/mrpizza_co_kr_20141113_123512.jpg" alt="" /></a></li>
+				<li><a href="#"><img src="http://www.anoju.com/portfolio/resources/images/pji_co_kr_20141113_164813.jpg" alt="" /></a></li>
+			</ul>
+		</div>
+		
+		<div class="slider-range"></div>
+		<p><input type="text" class="page" readonly /></p>
+	</div>
+<script type="text/javascript">
+	$(function(){
+		var $img = $('.big_img')
+			,$list = $('.list')
+			,$first = $list.find('li').first()
+			,idx = 1
+			,move = false
+			,speed = 500;
+
+		var $li_n = $list.children('li').length
+			,$list_w = ($li_n*100)+(($li_n)*10)
+			
+		$list.css({width:$list_w});
+		$first.addClass('on');
+		$img.html($first.find('img').clone());
+
+		$list.on('click','a',function(){
+			var _thisIdx = $(this).index();
+			$img.html($(this).find('img').clone());
+			$(this).parent().addClass('on').siblings().removeClass('on');
+			return false;
+		})
+
+		$('nav button').click(function(){
+			if(move == false){
+				move = true;
+				var txt = $(this).text()
+					,$on = $list.find('.on')				
+					,idx = ($on.index())+1;
+
+				if(txt == 'next' && idx < $li_n){
+					idx = idx+1;
+					$on.next().find('a').trigger('click')					
+					//if(idx%5 == 0){
+						pageNumber(idx)
+					//}
+				}else if(txt == 'prev' && idx > 1){
+					idx = idx-1;
+					$on.prev().find('a').trigger('click')					
+					//if((idx%5 == 4)){
+						pageNumber(idx)
+					//}						
+				}
+				setTimeout(function(){move = false;},speed)
+			}
+			return false;
+		})
+
+		function pageNumber(e){
+			var $val = (Math.ceil(e / 5));
+			$('.slider-range').slider('value', $val)
+			$('.page').val($val)
+			$list.animate({left:($val-1)*(-550)},speed)
+			//console.log(e, $val)
+		}
+		
+		//slider
+		var $max = (Math.ceil($li_n / 5));
+		console.log($max)
+		$( ".slider-range" ).slider({
+		  range: "max",
+		  min:1,
+		  max: $max,		  
+		  slide: function( event, ui ) {
+			$( ".page" ).val( ui.value );
+			var $val = ui.value
+			$list.animate({left:($val-1)*(-550),speed})	
+		  }
+		});
+		$('.page').val($('.slider-range').slider('value'));
+	})
+</script>
+</body>
+</html>
