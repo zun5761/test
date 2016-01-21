@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+
+* {
+  margin:0;
+  padding:0;
+  outline:none;
+  list-style:none;
+  text-decoration:none;
+  box-sizing:border-box;
+  color:#000;
+  background: transparent;
+  border:none;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #202020;
+  font-family: 'Roboto', sans-serif;
+}
+.wrap {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+  transform-style:preserve-3d;
+}
+.wrap img {
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;
+}
+
+
+
+
+
+/*MY PENS*/
+.mypens {
+  height: 50px;
+  width: 50px;
+  line-height:50px;
+  text-align:center;
+  color:#fff;
+  border:2px solid #fff;
+  border-radius:50%;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  transition:0.2s all ease-out;
+}
+
+.mypens:before {
+  content:"More pen";
+  position: absolute;
+  width: 200px;
+  left: -75px;
+  bottom: -40px;
+  text-align:center;
+  font-size:12px;
+  text-transform:uppercase;
+  color:#fff;
+  opacity: 0;
+  transform:scale(0.2) translateY(100px);
+  transition:0.2s all ease-out;
+}
+.mypens:hover {
+  background: #fff;
+  color:#000;
+  transform:scale(1.2);
+}
+.mypens:hover:before {
+  transform:scale(1) translateY(0);
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<img src="http://thomaspodgro.com/dev/tpodgro/assets/img/monsters-1.png" alt="" />
+		<img class="elem" src="http://thomaspodgro.com/dev/tpodgro/assets/img/monsters-2.png" alt="" />
+		<img class="elem2" src="http://thomaspodgro.com/dev/tpodgro/assets/img/monsters-3.png" alt="" />
+	</div>
+
+<script type="text/javascript">
+/*MOUSEMOVE TRANSFORM 3D*/
+
+!(function ($doc, $win) {
+	var screenWidth = $win.screen.width / 2,
+		screenHeight = $win.screen.height / 2,
+		$elems = $doc.getElementsByClassName("elem"),
+		validPropertyPrefix = '',
+		otherProperty = 'perspective(1000px)',
+		elemStyle = $elems[0].style;
+
+	if(typeof elemStyle.webkitTransform == 'string') {
+		validPropertyPrefix = 'webkitTransform';
+	} else if (typeof elemStyle.MozTransform == 'string') {
+		validPropertyPrefix = 'MozTransform';
+	}
+
+
+	$doc.addEventListener('mousemove', function (e) {
+		var centroX = e.clientX - screenWidth,
+			centroY = screenHeight - (e.clientY + 13),
+			pxX = centroX * 0.03,
+			pxY = centroY * 0.03,
+			$elem
+
+		for (var i = 0; i < $elems.length; i++) {
+   			$elem = $elems[i];
+			$elem.style[validPropertyPrefix] = otherProperty + 'translateY('+ pxY +'px)  translateX('+ pxX +'px)';
+		};
+	});
+})(document, window);
+
+/*SECOND MOUSEMOVE TRANSFORM 3D*/
+
+!(function ($doc, $win) {
+	var screenWidth = $win.screen.width / 2,
+		screenHeight = $win.screen.height / 2,
+		$elems = $doc.getElementsByClassName("elem2"),
+		validPropertyPrefix = '',
+		otherProperty = 'perspective(1000px)',
+		elemStyle = $elems[0].style;
+
+	if(typeof elemStyle.webkitTransform == 'string') {
+		validPropertyPrefix = 'webkitTransform';
+	} else if (typeof elemStyle.MozTransform == 'string') {
+		validPropertyPrefix = 'MozTransform';
+	}
+
+
+	$doc.addEventListener('mousemove', function (e) {
+		var centroX = e.clientX - screenWidth,
+			centroY = screenHeight - (e.clientY + 13),
+			pxX = centroX * 0.05,
+			pxY = centroY * 0.05,
+			$elem
+
+		for (var i = 0; i < $elems.length; i++) {
+   			$elem = $elems[i];
+			$elem.style[validPropertyPrefix] = otherProperty + 'translateY('+ pxY +'px)  translateX('+ pxX +'px)';
+		};
+	});
+})(document, window);
+</script>
+</body>
+</html>
