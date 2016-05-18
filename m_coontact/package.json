@@ -1,0 +1,29 @@
+{
+  "name": "m_contact",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab2.uit.nhncorp.com/CONTACT/m_contact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "merge-stream": "~1.0.0",
+    "vinyl-buffer": "~1.0.0",
+    "gulp-sourcemaps": "~1.6.0",
+    "gulp-md5-plus": "~0.2.0",
+    "gulp-cache": "~0.4.3",
+    "gulp.spritesmith": "~6.2.1",
+    "gulp-imagemin": "~2.4.0",
+    "browser-sync": "~2.11.1",
+    "gulp-sass": "~2.2.0",
+    "gulp-file": "~0.2.0",
+    "gulp-clean": "~0.3.2"
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>슬라이딩메뉴</title>
+<link rel="stylesheet" href="css/contact.css">
+
+<!-- 마크업 확인용 -->
+<script src="js/jquery.min.js"></script>
+<script src="js/markup.js"></script>
+</head>
+<body>
+<div class="lnb lnb_show">
+	<div class="side_cover">
+		<h2 class="blind">사용자 정보</h2>
+		<div class="user_profile">
+			<span class="user_thumb"><img src="img/2hyo2.jpg" alt="뽀뎅"></span>
+			<div class="name_cover">
+				<span class="user_name">이효리</span>
+				<span class="user_id">2hyo2</span>
+			</div>
+		</div>
+		<div class="group_cover">
+			<ul class="side_list">
+				<li><a href="#" class="contact_all">전체연락처 <em class="cnt">365</em></a></li>
+				<li class="selected"><a href="#" class="contact_recent">최근연락처 <em class="cnt">6</em></a></li>
+				<li><a href="#" class="contact_imp">중요연락처 <em class="cnt">47</em></a></li>
+				<!-- [D] 하위폴더 접기시 tree_fold 클래스 추가 -->				
+				<li class="group_list">
+					<button class="contact_group btn_toggle">그룹보기</button>
+					<ul class="sub_list">
+						<li><a href="#" class="contact_group"><span class="el_cover">동아리</span> <em class="cnt">8</em></a></li>
+						<li><a href="#" class="contact_group"><span class="el_cover">디자인 1팀</span> <em class="cnt">99</em></a></li>
+						<li><a href="#" class="contact_group"><span class="el_cover">미지정</span> <em class="cnt">10</em></a></li>
+						<li class="selected"><a href="#" class="contact_group"><span class="el_cover">일이삼사오육칠팔구십일이삼사오육칠팔구십</span> <em class="cnt">999+</em></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="menu_cover">
+			<ul class="side_list">
+				<li><a href="#" class="logout">로그아웃 <em class="user_id">2hyo2</em></a></li>
+				<li><a href="#" class="use_desktop_version">PC버전으로 보기</a></li>
+				<li><a href="#" class="link_cs link_sub">고객센터</a></li>
+				<li><a href="#" class="link_report link_sub">오류 신고하기</a></li>
+			</ul>
+		</div>
+		<footer class="copyright">© NAVER corp.</footer>
+		<button class="btn_close"><i>메뉴닫기</i></button>
+	</div>
+	
+	<span class="dimmed"></span>
+</div>
+<div class="wrap">
+	<!-- 기본 헤더 -->
+	<header class="header">
+		
+	</header>
+	<div class="scroll_cover">
+		
+	</div>
+	<main class="container">
+		
+	</main>
+</div>
+
+
+
+<script>
+// 마크업 인클루드
+IBJS.include([
+    {path:'01_header.html', sel:'.header'},
+    {path:'01_header.html', sel:'.scroll_cover'},
+    {path:'02_list.html', sel:'.container'},
+    
+]);
+</script>
+</body>
+</html>

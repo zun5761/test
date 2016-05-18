@@ -1,0 +1,20 @@
+{
+  "name": "gulp_test",
+  "version": "1.0.0",
+  "description": "gulp 테스트를 위한 프로젝트",
+  "main": "index.js",
+  "dependencies": {
+    "gulp":"^3.9.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zun5761/test.git"
+  },
+  "author": "anoju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zun5761/test/issues"
+  },
+  "homepage": "https://github.com/zun5761/test#readme"
+}

@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="Generator" content="EditPlus®">
+	<meta name="Author" content="">
+	<meta name="Keywords" content="">
+	<meta name="Description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="all">
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<style type="text/css">
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.search-overlay {
+  z-index: -1000;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.search-overlay.s--active {
+  z-index: 9999;
+}
+
+.scroll-cont {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.content {
+  padding: 50px;
+}
+
+.desc {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 25px;
+}
+
+.search {
+  position: relative;
+  margin: 0 auto 50px;
+  width: 116px;
+  height: 116px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.search:not(.s--active) {
+  cursor: pointer;
+}
+.search.s--hidden {
+  opacity: 0;
+}
+.search.s--cloned {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  margin-left: -58px;
+  margin-top: -58px;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.search.s--moving {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.56, -0.49, 0.58, 0.9);
+  transition: -webkit-transform 0.4s cubic-bezier(0.56, -0.49, 0.58, 0.9);
+  transition: transform 0.4s cubic-bezier(0.56, -0.49, 0.58, 0.9);
+  transition: transform 0.4s cubic-bezier(0.56, -0.49, 0.58, 0.9), -webkit-transform 0.4s cubic-bezier(0.56, -0.49, 0.58, 0.9);
+}
+.search__bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #F63;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+}
+.search.s--active .search__bg {
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(48);
+          transform: translate3d(-50%, -50%, 0) scale(48);
+}
+.search__box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #fff;
+  border-radius: 25px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+.search.s--active .search__box {
+  width: 510px;
+  height: 100px;
+  border-radius: 50px;
+}
+.search__input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  pointer-events: none;
+  opacity: 0;
+  color: #fff;
+  font-size: 40px;
+  -webkit-transition: opacity 0s;
+  transition: opacity 0s;
+}
+.search__input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.search__input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.search__input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.search__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.search.s--active .search__input {
+  padding: 23px 90px 23px 40px;
+  pointer-events: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.18s 0.48s;
+  transition: opacity 0.18s 0.48s;
+}
+.search__line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: translate(14px, 14px) rotate(45deg);
+          transform: translate(14px, 14px) rotate(45deg);
+  -webkit-transition: all 0.48s;
+  transition: all 0.48s;
+}
+.search__line:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: inherit;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.search.s--active .search__line:before {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.42s;
+  transition: opacity 0.3s 0.42s;
+}
+.search.s--active .search__line {
+  width: 36px;
+  height: 6px;
+  -webkit-transform: translate(180px, 11px) rotate(-45deg);
+          transform: translate(180px, 11px) rotate(-45deg);
+}
+.search__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+.search.s--active .search__close {
+  right: 44px;
+  top: 33px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+	<div class="search-overlay"></div>
+	<div class="scroll-cont">
+	  <div class="content">
+		<div class="search">
+		  <div class="search__bg"></div>
+		  <div class="search__box">
+			<input type="text" class="search__input" placeholder="Search"/>
+			<div class="search__line"></div>
+			<div class="search__close"></div>
+		  </div>
+		</div>
+		<p class="desc">This search input should work with any position/layout type, including normal pages with scroll. Just don't override .s--cloned styles for .search and everything will be okay. Requires specific styles for containers (check html+body and .scroll-cont styles) and .search-overlay element to be placed in the root.</p>
+	  </div>
+	</div>
+<script type="text/javascript">
+(function() {
+  var $searchOverlay = document.querySelector(".search-overlay");
+  var $search = document.querySelector(".search");
+  var $clone, offsetX, offsetY;
+
+  $search.addEventListener("click", function() {
+    var $original = this;
+    $clone = this.cloneNode(true);
+
+    $searchOverlay.classList.add("s--active");
+
+    $clone.classList.add("s--cloned", "s--hidden");
+    $searchOverlay.appendChild($clone);
+
+    var triggerLayout = $searchOverlay.offsetTop;
+
+    var originalRect = $original.getBoundingClientRect();
+    var cloneRect = $clone.getBoundingClientRect();
+
+    offsetX = originalRect.left - cloneRect.left;
+    offsetY = originalRect.top - cloneRect.top;
+
+    $clone.style.transform = "translate("+ offsetX +"px, "+ offsetY +"px)";
+    $original.classList.add("s--hidden");
+    $clone.classList.remove("s--hidden");
+
+    var triggerLayout = $searchOverlay.offsetTop;
+
+    $clone.classList.add("s--moving");
+
+    $clone.setAttribute("style", "");
+
+    $clone.addEventListener("transitionend", openAfterMove);
+  });
+
+  function openAfterMove() {
+    $clone.classList.add("s--active");
+    $clone.querySelector("input").focus();
+
+    addCloseHandler($clone);
+    $clone.removeEventListener("transitionend", openAfterMove);
+  };
+  
+  function addCloseHandler($parent) {
+    var $closeBtn = $parent.querySelector(".search__close");
+    $closeBtn.addEventListener("click", closeHandler);
+  };
+
+  /* close handler functions */
+  function closeHandler(e) {
+    $clone.classList.remove("s--active");
+    e.stopPropagation();
+    
+    var $cloneBg = $clone.querySelector(".search__bg");
+
+    $cloneBg.addEventListener("transitionend", moveAfterClose);
+  };
+  
+  function moveAfterClose(e) {
+    e.stopPropagation(); // prevents from double transitionend even fire on parent $clone
+    
+    $clone.classList.add("s--moving");
+    $clone.style.transform = "translate("+ offsetX +"px, "+ offsetY +"px)";
+    $clone.addEventListener("transitionend", terminateSearch);
+  };
+  
+  function terminateSearch(e) {
+    $search.classList.remove("s--hidden");
+    $clone.remove();
+    $searchOverlay.classList.remove("s--active");
+  };
+}());
+</script>
+</body>
+</html>

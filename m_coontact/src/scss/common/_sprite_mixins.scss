@@ -1,0 +1,43 @@
+$pixel-ratio: 2;
+
+// 스프라이트 스미스 레티나용 mixin으로 변경
+@mixin get-sprite-position($sprite, $ofs-x:0, $ofs-y:0) {
+  $sprite-offset-x: nth($sprite, 3) / $pixel-ratio;
+  $sprite-offset-y: nth($sprite, 4) / $pixel-ratio;
+  $sprite-size-w: nth($sprite, 7) / $pixel-ratio;
+  $sprite-size-h: nth($sprite, 8) / $pixel-ratio;
+  background-position: ($sprite-offset-x + $ofs-x) ($sprite-offset-y + $ofs-y);
+  @if ($pixel-ratio > 1) {
+  	background-size: $sprite-size-w $sprite-size-h;
+  }
+}
+
+@mixin get-sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin use-sprite($sprite, $ofs-x:0, $ofs-y:0) {
+	@include get-sprite-image($sprite);
+	@include get-sprite-position($sprite, $ofs-x, $ofs-y);	
+	background-repeat: no-repeat;
+	width: nth($sprite, 5) / $pixel-ratio + $ofs-x;
+	height: nth($sprite, 6) / $pixel-ratio + $ofs-y;
+	display: inline-block;
+	vertical-align: top;
+}
+
+@mixin use-sprite-nodemension($sprite, $ofs-x:0, $ofs-y:0) {
+	@include get-sprite-image($sprite);
+	@include get-sprite-position($sprite, $ofs-x, $ofs-y);	
+}
+
+
+
+@function get-spr-width($sprite) {
+	@return nth($sprite, 5) / $pixel-ratio;
+}
+
+@function get-spr-height($sprite) {
+	@return nth($sprite, 6) / $pixel-ratio;
+}

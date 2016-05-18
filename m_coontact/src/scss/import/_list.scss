@@ -1,0 +1,231 @@
+@charset "utf-8";
+// $id-color: #00acbd;
+
+
+// 목록 상단
+.content_head {
+	height: 46px;
+	line-height: 43px;
+	border-bottom: 1px solid #d4d6d5;
+	
+	.task_cover {
+		float: right;
+		padding: 9px 10px 0 0;
+		font-size: 0;
+		line-height: 0;
+		
+		// 편집
+		.list_edit {
+			vertical-align: top;
+			height: 28px;
+			line-height: 20px;
+			&:before {
+				content: '';
+				@include use-sprite($task_list_edit);
+			}
+		}
+		
+		// 주소 추가
+		.add_contact {
+			vertical-align: top;
+			margin-left: 19px;
+			&:before {
+				content: '';
+				@include use-sprite($task_add_contact);
+			}
+		}
+	}
+	
+	.title_cover {
+		overflow: hidden;
+		font-weight: normal;
+		padding-left: 14px;
+		
+		.group_name {
+			font-size: 16px;
+		}
+		
+		.cnt {
+			font-size: 17px;			
+			color: $id-color;
+		}
+		
+	}
+	
+	@include clear;
+}
+
+// 주소록 목록
+.contact_list {
+	li {
+		position: relative;
+		border-bottom: 1px solid #f2f2f2;		
+		box-sizing: border-box;
+		padding: 7px 90px 8px 14px;
+		height: 54px;
+	}
+	
+	// 체크
+	.check_cover {
+		display: none;
+		float: left;
+	}
+	
+	
+	// 이름,중요,최근
+	.item {
+		text-decoration: none!important;
+		overflow: hidden;
+		display: block;
+		line-height: 21px;
+	}
+	
+	.name {
+		color: #000;
+		display: inline-block;
+		vertical-align: middle;
+		font-weight: normal;
+	}
+	
+	.ico_imp {
+		display: inline-block;
+		vertical-align: middle;
+		box-sizing: border-box;
+		line-height: 0;
+		&:before {
+			content: '';
+			@include use-sprite($ico_important_on);
+		}
+	}
+	
+	.recent {
+		font-size: 11px;
+		color: $id-color;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 11px;
+		padding-top: 2px;
+		
+		&:before {
+			content: '';
+			@include use-sprite($ico_recent);
+			margin-right: 3px;
+		}
+	}
+	
+	// 전화번호
+	.phone,
+	.email {
+		color: #999;
+		font-size: 11px;
+		display: block;
+		line-height: 16px;
+	}
+	
+	.search_key {
+		color: #5898fc;
+	}
+}
+
+// 전화하기, 문자보내기
+.action_cover {
+	position: absolute;
+	right: 10px;
+	top: 11px;
+	font-size: 0;
+	
+	button {
+		padding: 5px;
+	}
+	
+	button + button {
+		margin-left: 8px;
+	}
+	.act_call {		
+		&:before {
+			content: '';
+			@include use-sprite($action_call);
+		}
+		
+	}
+	
+	.act_sms {
+		&:before {
+			content: '';
+			@include use-sprite($action_sms);
+		}
+	}
+	
+	.act_mail {
+		&:before {
+			content: '';
+			@include use-sprite($action_mail);
+		}
+	}	
+}
+
+// 편집모드
+.list_edit_mode {
+	.contact_list {
+		li {
+			padding-left: 0;
+		}
+		.check_cover {
+			display: block;
+			line-height: 0;
+			padding: 12px 10px 12px 15px;
+			
+			input {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+ 				@include blind;
+			}
+			.ico {
+				@include use-sprite($chk_off_30);
+			}
+			
+			input:checked + .ico {
+				@include use-sprite-nodemension($chk_on_30);
+			}
+		}
+		
+		.item .ico_imp,
+		.item .recent,
+		.action_cover {
+			display: none;
+		}
+	}
+}
+
+.pagination {
+	border-bottom: 1px solid #e9eaea;
+	
+	box-sizing: border-box;
+	
+	
+	
+	.btn_list_more {
+		font-size: 12px;
+		color: #000;
+		text-align: center;
+		height: 48px;
+		line-height: 18px;
+		padding: 15px 0;
+		width: 100%;
+			
+		&:before {
+			content: '';
+			@include use-sprite($ico_list_more);
+			margin-right: 5px;
+			vertical-align: middle;
+			padding-bottom: 3px;
+			
+		}
+	}
+	.cnt {
+		color: $id-color;
+	}
+	.page_cnt {		
+		color: #999;
+	}
+}

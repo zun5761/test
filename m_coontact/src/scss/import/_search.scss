@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+.search_result {
+	
+}
+
+.search_result_head {
+	height: 35px;
+	border-width: 1px 0;
+	border-color: #e9eaef;
+	border-style: solid;
+	line-height: 35px;
+	background-color: #f7f7f9;
+	padding-left: 14px;
+	font-size: 14px;
+	color: #000;
+	
+	.cnt {
+		color: $id-color;
+	}
+}
+
+.search_noresult {
+	background-color: #f0f1f5;
+	position: absolute;
+	top: 96px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	font-size: 0;
+	
+	.msg {
+		display: inline-block;
+		vertical-align: middle;
+		color: #a0a0a0;
+		font-size: 15px;
+		white-space: nowrap;
+		
+		&:before {
+			content: '';
+			@include use-sprite($search_noresult);
+			display: block;
+			margin: 0 auto 18px;
+		}
+	}
+	&:after {
+		content: '';
+		height: 100%;
+		width: 0;		
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+

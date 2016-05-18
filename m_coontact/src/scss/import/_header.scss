@@ -1,0 +1,299 @@
+@charset "utf-8";
+
+@mixin fixed-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: $scroll_cover-zindex-order;
+}
+
+.header {	
+	position: relative;
+	z-index: $header-zindex-order;
+	
+	.gnb {
+		height: 48px;
+		position: relative;
+		background-color: $id-color;
+		line-height: 0;
+		z-index: 20;
+		overflow: hidden;
+	}
+	
+	.logo {
+		@include clear;
+	}
+	
+	.bi_naver {
+		width: 48px;
+		height: 48px;
+		background-color: #009aaa;
+		float: left;
+		text-align: center;
+		box-sizing: border-box;
+		padding-top: 15px;
+		&:before {
+			content: '';
+			@include use-sprite($logo_naver);
+		}
+		
+		.header_search & {
+			-webkit-transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+			transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+			
+			-webkit-transform: scale(0.75);
+			transform: scale(0.75);
+		}
+	}
+	
+	.bi_contact {
+		float: left;
+		height: 48px;
+		box-sizing: border-box;
+		padding: 15px 0 0 10px;
+		&:before {
+			content: '';
+			@include use-sprite($logo_contact);
+		}
+	}
+	
+	.tools {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 9px 11px 0 0;
+	}
+	
+	.btn_search {
+		padding: 6px;
+		vertical-align: top;
+		&:before {
+			content: '';
+			@include use-sprite($header_search);			
+		}
+		
+		.header_search & {
+			display: none;
+		}
+	}
+	
+	.btn_menu {
+		padding: 7px 6px;
+		vertical-align: top;
+		&:before {
+			content: '';
+			@include use-sprite($header_menu);
+			
+		}
+	}
+	
+}
+
+// 검색
+.search_cover {
+	margin-top: -54px;
+	box-sizing: border-box;	
+	padding: 6px;
+	height: 54px;
+	position: relative;
+	background-color: $id-color;
+	overflow: hidden;
+	-webkit-transition: margin 0.3s;
+			transition: margin 0.3s;
+			
+	.header_search & {
+		margin-top: -6px;
+	
+	}
+	.search_bar {
+		position: relative;
+		background-color: #fff;
+		height: 100%;
+		padding-right: 42px;
+		
+	}
+	
+	.search_input {
+		border: 0;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		padding-left: 11px;
+		padding-top: 2px;
+		-webkit-appearance: none;
+		
+		&::-webkit-input-placeholder {
+			font-size: 15px;
+			vertical-align: middle;
+			color: #bbb;
+			font-weight: normal;
+		}
+	}
+	
+	.search_submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 0 12px;
+		
+		&:before {
+			content: '';
+			@include use-sprite($header_search_submit);
+		}
+	}
+}
+
+.fix_head {	
+	.scroll_cover {
+		background-color: #fff;
+		@include fixed-cover;
+	}
+	
+	.header {
+		
+	}
+	
+	.container {
+		padding-top: 47px;
+	}
+}
+
+.scroll_cover {
+	position: relative;
+}
+
+.edit_task {
+	display: none;
+}
+
+// 목록 편집
+.list_edit_mode {
+	padding-top: 92px;
+	
+	.search_cover,
+	.content_head,
+	.header {
+		display: none;
+	}
+	.scroll_cover {
+		height: 92px;
+		@include fixed-cover;
+	}
+	.edit_task {
+		display: block;
+		background-color: #262d37;
+		height: 100%;
+		text-align: center;		
+		
+		.btn_close {
+			position: absolute;
+			top: 10px;
+			left: 10px;			
+		}
+		.btn_label {
+			display: block;
+			color: #bdbec0;
+			font-size: 11px;
+			padding-top: 4px;
+		}
+		
+		.btn_move,
+		.btn_delete,
+		.btn_select {
+			display: inline-block;
+			padding: 5px 10px;
+			font-size: 0;
+		}
+		
+		.btn_select {
+			&:before {
+				content: '';
+				@include use-sprite($edit_select);
+			}
+		}
+		
+		.btn_delete {
+			&:before {
+				content: '';
+				@include use-sprite($edit_delete);
+			}
+		}
+		
+		.btn_move {
+			&:before {
+				content: '';
+				@include use-sprite($edit_move);
+			}
+		}
+		
+		.target_cnt {
+			padding-top: 12px;
+			line-height: 18px;
+			color: #eaeaeb;
+			font-size: 17px;
+			
+			.cnt {
+				color: $id-color;
+				font-weight: bold;
+			}
+			
+			.slash {
+				padding: 0 5px 0 5px;
+			}
+		}
+	}
+}
+
+.btn_close {	
+	padding: 5px;
+	
+	&:before {
+		content: '';
+		@include use-sprite($btn_close);
+	}
+}
+
+.footer {
+	position: relative;
+	padding: 15px 0 20px 15px;
+	
+	a {
+		text-decoration: none;
+	}
+	
+	.install_app {
+		display: inline-block;
+		color: #333;
+		font-size: 12px;
+		vertical-align: top;
+		
+		&:before {
+			content: '';
+			@include use-sprite($ico_contact_app);
+			margin-right: 3px;
+		}
+	}
+	.go_top {
+		position: absolute;
+		right: 15px;
+		top: 10px;
+		display: inline-block;
+		border: 1px solid #d3d6d6;
+		font-size: 11px;
+		color: #333;
+		height: 22px;
+		line-height: 22px;
+		padding: 0 4px;
+		
+		&:before {
+			content: '';
+			@include use-sprite($ico_go_top);
+			vertical-align: middle;
+			margin-right: 3px;
+			padding-bottom: 2px;
+		}
+	}
+}
+

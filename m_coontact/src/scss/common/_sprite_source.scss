@@ -1,0 +1,525 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$action-call-name: 'action_call';
+$action-call-x: 116px;
+$action-call-y: 170px;
+$action-call-offset-x: -116px;
+$action-call-offset-y: -170px;
+$action-call-width: 46px;
+$action-call-height: 46px;
+$action-call-total-width: 378px;
+$action-call-total-height: 320px;
+$action-call-image: '../img/spr_contact_fee313.png';
+$action-call: (116px, 170px, -116px, -170px, 46px, 46px, 378px, 320px, '../img/spr_contact_fee313.png', 'action_call', );
+$action-mail-name: 'action_mail';
+$action-mail-x: 168px;
+$action-mail-y: 170px;
+$action-mail-offset-x: -168px;
+$action-mail-offset-y: -170px;
+$action-mail-width: 46px;
+$action-mail-height: 46px;
+$action-mail-total-width: 378px;
+$action-mail-total-height: 320px;
+$action-mail-image: '../img/spr_contact_fee313.png';
+$action-mail: (168px, 170px, -168px, -170px, 46px, 46px, 378px, 320px, '../img/spr_contact_fee313.png', 'action_mail', );
+$action-sms-name: 'action_sms';
+$action-sms-x: 220px;
+$action-sms-y: 170px;
+$action-sms-offset-x: -220px;
+$action-sms-offset-y: -170px;
+$action-sms-width: 46px;
+$action-sms-height: 46px;
+$action-sms-total-width: 378px;
+$action-sms-total-height: 320px;
+$action-sms-image: '../img/spr_contact_fee313.png';
+$action-sms: (220px, 170px, -220px, -170px, 46px, 46px, 378px, 320px, '../img/spr_contact_fee313.png', 'action_sms', );
+$btn-close-name: 'btn_close';
+$btn-close-x: 344px;
+$btn-close-y: 110px;
+$btn-close-offset-x: -344px;
+$btn-close-offset-y: -110px;
+$btn-close-width: 30px;
+$btn-close-height: 30px;
+$btn-close-total-width: 378px;
+$btn-close-total-height: 320px;
+$btn-close-image: '../img/spr_contact_fee313.png';
+$btn-close: (344px, 110px, -344px, -110px, 30px, 30px, 378px, 320px, '../img/spr_contact_fee313.png', 'btn_close', );
+$btn-confirm-name: 'btn_confirm';
+$btn-confirm-x: 296px;
+$btn-confirm-y: 226px;
+$btn-confirm-offset-x: -296px;
+$btn-confirm-offset-y: -226px;
+$btn-confirm-width: 42px;
+$btn-confirm-height: 32px;
+$btn-confirm-total-width: 378px;
+$btn-confirm-total-height: 320px;
+$btn-confirm-image: '../img/spr_contact_fee313.png';
+$btn-confirm: (296px, 226px, -296px, -226px, 42px, 32px, 378px, 320px, '../img/spr_contact_fee313.png', 'btn_confirm', );
+$btn-prev-name: 'btn_prev';
+$btn-prev-x: 296px;
+$btn-prev-y: 96px;
+$btn-prev-offset-x: -296px;
+$btn-prev-offset-y: -96px;
+$btn-prev-width: 40px;
+$btn-prev-height: 40px;
+$btn-prev-total-width: 378px;
+$btn-prev-total-height: 320px;
+$btn-prev-image: '../img/spr_contact_fee313.png';
+$btn-prev: (296px, 96px, -296px, -96px, 40px, 40px, 378px, 320px, '../img/spr_contact_fee313.png', 'btn_prev', );
+$chk-off-30-name: 'chk_off_30';
+$chk-off-30-x: 344px;
+$chk-off-30-y: 146px;
+$chk-off-30-offset-x: -344px;
+$chk-off-30-offset-y: -146px;
+$chk-off-30-width: 30px;
+$chk-off-30-height: 30px;
+$chk-off-30-total-width: 378px;
+$chk-off-30-total-height: 320px;
+$chk-off-30-image: '../img/spr_contact_fee313.png';
+$chk-off-30: (344px, 146px, -344px, -146px, 30px, 30px, 378px, 320px, '../img/spr_contact_fee313.png', 'chk_off_30', );
+$chk-on-30-name: 'chk_on_30';
+$chk-on-30-x: 344px;
+$chk-on-30-y: 182px;
+$chk-on-30-offset-x: -344px;
+$chk-on-30-offset-y: -182px;
+$chk-on-30-width: 30px;
+$chk-on-30-height: 30px;
+$chk-on-30-total-width: 378px;
+$chk-on-30-total-height: 320px;
+$chk-on-30-image: '../img/spr_contact_fee313.png';
+$chk-on-30: (344px, 182px, -344px, -182px, 30px, 30px, 378px, 320px, '../img/spr_contact_fee313.png', 'chk_on_30', );
+$comp-select-arrow-name: 'comp_select_arrow';
+$comp-select-arrow-x: 366px;
+$comp-select-arrow-y: 240px;
+$comp-select-arrow-offset-x: -366px;
+$comp-select-arrow-offset-y: -240px;
+$comp-select-arrow-width: 10px;
+$comp-select-arrow-height: 7px;
+$comp-select-arrow-total-width: 378px;
+$comp-select-arrow-total-height: 320px;
+$comp-select-arrow-image: '../img/spr_contact_fee313.png';
+$comp-select-arrow: (366px, 240px, -366px, -240px, 10px, 7px, 378px, 320px, '../img/spr_contact_fee313.png', 'comp_select_arrow', );
+$edit-delete-name: 'edit_delete';
+$edit-delete-x: 50px;
+$edit-delete-y: 280px;
+$edit-delete-offset-x: -50px;
+$edit-delete-offset-y: -280px;
+$edit-delete-width: 44px;
+$edit-delete-height: 40px;
+$edit-delete-total-width: 378px;
+$edit-delete-total-height: 320px;
+$edit-delete-image: '../img/spr_contact_fee313.png';
+$edit-delete: (50px, 280px, -50px, -280px, 44px, 40px, 378px, 320px, '../img/spr_contact_fee313.png', 'edit_delete', );
+$edit-move-name: 'edit_move';
+$edit-move-x: 0px;
+$edit-move-y: 280px;
+$edit-move-offset-x: 0px;
+$edit-move-offset-y: -280px;
+$edit-move-width: 44px;
+$edit-move-height: 40px;
+$edit-move-total-width: 378px;
+$edit-move-total-height: 320px;
+$edit-move-image: '../img/spr_contact_fee313.png';
+$edit-move: (0px, 280px, 0px, -280px, 44px, 40px, 378px, 320px, '../img/spr_contact_fee313.png', 'edit_move', );
+$edit-select-name: 'edit_select';
+$edit-select-x: 100px;
+$edit-select-y: 280px;
+$edit-select-offset-x: -100px;
+$edit-select-offset-y: -280px;
+$edit-select-width: 44px;
+$edit-select-height: 40px;
+$edit-select-total-width: 378px;
+$edit-select-total-height: 320px;
+$edit-select-image: '../img/spr_contact_fee313.png';
+$edit-select: (100px, 280px, -100px, -280px, 44px, 40px, 378px, 320px, '../img/spr_contact_fee313.png', 'edit_select', );
+$header-menu-name: 'header_menu';
+$header-menu-x: 344px;
+$header-menu-y: 0px;
+$header-menu-offset-x: -344px;
+$header-menu-offset-y: 0px;
+$header-menu-width: 34px;
+$header-menu-height: 32px;
+$header-menu-total-width: 378px;
+$header-menu-total-height: 320px;
+$header-menu-image: '../img/spr_contact_fee313.png';
+$header-menu: (344px, 0px, -344px, 0px, 34px, 32px, 378px, 320px, '../img/spr_contact_fee313.png', 'header_menu', );
+$header-search-name: 'header_search';
+$header-search-x: 296px;
+$header-search-y: 184px;
+$header-search-offset-x: -296px;
+$header-search-offset-y: -184px;
+$header-search-width: 38px;
+$header-search-height: 36px;
+$header-search-total-width: 378px;
+$header-search-total-height: 320px;
+$header-search-image: '../img/spr_contact_fee313.png';
+$header-search: (296px, 184px, -296px, -184px, 38px, 36px, 378px, 320px, '../img/spr_contact_fee313.png', 'header_search', );
+$header-search-submit-name: 'header_search_submit';
+$header-search-submit-x: 192px;
+$header-search-submit-y: 280px;
+$header-search-submit-offset-x: -192px;
+$header-search-submit-offset-y: -280px;
+$header-search-submit-width: 36px;
+$header-search-submit-height: 36px;
+$header-search-submit-total-width: 378px;
+$header-search-submit-total-height: 320px;
+$header-search-submit-image: '../img/spr_contact_fee313.png';
+$header-search-submit: (192px, 280px, -192px, -280px, 36px, 36px, 378px, 320px, '../img/spr_contact_fee313.png', 'header_search_submit', );
+$ico-add-field-name: 'ico_add_field';
+$ico-add-field-x: 234px;
+$ico-add-field-y: 280px;
+$ico-add-field-offset-x: -234px;
+$ico-add-field-offset-y: -280px;
+$ico-add-field-width: 34px;
+$ico-add-field-height: 34px;
+$ico-add-field-total-width: 378px;
+$ico-add-field-total-height: 320px;
+$ico-add-field-image: '../img/spr_contact_fee313.png';
+$ico-add-field: (234px, 280px, -234px, -280px, 34px, 34px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_add_field', );
+$ico-contact-app-name: 'ico_contact_app';
+$ico-contact-app-x: 344px;
+$ico-contact-app-y: 38px;
+$ico-contact-app-offset-x: -344px;
+$ico-contact-app-offset-y: -38px;
+$ico-contact-app-width: 30px;
+$ico-contact-app-height: 30px;
+$ico-contact-app-total-width: 378px;
+$ico-contact-app-total-height: 320px;
+$ico-contact-app-image: '../img/spr_contact_fee313.png';
+$ico-contact-app: (344px, 38px, -344px, -38px, 30px, 30px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_contact_app', );
+$ico-go-top-name: 'ico_go_top';
+$ico-go-top-x: 272px;
+$ico-go-top-y: 170px;
+$ico-go-top-offset-x: -272px;
+$ico-go-top-offset-y: -170px;
+$ico-go-top-width: 18px;
+$ico-go-top-height: 20px;
+$ico-go-top-total-width: 378px;
+$ico-go-top-total-height: 320px;
+$ico-go-top-image: '../img/spr_contact_fee313.png';
+$ico-go-top: (272px, 170px, -272px, -170px, 18px, 20px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_go_top', );
+$ico-important-on-name: 'ico_important_on';
+$ico-important-on-x: 344px;
+$ico-important-on-y: 74px;
+$ico-important-on-offset-x: -344px;
+$ico-important-on-offset-y: -74px;
+$ico-important-on-width: 30px;
+$ico-important-on-height: 30px;
+$ico-important-on-total-width: 378px;
+$ico-important-on-total-height: 320px;
+$ico-important-on-image: '../img/spr_contact_fee313.png';
+$ico-important-on: (344px, 74px, -344px, -74px, 30px, 30px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_important_on', );
+$ico-list-more-name: 'ico_list_more';
+$ico-list-more-x: 296px;
+$ico-list-more-y: 264px;
+$ico-list-more-offset-x: -296px;
+$ico-list-more-offset-y: -264px;
+$ico-list-more-width: 18px;
+$ico-list-more-height: 10px;
+$ico-list-more-total-width: 378px;
+$ico-list-more-total-height: 320px;
+$ico-list-more-image: '../img/spr_contact_fee313.png';
+$ico-list-more: (296px, 264px, -296px, -264px, 18px, 10px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_list_more', );
+$ico-recent-name: 'ico_recent';
+$ico-recent-x: 344px;
+$ico-recent-y: 298px;
+$ico-recent-offset-x: -344px;
+$ico-recent-offset-y: -298px;
+$ico-recent-width: 22px;
+$ico-recent-height: 22px;
+$ico-recent-total-width: 378px;
+$ico-recent-total-height: 320px;
+$ico-recent-image: '../img/spr_contact_fee313.png';
+$ico-recent: (344px, 298px, -344px, -298px, 22px, 22px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_recent', );
+$ico-remove-field-name: 'ico_remove_field';
+$ico-remove-field-x: 274px;
+$ico-remove-field-y: 280px;
+$ico-remove-field-offset-x: -274px;
+$ico-remove-field-offset-y: -280px;
+$ico-remove-field-width: 34px;
+$ico-remove-field-height: 34px;
+$ico-remove-field-total-width: 378px;
+$ico-remove-field-total-height: 320px;
+$ico-remove-field-image: '../img/spr_contact_fee313.png';
+$ico-remove-field: (274px, 280px, -274px, -280px, 34px, 34px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_remove_field', );
+$ico-upload-name: 'ico_upload';
+$ico-upload-x: 62px;
+$ico-upload-y: 170px;
+$ico-upload-offset-x: -62px;
+$ico-upload-offset-y: -170px;
+$ico-upload-width: 48px;
+$ico-upload-height: 48px;
+$ico-upload-total-width: 378px;
+$ico-upload-total-height: 320px;
+$ico-upload-image: '../img/spr_contact_fee313.png';
+$ico-upload: (62px, 170px, -62px, -170px, 48px, 48px, 378px, 320px, '../img/spr_contact_fee313.png', 'ico_upload', );
+$lnb-contact-all-name: 'lnb_contact_all';
+$lnb-contact-all-x: 296px;
+$lnb-contact-all-y: 48px;
+$lnb-contact-all-offset-x: -296px;
+$lnb-contact-all-offset-y: -48px;
+$lnb-contact-all-width: 42px;
+$lnb-contact-all-height: 42px;
+$lnb-contact-all-total-width: 378px;
+$lnb-contact-all-total-height: 320px;
+$lnb-contact-all-image: '../img/spr_contact_fee313.png';
+$lnb-contact-all: (296px, 48px, -296px, -48px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_contact_all', );
+$lnb-contact-recent-name: 'lnb_contact_recent';
+$lnb-contact-recent-x: 296px;
+$lnb-contact-recent-y: 0px;
+$lnb-contact-recent-offset-x: -296px;
+$lnb-contact-recent-offset-y: 0px;
+$lnb-contact-recent-width: 42px;
+$lnb-contact-recent-height: 42px;
+$lnb-contact-recent-total-width: 378px;
+$lnb-contact-recent-total-height: 320px;
+$lnb-contact-recent-image: '../img/spr_contact_fee313.png';
+$lnb-contact-recent: (296px, 0px, -296px, 0px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_contact_recent', );
+$lnb-contatct-group-name: 'lnb_contatct_group';
+$lnb-contatct-group-x: 240px;
+$lnb-contatct-group-y: 232px;
+$lnb-contatct-group-offset-x: -240px;
+$lnb-contatct-group-offset-y: -232px;
+$lnb-contatct-group-width: 42px;
+$lnb-contatct-group-height: 42px;
+$lnb-contatct-group-total-width: 378px;
+$lnb-contatct-group-total-height: 320px;
+$lnb-contatct-group-image: '../img/spr_contact_fee313.png';
+$lnb-contatct-group: (240px, 232px, -240px, -232px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_contatct_group', );
+$lnb-contatct-imp-name: 'lnb_contatct_imp';
+$lnb-contatct-imp-x: 0px;
+$lnb-contatct-imp-y: 232px;
+$lnb-contatct-imp-offset-x: 0px;
+$lnb-contatct-imp-offset-y: -232px;
+$lnb-contatct-imp-width: 42px;
+$lnb-contatct-imp-height: 42px;
+$lnb-contatct-imp-total-width: 378px;
+$lnb-contatct-imp-total-height: 320px;
+$lnb-contatct-imp-image: '../img/spr_contact_fee313.png';
+$lnb-contatct-imp: (0px, 232px, 0px, -232px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_contatct_imp', );
+$lnb-customer-center-name: 'lnb_customer_center';
+$lnb-customer-center-x: 192px;
+$lnb-customer-center-y: 232px;
+$lnb-customer-center-offset-x: -192px;
+$lnb-customer-center-offset-y: -232px;
+$lnb-customer-center-width: 42px;
+$lnb-customer-center-height: 42px;
+$lnb-customer-center-total-width: 378px;
+$lnb-customer-center-total-height: 320px;
+$lnb-customer-center-image: '../img/spr_contact_fee313.png';
+$lnb-customer-center: (192px, 232px, -192px, -232px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_customer_center', );
+$lnb-desktop-version-name: 'lnb_desktop_version';
+$lnb-desktop-version-x: 144px;
+$lnb-desktop-version-y: 232px;
+$lnb-desktop-version-offset-x: -144px;
+$lnb-desktop-version-offset-y: -232px;
+$lnb-desktop-version-width: 42px;
+$lnb-desktop-version-height: 42px;
+$lnb-desktop-version-total-width: 378px;
+$lnb-desktop-version-total-height: 320px;
+$lnb-desktop-version-image: '../img/spr_contact_fee313.png';
+$lnb-desktop-version: (144px, 232px, -144px, -232px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_desktop_version', );
+$lnb-group-down-name: 'lnb_group_down';
+$lnb-group-down-x: 344px;
+$lnb-group-down-y: 276px;
+$lnb-group-down-offset-x: -344px;
+$lnb-group-down-offset-y: -276px;
+$lnb-group-down-width: 30px;
+$lnb-group-down-height: 16px;
+$lnb-group-down-total-width: 378px;
+$lnb-group-down-total-height: 320px;
+$lnb-group-down-image: '../img/spr_contact_fee313.png';
+$lnb-group-down: (344px, 276px, -344px, -276px, 30px, 16px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_group_down', );
+$lnb-group-up-name: 'lnb_group_up';
+$lnb-group-up-x: 344px;
+$lnb-group-up-y: 218px;
+$lnb-group-up-offset-x: -344px;
+$lnb-group-up-offset-y: -218px;
+$lnb-group-up-width: 30px;
+$lnb-group-up-height: 16px;
+$lnb-group-up-total-width: 378px;
+$lnb-group-up-total-height: 320px;
+$lnb-group-up-image: '../img/spr_contact_fee313.png';
+$lnb-group-up: (344px, 218px, -344px, -218px, 30px, 16px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_group_up', );
+$lnb-link-sub-name: 'lnb_link_sub';
+$lnb-link-sub-x: 344px;
+$lnb-link-sub-y: 240px;
+$lnb-link-sub-offset-x: -344px;
+$lnb-link-sub-offset-y: -240px;
+$lnb-link-sub-width: 16px;
+$lnb-link-sub-height: 30px;
+$lnb-link-sub-total-width: 378px;
+$lnb-link-sub-total-height: 320px;
+$lnb-link-sub-image: '../img/spr_contact_fee313.png';
+$lnb-link-sub: (344px, 240px, -344px, -240px, 16px, 30px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_link_sub', );
+$lnb-logout-name: 'lnb_logout';
+$lnb-logout-x: 96px;
+$lnb-logout-y: 232px;
+$lnb-logout-offset-x: -96px;
+$lnb-logout-offset-y: -232px;
+$lnb-logout-width: 42px;
+$lnb-logout-height: 42px;
+$lnb-logout-total-width: 378px;
+$lnb-logout-total-height: 320px;
+$lnb-logout-image: '../img/spr_contact_fee313.png';
+$lnb-logout: (96px, 232px, -96px, -232px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_logout', );
+$lnb-report-name: 'lnb_report';
+$lnb-report-x: 48px;
+$lnb-report-y: 232px;
+$lnb-report-offset-x: -48px;
+$lnb-report-offset-y: -232px;
+$lnb-report-width: 42px;
+$lnb-report-height: 42px;
+$lnb-report-total-width: 378px;
+$lnb-report-total-height: 320px;
+$lnb-report-image: '../img/spr_contact_fee313.png';
+$lnb-report: (48px, 232px, -48px, -232px, 42px, 42px, 378px, 320px, '../img/spr_contact_fee313.png', 'lnb_report', );
+$logo-contact-name: 'logo_contact';
+$logo-contact-x: 170px;
+$logo-contact-y: 126px;
+$logo-contact-offset-x: -170px;
+$logo-contact-offset-y: -126px;
+$logo-contact-width: 108px;
+$logo-contact-height: 36px;
+$logo-contact-total-width: 378px;
+$logo-contact-total-height: 320px;
+$logo-contact-image: '../img/spr_contact_fee313.png';
+$logo-contact: (170px, 126px, -170px, -126px, 108px, 36px, 378px, 320px, '../img/spr_contact_fee313.png', 'logo_contact', );
+$logo-naver-name: 'logo_naver';
+$logo-naver-x: 150px;
+$logo-naver-y: 280px;
+$logo-naver-offset-x: -150px;
+$logo-naver-offset-y: -280px;
+$logo-naver-width: 36px;
+$logo-naver-height: 36px;
+$logo-naver-total-width: 378px;
+$logo-naver-total-height: 320px;
+$logo-naver-image: '../img/spr_contact_fee313.png';
+$logo-naver: (150px, 280px, -150px, -280px, 36px, 36px, 378px, 320px, '../img/spr_contact_fee313.png', 'logo_naver', );
+$profile-default-name: 'profile_default';
+$profile-default-x: 0px;
+$profile-default-y: 0px;
+$profile-default-offset-x: 0px;
+$profile-default-offset-y: 0px;
+$profile-default-width: 164px;
+$profile-default-height: 164px;
+$profile-default-total-width: 378px;
+$profile-default-total-height: 320px;
+$profile-default-image: '../img/spr_contact_fee313.png';
+$profile-default: (0px, 0px, 0px, 0px, 164px, 164px, 378px, 320px, '../img/spr_contact_fee313.png', 'profile_default', );
+$search-noresult-name: 'search_noresult';
+$search-noresult-x: 170px;
+$search-noresult-y: 0px;
+$search-noresult-offset-x: -170px;
+$search-noresult-offset-y: 0px;
+$search-noresult-width: 120px;
+$search-noresult-height: 120px;
+$search-noresult-total-width: 378px;
+$search-noresult-total-height: 320px;
+$search-noresult-image: '../img/spr_contact_fee313.png';
+$search-noresult: (170px, 0px, -170px, 0px, 120px, 120px, 378px, 320px, '../img/spr_contact_fee313.png', 'search_noresult', );
+$task-add-contact-name: 'task_add_contact';
+$task-add-contact-x: 0px;
+$task-add-contact-y: 170px;
+$task-add-contact-offset-x: 0px;
+$task-add-contact-offset-y: -170px;
+$task-add-contact-width: 56px;
+$task-add-contact-height: 56px;
+$task-add-contact-total-width: 378px;
+$task-add-contact-total-height: 320px;
+$task-add-contact-image: '../img/spr_contact_fee313.png';
+$task-add-contact: (0px, 170px, 0px, -170px, 56px, 56px, 378px, 320px, '../img/spr_contact_fee313.png', 'task_add_contact', );
+$task-list-edit-name: 'task_list_edit';
+$task-list-edit-x: 296px;
+$task-list-edit-y: 142px;
+$task-list-edit-offset-x: -296px;
+$task-list-edit-offset-y: -142px;
+$task-list-edit-width: 42px;
+$task-list-edit-height: 36px;
+$task-list-edit-total-width: 378px;
+$task-list-edit-total-height: 320px;
+$task-list-edit-image: '../img/spr_contact_fee313.png';
+$task-list-edit: (296px, 142px, -296px, -142px, 42px, 36px, 378px, 320px, '../img/spr_contact_fee313.png', 'task_list_edit', );
+$spritesheet-width: 378px;
+$spritesheet-height: 320px;
+$spritesheet-image: '../img/spr_contact_fee313.png';
+$spritesheet-sprites: ($action-call, $action-mail, $action-sms, $btn-close, $btn-confirm, $btn-prev, $chk-off-30, $chk-on-30, $comp-select-arrow, $edit-delete, $edit-move, $edit-select, $header-menu, $header-search, $header-search-submit, $ico-add-field, $ico-contact-app, $ico-go-top, $ico-important-on, $ico-list-more, $ico-recent, $ico-remove-field, $ico-upload, $lnb-contact-all, $lnb-contact-recent, $lnb-contatct-group, $lnb-contatct-imp, $lnb-customer-center, $lnb-desktop-version, $lnb-group-down, $lnb-group-up, $lnb-link-sub, $lnb-logout, $lnb-report, $logo-contact, $logo-naver, $profile-default, $search-noresult, $task-add-contact, $task-list-edit, );
+$spritesheet: (378px, 320px, '../img/spr_contact_fee313.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

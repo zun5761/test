@@ -1,0 +1,311 @@
+@charset "utf-8";
+
+.lnb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	overflow: hidden;
+	
+	&.lnb_show {		
+		z-index: 20;
+		
+		.side_cover {			
+			
+			overflow-y: auto;
+			right: 0;
+			z-index: 20;
+			transition: 0.3s right;
+		}
+		
+		.dimmed {
+			display: block;
+		}
+	}
+	.dimmed {
+		display: none;
+	}
+	.side_cover {
+		position: absolute;
+		top: 0;
+		right: -276px;
+		bottom: 0;
+		
+		width: 276px;
+		overflow: hidden;
+		background-color: #e9ecef;
+// 		transition: 0.3s right;
+		-webkit-overflow-scrolling: touch;	
+		z-index: 1;
+		
+		.btn_close {
+			position: absolute;
+			right: 7px;
+			top: 18px;
+		}
+		
+		&:after {
+			content: '';
+			position: absolute;
+			top: -1px;
+			bottom: -1px;
+			left: 100%;
+			width: 1px;
+			overflow: hidden;
+		}
+	}
+	
+	.user_profile {
+		background-color: $id-color;
+		height: 60px;
+		box-sizing: border-box;
+		padding: 12px 0 0 12px;
+		
+		.user_thumb {
+			float: left;
+			width: 36px;
+			height: 36px;
+			overflow: hidden;
+			border-radius: 36px;
+			margin-right: 11px;
+			
+			img {
+				width: 100%;
+				
+			}
+		}
+		
+		.name_cover {
+			display: block;
+			overflow: hidden;
+			padding-top: 2px;
+		}
+		
+		.user_name {
+			display: block;
+			font-size: 15px;
+			color: #fff;
+		}
+		
+		.user_id {
+			display: block;
+			color: rgba(255,255,255,0.7);
+			font-size: 12px;
+		}
+	}
+	
+	.group_cover {
+		background-color: #fff;
+		margin-bottom: 5px;
+	}
+	
+	.menu_cover {
+		background-color: #fff;
+		
+	}
+	
+	.side_list {
+		li {
+			border-bottom: 1px solid #f2f2f2;
+			padding: 10px 12px;
+			line-height: 21px;
+			
+			&.group_list {
+				border-bottom: 0;
+			}
+			
+			&.selected {
+				.cnt,
+				button,
+				a {
+					color: $id-color;
+				}
+			}
+		}
+		
+		button,
+		a {
+			color: #333;
+			box-sizing: border-box;
+			font-size: 14px;
+			display: block;
+			position: relative;
+			text-decoration: none;
+			line-height: 21px;
+			width: 100%;
+			text-align: left;
+		}
+		
+		.cnt {
+			color: #999;
+			font-size: 15px;
+		}
+		
+		.btn_toggle {
+			&:after {
+				content: '';
+				@include use-sprite($lnb_group_up);
+				position: absolute;
+				right: 3px;
+				top: 7px;
+			}
+		}
+		
+		.user_id {
+			position: absolute;
+			right: 0;
+			color: #00c73c;
+			font-size: 12px;
+		}	
+		
+	}
+	
+	.sub_list {
+		padding-top: 10px;	
+		
+		.contact_group:before {
+			background-color: #999;
+		}
+		li {
+			border-bottom: 0;
+			padding-left: 34px;
+			padding-right: 36px;
+		}
+		
+		.contact_group {
+			display: inline-block;
+			width: auto;
+			max-width: 100%;
+			white-space: nowrap;
+			padding: 0 0 0 32px;
+			
+			&:before {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			.el_cover {
+				display: inline-block;
+				@include ellipsis;
+				vertical-align: top;
+			}
+			.cnt {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				padding-left: 4px;
+			}
+		}
+		
+	}
+	
+	.tree_fold {
+		.sub_list {
+			display: none;
+		}
+		
+		.btn_toggle:after {
+			@include use-sprite-nodemension($lnb_group_down);
+		}
+	}
+	
+	.copyright {
+		color: #999;
+		font-size: 11px;
+		padding: 17px 0 0 12px
+	}
+}
+
+.dimmed {
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+
+@mixin lnb-icon-style {
+	content: '';	
+	margin-right: 11px;
+}
+
+
+//icons
+.lnb {
+	.contact_all {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_contact_all);
+			background-color: $id-color;
+		}
+	}
+	.contact_recent {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_contact_recent);
+			background-color: $id-color;
+		}
+	}
+	.contact_imp {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_contatct_imp);
+			background-color: $id-color;
+		}
+	}
+	.contact_group {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_contatct_group);
+			background-color: $id-color;
+		}
+	}
+	
+	.logout {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_logout);
+			background-color: #999;	
+		}
+	}
+	.use_desktop_version {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_desktop_version);
+			background-color: #999;
+		}
+	}
+	.link_cs {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_customer_center);
+			background-color: #999;
+		}
+	}
+	.link_report {
+		&:before {
+			@include lnb-icon-style;
+			@include use-sprite($lnb_report);
+			background-color: #999;
+		}
+	}
+	
+	
+	
+	.link_sub {
+		&:after {
+			content: '';
+			@include use-sprite($lnb_link_sub);
+			position: absolute;
+			right: 0;
+			top: 3px;
+		}
+	}
+	
+}

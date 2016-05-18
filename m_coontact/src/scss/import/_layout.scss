@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+$id-color: #00acbd; //#02c4b4
+
+$header-zindex-order: 30;
+$scroll_cover-zindex-order: 40;
+
+
+body, html {
+	height: 100%;
+}
+.wrap {
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	z-index: 10;
+}
+
+.container {
+	
+}
+

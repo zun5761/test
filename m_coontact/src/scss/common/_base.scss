@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+%blind,.blind, i {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+@mixin blind {
+	position: absolute;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+@mixin clear {
+	&:after {
+		content: '';
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+@mixin ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 100%;
+}
+
+@mixin reset-button{
+	background-color: transparent;
+	border-radius: 0;
+	border: 0;
+	padding: 0;
+	font-size: 0;
+}
+
+@mixin rounded-button {
+	border: 1px solid #c3c3c3;
+	background-color: #fff;
+	border-radius: 22px;
+	padding: 0 7px;
+	box-sizing: border-box;
+	color: #a5a5a5;
+	font-size: 11px;
+}
+
+
+@mixin flex{
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+}
+@mixin flex-child-ellipsis{
+	@include ellipsis;
+	-webkit-box-flex:1;
+	-moz-box-flex:0 1 auto;
+	-webkit-flex:0 1 auto;
+	-ms-flex:0 1 auto;
+	flex:0 1 auto;	
+	box-sizing:border-box;
+	display:block
+}
+@mixin flex-child-none-ellipsis{
+	-webkit-box-flex:0;
+	-moz-box-flex:0 0 auto;
+	-webkit-flex:0 0 auto;
+	-ms-flex:0 0 auto;
+	flex:0 0 auto;
+	box-sizing:border-box;
+	display:block
+}
+
+@mixin vertical-center {
+	white-space: nowrap;
+	
+	&:before {
+		vertical-align: middle;		
+	}
+	
+	&:after {
+		content: '';
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+
+button {
+	background-color: transparent;
+	border-radius: 0;
+	border: 0;
+}

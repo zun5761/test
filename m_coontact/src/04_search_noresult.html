@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>검색 : 결과 없음</title>
+<link rel="stylesheet" href="css/contact.css">
+
+<!-- 마크업 확인용 -->
+<script src="js/jquery.min.js"></script>
+<script src="js/markup.js"></script>
+</head>
+<body>
+
+<!-- 사이드 메뉴 -->
+<div class="lnb">
+	
+</div>
+<div class="wrap header_search">
+	<!-- 기본 헤더 -->
+	<header class="header">
+		
+	</header>
+	<!-- 스크롤 고정 영역 -->
+	<div class="scroll_cover" style="display: none">
+		
+	</div>
+	<!-- 연락처 목록 -->
+	<main class="container search_result">
+		<h3 class="blind">연락처 목록</h3>
+		<div class="search_result_head" style="display: none">
+			<span>검색결과</span>
+			<em class="cnt">0</em>
+		</div>
+		<ul class="contact_list">
+			
+		</ul>
+		
+		<div class="search_noresult">
+			<p class="msg">검색 결과가 없습니다.</p>
+		</div>
+	</main>
+</div>
+
+
+
+<script>
+// 마크업 인클루드
+IBJS.include([
+    {path:'01_header.html', sel:'.header'},
+    {path:'01_header.html', sel:'.scroll_cover'},
+    {path:'01_sidemenu.html', sel:'.lnb'},
+    
+]);
+</script>
+</body>
+</html>
