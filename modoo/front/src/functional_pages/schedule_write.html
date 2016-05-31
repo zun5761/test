@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Mobile 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/w.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body>
+<!-- 스케줄 쓰기 -->
+<div class="schedule_write">
+    <div class="title_area">
+        <h2 class="tit">공지쓰기/수정</h2>
+        <!-- <h2 class="tit">일정쓰기</h2> -->
+        <a href="" class="btn_back"><span class="blind">돌아가기</span></a>
+    </div>
+    <div class="write_area">
+        <!-- 공지쓰기 / 수정 -->
+        <div class="item">
+            <label for="cont" class="blind">내용</label>
+            <textarea cols="30" rows="6" id="cont" placeholder="내용을 입력해주세요"></textarea>
+            <p class="limit">0/500</p>
+        </div>
+        <!-- 일정쓰기인 경우 노출 -->
+        <div class="set_option">
+            <div class="row">
+                <!-- [D] input focus일때 selected 클래스 추가 -->
+                <div class="input_box selected">
+                    <!-- [D] input date, time 등 placeholder 작동안함(label로 대체) -->
+                    <!-- [D] input에 focus이거나 value값이 있을때 label에 blind 클래스 추가, blur이거나 value값이 없을때 blind클래스 제거 -->
+                    <label for="start_day" class="blind">시작일</label>
+                    <input type="date" id="start_day" value="2015-11-03">
+                </div>
+                <!-- [D] 종일버튼 활성화되면 시간선택 비활성화 disabled 클래스 추가 -->
+                <div class="input_box v2 disabled">
+                    <label for="start_time">시작시간</label>
+                    <!-- [D] 비활성화일 때 disabled -->
+                    <input type="time" id="start_time" disabled>
+                </div>
+                <!-- [D] 종일버튼 활성화일 때 a에 active 클래스 추가 -->
+                <a href="javascript://" class="btn_all_time active"><span class="ic"></span>종일</a>
+            </div>
+            <div class="row">
+                <div class="input_box">
+                    <label for="end_day">종료일</label>
+                    <input type="date" id="end_day">
+                </div>
+                <!-- [D] 종일버튼 활성화되면 시간선택 비활성화 disabled 클래스 추가 -->
+                <div class="input_box v2 disabled">
+                    <label for="end_time">종료시간</label>
+                    <!-- [D] 비활성화일 때 disabled -->
+                    <input type="time" id="end_time" disabled>
+                </div>
+            </div>
+        </div>
+        <!-- [D] 등록가능할 때 버튼 활성화 active 클래스 추가 -->
+        <a href="" class="btn_reg">등록하기</a>
+        <a href="" class="btn_reg active">등록하기</a>
+    </div>
+</div>
+
+<!-- 푸터 -->
+
+<script>
+</script>
+
+</body>
+</html>

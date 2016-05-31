@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Mobile 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/w.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body>
+<div id="wrap">
+  <div class="fc_wrap">
+    <div class="fc_aside" data-include="inc/mobile/fc_aside.html"></div>
+    <div class="fc_container">
+      <div class="fc_header" data-include="inc/mobile/fc_header.html"></div>
+      <div class="fc_content fcdeck_base swipe-container">
+        <div class="fcdeck_container transform swipe-wrapper">
+          <div class="eg-flick-container">
+            <div class="fcdeck_ct fc_group swiper-slide eg-flick-panel">
+              <div class="card shadow">
+                <div class="sc_group">
+                  <div>
+                    <div class="balloon_wrapper" style="display:none;position:relative;top:0px;opacity:0">
+                      <div class="balloon">
+                        <span class="depth"></span>
+                        <span class="page"></span>
+                      </div>
+                    </div>
+                    <div class="first main_area current">
+                      <div class="inner" id="components">
+                        <!-- components -->
+                      </div>
+                    </div>
+                    <!-- [D] 메인 페이지인 경우 main 클래스 추가 -->
+                    <div class="adr_area" data-include="inc/mobile/fc_footer.html"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layer_dim"></div>
+    </div>
+  </div>
+</div>
+<div class="talk_area" style="display:none">
+  <a href="" class="talk_link">톡톡하기</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* import/functional_pages/_blocked_page.scss */
+.main{
+  .blocked_page_area{
+    padding:206px 20px;
+  }
+}
+.blocked_page_area{
+  @if $DEVICE == 'pc'{
+    padding:206px 0;
+    background-color:#fff;
+  } @else{
+    padding:106px 0;
+  }
+  text-align:center;
+}
+.blocked_page_area .txt{
+  @if $DEVICE == 'pc'{
+    margin-bottom:35px;font-size:20px;font-weight:600;line-height:38px
+  } @else{
+    margin:16px 10px 27px;font-size:15px;line-height:21px;
+  }
+  color:#222;
+}
+.blocked_page_area .txt strong{
+  @if $DEVICE == 'pc' {
+    font-weight:600;color:#f85d5d;
+  } @else{
+    font-weight:normal;color:#222
+  }
+}

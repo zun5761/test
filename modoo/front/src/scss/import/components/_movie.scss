@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* import/components/_movie.scss */
+.gallery_area {
+	&.movie {
+		li {
+			position: relative;
+		}
+
+		.gallery_img {
+			@extend %default-imgage;
+
+			img {
+				width: 100%;
+				vertical-align: top;
+			}
+		}
+
+		.gallery_img .ico_default {
+			@if $DEVICE == 'pc' {
+				@include setSprite($sp_pc-movie, both);
+			} @else {
+				@include setSprite($sp_m-movie, both);
+			}
+
+			z-index: 10;
+			cursor: pointer;
+		}
+
+		.ico_play {
+			@if $DEVICE == 'pc' {
+				min-height: 400px;
+			} @else{
+				min-height: 200px;
+			}
+
+			display: block;
+			position: relative;
+			width: 100%;
+		}
+
+		.default {
+			.ico_default {
+				cursor: default;
+			}
+		}
+
+		.gallery_txt {
+			display: none;
+		}
+	}
+}

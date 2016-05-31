@@ -1,0 +1,990 @@
+@charset "utf-8";
+
+/* import/functional_pages/_coupon.scss */
+.banner_coupon_guide{
+    overflow:hidden;
+    width:100%;
+    height:78px;
+    border:1px solid #d0dad4;
+    background:#effaf3 url(../img/banner_coupon_guide.png) no-repeat 50% 0;
+    line-height:1000px;
+    box-sizing:border-box;
+}
+
+.coupon_area{
+    @if $DEVICE == "pc" {
+        margin:13px 0 7px;
+        background:#fff;
+        border-radius:2px;
+    } @else {
+        padding:5px;
+        background:#e9ecef;
+    }
+    > a{
+        display:block;
+        position:relative;
+        box-sizing:border-box;
+        @if $DEVICE == "pc" {
+            height:90px;
+            border:1px solid #dfe0e2;
+            border-radius:2px;
+        } @else {
+            height:68px;
+            border:1px solid #e2e2e2;
+            border-radius:3px;
+            background:#fff;
+            box-shadow:0 2px 2px rgba(0, 0, 0, 0.03);
+        }
+    }
+    .coupon_bg{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    .coupon_before{
+        position:absolute;
+        top:50%;
+        z-index:100;
+        @if $DEVICE == "pc" {
+            @include setSprite($sp_pc-coupon_area_before);
+            left:-1px;
+            margin-top:-19px;
+        } @else {
+            @include setSprite($sp_m-coupon_area_before);
+            left:-2px;
+            margin-top:-12.5px;
+        }
+    }
+    .coupon_after{
+        position:absolute;
+        top:50%;
+        z-index:100;
+        @if $DEVICE == "pc" {
+            @include setSprite($sp_pc-coupon_area_after);
+            right:-1px;
+            margin-top:-19px;
+        } @else {
+            @include setSprite($sp_m-coupon_area_after);
+            right:-2px;
+            margin-top:-12.5px;
+        }
+    }
+    .coupon{
+        overflow:hidden;
+        position:relative;
+        z-index:10;
+        height:90px;
+        .coupon_benefit_wrap + .coupon_tit_wrap{
+            text-align:left
+        }
+        .coupon_tit_wrap{
+            width:100%;
+            box-sizing:border-box;
+            @if $DEVICE == "pc" {
+                height:38px;
+                padding:24px 25px 28px;
+                text-align:center;
+            } @else {
+                padding:15px 72px 15px 22px;
+            }
+            .tit_wrap{
+                overflow:hidden;
+                word-break:break-all;
+                height:38px;
+                .tit{
+                    display:table;
+                    height:38px;
+                    .txt{
+                        display:table-cell;
+                        word-break:break-all;
+                        vertical-align:middle;
+                        @if $DEVICE == "pc" {
+                            overflow:hidden;
+                            font-size:12px;
+                            color:#222;
+                            line-height:19px;
+                            letter-spacing:-0.8px;
+                        } @else {
+                            font-size:14px;
+                            font-weight:normal;
+                            color:#333;
+                            line-height:19px;
+                        }
+                    }
+                }
+            }
+        }
+        .coupon_benefit_wrap{
+            float:right;
+            @if $DEVICE == "pc" {
+                top:50%;
+                width:56px;
+                height:56px;
+                margin:-28px 25px 0 7px;
+            } @else {
+                width:46px;
+                height:46px;
+                margin-top:10px;
+                margin-right:14px;
+            }
+            .benefit{
+                .no{
+                    @if $DEVICE == "pc"{
+                        margin:0 -2px;
+                        &.no0{ @include setSprite($sp_pc-coupon_aside_no0)}
+                        &.no1{ @include setSprite($sp_pc-coupon_aside_no1)}
+                        &.no2{ @include setSprite($sp_pc-coupon_aside_no2)}
+                        &.no3{ @include setSprite($sp_pc-coupon_aside_no3)}
+                        &.no4{ @include setSprite($sp_pc-coupon_aside_no4)}
+                        &.no5{ @include setSprite($sp_pc-coupon_aside_no5)}
+                        &.no6{ @include setSprite($sp_pc-coupon_aside_no6)}
+                        &.no7{ @include setSprite($sp_pc-coupon_aside_no7)}
+                        &.no8{ @include setSprite($sp_pc-coupon_aside_no8)}
+                        &.no9{ @include setSprite($sp_pc-coupon_aside_no9)}
+                    } @else {
+                        &.no0{ @include setSprite($sp_m-coupon_aside_no0)}
+                        &.no1{ @include setSprite($sp_m-coupon_aside_no1)}
+                        &.no2{ @include setSprite($sp_m-coupon_aside_no2)}
+                        &.no3{ @include setSprite($sp_m-coupon_aside_no3)}
+                        &.no4{ @include setSprite($sp_m-coupon_aside_no4)}
+                        &.no5{ @include setSprite($sp_m-coupon_aside_no5)}
+                        &.no6{ @include setSprite($sp_m-coupon_aside_no6)}
+                        &.no7{ @include setSprite($sp_m-coupon_aside_no7)}
+                        &.no8{ @include setSprite($sp_m-coupon_aside_no8)}
+                        &.no9{ @include setSprite($sp_m-coupon_aside_no9)}
+                    }
+                }
+                .percent{
+                    @if $DEVICE == 'pc' {
+                        @include setSprite($sp_pc-coupon_aside_percent);
+                    } @else {
+                        @include setSprite($sp_m-coupon_aside_percent);
+                    }
+                    margin:0 -5px 0 -2px;
+                }
+                .b_one_plus_one{
+                    @if $DEVICE == 'pc' {
+                        @include setSprite($sp_pc-coupon_aside_oneplusone);
+                    } @else {
+                        @include setSprite($sp_m-coupon_aside_oneplusone);
+                    }
+                }
+                .b_free{
+                    @if $DEVICE == 'pc' {
+                        @include setSprite($sp_pc-coupon_aside_free);
+                    } @else {
+                        @include setSprite($sp_m-coupon_aside_free);
+                    }
+                }
+                .b_coupon{
+                    @if $DEVICE == 'pc' {
+                        @include setSprite($sp_pc-coupon_aside_coupon);
+                    } @else {
+                        @include setSprite($sp_m-coupon_aside_coupon);
+                    }
+                }
+                .b_event{
+                    @if $DEVICE == 'pc' {
+                        @include setSprite($sp_pc-coupon_aside_event);
+                    } @else {
+                        @include setSprite($sp_m-coupon_aside_event);
+                    }
+                }
+            }
+            .mask{
+                @if $DEVICE == "pc" {
+                    @include setSprite($sp_pc-coupon_aside_mask);
+                } @else{
+                    @include setSprite($sp_m-coupon_aside_mask);
+                }
+            }
+            .img{
+                img{
+                    @if $DEVICE == "pc" {
+                        width:56px;
+                        height:56px;
+                    } @else {
+                        width:46px;
+                        height:46px;
+                    }
+                }
+            }
+        }
+        .coupon_arrow{
+            position:absolute;
+            top:50%;
+            @if $DEVICE == "pc" {
+                right:30px;
+            } @else {
+                right:18px;
+            }
+            margin-top:-10.5px;
+            & + .coupon_tit_wrap{
+                padding-right:40px;
+            }
+        }
+    }
+}
+
+@if $DEVICE == "m"{
+    @each $type in $ButtonType{
+        .btn_#{$type}1 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow1)}
+        .btn_#{$type}2 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow2)}
+        .btn_#{$type}3 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow3)}
+        .btn_#{$type}4 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow4)}
+        .btn_#{$type}5 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow5)}
+        .btn_#{$type}6 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow6)}
+        .btn_#{$type}7 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow7)}
+        .btn_#{$type}8 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow8)}
+        .btn_#{$type}9 .coupon_area .coupon .coupon_arrow{@include setSprite($sp_m-coupon_arrow9)}
+    }
+}
+
+.coupon_list_wrap{
+    @if $DEVICE == "pc" {
+        margin-top:26px;
+    } @else {
+        padding-bottom:7px;
+        background:#f0f2f4;
+    }
+    &:after{
+        display:block;
+        clear:both;
+        content:'';
+    }
+}
+
+.coupon_none{
+    background:#fff;
+    font-size:16px;
+    letter-spacing:-0.5px;
+    text-align:center;
+    @if $DEVICE == "pc" {
+        padding:118px 0;
+        border:1px solid #e8e8e8;
+        color:#222;
+        .txt1{
+            display:block;
+            font-size:26px;
+            font-weight:600;
+            letter-spacing:-0.5px;
+        }
+        .txt2{
+            display:block;
+            margin-top:36px;
+            font-size:18px;
+            font-weight:600;
+        }
+        .txt{
+            margin-top:15px;
+            color:#666;
+            letter-spacing:-0.5px;
+            line-height:20px;
+        }
+    } @else {
+        padding:89px 0;
+        .txt1{
+            display:block;
+            font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+            font-size:17px;
+            font-weight:normal;
+            color:#333;
+            letter-spacing:-0.5px;
+        }
+        .txt2{
+            display:block;
+            margin-top:24px;
+            font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+            font-size:16px;
+            font-weight:normal;
+        }
+        .txt{
+            margin-top:8px;
+            font-family:AppleSDGothicNeo-Light,sans-serif-light;
+            font-size:15px;
+            color:#222;
+            line-height:20px;
+        }
+    }
+}
+
+@each $type in $ButtonType{
+    @each $color in $ThemeColor{
+        $i: index($ThemeColor, $color);
+        .btn_#{$type}#{$i} {
+            .coupon_none .txt2,
+            .coupon_none .txt a {
+                color: $color;
+            }
+        }
+    }
+}
+
+.coupon_list{
+    position:relative;
+    margin-top:7px;
+    &:first-child{
+        margin-top:0;
+    }
+    .coupon{
+        overflow:hidden;
+        position:relative;
+        border-top:1px solid #e8e8e8;
+        background:#fff;
+        @if $DEVICE == "pc" {
+            padding:20px;
+            border-right:1px solid #e8e8e8;
+            border-left:1px solid #e8e8e8;
+        } @else {
+            padding:16px 18px 15px 18px;
+        }
+        .coupon_tit_wrap{
+            width:100%;
+            &.btn_none{
+                @if $DEVICE == "pc" {
+                    height:80px;
+                } @else {
+                    height:70px;
+                }
+                .tit_wrap{
+                    @if $DEVICE == "pc" {
+                        height:80px;
+                        max-height:80px;
+                    } @else {
+                        height:70px;
+                        max-height:70px;
+                    }
+                    .tit{
+                        @if $DEVICE == "pc" {
+                            height:80px;
+                            max-height:80px;
+                        } @else {
+                            display:flex;
+                            align-items:center;
+                            height:70px;
+                            max-height:70px;
+                        }
+                        .txt{
+                            @if $DEVICE == "m" {
+                                overflow:hidden;
+                                max-height:42px;
+                            }
+                        }
+                    }
+                }
+            }
+            .tit_wrap{
+                overflow:hidden;
+                word-break:break-all;
+                @if $DEVICE == "pc" {
+                    height:44px;
+                    max-height:44px;
+                } @else {
+                    height:42px;
+                    max-height:42px;
+                }
+                .tit{
+                    display:table;
+                    @if $DEVICE == "pc" {
+                        height:44px;
+                        max-height:44px;
+                    } @else {
+                        height:42px;
+                        max-height:42px;
+                    }
+                    .txt{
+                        display:table-cell;
+                        letter-spacing:-0.5px;
+                        vertical-align:middle;
+                        @if $DEVICE == "pc" {
+                            font-size:16px;
+                            font-weight:600;
+                            color:#222;
+                            line-height:22px;
+                        } @else {
+                            font-family:HelveticaNeue,AppleSDGothicNeo-Regular,sans-serif;
+                            font-size:16px;
+                            font-weight:normal;
+                            color:#333;
+                            line-height:21px;
+                        }
+                    }
+                }
+            }
+            .btn_area{
+                display:inline-block;
+                margin:0;
+                @if $DEVICE == "pc" {
+                    margin-top:10px;
+                } @else {
+                    margin-top:5px;
+                }
+            }
+            .use{
+                display:block;
+                overflow:hidden;
+                @include setSprite($sp_pc-coupon_use1);
+                line-height:1000px;
+            }
+            .btn_use{
+                display:block;
+                overflow:hidden;
+                line-height:1000px;
+            }
+            .used{
+                display:block;
+                overflow:hidden;
+                @if $DEVICE == "pc" {
+                    @include setSprite($sp_pc-coupon_used);
+                } @else {
+                    @include setSprite($sp_m-coupon_used);
+                }
+                line-height:1000px;
+            }
+            .soldout{
+                display:block;
+                overflow:hidden;
+                @if $DEVICE == "pc" {
+                    @include setSprite($sp_pc-coupon_soldout);
+                } @else {
+                    @include setSprite($sp_m-coupon_soldout);
+                }
+                line-height:1000px;
+            }
+        }
+        .coupon_benefit_wrap{
+            float:right;
+            margin-left:13px;
+        }
+    }
+    .coupon_desc{
+        @if $DEVICE == "pc" {
+            padding:15px 20px;
+            border-right:1px solid #e8e8e8;
+            border-left:1px solid #e8e8e8;
+        } @else {
+            padding:12px 18px 11px;
+        }
+        border-top:1px dashed #e7e7e7;
+        border-bottom:1px solid #e8e8e8;
+        background:#f9f9f9;
+        > li{
+            position:relative;
+            padding-left:7px;
+            word-wrap:break-word;
+            @if $DEVICE == "pc" {
+                font-size:12px;
+                line-height:18px;
+            } @else {
+                font-family:HelveticaNeue-Light,AppleSDGothicNeo-Regular,sans-serif;
+                font-size:13px;
+                line-height:17px;
+            }
+            color:#999;
+            letter-spacing:-0.5px;
+            &:before{
+                display:block;
+                position:absolute;
+                top:7px;
+                left:0;
+                width:2px;
+                height:2px;
+                border-radius:2px;
+                background:#999;
+                content:'';
+            }
+        }
+    }
+    .coupon_edit_guide{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:30;
+        width:100%;
+        height:100%;
+        border:1px solid #464646;
+        text-align:center;
+        box-sizing:border-box;
+        .txt{
+            position:absolute;
+            top:50%;
+            left:0;
+            z-index:31;
+            width:100%;
+            margin-top:-14px;
+            font-size:20px;
+            font-weight:600;
+            color:#fff;
+            letter-spacing:-0.3px;
+            line-height:28px;
+            &.v2{
+                margin-top:-42px;
+            }
+            &.v3{
+                margin-top:-42px;
+            }
+        }
+        .bg{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:#585858;
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+            opacity:0.85;
+        }
+    }
+    .coupon_info{
+        @if $DEVICE == "pc" {
+            padding:14px 4px 16px;
+            font-size:14px;
+            color:#666;
+        } @else {
+            padding:14px 18px 16px;
+            font-family:HelveticaNeue,AppleSDGothicNeo-Regular,sans-serif;
+            font-size:15px;
+            color:#777;
+        }
+
+        text-align:right;
+        .count{
+            display:inline-block;
+            font-size:inherit;
+            @if $DEVICE == "pc" {
+                font-weight:600;
+            }
+            letter-spacing:-0.5px;
+            .num{
+                @if $DEVICE == "pc" {
+                    color:#999;
+                } @else {
+                    color:#aaa;
+                }
+            }
+            .bu{
+                display:inline-block;
+                @if $DEVICE == "pc" {
+                    @include setSprite($sp_pc-coupon_bu_count);
+                    margin-top:-4px;
+                    margin-right:9px;
+                } @else {
+                    @include setSprite($sp_m-coupon_bu_count);
+                    margin-top:-6px;
+                    margin-right:7px;
+                }
+                vertical-align:middle;
+            }
+        }
+        @if $DEVICE == "pc" {
+            .bar{
+                display:inline-block;
+                width:1px;
+                height:10px;
+                margin:-2px 11px 2px;
+                background:#d6d6d6;
+                vertical-align:middle;
+            }
+            .btn_modify{
+                display:inline-block;
+                font-size:inherit;
+                @if $DEVICE == "pc" {
+                    font-weight:600;
+                }
+                .ic{
+                    display:inline-block;
+                    @include setSprite($sp_pc-board_ico_edit);
+                    margin-top:-2px;
+                    margin-right:4px;
+                    vertical-align:middle;
+                }
+            }
+        }
+    }
+}
+
+.coupon_benefit_wrap{
+    display:table;
+    position:relative;
+    @if $DEVICE == "pc" {
+        width:80px;
+        height:80px;
+    } @else {
+        width:70px;
+        height:70px;
+    }
+    text-align:center;
+    .benefit{
+        display:table-cell;
+        position:relative;
+        z-index:20;
+        vertical-align:middle;
+        .no{
+            display:inline-block;
+            height:22px;
+            margin:0 -1px;
+            vertical-align:top;
+            @if $DEVICE == 'pc' {
+                &.no0{@include setSprite($sp_pc-coupon_benefit_no0)}
+                &.no1{@include setSprite($sp_pc-coupon_benefit_no1)}
+                &.no2{@include setSprite($sp_pc-coupon_benefit_no2)}
+                &.no3{@include setSprite($sp_pc-coupon_benefit_no3)}
+                &.no4{@include setSprite($sp_pc-coupon_benefit_no4)}
+                &.no5{@include setSprite($sp_pc-coupon_benefit_no5)}
+                &.no6{@include setSprite($sp_pc-coupon_benefit_no6)}
+                &.no7{@include setSprite($sp_pc-coupon_benefit_no7)}
+                &.no8{@include setSprite($sp_pc-coupon_benefit_no8)}
+                &.no9{@include setSprite($sp_pc-coupon_benefit_no9)}
+            } @else {
+              &.no0{@include setSprite($sp_m-coupon_benefit_no0)}
+              &.no1{@include setSprite($sp_m-coupon_benefit_no1)}
+              &.no2{@include setSprite($sp_m-coupon_benefit_no2)}
+              &.no3{@include setSprite($sp_m-coupon_benefit_no3)}
+              &.no4{@include setSprite($sp_m-coupon_benefit_no4)}
+              &.no5{@include setSprite($sp_m-coupon_benefit_no5)}
+              &.no6{@include setSprite($sp_m-coupon_benefit_no6)}
+              &.no7{@include setSprite($sp_m-coupon_benefit_no7)}
+              &.no8{@include setSprite($sp_m-coupon_benefit_no8)}
+              &.no9{@include setSprite($sp_m-coupon_benefit_no9)}
+            }
+        }
+        .percent{
+            display:inline-block;margin:0 -8px 0 -2px;vertical-align:top;
+            @if $DEVICE == 'pc' {
+              @include setSprite($sp_pc-coupon_benefit_percent);
+            } @else {
+              @include setSprite($sp_m-coupon_benefit_percent);
+            }
+        }
+        .b_one_plus_one{
+            display:inline-block;vertical-align:middle;
+            @if $DEVICE == 'pc' {
+              @include setSprite($sp_pc-coupon_benefit_oneplusone);
+            } @else {
+              @include setSprite($sp_m-coupon_benefit_oneplusone);
+            }
+        }
+        .b_free{
+            display:inline-block;vertical-align:middle;
+            @if $DEVICE == 'pc' {
+              @include setSprite($sp_pc-coupon_benefit_free);
+            } @else {
+              @include setSprite($sp_m-coupon_benefit_free);
+            }
+        }
+        .b_coupon{
+            display:inline-block;vertical-align:middle;
+            @if $DEVICE == 'pc' {
+              @include setSprite($sp_pc-coupon_benefit_coupon);
+            } @else {
+              @include setSprite($sp_m-coupon_benefit_coupon);
+            }
+        }
+        .b_event{
+            display:inline-block;vertical-align:middle;
+            @if $DEVICE == 'pc' {
+              @include setSprite($sp_pc-coupon_benefit_event);
+            } @else {
+              @include setSprite($sp_m-coupon_benefit_event);
+            }
+        }
+    }
+    .mask{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:10;
+        @if $DEVICE == 'pc' {
+          @include setSprite($sp_pc-coupon_benefit_mask);
+        } @else {
+          @include setSprite($sp_m-coupon_benefit_mask);
+        }
+    }
+    .img{
+        width:100%;
+        height:100%;
+        img{
+            display:block;
+            @if $DEVICE == "pc" {
+                width:80px;
+                height:80px;
+            } @else {
+                width:70px;
+                height:70px;
+            }
+        }
+    }
+    .bg{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        @if $DEVICE == "pc" {
+            -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+        }
+        opacity:0.85;
+    }
+}
+
+@each $type in $ButtonType{
+    @each $color in $ThemeColor{
+        $i: index($ThemeColor, $color);
+        .btn_#{$type}#{$i} {
+            .coupon_benefit_wrap .bg{
+                background: $color;
+            }
+            .coupon_list_wrap .coupon_list .coupon_info .count .num em{
+                color: $color;
+            }
+        }
+    }
+    @if $DEVICE == 'pc' {
+        .btn_#{$type}1 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use1)}
+        .btn_#{$type}2 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use2)}
+        .btn_#{$type}3 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use3)}
+        .btn_#{$type}4 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use4)}
+        .btn_#{$type}5 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use5)}
+        .btn_#{$type}6 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use6)}
+        .btn_#{$type}7 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use7)}
+        .btn_#{$type}8 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use8)}
+        .btn_#{$type}9 .coupon_list_wrap .coupon_list .coupon .use{@include setSprite($sp_pc-coupon_use9)}
+    } @else {
+        .btn_#{$type}1 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use1)}
+        .btn_#{$type}2 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use2)}
+        .btn_#{$type}3 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use3)}
+        .btn_#{$type}4 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use4)}
+        .btn_#{$type}5 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use5)}
+        .btn_#{$type}6 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use6)}
+        .btn_#{$type}7 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use7)}
+        .btn_#{$type}8 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use8)}
+        .btn_#{$type}9 .coupon_list_wrap .coupon_list .coupon .btn_use{@include setSprite($sp_m-coupon_btn_use9)}
+    }
+}
+
+.layer_coupon{
+    position:relative;
+    width:300px;
+    border-radius:2px;
+    background:#fff;
+    .message_area{
+        min-height:154px;
+        padding:25px 15px 20px;
+        border-bottom:1px dashed #6089e8;
+        border-top-right-radius:2px;
+        border-top-left-radius:2px;
+        background:#fff;
+        text-align:center;
+        box-sizing:border-box;
+        .logo_wrap{
+            margin:0 auto 20px;
+            text-align:center;
+            > div{
+                display:inline-block;
+                overflow:hidden;
+                line-height:1000px;
+                vertical-align:middle;
+            }
+            .naver{
+                @include setSprite($sp_m-logo_naver);
+            }
+            .logo{
+                @include setSprite($sp_m-logo);
+            }
+        }
+        .coupon_benefit_wrap{
+            position:relative;
+            top:auto;
+            right:auto;
+            margin:0 auto 15px;
+        }
+        .message{
+            display:block;
+            font-family:AppleSDGOthicNeo-SemiBold,sans-serif;
+            font-size:18px;
+            color:#333;
+            letter-spacing:-0.5px;
+            line-height:23px;
+            &.v2{
+                margin-top:24px;
+            }
+            &.v3{
+                margin-top:37px;
+            }
+        }
+        .memo{
+            display:block;
+            margin-top:10px;
+            font-family:HelveticaNeue,AppleSDGOthicNeo-Regular,sans-serif;
+            font-size:14px;
+            color:#999;
+            letter-spacing:-0.5px;
+            line-height:17px;
+        }
+    }
+    .btn_area{
+        border-top-width:1px;
+        border-top-style:dashed;
+        border-bottom-right-radius:2px;
+        border-bottom-left-radius:2px;
+        .btn{
+            display:block;
+            font-family:AppleSDGOthicNeo-SemiBold,sans-serif;
+            font-size:21px;
+            color:#fff;
+            line-height:61px;
+            text-align:center;
+        }
+    }
+    &.v2{
+        .btn_area{
+            .btn{
+                line-height:81px;
+            }
+            &.v2{
+                .btn{
+                    padding:15px 0 14px;
+                    line-height:1.25em;
+                    .memo{
+                        display:block;
+                        font-family:AppleSDGOthicNeo-Regular,sans-serif;
+                        font-size:13px;
+                        color:rgba(255, 255, 255, 0.7);
+                        text-align:center;
+                    }
+                }
+            }
+        }
+    }
+    &.done{
+        .message_area{
+            border-color:#b6b6b6 !important;
+            .coupon_used{
+                position:relative;
+                width:73px;
+                height:50px;
+                margin:0 auto 15px;
+                .bg{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                }
+                .mask{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    @include setSprite($sp_m-coupon_used_mask);
+                }
+            }
+        }
+        .btn_area{
+            border-color:#d1d1d1 !important;
+            background:#bdbdbd !important;
+        }
+    }
+    .btn_close{
+        overflow:hidden;
+        position:absolute;
+        top:13px;
+        right:13px;
+        @include setSprite($sp_m-coupon_btn_close_layer);
+        line-height:1000px;
+    }
+}
+
+@each $type in $ButtonType{
+    @each $color in $ThemeColor{
+        $i: index($ThemeColor, $color);
+        .btn_#{$type}#{$i} {
+            .layer_coupon.done .message_area .coupon_used .bg{
+                background: $color;
+            }
+            .coupon_area .coupon .coupon_tit_wrap .tit_wrap .tit .txt{
+                color: $color;
+            }
+            .layer_coupon .btn_area{
+                @include backgroundOpacity($color, 0.9);
+                border-top-color:rgba(255, 255, 255, 0.35);
+            }
+            .layer_coupon .message_area{
+                border-bottom-width:1px;
+                border-bottom-style:dashed;
+                @include borderOpacity($color, 0.85);
+            }
+        }
+    }
+}
+
+@if $DEVICE == "pc" {
+    .layer_coupon_modify{
+        width:420px;
+        padding:46px 20px 42px;
+        border:2px solid #222;
+        background:#fff;
+        box-sizing:border-box;
+        .message_area{
+            .message{
+                display:block;
+                font-size:13px;
+                font-weight:normal;
+                color:#666;
+                letter-spacing:-0.5px;
+                line-height:20px;
+                text-align:center;
+                &+.message{
+                    margin-top:9px;
+                }
+            }
+        }
+        .btn_area{
+            margin:27px 0 0;
+            .btn{
+                display:inline-block;
+                height:36px;
+                margin:0;
+                padding:0;
+                border-width:1px;
+                border-style:solid;
+                font-size:12px;
+                font-weight:600;
+                line-height:36px;
+                vertical-align:middle;
+                white-space:nowrap;
+                box-sizing:border-box;
+                &.btn_color_green{
+                    width:100px;
+                    border-color:#16bb00;
+                    background:#00cf00;
+                    color:#fff;
+                }
+                &.btn_color_white{
+                    width:74px;
+                    border-color:#cacaca;
+                    background:#fafafa;
+                    color:#222;
+                }
+            }
+        }
+    }
+}
+// 쿠폰 편집불가 안내
+.coupon_text{
+    &:before{
+        @include setSprite($sp_limit-img_coupon);
+    }
+}
+
+// 메인 쿠폰
+.main{
+    @if $DEVICE == "pc" {
+        .coupon_list .coupon_info{
+            margin-top:-1px;
+            border:1px solid #e8e8e8;
+            background-color:#fff;
+        }
+    }
+}

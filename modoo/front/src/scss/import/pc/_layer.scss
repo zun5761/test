@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+/* import/pc/_layer.scss */
+.ly_view{height:692px;border:1px solid #343434;background-color:#fff}
+.ly_view .t_area{position:relative;height:60px;background:#343434}
+.ly_view .t_area .t_view{font-size:22px;font-weight:normal;text-align:center;color:#fff;line-height:60px}
+.ly_view .t_area .b_cls{
+	@include setSprite($sp_pc-viewer_ico_close);
+
+	position:absolute;right:21px;top:20px;line-height:1000px;
+}
+.ly_view .viewer .inner{position:relative;margin:25px 24px 0}
+.ly_view .viewer .inner_t{margin-top:25px}
+.ly_view .viewer .inner .thmb{width:678px;height:488px}
+.ly_view .viewer .inner .btn{position:absolute;overflow:hidden;top:50%;width:90px;height:162px;margin-top:-41px}
+.ie8 .ly_view .viewer .inner .btn{background-color:#525151;border:1px solid #414040}
+.ly_view .viewer .inner .btn{position:absolute;top:50%;margin-top:-41px;line-height:1000px}
+.ly_view .viewer .inner .btn_prev{left:0}
+.ly_view .viewer .inner .btn_next{right:0}
+.ly_view .viewer .inner .btn_prev {
+	@include setSprite($sp_pc-viewer_left_big_arrow);
+
+	left:11px;
+}
+.ly_view .viewer .inner .btn_next{
+	@include setSprite($sp_pc-viewer_right_big_arrow);
+
+	right:11px;
+}
+.ly_view .viewer .btn_zoom{position:absolute;right:0;bottom:0;width:84px;height:30px;border:1px solid rgba(0,0,0,.2);background-color:rgba(0,0,0,.6);box-sizing:border-box;color:#fff;line-height:29px}
+.ly_view .viewer .btn_zoom:before{
+	@include setSprite($sp_pc-viewer_ico_zoom);
+
+	display:inline-block;margin:3px 3px -3px 10px;content:'';
+}
+.ly_view .viewer .v_pg{position:absolute;right:62px;top:17px;text-align:center}
+.ly_view .viewer .v_pg .f_h{display:inline-block;height:30px;font-size:16px;color:#999;line-height:30px}
+.ie8 .ly_view .viewer .v_pg .f_h{background-color:#474748}
+.ly_view .viewer .v_pg .n{font-weight:600;color:#dbdbdb}
+.ly_view .viewer .v_pg .bar{margin:0 -4px}
+.lst_view{position:relative;margin-top:10px}
+.lst_view .lst{overflow:hidden;height:84px;margin:0 61px;background-color:#f1f1f1;white-space:nowrap}
+.lst_view .lst li{float:left;position:relative;width:84px;height:84px;margin-left:2px;vertical-align:top}
+.lst_view .lst li.selected .border{position:absolute;left:0;right:0;bottom:0;top:0;border:4px solid #4f7ce6}
+.lst_view .lst li a{display:block}
+.lst_view .btn{overflow:hidden;position:absolute;top:0;width:35px;height:82px;border:1px solid rgba(0,0,0,.1);background-color:#4f7ce6;line-height:1000px}
+.lst_view .btn.disable{opacity:.6}
+.lst_view .prev{left:24px}
+.lst_view .next{right:24px}
+.lst_view .btn .spci{display:block;position:absolute;top:34px;}
+.lst_view .prev .spci{
+	@include setSprite($sp_pc-viewer_left_arrow);
+
+	left:13px;
+}
+.lst_view .next .spci{
+	@include setSprite($sp_pc-viewer_right_arrow);
+
+	right:13px;
+}
+
+// .PC 레이어 공통
+.dimmed{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1000;width:100%;height:100%;background:#000;opacity:0.55;filter:alpha(opacity=55)}
+.layer_pc{
+	position:relative;
+	z-index:1100;
+	width:438px;
+	border:1px solid #393d46;
+	background-color:#fff;
+
+	.l_tit{
+		position:relative;
+		height:55px;
+		background-color:#393f47;
+		line-height:55px;
+
+		.title{
+			padding:0 23px;
+			font-size:16px;
+			font-weight:600;
+			color:#fff;
+			letter-spacing:-0.06em;
+		}
+	}
+
+	.l_cont{
+		display:table;
+		width:100%;
+		vertical-align:middle;
+		box-sizing:border-box;
+
+		.lc_inner{
+			padding:44px 15px 45px;
+			line-height:1.5;
+
+			&.center{
+				text-align:center;
+			}
+			&.v2{
+				padding:0;
+			}
+		}
+
+		.lc_tt{
+			margin-top:2px;
+			padding-bottom:14px;
+			font-weight:bold;
+			font-size:16px;
+			color:#111;
+			line-height:24px;
+			letter-spacing:-0.5px;
+		}
+
+		.lc_ts{
+			font-size:14px;
+			color:#45484f;
+			line-height:24px;
+			letter-spacing:-0.5px;
+		}
+		.notice_list{
+			padding:18px 24px 20px;
+			border-bottom:1px solid #ebebeb;
+			background-color:#fcfcfc;
+			li{
+				padding-left:10px;
+				text-align:left;
+				text-indent:-10px;
+				font-size:12px;
+				color:#626668;
+				letter-spacing:-0.5px;
+				line-height:20px;
+				&:before{
+					display:inline-block;
+					width:2px;
+					height:2px;
+					margin:9px 9px -9px 0;
+					background-color:#b0b0b0;
+					vertical-align:top;
+					content:'';
+				}
+			}
+		}
+		.photo_upload{
+			padding:24px 0 19px 24px;
+			border:0;
+			.btn_add{
+				width:70px;
+				height:70px;
+				padding-top:24px;
+			}
+			.photo_list{
+				@include setBackgroundImage('#{$P-img}thumb_noimg.png', $repeat: repeat, $top: 0,$left:0);
+
+				overflow:hidden;
+				width:380px;
+				height:70px;
+
+				.thumb{
+					width:70px;
+					height:70px;
+					.delete{
+						width:20px;
+						height:20px;
+						&:before{
+							@include setSprite($sp_pc-thumb_ico_big_delete);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.l_btns{
+		padding:20px 0;
+		border-top:1px solid #dedede;
+		text-align:center;
+
+		.btn{
+			display:inline-block;
+			height:35px;
+			padding:0 22px;
+			margin:0 1px;
+			box-sizing:border-box;
+			background:#fff;
+			border:1px solid #d8dbde;
+			font-size:14px;
+			font-weight:600;
+			line-height:35px;
+			color:#5c6676;
+			letter-spacing:-0.06em;
+			vertical-align:top;
+		}
+
+		.btn:hover, .btn:focus{
+			text-decoration:none;
+		}
+
+		.btn_theme{
+			border:0;
+			color:#fff;
+		}
+	}
+}
+
+// 개인정보 수집 동의
+.ly_sc{border:2px solid #222;background-color:#fff}
+.ly_sc .ly_tit h2{margin:0 0 30px 0;padding:25px;font-size:18px;font-weight:600;text-align:center;letter-spacing:-0.05em;color:#000;background:#f7f7f7;border-bottom:1px solid #ebebeb}
+.ly_sc .ly_inquiry{margin:0 0 20px;}
+
+.ly_sc .ly_inquiry .agreement{overflow:auto;width:534px;height:398px;margin:0 auto;border:1px solid #d0d0d0}
+.ly_sc .ly_inquiry .tx_agree{font-size:13px;letter-space:-0.05em;color:#666}
+.ly_sc .btn_cls{
+	@include setSprite($sp_pc-layer_button_cls);
+
+	position:absolute;right:25px;top:25px;line-height:1000px;overflow:hidden;
+}
+.ly_sc .btn_area{padding-top:20px;margin-bottom:20px;border-top:1px solid #dedede}
+.ly_sc .btn_area .btn{padding:0 29px;background-color:#fefefe}
+.ly_sc .btn_area .btn.accusat{color: #fff;background: #00cf00}
+
+// 신고하기
+@each $type in $ButtonType{
+	@each $color in $ThemeColor{
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i} {
+			.lst_view .btn{
+				background-color: $color;
+			};
+			.lst_view .lst li.selected .border,
+			.ly_view .viewer .inner .selected,
+			.ly_view .viewer .inner .btn:hover{
+				border-color: $color;
+			};
+		}
+	}
+}

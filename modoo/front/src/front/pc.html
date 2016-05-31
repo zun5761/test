@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+<title>PC 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/pc.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+<style>
+/* [D] IE8 적용을 위해 htc 설정 */
+.lst_index .tile a > div{-ms-behavior:url(./backgroundsize.min.htc);}
+</style>
+<script type="text/javascript">
+window.onload = function() {
+  window.__splugin = SocialPlugIn_Core({
+    // nEvent Key
+    "evKey"       : "news",
+    // 서비스명
+    "serviceName" : "뉴스",
+    // 출처명
+    "sourceName" : "아이유",
+    // 버튼 클릭후 호출되는 콜백함수
+    "onClick"     : function(button) {
+      // button = 버튼명(band:밴드보내기)
+    },
+    // 공유하기 레이어 노출 후 호출되는 콜백함수
+    "onShow"      : function() {
+
+    },
+    // 공유하기 레이어 닫기 후 호출되는 콜백함수
+    "onHide"      : function() {
+    }
+  });
+}
+
+function onSubscribe(elTarget) {
+  return {
+    popupType 		: "B",
+    callbackUrl     : "/popupSample_js.html",
+    targetUrl       : "/subscribe/applyFeedRelation.nhn",
+    serviceId 		: "navercast",
+    feedGroupId		: "004",
+    feedGroupName 	: "오늘의 미술",
+    feedId 			: ["001","002","003","004","005","006","007","008"],
+    feedName 		: ["서양미술의 걸작","테마로 보는 미술"],
+    selected 		: ["Y","N","N","N","N","N","N","N"]
+  };
+}
+</script>
+<script id="naver-splugin-sdk" type="text/javascript" charset="utf-8" src="http://spi.naver.com/js/release/ko_KR/splugin.js?20150803"></script>
+<script id="naver-splugin-sdk" type="text/javascript" charset="utf-8" src="http://spi.naver.com/js/release/ko_KR/splugin.m.js?20150803"></script>
+</head>
+<!-- [D] 스토어 페이지에만 store 클래스 추가 -->
+<!-- [D] 게시판,문의하기 페이지에만 board 클래스 추가 -->
+<!-- [D] 타블렛일때 t 클래스 추가 -->
+<!-- [D] pc main페이지 main 클래스 추가 -->
+<!-- [D] 모바일 메인카드 노출시 main 클래스 추가 -->
+<!-- [D] 모바일 메인카드 스크롤시 scroll 클래스 추가 -->
+<body>
+<div id="header" data-include="inc/pc/header.html"></div>
+<div id="wrap">
+  <div class="fc_wrap">
+    <div class="fc_container">
+      <div class="fc_aside transform" data-include="inc/pc/fc_aside.html"></div>
+      <div class="fc_content">
+        <div class="fcdeck_container">
+          <div class="fcdeck_ct">
+            <div class="card on">
+              <div class="title">
+                <h2>메인</h2>
+              </div>
+              <div class="main_area current">
+                <div class="inner" id="components">
+                  <!-- components -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="layer_dim"></div>
+    </div>
+    <div class="aside_notice" data-include="inc/pc/aside_notice.html"></div>
+  </div>
+  <div class="fc_footer" data-include="inc/pc/fc_footer.html"></div>
+</div>
+<div class="footer_section" data-include="inc/pc/footer_section.html"></div>
+<!-- [D] 타블렛이서만 노출 -->
+<div class="mode_change">
+  <a href="#" class="btn_change">모바일버전으로 보기</a>
+</div>
+</body>
+</html>

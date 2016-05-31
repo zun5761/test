@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Mobile 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/w.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body>
+
+<div class="layer" style="position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:10001;">
+	<div class="ly_view">
+		<div class="t_area">
+			<h2 class="t_view">이미지뷰어</h2>
+			<a href="#" class="b_cls">닫기</a>
+		</div>
+		<div class="viewer">
+			<!-- [D] 테이블 확대보기시 클래스 inner_t 로 변경
+			<div class="inner_t">
+			 -->
+			<div class="inner">
+				<div class="thmb"><img src="http://dev.ui.naver.com/tmp/?640x432_pororo_y_FFB4B4_50" width="320" height="216" alt="임시 이미지"></div>
+				<!-- [D] 선택시 selected  추가 -->
+				<a href="#" class="btn btn_prev">이전 이미지</a>
+				<a href="#" class="btn btn_next selected">다음 이미지</a>
+				<a href="#" class="btn_zoom">확대보기</a>
+			</div>
+			<div class="v_pg">
+				<p class="f_h"><strong class="n">1</strong> <span>/</span> 4</p>
+			</div>
+		</div>
+		<div class="lst_view">
+			<a href="#" class="btn prev"><span class="spci"></span>이전 이미지</a>
+			<ul class="lst">
+				<!-- [D] 선택시 selected  추가 -->
+				<li class="selected"><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+				<li><a href="#"><img src="http://dev.ui.naver.com/tmp/?102x102_pororo_y_FFB4B4_51" width="51" height="51" alt="임시 이미지"><span class="border"></span></a></li>
+			</ul>
+			<!-- [D] 활성화 버튼
+			<a href="#" class="btn next"><span class="spci"></span>다음 이미지</a>
+			-->
+			<!-- [D] 비활성화 버튼 disable 클래스 추가 -->
+			<span class="btn next disable"><span class="spci"></span>다음 이미지</span>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

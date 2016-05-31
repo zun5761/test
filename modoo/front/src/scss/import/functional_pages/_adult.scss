@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* import/functional_pages/_adult.scss */
+.main .adult_area{
+  @if $DEVICE == 'pc'{
+    background-color:#fff;
+  }
+}
+
+.adult_area{
+  @if $DEVICE == 'pc'{
+    padding:206px 0;
+  } @else{
+    padding:106px 0;
+  }
+  text-align:center;
+
+  .ic_adult{
+    display:inline-block;
+    @if $DEVICE == 'pc'{
+      @include setSprite($sp_pc-adult_icon);
+      margin-bottom:28px;
+    } @else {
+      @include setSprite($sp_m-adult_icon);
+    }
+  }
+
+  .tx_adult{
+    @if $DEVICE == 'pc'{
+      margin-bottom:35px;font-size:26px;font-weight:600;line-height:38px;
+    } @else {
+      margin:16px 10px 27px;font-size:15px;line-height:21px;
+    }
+    color:#222;
+
+    strong{
+      @if $DEVICE == 'pc' {
+        font-weight:600;color:#f85d5d;
+      } @else{
+        font-weight:normal;color:#222
+      }
+    }
+  }
+
+  .btn_adult{
+    display:inline-block;height:30px;margin-right:1px;padding:0 11px;border:1px solid #e15656;background:#f85d5d;
+    @if $DEVICE == 'pc' {
+      font-size:12px;
+    } @else{
+      font-size:15px;
+    }
+    color:#fff;line-height:30px;
+  }
+
+  .btn_minor{
+    display:inline-block;height:30px;padding:0 11px;border:1px solid #ccc;
+    @if $DEVICE == 'pc' {
+      background-color:#fbfbfb;font-size:12px;
+    } @else{
+      background:#fff;font-size:15px;
+    }
+    color:#666;line-height:30px;
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "modoo-front-mobile_editor",
+  "version": "0.0.1",
+  "description": "modoo front & mobile editor",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "repository": {
+    "url": "http://gitlab2.uit.nhncorp.com/MODOO/front.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "eedaihee <daihee.ee@nhn.com>",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-csso": "^1.0.1",
+    "gulp-inject": "^3.0.0",
+    "gulp-md5-plus": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.5",
+    "gulp.spritesmith-multi": "^2.2.2",
+    "merge-stream": "^1.0.0",
+    "vinyl-buffer": "^1.0.0"
+  }
+}

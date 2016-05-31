@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* import/editor/_coach_mark.scss */
+.coach_wrap{
+	position:fixed;
+	z-index: 20010;
+	background:rgba(23, 23, 24, 0.90);
+
+	p{
+		color: transparent;
+		font-size: 1px;
+	}
+
+	.save_text{
+		position: absolute;
+		top: 8px;
+		right: 15px;
+		@include setSprite($sp_coach-img_save);
+		&:before{content:'\00a0'}
+	}
+
+	.editor_text{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include setSprite($sp_coach-img_editor);
+		margin: -95px 0 0 -90px;
+		&:before{content:'\00a0'}
+	}
+
+	.editor_text{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include setSprite($sp_coach-img_editor);
+		margin: -99px 0 0 -90px;
+		&:before{content:'\00a0'}
+	}
+
+	.page_text{
+		position: absolute;
+		top: 7px;
+		left: 5px;
+		@include setSprite($sp_coach-img_page);
+		&:before{content:'\00a0'}
+	}
+
+	.call_text{
+		position: absolute;
+		top: 53px;
+		right: 10px;
+		@include setSprite($sp_coach-img_call);
+		&:before{content:'\00a0'}
+	}
+
+	.add_text{
+		position: absolute;
+		bottom: 28px;
+		right: 15px;
+		@include setSprite($sp_coach-img_add);
+		&:before{content:'\00a0'}
+	}
+}

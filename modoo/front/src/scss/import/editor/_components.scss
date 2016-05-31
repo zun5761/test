@@ -1,0 +1,698 @@
+@charset "utf-8";
+
+/* import/editor/_components.scss */
+.editor .edit_text,
+.editor .edit_input{width:100%;padding:4px;border:1px solid transparent;border-radius:0;background-color:transparent;font-size:inherit;font-weight:inherit;color:inherit;line-height:inherit;-webkit-appearance:none;box-sizing:border-box}
+.editor .edit_text:focus,
+.editor .edit_input:focus{border:1px solid #01c73c}
+.ios.editor .edit_text{padding-left:1px}
+.editor .edit_text{-webkit-overflow-scrolling:touch}
+.editor input::-webkit-input-placeholder,
+.editor input:-moz-placeholder,
+.editor input::-moz-placeholder,
+.editor input:-ms-input-placeholder,
+.editor textarea::-webkit-input-placeholder,
+.editor textarea:-moz-placeholder,
+.editor textarea::-moz-placeholder,
+.editor textarea:-ms-input-placeholder{color:#c1c8cd}
+
+// 공통 - 텍스트 정렬
+.editor .align_l .edit_text,
+.editor .align_l .edit_input{text-align:left !important}
+.editor .align_c .edit_text,
+.editor .align_c .edit_input{text-align:center !important}
+.editor .align_r .edit_text,
+.editor .align_r .edit_input{text-align:right !important}
+
+// 텍스트 구성요소
+.editor .txt_box .txt_component ul li.status_edit{padding:0;text-indent:0}
+@each $color in $TextColor{
+	$i: index($TextColor, $color);
+	.editor .txt_component.color#{$i} p .edit_text{
+		color: $color;
+	}
+}
+@each $type in $ButtonType {
+	@each $number, $colors in $ThemeColor-title {
+		@each $color in $colors {
+			$i: index($colors, $color);
+			&.btn_#{$type}#{$number} .txt_box {
+				.color#{$i} h4,
+				.color#{$i} h4 .edit_input,
+				.color#{$i} h4 .edit_text {
+					color: $color;
+				}
+			}
+		}
+	}
+}
+
+// 이미지 구성요소
+// 이미지 구성요소 - 공통
+.editor .gallery_area ul li .gallery_img.selected{border:3px solid #01c73c;box-sizing:border-box}
+// 이미지 구성요소 - 공통
+.editor .gallery_area.type2 ul li .gallery_txt{height:134px}
+// 이미지 구성요소 - 좌우측이미지 + 텍스트
+.editor .gallery_area.type4 ul li .gallery_txt .txt_area{width:100%;box-sizing:border-box}
+.editor .gallery_area.type4 ul li.status_edit .gallery_txt h3{height:auto}
+.editor .gallery_area.type4 ul li.status_edit .gallery_txt p{max-height:44px}
+// 이미지 구성요소 - 이미지 + 텍스트오버레이
+.editor .gallery_area.type5 ul li .gallery_txt .edit_text{text-align:center}
+.editor .gallery_area.type5 ul li .gallery_txt .edit_text:focus{border:1px solid #01c73c;background:rgba(1,199,60,0.2)}
+.editor .gallery_area.type5 ul li .gallery_txt p .edit_text{color:#fff}
+.editor .gallery_area.type5 ul li.status_edit.h3 .gallery_txt h3 span{max-height:62px}
+// 이미지 구성요소 - 이미지 + 테두리있는텍스트오버레이
+.editor .gallery_area.type5.txt_ul ul li .gallery_txt h3{padding:10px 13px}
+.editor .gallery_area.type5.txt_ul ul li .gallery_txt h3 .edit_text{padding:10px 13px}
+.editor .gallery_area.type5.txt_ul ul li .gallery_txt h3 .edit_text:focus{border-color:transparent}
+.editor .gallery_area.type5.txt_ul ul li.status_edit.h3 .gallery_txt h3{min-height:33px;padding:0;background:rgba(1,199,60,0.2);line-height:0}
+.editor .gallery_area.type5.txt_ul ul li.status_edit.h3 .gallery_txt h3 .edit_text{background:none;line-height:28px}
+.editor .gallery_area.type5.txt_none ul li .gallery_txt h3{display:block}
+
+// 전환형 이미지 구성요소
+.editor .thmb_view .thmb{overflow:hidden;float:none;min-height:230px;background:#f3f3f3}
+.editor .thmb_view .thmb a > div{-webkit-filter:blur(10px);filter:blur(10px)}
+.editor .thmb_view .thmb .memo{
+	position:absolute;top:0;left:0;width:100%;height:100%;
+	@include backgroundOpacity(#fff, 0.7);
+}
+.editor .thmb_view .thmb .memo .txt{
+	position:absolute;top:50%;left:0;width:100%;margin-top:-23px;
+	font-family:AppleSDGothicNeo-Regular,sans-serif;font-size:17px;letter-spacing:-0.4px;line-height:23px;text-align:center;
+}
+.editor .lst_thmb ul{white-space:normal}
+.editor .lst_thmb ul li.selected .border{border-color:#07bc07}
+
+// 버튼 구성요소
+.editor .btn_wrap .edit_input{width:90%;height:22px;padding:4px 0;text-align:center;font-size:15px;color:#fff;line-height:17px}
+.editor .btn_wrap .aa{display:block;min-width:50%}
+.editor [class*="btn_theme_"] .edit_input{text-align:left}
+.editor [class*="btn_theme_"] .edit_input:focus,
+.editor [class*="btn_theme"] .edit_input:focus{border:1px solid #01c73c}
+
+// 표 구성요소
+.editor .view_table{min-height:100px}
+.editor .view_table table .edit_input{text-align:center;font-size:11px;color:#666;line-height:14px}
+.editor .view_table table th .edit_input{font-weight:bold}
+.editor .limit_area_table{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	background-color: rgba(245,245,245,.85);
+	font-size: 16px;
+	color: #222;
+	line-height:22px;
+	text-align: center;
+
+	&:before{
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		vertical-align: middle;
+		content: '';
+	}
+	p{
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+// 인덱스 구성요소
+.editor .lst_type4 .selected:before{position:absolute;left:0;right:0;bottom:0;top:0;border:4px solid #07bc07;content:'';z-index:100;background-color:transparent}
+.editor .lst_type4 li .g_tx2 h3{height:17px}
+.editor .lst_type4 li .g_tx2 h3 .edit_input{font-size:16px;font-weight:bold}
+.editor .lst_type4 li .g_tx2 .edit_text{font-size:14px;color:#676767}
+.editor .lst_index .tile a > div{position:relative}
+.editor .lst_index .tile a .selected:before{position:absolute;left:0;right:0;bottom:0;top:0;border:4px solid #07bc07;content:'';z-index:100;background-color:transparent}
+.editor .lst_index .edit_text{text-shadow: -1px 0 1px rgba(0, 0, 0, 0.2), 1px 0 1px rgba(0, 0, 0, 0.2), 0 -1px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.2);font-size:15px;color: #fff}
+
+// 구분선 구성요소
+.editor .division_line .space{height:20px}
+
+// 푸터 구성요소
+.editor .adr_area{padding:0;padding-bottom:23px}
+.editor .adr_area .btn_set{display:block;padding:15px 15px 13px}
+.editor .adr_area .btn_set .set_txt,.editor .adr_area .btn_set .bar{display:none}
+.editor .adr_area .link_personal{font-weight:600}
+.editor .adr_area .link_personal .ico_arrow{
+	@include setSprite($sp_m-ico_arrow_right);
+	display:inline-block;
+	margin-left:4px;
+}
+.editor .adr_area.info_none{
+	padding:15px;
+
+	.btn_set{
+		padding:0;
+	}
+
+	.set_txt{
+		display:block;
+	}
+}
+
+// 버튼 수정옵션 메뉴
+.editor .btn_menu{display:none;position:fixed;left:0;bottom:0;width:100%;z-index:100000}
+.editor .btn_menu.open{display:block}
+.editor .btn_menu a{display:block;height:50px;border-bottom:1px solid #dadfe3;background-color:#f2f3f5;text-align:center;font-size:17px;color:#222;line-height:50px}
+.editor .btn_menu a:last-child{background-color:#dadfe3;color:#868890}
+
+// 버튼 구성요소 수정 속성
+.editor.option_open .card{z-index:inherit}
+.editor.option_open .layer_dim{display:block}
+.editor [class*=btn_theme] >.selected{z-index:10010}
+.editor .link_section{display:none;position:fixed;left:0;top:50%;width:100%;margin-top:-105px; z-index:100100}
+.editor .link_section.open{display:block}
+.editor .link_section .type_area{position:relative;width:312px;margin:0 auto;background-color:#fff}
+.editor .link_section .lst{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flex;
+	display:flex;
+	padding:15px 10px 17px;
+}
+.editor .link_section .lst > li{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flex;
+	display:flex;
+	-webkit-box-flex:1;
+	-webkit-flex:auto;
+	flex:auto;
+	-webkit-box-orient:vertical;
+	-webkit-flex-flow:column;
+	flex-flow:column;
+	position:relative;
+	width:100%;text-align:center;white-space:nowrap;
+}
+.editor .lst .type{display:block;text-align:center}
+.editor .lst .type .txt{font-size:11px;color:#666;letter-spacing:-0.05em}
+.editor .lst .type .ico{display:block;position:relative;width:40px;height:40px;margin:0 auto 5px;border:1px solid rgba(0,0,0,.07);border-radius:25px;background-color:#dadfe3;box-sizing:border-box}
+.editor .lst .type .ico:before{position:absolute;left:50%;top:50%;content:''}
+.editor .lst .page:before{
+	@include setSprite($sp_editor-btn_ico_page, both);
+}
+.editor .lst .tel:before{
+	@include setSprite($sp_editor-btn_ico_tel, both);
+}
+.editor .lst .sms:before{
+	@include setSprite($sp_editor-btn_ico_sms, both);
+}
+.editor .lst .email:before{
+	@include setSprite($sp_editor-btn_ico_email, both);
+}
+.editor .lst .link:before{
+	@include setSprite($sp_editor-btn_ico_link, both);
+}
+.editor .lst .top:before{
+	@include setSprite($sp_editor-btn_ico_top, both);
+}
+.editor .form_area{display:none;position:relative;height:40px;margin:0 14px 15px;border:1px solid #dadfe3;border-radius:2px;line-height:40px;box-sizing:border-box;vertical-align:top}
+.editor .form_area.open{display:block}
+.editor .form_area.page:after{
+	@include setSprite($sp_editor-btn_ico_arrow);
+	position:absolute;right:11px;top:11px;content:'';
+}
+.editor .form_area .page_select{width:100%;height:38px;border:0;text-indent:7px;font-size:16px;font-family:#{$F-light};background:none;-webkit-appearance:none;color:#222;box-sizing:border-box}
+.editor .form_area .input_txt{width:100%;height:38px;border:0;border-radius:0;padding:10px 9px;font-size:16px;font-family:#{$F-light};line-height:16px;color:#222;-webkit-appearance:none;box-sizing:border-box;vertical-align:top}
+.editor .form_area.phone {height:65px;border:0 none}
+.editor .form_area.phone .input_txt {border:1px solid #dadfe3}
+.editor .form_area .dsc_text {display:inline-block;margin-top:6px;font-size:13px;color:#999;line-height:15px;text-decoration:underline;vertical-align:top}
+.editor .form_area .dsc_text .ico_arr {display:inline-block;width:0;height:0;margin-left:3px;border:4px solid;border-color:transparent transparent transparent #999}
+.editor .form_area .input_txt:disabled{background-color:#ccc}
+.editor .form_area .select{display:inline-block;position:relative;width:143px;height:40px;padding:0 30px 0 0;margin-left:-5px;border:1px solid #dadfe3;border-radius:0 2px 2px 0;box-sizing:border-box}
+.editor .form_area .select .email_area .input_txt{width:89px;height:38px;border:0;padding:0}
+.editor .form_area .btn_select{position:absolute;right:0;top:0;width:30px;border-left:1px solid #dadfe3;height:100%;font-size:16px;color:#222;line-height:39px}
+.editor .form_area .btn_select .ico_arrow{
+	@include setSprite($sp_editor-btn_select_down, both);
+	position:absolute;left:50%;top:50%;
+}
+.editor .form_area .select.on{border-radius:0 2px 0 0}
+.editor .form_area .select.on .btn_select .ico_arrow{
+	@include setSprite($sp_editor-btn_select_up, both);
+}
+.editor .select .txt{margin:0 3px 0 4px}
+.editor .form_area .btn_select:hover,.editor .form_area .btn_select:visited{text-decoration:none}
+.editor .option_lst{display:none;position:absolute;top:39px;left:-1px;width:141px;border:1px solid #dadfe3;border-radius:0 0 2px 2px;background-color:#fff;z-index:10}
+.editor .form_area .select.on .option_lst{display:block}
+.editor .option_lst li{width:101px;height:38px}
+.editor .option_lst li a{display:block;width:132px;height:38px;padding:0 0 0 9px;font-size:16px;color:#222;text-decoration:none;line-height:38px}
+.editor .option_lst li.selected a{background-color:#dadfe3;text-decoration:none}
+.editor .form_area.email{border:0;white-space:nowrap}
+.editor .form_area.email .input_txt{display:inline-block;width:143px;height:40px;border:1px solid #dadfe3;border-radius:2px 0  0 2px;vertical-align:top}
+
+// 버튼 아이콘
+.editor .ico_section{display:none;position:fixed;left:0;bottom:0;width:100%;background-color:#fff;z-index:100000}
+.editor .ico_section.open{display:block}
+.editor .ico_section .lst{margin:10px 11px 11px}
+.editor .ico_section .lst:after{display:block;clear:both;content:''}
+.editor .ico_section .lst>li{float:left;width:14.285%;margin:2px 0 1px}
+.editor .ico_section .lst>li:last-child{margin-top:0}
+.editor .ico_section .lst .type:last-child{text-align:center;font-size:12px;line-height:14px}
+.editor .ico_section .lst .type:last-child .ico{padding-top:8px}
+.editor .ico_section .lst .ico{display:block;position:relative;width:42px;height:42px;margin:0 auto;border:0;background-color:transparent}
+.editor .ico_section .lst .ico:before{position:absolute;left:50%;top:50%;content:''}
+.editor .ico_section .selected .type:last-child{color:#fff}
+.editor .ico_section .selected .ico{border:1px solid rgba(0,0,0,.07);border-radius:25px}
+.editor .ico_section .selected .ico:before{border-radius:25px;background-color:transparent}
+
+
+//  아이콘
+.editor{
+	.lst{
+		.ic:before{
+			@include setSprite($sp_m_button-editor_button_set, both);
+			&:before{content:'\00a0';}
+		}
+		.ic2:before{
+			@include setSprite($sp_m_button-editor_button_set2, both);
+			&:before{content:'\00a0';}
+		}
+		.ic3:before{
+			@include setSprite($sp_m_button-editor_button_set3, both);
+			&:before{content:'\00a0';}
+		}
+		.ic4:before{
+			@include setSprite($sp_m_button-editor_button_set4, both);
+			&:before{content:'\00a0';}
+		}
+		.ic5:before{
+			@include setSprite($sp_m_button-editor_button_set5, both);
+			&:before{content:'\00a0';}
+		}
+		.ic6:before{
+			@include setSprite($sp_m_button-editor_button_set6, both);
+			&:before{content:'\00a0';}
+		}
+		.ic7:before{
+			@include setSprite($sp_m_button-editor_button_set7, both);
+			&:before{content:'\00a0';}
+		}
+		.ic8:before{
+			@include setSprite($sp_m_button-editor_button_set8, both);
+			&:before{content:'\00a0';}
+		}
+		.ic9:before{
+			@include setSprite($sp_m_button-editor_button_set9, both);
+			&:before{content:'\00a0';}
+		}
+		.ic10:before{
+			@include setSprite($sp_m_button-editor_button_set10, both);
+			&:before{content:'\00a0';}
+		}
+		.ic11:before{
+			@include setSprite($sp_m_button-editor_button_set11, both);
+			&:before{content:'\00a0';}
+		}
+		.ic12:before{
+			@include setSprite($sp_m_button-editor_button_set12, both);
+			&:before{content:'\00a0';}
+		}
+		.ic13:before{
+			@include setSprite($sp_m_button-editor_button_set13, both);
+			&:before{content:'\00a0';}
+		}
+		.ic14:before{
+			@include setSprite($sp_m_button-editor_button_set14, both);
+			&:before{content:'\00a0';}
+		}
+		.ic15:before{
+			@include setSprite($sp_m_button-editor_button_set15, both);
+			&:before{content:'\00a0';}
+		}
+		.ic16:before{
+			@include setSprite($sp_m_button-editor_button_set16, both);
+			&:before{content:'\00a0';}
+		}
+		.ic17:before{
+			@include setSprite($sp_m_button-editor_button_set17, both);
+			&:before{content:'\00a0';}
+		}
+		.ic18:before{
+			@include setSprite($sp_m_button-editor_button_set18, both);
+			&:before{content:'\00a0';}
+		}
+		.ic19:before{
+			@include setSprite($sp_m_button-editor_button_set19, both);
+			&:before{content:'\00a0';}
+		}
+		.ic20:before{
+			@include setSprite($sp_m_button-editor_button_set20, both);
+			&:before{content:'\00a0';}
+		}
+		.ic21:before{
+			@include setSprite($sp_m_button-editor_button_set21, both);
+			&:before{content:'\00a0';}
+		}
+		.ic22:before{
+			@include setSprite($sp_m_button-editor_button_set22, both);
+			&:before{content:'\00a0';}
+		}
+		.ic23:before{
+			@include setSprite($sp_m_button-editor_button_set23, both);
+			&:before{content:'\00a0';}
+		}
+		.ic24:before{
+			@include setSprite($sp_m_button-editor_button_set24, both);
+			&:before{content:'\00a0';}
+		}
+		.ic25:before{
+			@include setSprite($sp_m_button-editor_button_set25, both);
+			&:before{content:'\00a0';}
+		}
+		.ic26:before{
+			@include setSprite($sp_m_button-editor_button_set26, both);
+			&:before{content:'\00a0';}
+		}
+		.ic27:before{
+			@include setSprite($sp_m_button-editor_button_set27, both);
+			&:before{content:'\00a0';}
+		}
+		.ic28:before{
+			@include setSprite($sp_m_button-editor_button_set28, both);
+			&:before{content:'\00a0';}
+		}
+		.ic29:before{
+			@include setSprite($sp_m_button-editor_button_set29, both);
+			&:before{content:'\00a0';}
+		}
+		.ic30:before{
+			@include setSprite($sp_m_button-editor_button_set30, both);
+			&:before{content:'\00a0';}
+		}
+		.ic31:before{
+			@include setSprite($sp_m_button-editor_button_set31, both);
+			&:before{content:'\00a0';}
+		}
+		.ic32:before{
+			@include setSprite($sp_m_button-editor_button_set32, both);
+			&:before{content:'\00a0';}
+		}
+		.ic33:before{
+			@include setSprite($sp_m_button-editor_button_set33, both);
+			&:before{content:'\00a0';}
+		}
+		.ic34:before{
+			@include setSprite($sp_m_button-editor_button_set34, both);
+			&:before{content:'\00a0';}
+		}
+		.ic35:before{
+			@include setSprite($sp_m_button-editor_button_set35, both);
+			&:before{content:'\00a0';}
+		}
+		.ic36:before{
+			@include setSprite($sp_m_button-editor_button_set36, both);
+			&:before{content:'\00a0';}
+		}
+		.ic37:before{
+			@include setSprite($sp_m_button-editor_button_set37, both);
+			&:before{content:'\00a0';}
+		}
+		.ic38:before{
+			@include setSprite($sp_m_button-editor_button_set38, both);
+			&:before{content:'\00a0';}
+		}
+		.ic39:before{
+			@include setSprite($sp_m_button-editor_button_set39, both);
+			&:before{content:'\00a0';}
+		}
+		.ic40:before{
+			@include setSprite($sp_m_button-editor_button_set40, both);
+			&:before{content:'\00a0';}
+		}
+		.ic41:before{
+			@include setSprite($sp_m_button-editor_button_set41, both);
+			&:before{content:'\00a0';}
+		}
+		.ic42:before{
+			@include setSprite($sp_m_button-editor_button_set42, both);
+			&:before{content:'\00a0';}
+		}
+	}
+}
+
+//  아이콘
+.editor{
+	.selected{
+		.ic:before{
+			@include setSprite($sp_m_button-editor_button_line, both);
+			&:before{content:'\00a0';}
+		}
+		.ic2:before{
+			@include setSprite($sp_m_button-editor_button_line2, both);
+			&:before{content:'\00a0';}
+		}
+		.ic3:before{
+			@include setSprite($sp_m_button-editor_button_line3, both);
+			&:before{content:'\00a0';}
+		}
+		.ic4:before{
+			@include setSprite($sp_m_button-editor_button_line4, both);
+			&:before{content:'\00a0';}
+		}
+		.ic5:before{
+			@include setSprite($sp_m_button-editor_button_line5, both);
+			&:before{content:'\00a0';}
+		}
+		.ic6:before{
+			@include setSprite($sp_m_button-editor_button_line6, both);
+			&:before{content:'\00a0';}
+		}
+		.ic7:before{
+			@include setSprite($sp_m_button-editor_button_line7, both);
+			&:before{content:'\00a0';}
+		}
+		.ic8:before{
+			@include setSprite($sp_m_button-editor_button_line8, both);
+			&:before{content:'\00a0';}
+		}
+		.ic9:before{
+			@include setSprite($sp_m_button-editor_button_line9, both);
+			&:before{content:'\00a0';}
+		}
+		.ic10:before{
+			@include setSprite($sp_m_button-editor_button_line10, both);
+			&:before{content:'\00a0';}
+		}
+		.ic11:before{
+			@include setSprite($sp_m_button-editor_button_line11, both);
+			&:before{content:'\00a0';}
+		}
+		.ic12:before{
+			@include setSprite($sp_m_button-editor_button_line12, both);
+			&:before{content:'\00a0';}
+		}
+		.ic13:before{
+			@include setSprite($sp_m_button-editor_button_line13, both);
+			&:before{content:'\00a0';}
+		}
+		.ic14:before{
+			@include setSprite($sp_m_button-editor_button_line14, both);
+			&:before{content:'\00a0';}
+		}
+		.ic15:before{
+			@include setSprite($sp_m_button-editor_button_line15, both);
+			&:before{content:'\00a0';}
+		}
+		.ic16:before{
+			@include setSprite($sp_m_button-editor_button_line16, both);
+			&:before{content:'\00a0';}
+		}
+		.ic17:before{
+			@include setSprite($sp_m_button-editor_button_line17, both);
+			&:before{content:'\00a0';}
+		}
+		.ic18:before{
+			@include setSprite($sp_m_button-editor_button_line18, both);
+			&:before{content:'\00a0';}
+		}
+		.ic19:before{
+			@include setSprite($sp_m_button-editor_button_line19, both);
+			&:before{content:'\00a0';}
+		}
+		.ic20:before{
+			@include setSprite($sp_m_button-editor_button_line20, both);
+			&:before{content:'\00a0';}
+		}
+		.ic21:before{
+			@include setSprite($sp_m_button-editor_button_line21, both);
+			&:before{content:'\00a0';}
+		}
+		.ic22:before{
+			@include setSprite($sp_m_button-editor_button_line22, both);
+			&:before{content:'\00a0';}
+		}
+		.ic23:before{
+			@include setSprite($sp_m_button-editor_button_line23, both);
+			&:before{content:'\00a0';}
+		}
+		.ic24:before{
+			@include setSprite($sp_m_button-editor_button_line24, both);
+			&:before{content:'\00a0';}
+		}
+		.ic25:before{
+			@include setSprite($sp_m_button-editor_button_line25, both);
+			&:before{content:'\00a0';}
+		}
+		.ic26:before{
+			@include setSprite($sp_m_button-editor_button_line26, both);
+			&:before{content:'\00a0';}
+		}
+		.ic27:before{
+			@include setSprite($sp_m_button-editor_button_line27, both);
+			&:before{content:'\00a0';}
+		}
+		.ic28:before{
+			@include setSprite($sp_m_button-editor_button_line28, both);
+			&:before{content:'\00a0';}
+		}
+		.ic29:before{
+			@include setSprite($sp_m_button-editor_button_line29, both);
+			&:before{content:'\00a0';}
+		}
+		.ic30:before{
+			@include setSprite($sp_m_button-editor_button_line30, both);
+			&:before{content:'\00a0';}
+		}
+		.ic31:before{
+			@include setSprite($sp_m_button-editor_button_line31, both);
+			&:before{content:'\00a0';}
+		}
+		.ic32:before{
+			@include setSprite($sp_m_button-editor_button_line32, both);
+			&:before{content:'\00a0';}
+		}
+		.ic33:before{
+			@include setSprite($sp_m_button-editor_button_line33, both);
+			&:before{content:'\00a0';}
+		}
+		.ic34:before{
+			@include setSprite($sp_m_button-editor_button_line34, both);
+			&:before{content:'\00a0';}
+		}
+		.ic35:before{
+			@include setSprite($sp_m_button-editor_button_line35, both);
+			&:before{content:'\00a0';}
+		}
+		.ic36:before{
+			@include setSprite($sp_m_button-editor_button_line36, both);
+			&:before{content:'\00a0';}
+		}
+		.ic37:before{
+			@include setSprite($sp_m_button-editor_button_line37, both);
+			&:before{content:'\00a0';}
+		}
+		.ic38:before{
+			@include setSprite($sp_m_button-editor_button_line38, both);
+			&:before{content:'\00a0';}
+		}
+		.ic39:before{
+			@include setSprite($sp_m_button-editor_button_line39, both);
+			&:before{content:'\00a0';}
+		}
+		.ic40:before{
+			@include setSprite($sp_m_button-editor_button_line40, both);
+			&:before{content:'\00a0';}
+		}
+		.ic41:before{
+			@include setSprite($sp_m_button-editor_button_line41, both);
+			&:before{content:'\00a0';}
+		}
+		.ic42:before{
+			@include setSprite($sp_m_button-editor_button_line42, both);
+			&:before{content:'\00a0';}
+		}
+	}
+}
+
+// 모바일 에디터 구성요소 수정 옵션
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i}.editor {
+			.lst .selected .ico{
+				background-color: $color;
+			}
+			.map_area .map .btn{
+				background-color: $color;
+			}
+		}
+	}
+}
+
+// 동영상 구성요소 수정 관련 레이어
+.editor .edit_movie{background:#fff}
+.editor .edit_movie .input_box{padding:19px 14px}
+.editor .edit_movie .input_box .edit_text{height:69px;border:1px solid #dadfe3;border-radius:2px;font-size:15px;letter-spacing:-0.25px;line-height:15px}
+
+// 지도 구성요소 수정
+.editor .map_area .map.selected{border:3px solid #01c73c;box-sizing:border-box}
+.editor .map_area .map .btn{position:absolute;top:10px;right:10px;padding:0 10px;font-size:15px;line-height:36px;color:#fff;letter-spacing:-0.5px}
+.editor .map_area .map .btn:after{position:absolute;left:0;top:0;bottom:0;right:0;border:1px solid rgba(0,0,0,0.1);content:''}
+.editor .map_area .map_adr{padding:13px 61px 11px 15px}
+.editor .map_area .map_adr .edit_input{padding:3px;font-family:AppleSDGothicNeo-Medium,sans-serif;font-size:17px;color:#fff;line-height:22px}
+.editor .map_area .map_adr .edit_text{padding:3px;font-size:15px;color:rgba(255, 255, 255, 0.5);line-height:20px}
+.editor .map_area .map_adr .edit_input:focus,
+.editor .map_area .map_adr .edit_text:focus{border-color:rgba(255,255,255,0.4)}
+
+// 지도 구성요소 수정 관련 레이어
+.editor .edit_map{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:101000;width:100%;background:#f9fbfd}
+.editor .edit_map .search_box_wrap{position:fixed;top:0;left:0;width:100%;height:46px;border-bottom:1px solid #c9ced1;background:#fff}
+.editor .edit_map .search_box{position:relative;margin-right:46px;padding-right:50px}
+.editor .edit_map .search_box input{width:100%;height:46px;padding:15px 15px 14px;border:none;font-size:17px;color:#222;line-height:17px;box-sizing:border-box;-webkit-appearance:none}
+.editor .edit_map .search_box .btn_search{overflow:hidden;position:absolute;top:0;right:0;width:50px;height:46px}
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i}.editor {
+			.edit_map .search_box .btn_search:before{
+				position:absolute;left:50%;top:50%;
+				@include setSprite($sp_editor-btn_srch, both);
+				background-color: $color;
+				content:'\00a0';
+			}
+		}
+	}
+}
+.editor .edit_map .result_list_wrap{overflow-y:auto;width:100%;padding:47px 0 52px;box-sizing:border-box}
+.editor .edit_map .count{padding:0 12px;background:#fafafa;font-size:16px;line-height:40px}
+.editor .edit_map .count em{font-family:HelveticaNeue-Medium,sans-serif}
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i}.editor {
+			.edit_map .count em {
+				color: $color;
+			}
+		}
+	}
+}
+.editor .edit_map .result_list li{border-top:1px solid #f2f2f2;background:#fff}
+.editor .edit_map .result_list li a{display:block;padding:12px 20px 12px}
+.editor .edit_map .result_list li .tit{font-family:HelveticaNeue-Medium,AppleSDGothicNeo-Medium,sans-serif;font-size:14px;color:#313131;line-height:18px}
+.editor .edit_map .result_list li .addr{margin-top:2px;font-family:HelveticaNeue-Light,AppleSDGothicNeo-Regular,sans-serif;font-size:14px;color:#999;line-height:18px}
+.editor .edit_map .result_list li.selected{background:#edfbeb}
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i}.editor {
+			.edit_map .result_list li.selected .tit {
+				color: $color;
+			}
+		}
+	}
+}
+.editor .edit_map .result_list_wrap .no_data{position:absolute;top:50%;left:0;width:100%;margin-top:-80px;padding-top:86px}
+.editor .edit_map .result_list_wrap .no_data:after{
+	position:absolute;top:0;left:50%;
+	@include setSprite($sp_m-board_ico_empty, center);
+	content:'\00a0';
+}
+.editor .edit_map .result_list_wrap .no_data p{margin-top:5px;font-size:15px;line-height:21px;color:#222;text-align:center}
+.editor .edit_map .result_list_wrap .no_data p em{color:#222}
+.editor .edit_map .result_list_wrap .no_data p strong{font-weight:bold;font-size:17px}
+.editor .edit_map .btn_area{position:fixed;bottom:0;left:0;width:100%;height:52px}
+.editor .edit_map .layer_close{display:block;position:fixed;top:0;right:0;width:45px;height:46px;border-left:1px solid #ededed}

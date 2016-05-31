@@ -1,0 +1,17 @@
+{
+  "name": "modoo-front-mobile_editor",
+  "description": "modoo front & mobile editor",
+  "authors": "eedaihee <daihee.ee@nhn.com>",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.12.0",
+    "jquery-selectric": "^1.9.5"
+  }
+}

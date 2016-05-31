@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>모바일에디터 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/editor.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body class="editor">
+<div id="wrap" class="edit_total">
+  <div class="et_header total">
+    <h2 class="title"><span class="blind">모바일에디터</span></h2>
+    <a href="javascript:alert('저장 확인 레이어 및 홈사이트 내 모두 리스트로 이동')" class="btn btn_back"><span class="blind">모바일에디터 종료</span></a>
+    <a href="javascript:alert('저장 확인 레이어')" class="btn_save"><span class="blind">저장</span></a>
+  </div>
+  <div class="et_contents">
+    <div class="total">
+      <!-- 데이터 없을 때 -->
+      <div class="empty_guide_total" style="display:none">
+      	<div class="empty_guide">
+      		<span class="blind">업종에 맞는 템플릿을 이용해 보세요<br>사진과 글을 넣으면 끝!<br>지금 바로 만들 수 있어요</span>
+      	</div>
+      </div>
+      <!-- //데이터 없을 때 -->
+
+	<div class="page-list">
+		<ul class="pages">
+		<!-- [D] 메인카드 maincard 클래스 추가 -->
+		<!-- [D] 선택된 리스트 selected 클래스 추가 -->
+		<li class="page maincard selected">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page selected">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<!-- [D] 미노출 페이지 disabled  클래스 추가 -->
+		<li class="page disabled">
+			<div class="list_area">
+				<a href="" class="list_thumb"><img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page disabled selected">
+			<div class="list_area">
+				<a href="" class="list_thumb"><img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<!-- [D] 같은 메뉴는 group 클래스 추가 -->
+		<li class="page group">
+			<div class="list_area">
+				<a href="" class="list_thumb"><img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<!-- [D] 같은 메뉴는 group 클래스 추가 -->
+		<li class="page group">
+			<div class="list_area">
+				<!-- [D] 더미이미지 관리자게시판 admin class 추가 -->
+				<a href="" class="list_thumb admin"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<!-- [D] 같은 메뉴는 group 클래스 추가 -->
+		<li class="page group">
+		<div class="list_area">
+			<!-- [D] 더미이미지 스토어 store class 추가 -->
+			<a href="" class="list_thumb store"></a>
+			<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+			<span class="page_nav">
+				<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+			</span>
+			<a href="" class="top_menu">메뉴</a>
+		</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<!-- [D] 더미이미지 스케쥴 schedule class 추가 -->
+				<a href="" class="list_thumb schedule"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<!-- [D] 더미이미지 쿠폰 coupon class 추가 -->
+				<a href="" class="list_thumb coupon"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<!-- [D] 더미이미지 일반게시판 board class 추가 -->
+				<a href="" class="list_thumb board"></a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		<li class="page">
+			<div class="list_area">
+				<a href="" class="list_thumb">
+					<img src="http://dev.ui.naver.com/tmp/?190x286_ccpInteriorY_y_FFFFFF_100" alt="임시 이미지">
+				</a>
+				<span class="btn_area"><a href="" class="btn_edit">수정</a></span>
+				<span class="page_nav">
+					<a href="" class="prev">이전</a><a href="" class="next">다음</a>
+				</span>
+				<a href="" class="top_menu">메뉴</a>
+			</div>
+		</li>
+		</ul>
+	</div>
+	<!-- 테마색상선택 레이어 -->
+	<!-- [D] 선택된 레이어 open 클래스 추가 -->
+	<div class="edit_layer color_set">
+		<div class="area">
+			<div class="layer_title">디자인테마선택</div>
+			<ul class="lst_color">
+				<li class="selected"><a href="" class="btn_set1">일반_블루</a></li>
+				<li><a href="" class="btn_set2">일반_핑크</a></li>
+				<li><a href="" class="btn_set3">일반_초록</a></li>
+				<li><a href="" class="btn_set4">일반_올리브</a></li>
+				<li><a href="" class="btn_set5">일반_갈색</a></li>
+				<li><a href="" class="btn_set6">일반_퍼플</a></li>
+				<li><a href="" class="btn_set7">일반_모노</a></li>
+				<li><a href="" class="btn_set8">일반_빨강</a></li>
+				<li><a href="" class="btn_set9">일반_노랑</a></li>
+			</ul>
+			<!-- [D] 라인형 테마선택 클래스 theme_line 추가-->
+			<ul class="lst_color theme_line">
+				<li class="selected"><a href="" title="라인_블루" class="btn_line1">라인_블루</a></li>
+				<li><a href="" class="btn_line2">라인_핑크</a></li>
+				<li><a href="" class="btn_line3">라인_초록</a></li>
+				<li><a href="" class="btn_line4">라인_올리브</a></li>
+				<li><a href="" class="btn_line5">라인_갈색</a></li>
+				<li><a href="" class="btn_line6">라인_퍼플</a></li>
+				<li><a href="" class="btn_line7">라인_모노</a></li>
+				<li><a href="" class="btn_line8">라인_빨강</a></li>
+				<li><a href="" class="btn_line9">라인_노랑</a></li>
+			</ul>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="confirm">확인</a></span>
+			</div>
+			<a href="" class="layer_close">닫기</a>
+		</div>
+	</div>
+	<!-- //테마색상선택 레이어 -->
+
+	<!-- 페이지 추가 레이어 -->
+	<!-- [D] 선택된 레이어 open 클래스 추가 -->
+	<div class="edit_layer page_set">
+		<div class="area">
+			<div class="layer_title">새페이지추가</div>
+			<ul class="lst_page">
+				<!-- [D] 선택된 li에 .selected 추가 -->
+				<li class="selected"><a href=""><span>이미지<br>+<br>텍스트</span></a></li>
+				<li><a href=""><span>이미지<br>+<br>텍스트</span></a></li>
+				<li><a href=""><span>X텍스트</span></a></li>
+				<li><a href=""><span>빈페이지</span></a></li>
+				<li><a href=""><span>갤러리</span></a></li>
+				<li><a href=""><span>갤러리</span></a></li>
+				<li><a href=""><span>갤러리</span></a></li>
+				<li><a href=""><span>지도</span></a></li>
+				<li><a href=""><span>게시판</span></a></li>
+				<li><a href=""><span>게시판<br>(관리자)</span></a></li>
+				<li><a href=""><span>메인</span></a></li>
+				<li><a href=""><span class="ico_new">NEW</span><span>스케줄<br>(캘린더)</span></a></li>
+			</ul>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="confirm">확인</a></span>
+			</div>
+			<a href="" class="layer_close">닫기</a>
+		</div>
+	</div>
+	<!-- //페이지 추가 레이어 -->
+
+	<!-- 템플릿 추가 레이어 -->
+	<!-- [D] 선택된 레이어 open 클래스 추가 -->
+	<div class="edit_layer template_set">
+		<div class="area">
+			<div class="layer_title">템플릿선택</div>
+			<!-- [D] 디바이스별 높이값 -->
+			<ul class="lst_template" style="height:395px">
+				<!-- [D] 선택된 리스트 selected 추가 -->
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_simple.png" width="96" height="96" alt="단순템플릿">
+						<span class="category_name"><img src="img/editor_page/category_name_simple.png" width="65" height="63" alt="단순템플릿"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_nail.png" width="96" height="96" alt="네일">
+						<span class="category_name"><img src="img/editor_page/category_name_nail.png" width="31" height="40" alt="네일"></span>
+					</a>
+				</li>
+				<li class="selected">
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_leisure.png" width="96" height="96" alt="레저">
+						<span class="category_name"><img src="img/editor_page/category_name_leisure.png" width="31" height="39" alt="레저"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_beauty.png" width="96" height="96" alt="미용/스파">
+						<span class="category_name"><img src="img/editor_page/category_name_beauty.png" width="48" height="41" alt="미용/스파"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_delivery.png" width="96" height="96" alt="배달음식">
+						<span class="category_name"><img src="img/editor_page/category_name_delivery.png" width="44" height="41" alt="배달음식"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_law.png" width="96" height="96" alt="법무/세무/회계">
+						<span class="category_name"><img src="img/editor_page/category_name_law.png" width="72" height="40" alt="법무/세무/회계"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_hospital.png" width="96" height="96" alt="병원/의원">
+						<span class="category_name"><img src="img/editor_page/category_name_hospital.png" width="47" height="40" alt="병원/의원"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_realestate.png" width="96" height="96" alt="부동산중개">
+						<span class="category_name"><img src="img/editor_page/category_name_realestate.png" width="55" height="40" alt="부동산중개"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_bakery.png" width="96" height="96" alt="빵집/제과점">
+						<span class="category_name"><img src="img/editor_page/category_name_bakery.png" width="58" height="39" alt="빵집/제과점"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_camping.png" width="96" height="96" alt="숙박/캠핑장">
+						<span class="category_name"><img src="img/editor_page/category_name_camping.png" width="59" height="39" alt="숙박/캠핑장"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_super.png" width="96" height="96" alt="슈퍼/마트">
+						<span class="category_name"><img src="img/editor_page/category_name_super.png" width="48" height="40" alt="슈퍼/마트"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_sport.png" width="96" height="96" alt="스포츠/헬스">
+						<span class="category_name"><img src="img/editor_page/category_name_sport.png" width="59" height="37" alt="스포츠/헬스"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_pharmacy.png" width="96" height="96" alt="약국">
+						<span class="category_name"><img src="img/editor_page/category_name_pharmacy.png" width="24" height="41" alt="약국"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_rental.png" width="96" height="96" alt="운송/렌터가">
+						<span class="category_name"><img src="img/editor_page/category_name_rental.png" width="60" height="38" alt="운송/렌터가"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_cafe.png" width="96" height="96" alt="음식점/카페">
+						<span class="category_name"><img src="img/editor_page/category_name_cafe.png" width="59" height="40" alt="음식점/카페"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_move.png" width="96" height="96" alt="이사">
+						<span class="category_name"><img src="img/editor_page/category_name_move.png" width="31" height="40" alt="이사"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_interior.png" width="96" height="96" alt="인테리어">
+						<span class="category_name"><img src="img/editor_page/category_name_interior.png" width="44" height="41" alt="인테리어"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_cleansing.png" width="96" height="96" alt="청소">
+						<span class="category_name"><img src="img/editor_page/category_name_cleansing.png" width="28" height="40" alt="청소"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_studio.png" width="96" height="96" alt="포토스튜디오">
+						<span class="category_name"><img src="img/editor_page/category_name_studio.png" width="66" height="38" alt="포토스튜디오"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_academy.png" width="96" height="96" alt="학원">
+						<span class="category_name"><img src="img/editor_page/category_name_academy.png" width="30" height="40" alt="학원"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_makeup.png" width="96" height="96" alt="헤어/메이크업">
+						<span class="category_name"><img src="img/editor_page/category_name_makeup.png" width="69" height="40" alt="헤어/메이크업"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_workroom.png" width="96" height="96" alt="화랑/출판/공방">
+						<span class="category_name"><img src="img/editor_page/category_name_workroom.png" width="74" height="40" alt="화랑/출판/공방"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_public.png" width="96" height="96" alt="공공기관">
+						<span class="category_name"><img src="img/editor_page/category_name_public.png" width="45" height="40" alt="공공기관"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_gallery.png" width="96" height="96" alt="미술관/박물관">
+						<span class="category_name"><img src="img/editor_page/category_name_gallery.png" width="70" height="40" alt="미술관/박물관"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_theater.png" width="96" height="96" alt="소극장/공연장">
+						<span class="category_name"><img src="img/editor_page/category_name_theater.png" width="70" height="39" alt="소극장/공연장"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_market.png" width="96" height="96" alt="시장거리">
+						<span class="category_name"><img src="img/editor_page/category_name_market.png" width="47" height="40" alt="시장거리"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_kindergarten.png" width="96" height="96" alt="어린이집/유치원">
+						<span class="category_name"><img src="img/editor_page/category_name_kindergarten.png" width="81" height="41" alt="어린이집/유치원"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_policy.png" width="96" height="96" alt="정책/홍보">
+						<span class="category_name"><img src="img/editor_page/category_name_policy.png" width="48" height="40" alt="정책/홍보"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_finance.png" width="96" height="96" alt="금융/보험">
+						<span class="category_name"><img src="img/editor_page/category_name_finance.png" width="47" height="40" alt="금융/보험"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_designer.png" width="96" height="96" alt="디자이너">
+						<span class="category_name"><img src="img/editor_page/category_name_designer.png" width="43" height="39" alt="디자이너"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_translation.png" width="96" height="96" alt="번역/통역">
+						<span class="category_name"><img src="img/editor_page/category_name_translation.png" width="47" height="35" alt="번역/통역"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_counsel.png" width="96" height="96" alt="상담/컨설팅">
+						<span class="category_name"><img src="img/editor_page/category_name_counsel.png" width="58" height="40" alt="상담/컨설팅"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_specialized.png" width="96" height="96" alt="전문직">
+						<span class="category_name"><img src="img/editor_page/category_name_specialized.png" width="33" height="40" alt="전문직"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_author.png" width="96" height="96" alt="작가">
+						<span class="category_name"><img src="img/editor_page/category_name_author.png" width="23" height="40" alt="작가"></span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="temp_thumb">
+						<img src="img/editor_page/category_etc.png" width="96" height="96" alt="기타 개인">
+						<span class="category_name"><img src="img/editor_page/category_name_etc.png" width="44" height="40" alt="기타 개인"></span>
+					</a>
+				</li>
+			</ul>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="confirm">확인</a></span>
+			</div>
+			<a href="" class="layer_close">닫기</a>
+		</div>
+	</div>
+	<!-- //템플릿 추가 레이어 -->
+
+	<!-- 알림 레이어 -->
+	<!-- [D] 메세지 + 세로형 버튼 타입 : type1 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type1" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text">올바른 주소를 입력해주세요</p>
+			</div>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="ok">확인</a></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- [D] 메세지 + 세로형 버튼 타입 : type1 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type1" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text">임시저장한 내용이 있습니다</p>
+			</div>
+			<div class="btn_area">
+				<span class="btn"><a href="">임시저장 불러오기</a></span>
+				<span class="btn"><a href="">사이트대로 불러오기</a></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- [D] 세로형 버튼만 노출 타입 : type1 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type1" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="btn_area">
+				<span class="btn"><a href="">사이트 바로 반영하기</a></span>
+				<span class="btn"><a href="">임시저장 하기</a></span>
+				<span class="btn"><a href="" class="cancel">취소</a></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- [D] 메세지 + 세로형 버튼 타입 : type1 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type1 " style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text">변경된 내용이 있습니다</p>
+			</div>
+			<div class="btn_area">
+				<span class="btn"><a href="">사이트 반영하고 종료</a></span>
+				<span class="btn"><a href="">임시저장하고 종료</a></span>
+				<span class="btn"><a href="" >저장하지 않고 종료</a></span>
+				<span class="btn"><a href="" class="cancel">취소</a></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- [D] 메세지 + 가로형 버튼 타입 : type2 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type2" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text">메뉴 내 모든 페이지를<br> 삭제 하시겠습니다</p>
+			</div>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="cancel">취소</a></span>
+				<span class="btn"><a href="" class="del">삭제</a></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- 추천템플릿 저장하기 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type2" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text">추천 템플릿을 선택하면,<br>기존 편집한 내용이 모두 삭제됩니다</p>
+				<p class="text"><span class="point_text">추천템플릿을 사용하시겠습니까?</span></p>
+			</div>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="cancel">취소</a></span>
+				<span class="btn"><a href="" class="ok">확인</a></span>
+			</div>
+		</div>
+	</div>
+	<!-- //추천템플릿 저장하기 -->
+
+	<!-- 편집모드 종료 -->
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type1" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text">편집한 내용이 사이트에 반영되었습니다<br>
+				편집모드를 종료합니다</p>
+				<p class="text site"><span class="point_text">로뎀하우스<br><span class="url">http://redemhouse.modoo.at</span></span></p>
+			</div>
+			<div class="btn_area">
+				<span class="btn"><a href="" class="ok">확인</a></span>
+			</div>
+		</div>
+	</div>
+	<!-- //편집모드 종료 -->
+
+	<!-- [D] top값은 마크업 확인용 입니다. 개발시 재정의 부탁드립니다. -->
+	<div class="modal type2" style="display:none;top:150px">
+		<div class="modal_area">
+			<div class="text_area">
+				<p class="text"><span class="point_text">편집한 내용이 있습니다</span></p>
+				<p class="text">중요한 메세지 확인이 필요</p>
+				</div>
+				<div class="btn_area">
+				<span class="btn"><a href="" class="cancel">취소</a></span>
+				<span class="btn"><a href="" class="del">삭제</a></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- [D] 불투명 배경 타입 : opacity_modal -->
+	<div class="opacity_modal" style="display:none">
+		<div class="modal_area">
+			<p class="text"><span class="point_text">메뉴단위</span>는 함께 이동합니다.</p>
+		</div>
+	</div>
+</div>
+<!-- //알림 레이어 -->
+</div>
+
+
+
+  <div class="et_footer total" style="display:block">
+    <div class="buttons">
+      <!-- [D] 선택된 버튼 클래스 selected 추가 -->
+      <a href="javascript:layer('layer_set_theme')" class="btn"><span class="theme_color"><span class="blind">테마색상선택</span></span></a>
+      <a href="javascript:layer('layer_add_page')" class="btn"><span class="page_new"><span class="blind">페이지 추가</span></span></a>
+      <a href="javascript:layer('layer_recommend_template')" class="btn"><span class="tmp_new"><span class="blind">템플릿 추가</span></span></a>
+      <a href="javascript:alert('사이트연결정보 레이어(공통)')" class="btn"><span class="site"><span class="blind">사이트연결정보</span></span></a>
+    </div>
+  </div>
+</div>
+<div class="layer_dim"></div>
+</body>
+</html>

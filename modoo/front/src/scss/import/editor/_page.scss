@@ -1,0 +1,483 @@
+@charset "utf-8";
+
+/* import/editor/_page.scss */
+.editor .card{outline:none}
+.editor .page-list{padding:0 6px}
+.editor .pages{padding-bottom:10px;margin:3px auto 0}
+.editor .pages:after{display:block;clear:both;content:' '}
+.editor .pages .page{position:relative;float:left;width:33.33%;margin-top:7px}
+.editor .pages .page .thmb_view .thmb a > div{-webkit-filter:blur(0);filter:blur(0)}
+.editor .pages .page .list_area{overflow:hidden;position:relative;width:95px;height:130px;margin:0 auto;-webkit-box-shadow:0 0 1px rgba(0,0,0,.2),1px 1px 1px rgba(0,0,0,.05);box-shadow:0 0 1px rgba(0,0,0,.2),1px 1px 1px rgba(0,0,0,.05);border-radius:2px;background-color:#fff}
+.editor .pages .page .list_thumb{display:block}
+.editor .pages .page .list_thumb img{width:100%;border-radius:2px;vertical-align:top}
+.editor .pages .page .list_thumb:after{display:none;position:absolute;left:0;top:0;right:0;bottom:0;border:2px solid #01c73c;background-color:rgba(0,0,0,0.4);border-radius:2px;content:''}
+.editor .pages .disabled .list_thumb:after{display:block;border:0;background-color:rgba(195,199,203,0.8)}
+.editor .pages .selected .list_thumb:after{display:block}
+.editor .pages .disabled.selected .list_thumb:after{border:2px solid #01c73c;background-color:rgba(0,0,0,0.4)}
+.editor .pages .page .btn_area{display:none;position:absolute;left:0;right:0;top:3px;bottom:33px;-webkit-box-pack: center;-webkit-box-orient: vertical;-webkit-box-align: center;background-color:transparent}
+.editor .pages .page.selected .btn_area{display:-webkit-box}
+.editor .pages .page .btn_area [class^="btn"]{display:block;line-height:1000px}
+.editor .pages .page .btn_area .btn_edit{
+	@include setSprite($sp_editor-card_ico_edit);
+}
+.editor .pages .page .top_menu{
+	@include setSprite($sp_editor-card_ico_menu);
+
+	display:none;
+	position:absolute;
+	right:6px;
+	top:6px;
+	line-height:1000px;
+}
+.editor .pages .page.selected .top_menu{display:block}
+.editor .pages .page .page_nav{display:none;position:absolute;left:0;bottom:0;width:100%;height:33px;border-radius:2px;background-color:rgba(1,199,60,0.9);color:#fff;line-height:33px}
+.editor .pages .page.selected .page_nav{display:block}
+.editor .pages .page .page_nav a{display:inline-block;overflow:hidden;width:50%;height:100%;box-sizing:border-box;line-height:1000px}
+.editor .pages .page .page_nav a:before{display:block;margin:9px auto 0;content:'';}
+.editor .pages .page .page_nav .prev:before{
+	@include setSprite($sp_editor-card_left_arrow);
+}
+.editor .pages .page .page_nav .next:before{
+	@include setSprite($sp_editor-card_right_arrow);
+}
+.editor .pages .page .page_nav .prev + .next{border-left:1px solid #0fb23f}
+.editor .pages .group .list_thumb:before{position:absolute;left:0;bottom:0;top:0;right:0;border-radius:2px;background-color:rgba(1,199,60,.3);content:'';z-index:10}
+.editor .pages .group.selected .list_thumb:before{display:none}
+.editor .pages .border{position:absolute;left:0;bottom:40px;width:120%;height:3px;background-color:#27c49e}
+@media screen and (min-width:360px){
+	.editor .page-list{padding:0 20px}
+	.editor .pages{margin-top:4px}
+	.editor .pages .page{margin-top:11px}
+	.editor .pages .page .list_area{height:133px}
+}
+@media screen and (min-width:375px){
+	.editor .page-list{padding:0 26px}
+}
+
+.editor .pages .page.maincard{
+	.btn_edit{
+		margin-top:1px
+	}
+	.layer_notice{
+		position:absolute;
+		left:50%;
+		bottom:-51px;
+		min-width:165px;
+		padding:7px 0 7px 11px;
+		margin-left:-48px;
+		box-sizing:border-box;
+		border:1px solid #beb491;
+		background:#fffde1;
+		z-index:50;
+		.notice_text{
+			font-size:13px;
+			color:#222;
+			line-height:18px;
+			letter-spacing:-0.5px;
+		}
+		.layer_close{
+			right:2px;
+			top:2px;
+			width:20px;
+			height:20px;
+
+			&:before{
+				@include setSprite($sp_editor-layer_ico_close, both);
+			}
+		}
+		.top_arrow{
+			@include setSprite($sp_editor-layer_top_arrow);
+
+			position:absolute;
+			top:-6px;
+			left:45px;
+		}
+	}
+}
+
+// 레이어 공통
+.editor{
+	.edit_layer{
+		display:none;
+		position:fixed;
+		left:0;
+		bottom:0;
+		z-index:101000;
+		width:100%;
+		box-sizing:border-box;
+
+		&.open{
+			display:block
+		}
+	}
+
+	.area{
+		background-color:#f2f3f5
+	}
+
+	.layer_title{
+		height:43px;
+		border-bottom:1px solid #eef0f2;
+		background-color:#fff;
+		text-align:center;
+		font-size:16px;
+		color:#222;
+		line-height:43px
+	}
+
+	.layer_close{
+		overflow:hidden;
+		position:absolute;
+		top:0;
+		right:0;
+		z-index:999;
+		width:40px;
+		height:43px;
+		color:transparent;
+
+		&:before{
+			@include setSprite($sp_editor-layer_close, both);
+			position:absolute;
+			top:50%;
+			left:50%;
+			font-size:1px;
+			content:'\00a0';
+		}
+	}
+}
+
+// 레이어 버튼 공통
+.editor{
+	.btn_area{
+		position:relative;
+		clear:both;
+
+		.btn{
+			display:block;
+			overflow:hidden;
+			height:52px;
+			background-color:#f2f3f5;
+			text-align:center;
+			font-size:18px;
+			font-family:#{$F-base};
+			color:#868890;
+			line-height:52px;
+
+			a{
+				display:block;
+				position:relative
+			}
+		}
+
+		.confirm{
+			color:transparent;
+			background-color:#01c73c;
+
+			&:before{
+				@include setSprite($sp_editor-btn_ico_confirm, both);
+
+				position:absolute;
+				left:50%;
+				top:50%;
+				content:'\00a0';
+			}
+		}
+	}
+}
+	// 테마변경
+	.editor .color_set .area:after{display:block;clear:both;content:''}
+	.editor .lst_color:after{display:block;clear:both;content:''}
+	.editor .lst_color{float:left;width:50%;padding:16px 0 9px 16px;box-sizing:border-box}
+	.editor .lst_color.theme_line{padding:16px 16px 9px 0}
+	.editor .lst_color li{float:left;position:relative;width:33.33%;margin-bottom:8px}
+	.editor .lst_color a{display:block;overflow:hidden;width:40px;height:40px;margin:0 auto;border-radius:30px;line-height:1000px;box-sizing:border-box}
+	.editor .lst_color .btn_set1{background-color:#4f7ce6}
+	.editor .lst_color .btn_set2{background-color:#d77182}
+	.editor .lst_color .btn_set3{background-color:#31929a}
+	.editor .lst_color .btn_set4{background-color:#699b55}
+	.editor .lst_color .btn_set5{background-color:#795d49}
+	.editor .lst_color .btn_set6{background-color:#986fae}
+	.editor .lst_color .btn_set7{background-color:#414851}
+	.editor .lst_color .btn_set8{background-color:#bf3235}
+	.editor .lst_color .btn_set9{background-color:#e7a536}
+	.editor .lst_color .btn_line1{@include setSprite($sp_editor-theme_line1)}
+	.editor .lst_color .btn_line2{@include setSprite($sp_editor-theme_line2)}
+	.editor .lst_color .btn_line3{@include setSprite($sp_editor-theme_line3)}
+	.editor .lst_color .btn_line4{@include setSprite($sp_editor-theme_line4)}
+	.editor .lst_color .btn_line5{@include setSprite($sp_editor-theme_line5)}
+	.editor .lst_color .btn_line6{@include setSprite($sp_editor-theme_line6)}
+	.editor .lst_color .btn_line7{@include setSprite($sp_editor-theme_line7)}
+	.editor .lst_color .btn_line8{@include setSprite($sp_editor-theme_line8)}
+	.editor .lst_color .btn_line9{@include setSprite($sp_editor-theme_line9)}
+
+	.editor .lst_color .selected a:after{
+		@include setSprite($sp_editor-theme_select, both);
+
+		position:absolute;
+		left:50%;
+		top:50%;
+		content:'';
+	}
+	.editor .theme_line .selected .btn_line1:after{@include setSprite($sp_editor-btn_line1_check, both)}
+	.editor .theme_line .selected .btn_line2:after{@include setSprite($sp_editor-btn_line3_check, both)}
+	.editor .theme_line .selected .btn_line3:after{@include setSprite($sp_editor-btn_line3_check, both)}
+	.editor .theme_line .selected .btn_line4:after{@include setSprite($sp_editor-btn_line4_check, both)}
+	.editor .theme_line .selected .btn_line5:after{@include setSprite($sp_editor-btn_line5_check, both)}
+	.editor .theme_line .selected .btn_line6:after{@include setSprite($sp_editor-btn_line6_check, both)}
+	.editor .theme_line .selected .btn_line7:after{@include setSprite($sp_editor-btn_line7_check, both)}
+	.editor .theme_line .selected .btn_line8:after{@include setSprite($sp_editor-btn_line8_check, both)}
+	.editor .theme_line .selected .btn_line9:after{@include setSprite($sp_editor-btn_line9_check, both)}
+
+
+	// 페이지 추가
+	.editor .page_set{background-color:#f2f3f5;z-index:100100}
+	.editor .lst_page{width:296px;padding-top:15px;margin:0 auto 10px}
+	.editor .lst_page:after{display:block;clear:both;content:''}
+	.editor .lst_page li{display:table;float:left;position:relative;width:66px;height:99px;margin:0 4px 11px 4px}
+	.editor .lst_page li.selected:after{position:absolute;z-index:1;top:0;right:0;bottom:0;left:0;background:#f4f4f8;opacity:0.7;content:''}
+	.editor .lst_page li.selected:before{position:absolute;z-index:2;top:0;right:0;bottom:0;left:0;border:2px solid #01c73c;border-radius:3px;content:''}
+	.editor .lst_page li a{display:table-cell;width:66px;height:99px;@extend %sp_editor;@extend %sp_editor-size;text-align:center;vertical-align:middle;font-weight:600;font-size:13px;line-height:1.1}
+	.editor .lst_page li:nth-of-type(1) a{@include setSprite($sp_editor-page1)}
+	.editor .lst_page li:nth-of-type(2) a{@include setSprite($sp_editor-page2)}
+	.editor .lst_page li:nth-of-type(3) a{@include setSprite($sp_editor-page3)}
+	.editor .lst_page li:nth-of-type(4) a{@include setSprite($sp_editor-page4)}
+	.editor .lst_page li:nth-of-type(5) a{@include setSprite($sp_editor-page5)}
+	.editor .lst_page li:nth-of-type(6) a{@include setSprite($sp_editor-page6)}
+	.editor .lst_page li:nth-of-type(7) a{@include setSprite($sp_editor-page7)}
+	.editor .lst_page li:nth-of-type(8) a{@include setSprite($sp_editor-page8)}
+	.editor .lst_page li:nth-of-type(9) a{@include setSprite($sp_editor-page9)}
+	.editor .lst_page li:nth-of-type(10) a{@include setSprite($sp_editor-page10)}
+	.editor .lst_page li:nth-of-type(11) a{@include setSprite($sp_editor-page11)}
+	.editor .lst_page li:nth-of-type(12) a{@include setSprite($sp_editor-page12)}
+	.editor .lst_page li a span{display:none;position:relative;z-index:3;}
+	.editor .lst_page li.selected a span{display:inline;letter-spacing:-0.05px}
+	.editor .lst_page li a span.ico_new{
+		@include setSprite($sp_editor-ico_new);
+		display:block;overflow:hidden;position:absolute;top:0;left:0;width:29px;height:27px;line-height:100px;
+	}
+
+// 템플릿 변경
+.editor{
+	.template_set{
+		background-color:#fff
+	}
+
+	.lst_template{
+		overflow-y:scroll;
+		width:304px;
+		padding-top:10px;
+		margin:0 auto;
+
+		&:after{
+			display:block;
+			clear:both;
+			content:''
+		}
+
+		li{
+			float:left;
+			position:relative;
+			width:96px;
+			height:96px;
+			margin:0 2px 5px 3px;
+
+			&:first-child{
+				.name{
+					display:none
+				}
+
+				.category_name{
+					bottom:16px
+				}
+			}
+		}
+
+		.temp_thumb{
+			display:block;
+			width:100%;
+			height:100%;
+			color:transparent;
+
+			&:before{
+				position:absolute;
+				content:'\00a0'
+			}
+
+			img{
+				vertical-align:top
+			}
+		}
+
+		.selected{
+			border-radius:2px;
+			background-color:#01c73c;
+
+			.temp_thumb>img{
+				display:none
+			}
+		}
+
+		.category_name{
+			position:absolute;
+			left:0;
+			right:0;
+			bottom:28px;
+			text-align:center;
+			color:transparent;
+
+			&:before{
+				position:absolute;
+				content:'\00a0'
+			}
+		}
+
+		.category_simple{
+			display:none
+		}
+	}
+}
+
+.empty_guide_total{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:54px;
+	left:0;
+	z-index:990;
+	width:100%;
+
+	.empty_guide{
+		@include setSprite($sp_guide-img_total);
+
+		position:absolute;
+		bottom:-30px;
+		left:49%;
+		margin-left:-108px;
+
+		&:before{
+			content:'\00a0'
+		}
+	}
+}
+
+.empty_guide_component{
+	position:relative;
+	height:350px;
+	text-align:center;
+
+	.empty_guide{
+		@include setSprite($sp_guide-img_component, both);
+
+		display:block;
+		position:absolute;
+		top:50%;
+		left:50%;
+	}
+}
+
+// 모바일에디터 오픈이벤트 팝업
+.layer_banner{
+	position:relative;
+	margin-top:7px;
+
+	.layer_text{
+		overflow:hidden;
+		width:1px;
+		height:1px;
+		color:transparent
+	}
+
+	.layer_link{
+		position:absolute;
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		color:transparent
+	}
+
+	img{
+		vertical-align:top
+	}
+}
+
+//테마이미지
+@each $type in $ButtonType{
+	@each $color in $ThemeColor{
+		.btn_#{$type}1 .page .admin{ @include setSprite($sp_limit-dummy_admin_01) }
+		.btn_#{$type}2 .page .admin{ @include setSprite($sp_limit-dummy_admin_02) }
+		.btn_#{$type}3 .page .admin{ @include setSprite($sp_limit-dummy_admin_03) }
+		.btn_#{$type}4 .page .admin{ @include setSprite($sp_limit-dummy_admin_04) }
+		.btn_#{$type}5 .page .admin{ @include setSprite($sp_limit-dummy_admin_05) }
+		.btn_#{$type}6 .page .admin{ @include setSprite($sp_limit-dummy_admin_06) }
+		.btn_#{$type}7 .page .admin{ @include setSprite($sp_limit-dummy_admin_07) }
+		.btn_#{$type}8 .page .admin{ @include setSprite($sp_limit-dummy_admin_08) }
+		.btn_#{$type}9 .page .admin{ @include setSprite($sp_limit-dummy_admin_09) }
+
+		.btn_#{$type}1 .page .store{ @include setSprite($sp_limit-dummy_store_01) }
+		.btn_#{$type}2 .page .store{ @include setSprite($sp_limit-dummy_store_02) }
+		.btn_#{$type}3 .page .store{ @include setSprite($sp_limit-dummy_store_03) }
+		.btn_#{$type}4 .page .store{ @include setSprite($sp_limit-dummy_store_04) }
+		.btn_#{$type}5 .page .store{ @include setSprite($sp_limit-dummy_store_05) }
+		.btn_#{$type}6 .page .store{ @include setSprite($sp_limit-dummy_store_06) }
+		.btn_#{$type}7 .page .store{ @include setSprite($sp_limit-dummy_store_07) }
+		.btn_#{$type}8 .page .store{ @include setSprite($sp_limit-dummy_store_08) }
+		.btn_#{$type}9 .page .store{ @include setSprite($sp_limit-dummy_store_09) }
+
+		.btn_#{$type}1 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_01) }
+		.btn_#{$type}2 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_02) }
+		.btn_#{$type}3 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_03) }
+		.btn_#{$type}4 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_04) }
+		.btn_#{$type}5 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_05) }
+		.btn_#{$type}6 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_06) }
+		.btn_#{$type}7 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_07) }
+		.btn_#{$type}8 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_08) }
+		.btn_#{$type}9 .page .schedule{ @include setSprite($sp_limit-dummy_schedule_09) }
+
+		.btn_#{$type}1 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_01) }
+		.btn_#{$type}2 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_02) }
+		.btn_#{$type}3 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_03) }
+		.btn_#{$type}4 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_04) }
+		.btn_#{$type}5 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_05) }
+		.btn_#{$type}6 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_06) }
+		.btn_#{$type}7 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_07) }
+		.btn_#{$type}8 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_08) }
+		.btn_#{$type}9 .page .coupon{ @include setSprite($sp_limit-dummy_coupon_09) }
+
+		.btn_#{$type}1 .page .board{ @include setSprite($sp_limit-dummy_board_01) }
+		.btn_#{$type}2 .page .board{ @include setSprite($sp_limit-dummy_board_02) }
+		.btn_#{$type}3 .page .board{ @include setSprite($sp_limit-dummy_board_03) }
+		.btn_#{$type}4 .page .board{ @include setSprite($sp_limit-dummy_board_04) }
+		.btn_#{$type}5 .page .board{ @include setSprite($sp_limit-dummy_board_05) }
+		.btn_#{$type}6 .page .board{ @include setSprite($sp_limit-dummy_board_06) }
+		.btn_#{$type}7 .page .board{ @include setSprite($sp_limit-dummy_board_07) }
+		.btn_#{$type}8 .page .board{ @include setSprite($sp_limit-dummy_board_08) }
+		.btn_#{$type}9 .page .board{ @include setSprite($sp_limit-dummy_board_09) }
+	}
+}
+
+// 모바일 에디터 구성요소 수정 옵션
+@each $type in $ButtonType{
+	@each $color in $ThemeColor{
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i}.editor {
+			.btn .confirm,
+			.lst_template .selected{
+				background-color: $color;
+			}
+			.lst_page{
+				li.selected:before{
+					border-color: $color;
+				}
+
+				li.selected a:after{
+					background-color: $color;
+				}
+			}
+			.lst_page li a{
+				color: $color;
+			}
+		}
+	}
+}
+

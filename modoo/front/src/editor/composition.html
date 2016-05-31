@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>모바일에디터 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/editor.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body class="editor">
+<div id="wrap" class="edit_composition">
+  <div class="et_header composition">
+    <h2 class="title"><span class="blind">구성수정</span></h2>
+    <a href="components.html" class="btn btn_go_components"><span class="blind">내용편집</span></a>
+  </div>
+  <div class="et_contents">
+    <div class="composition" style="display:block">
+      <div class="editor_area">
+        <div class="editor_item">
+          <!-- [D] 구성요소 없을 때 구성요소추가 버튼 목록 노출 -->
+          <!-- <span class="component_list_wrap">
+              <ul class="component_list">
+              <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+              <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+              <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+              <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+              <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+              <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+              <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+              <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+              <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+              <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+              </ul>
+              <p class="txt">추가할 요소를 선택하세요</p>
+          </span> -->
+          <!-- [D] 추가버튼을 클릭하면 open_add 클래스 추가 -->
+          <div class="_component selected open_add">
+              <div class="txt_box">
+                  <div class="txt_component color1 big align_l t_space ">
+                      <h4>타이틀</h4>
+                  </div>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <!-- 구성요소목록 -->
+              <span class="component_list_wrap">
+          		<ul class="component_list">
+                      <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                      <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                      <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                      <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                      <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                      <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                      <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                      <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                      <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                      <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+          		</ul>
+          		<p class="txt">추가할 요소를 선택하세요</p>
+          	</span>
+              <!-- //구성요소목록 -->
+          </div>
+          <div class="_component">
+              <div class="txt_box">
+                  <div class="txt_component color1 big align_l t_space ">
+                      <p>내용</p>
+                  </div>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <span class="component_list_wrap">
+                  <ul class="component_list">
+                  <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                  <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                  <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                  <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                  <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                  <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                  <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                  <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                  <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                  <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+                  </ul>
+                  <p class="txt">추가할 요소를 선택하세요</p>
+              </span>
+          </div>
+          <div class="_component">
+              <div class="txt_box">
+                  <div class="txt_component big align_l num">
+                      <ul>
+                          <li>
+                              <span class="f_h">1</span>
+                              <span class="t_b">내용</span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <span class="component_list_wrap">
+                  <ul class="component_list">
+                  <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                  <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                  <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                  <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                  <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                  <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                  <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                  <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                  <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                  <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+                  </ul>
+                  <p class="txt">추가할 요소를 선택하세요</p>
+              </span>
+          </div>
+          <div class="_component">
+              <div class="gallery_area _image_view_container type5 align_c v_align_m black_bg sma   ">
+                  <ul class="_image_view_con">
+                      <li class="default  _image_view_btn" data-img-src="" data-img-index="0" data-img-title="타이틀">
+                          <div class="gallery_img">
+                              <a href="">
+                                  <img src="http://dev.ui.naver.com/tmp/?284x200_car" alt="">
+                              </a>
+                              <span class="ico_default"></span>
+                          </div>
+                          <div class="mask_bg" style="opacity:0; filter: alpha(opacity=0)"></div>
+                          <div class="gallery_txt">
+                              <div class="w1">
+                                  <div class="w2">
+                                      <div class="w3">
+                                          <h3>
+                                              <span>타이틀</span>
+                                          </h3>
+                                          <p>내용</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <span class="component_list_wrap">
+                  <ul class="component_list">
+                  <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                  <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                  <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                  <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                  <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                  <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                  <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                  <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                  <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                  <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+                  </ul>
+                  <p class="txt">추가할 요소를 선택하세요</p>
+              </span>
+          </div>
+          <div class="_component">
+              <div class="gallery_area _image_view_container type5 align_c v_align_m black_bg sma   ">
+                  <ul class="_image_view_con">
+                      <li class="default  _image_view_btn" data-img-src="" data-img-index="0" data-img-title="타이틀">
+                          <div class="gallery_img">
+                              <a href="">
+                                  <img src="" alt="">
+                              </a>
+                              <span class="ico_default"></span>
+                          </div>
+                          <div class="mask_bg" style="opacity:0.25; filter: alpha(opacity=25)"></div>
+                          <div class="gallery_txt">
+                              <div class="w1">
+                                  <div class="w2">
+                                      <div class="w3">
+                                          <h3>
+                                              <span>타이틀</span>
+                                          </h3>
+                                          <p>내용</p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <span class="component_list_wrap">
+                  <ul class="component_list">
+                  <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                  <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                  <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                  <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                  <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                  <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                  <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                  <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                  <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                  <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+                  </ul>
+                  <p class="txt">추가할 요소를 선택하세요</p>
+              </span>
+          </div>
+          <div class="_component">
+              <div class="gallery_area _image_view_container type4 img_lft align_c v_align_m black_bg sma   ">
+                  <ul class="_image_view_con">
+                      <li class="default  _image_view_btn" data-img-src="" data-img-index="0" data-img-title="타이틀">
+                          <div class="gallery_img">
+                              <a href="">
+                                  <img src="" alt="">
+                              </a>
+                              <span class="ico_default"></span>
+                          </div>
+                          <div class="gallery_txt">
+                              <div class="txt_area">
+                                  <h3>타이틀</h3>
+                                  <p>내용</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <span class="component_list_wrap">
+                  <ul class="component_list">
+                  <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                  <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                  <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                  <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                  <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                  <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                  <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                  <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                  <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                  <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+                  </ul>
+                  <p class="txt">추가할 요소를 선택하세요</p>
+              </span>
+          </div>
+          <div class="_component">
+              <div class="gallery_area _image_view_container type4 img_rgt align_c v_align_m black_bg sma   ">
+                  <ul class="_image_view_con">
+                      <li class="default  _image_view_btn" data-img-src="" data-img-index="0" data-img-title="타이틀">
+                          <div class="gallery_img">
+                              <a href="">
+                                  <img src="" alt="">
+                              </a>
+                              <span class="ico_default"></span>
+                          </div>
+                          <div class="gallery_txt">
+                              <div class="txt_area">
+                                  <h3>타이틀</h3>
+                                  <p>내용</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+              <span class="set_this_component">
+                  <a href=""><span class="btn btn_move_up"><span class="blind">위로</span></span></a>
+                  <a href=""><span class="btn btn_move_down"><span class="blind">아래로</span></span></a>
+                  <a href=""><span class="btn btn_copy"><span class="blind">복사</span></span></a>
+                  <a href=""><span class="btn btn_delete"><span class="blind">삭제</span></span></a>
+                  <a href=""><span class="btn btn_add"><span class="blind">추가</span></span></a>
+              </span>
+              <span class="component_list_wrap">
+                  <ul class="component_list">
+                  <li><a href="" class="add_image_single"><span class="blind">단수 이미지</span></a></li>
+                  <li><a href="" class="add_image_multiple"><span class="blind">복수 이미지</span></a></li>
+                  <li><a href="" class="add_text_title"><span class="blind">타이틀 텍스트</span></a></li>
+                  <li><a href="" class="add_text"><span class="blind">본문형 텍스트</span></a></li>
+                  <li><a href="" class="add_video"><span class="blind">동영상</span></a></li>
+                  <li><a href="" class="add_button_tile"><span class="blind">타일형 버튼</span></a></li>
+                  <li><a href="" class="add_button_list"><span class="blind">리스트형 버튼</span></a></li>
+                  <li><a href="" class="add_line_space"><span class="blind">공백</span></a></li>
+                  <li><a href="" class="add_line_solid"><span class="blind">실선</span></a></li>
+                  <li><a href="" class="add_lind_dotted"><span class="blind">점선</span></a></li>
+                  </ul>
+                  <p class="txt">추가할 요소를 선택하세요</p>
+              </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="et_footer composition">
+    <a href="components.html" class="btn_ok"><span class="blind">확인</span></a>
+  </div>
+</div>
+</body>
+</html>

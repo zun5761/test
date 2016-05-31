@@ -1,0 +1,135 @@
+<!-- [D] 글쓰기 버튼 있을 경우 class="bd_sc bd_sc2" -->
+<div class="bd_sc" ng-if="mode !='editor'">
+	<!-- 관리자 리스트 검색창 -->
+	<div class="inner">
+		<div class="sel">
+			<select>
+				<option>글쓰기</option>
+			</select>
+		</div>
+		<div class="sc">
+			<!-- [D] 포커스 class="sc_tx sc_on" -->
+			<div class="sc_tx  sc_on">
+				<input type="text">
+				<a href="#" class="b_dl">삭제</a>
+			</div>
+			<a href="#" class="b_sc">검색</a>
+		</div>
+	</div>
+	<!-- //관리자 리스트 검색창 -->
+	<!-- 사용자 내글 리스트 검색창 -->
+	<div class="inner">
+		<div class="sel">
+			<select>
+				<option>글쓰기</option>
+			</select>
+		</div>
+		<!-- [D] 사용자 일때 sc2 클래스 추가 -->
+		<div class="sc sc2">
+			<!-- [D] 포커스 class="sc_tx sc_on" -->
+			<div class="sc_tx  sc_on">
+				<input type="text">
+				<a href="#" class="b_dl">삭제</a>
+			</div>
+			<a href="#" class="b_sc">검색</a>
+		</div>
+		<div class="button">
+			<a href="#" class="btn write"><span class="ico_write">글쓰기</span></a>
+		</div>
+	</div>
+	<!-- //사용자 내글 리스트 검색창 -->
+</div>
+<div class="list_area" ng-if="mode !='editor'">
+	<ul class="lst_bd lst_ad">
+		<li>
+			<div class="q_area">
+				<a href="#" class="l_bd">
+				<span class="thumb">
+					<img src="http://dev.ui.naver.com/tmp/?100x100_default_y_FFB4B4_50" width="50" height="50" alt="임시 이미지">
+					<span class="num">+3</span>
+				</span>
+					<div>
+					<span class="w_n">
+						<span class="title_area">
+							<span class="borared_title">
+								<span class="tx_com">확인</span>
+								<span class="f_h">010-1234-****</span>
+							</span>
+							<span class="ico_new">새글</span>
+						</span>
+					</span>
+						<!-- [D] 로그인 후 사용자가 내글 확인 시 아이디 비노출 -->
+						<span class="dsc"><span class="f_h">2013.07.01 22:35</span> <span class="bar">|</span> <span class="f_h">댓글 2</span></span>
+					</div>
+				</a>
+			</div>
+		</li>
+		<li>
+			<div class="q_area">
+				<a href="#" class="l_bd">
+					<div>
+					<span class="w_n">
+						<span class="title_area">
+							<span class="borared_title">
+								<span class="tx_com tx_com2">미확인</span>
+								<span class="f_h">010-1234-****010-1234-****010-1234-****010-1234-****</span>
+							</span>
+							<span class="ico_new">새글</span>
+						</span>
+					</span>
+						<span class="dsc">modo****** <span class="bar">|</span> <span class="f_h">2013.07.01 22:35</span> <span class="bar">|</span> <span class="f_h">댓글 2</span></span>
+					</div>
+				</a>
+			</div>
+		</li>
+		<li>
+			<div class="q_area">
+				<a href="#" class="l_bd">
+					<div>
+					<span class="w_n">
+						<span class="title_area">
+							<span class="borared_title">
+								<span class="tx_com">확인</span>
+								<span class="f_h">010-1234-5678</span> <span class="bar">|</span> <span class="f_h">mail@naver.com</span>
+							</span>
+						</span>
+					</span>
+						<span class="dsc">modo****** <span class="bar">|</span> <span class="f_h">2013.07.01 22:35</span></span>
+					</div>
+				</a>
+			</div>
+		</li>
+		<li>
+			<div class="q_area">
+				<a href="#" class="l_bd">
+				<span class="thumb">
+					<img src="http://dev.ui.naver.com/tmp/?100x100_default_y_FFB4B4_50" width="50" height="50" alt="임시 이미지">
+				</span>
+					<div>
+					<span class="w_n">
+						<span class="title_area">
+							<span class="borared_title">
+								<span class="tx_com">확인</span>
+								<span class="f_h">010-1234-****</span>
+							</span>
+						</span>
+					</span>
+						<!-- [D] 로그인 후 사용자가 내글 확인 시 아이디 비노출 -->
+						<span class="dsc"><span class="f_h">2013.07.01 22:35</span> <span class="bar">|</span> <span class="f_h">댓글 2</span></span>
+					</div>
+				</a>
+			</div>
+		</li>
+	</ul>
+	<div class="u_pg">
+		<a href="#" class="btn_lst_more">더보기<span class="count">20</span><span class="dash">/</span><span class="total">48</span><span class="ic"></span></a>
+	</div>
+</div>
+<!-- 문의하기 안내글 -->
+<div class="list_area">
+	<div class="no_data no_data_v2">
+		<p><strong>등록된 내용이 없습니다.</strong></p>
+		<p>등록된 내용이 없습니다.</p>
+	</div>
+</div>
+<!-- //문의하기 안내글 -->

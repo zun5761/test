@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Mobile 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/w.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body>
+<!-- 스케줄 상세일 때 v2클래스 추가 -->
+<div class="schedule_area v2">
+    <div class="calendar_area">
+        <div class="controls">
+            <span class="date">2015. 10. 14</span>
+            <a href="" class="btn_back"><span class="blind">스케줄 목록</span></a>
+            <!-- [D] 관리자일 때 -->
+            <a href="" class="btn_reg_scd"><span class="blind">일정쓰기</span></a>
+            <!-- [D] 사용자(예약형)일 때 -->
+            <!-- <a href="" class="btn_inquiry">문의</a> -->
+        </div>
+    </div>
+    <div class="scd_list_area">
+        <!-- 공지형 -->
+        <ul class="scd_list">
+            <li>
+                <div class="info">
+                    <span class="datetime">15.11.25.(수) 11:00 ~ 16.03.25.(금) 12:00</span>
+                </div>
+                <p class="txt">
+                    피아노 레슨 오전 A반을 모집합니다. 많이 참석해주세요. 초급반입니다.<br>
+                    &centerdot; 강의실: 25-3 강의실<br>
+                    &centerdot; 정원: 10명<br>
+                    &centerdot; 교재: 체르니 100번
+                </p>
+                <!-- [D] 관리자일 때 버튼노출 -->
+                <div class="btn_area">
+                    <a href="" class="btn_modify"><span class="ic"></span>수정</a>
+                    <a href="" class="btn_delete"><span class="ic"></span>삭제</a>
+                </div>
+            </li>
+            <li>
+                <div class="info">
+                    <span class="datetime">15.10.14(금) 14:30~15.10</span>
+                </div>
+                <p class="txt">
+                    2015년도 실용음악과 수시가 시작되었습니다.
+                    서울예대를 시작으로 각 대학의 실용음악과 수시
+                    전형을입시생들에게 배포 및 설명회를 진행함으
+                    로 학생들의 성공적인 입시를 돕고있습니다!
+                </p>
+                <!-- [D] 관리자일 때 버튼노출 -->
+                <div class="btn_area">
+                    <a href="" class="btn_modify"><span class="ic"></span>수정</a>
+                    <a href="" class="btn_delete"><span class="ic"></span>삭제</a>
+                </div>
+            </li>
+            <li>
+                <div class="info">
+                    <span class="datetime">15.10.14(금) 14:30~15.10</span>
+                </div>
+                <p class="txt">
+                    2015년도 실용음악과 수시가 시작되었습니다.
+                    서울예대를 시작으로 각 대학의 실용음악과 수시
+                    전형을입시생들에게 배포 및 설명회를 진행함으
+                    로 학생들의 성공적인 입시를 돕고있습니다!
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- 푸터 -->
+
+<script>
+    $(".scd_list li").find(".btn_fold").on("click",function(){
+        $(this).closest("li").toggleClass("open");
+    });
+</script>
+
+</body>
+</html>

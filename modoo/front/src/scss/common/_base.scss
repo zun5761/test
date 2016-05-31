@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/* common/_base.scss */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,audio,video{margin:0;padding:0}
+body,input,textarea,select,table,button,code{font-family:helvetica,applesdgothicneo,sans-serif;font-size:14px;line-height:1.25em}
+body{position:relative;background-color:#e9ecef;color:#000;-webkit-text-size-adjust:none;word-wrap:break-word;word-break:break-all}
+img,fieldset{border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{color:inherit;text-decoration:none}
+table{border-collapse:collapse}
+input,input:focus,textarea,textarea:focus{-webkit-appearance:none;border-radius:0;outline:none;-webkit-tap-highlight-color: rgba(0,0,0,0)}
+img{-webkit-touch-callout:none; -webkit-user-select:none; -webkit-tap-highlight-color:rgba(0,0,0,0)}
+hr{display:none !important}
+.blind,.u_hc,.u_skip{visibility:hidden;position:absolute;top:0;left:0;font-size:1%;line-height:1%}
+.u_vc{position:absolute;z-index:-1;font-size:1px;line-height:1px;color:transparent}
+.clear{height:7px}
+
+/* 개발에서 쓰이는 css 정의 */
+.backface{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden}
+/* overthrow 라이브버리 적용을 위한 css */
+.overthrow-enabled .overthrow{overflow:auto;-webkit-overflow-scrolling:touch}
+/* 하드위어 가속처리를 위한 css */
+.pg-container{transform-style:preserve-3d;-webkit-transform-style:preserve-3d;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;backface-visibility:hidden}
+::-webkit-input-placeholder{color:#777}
+::-moz-placeholder{color:#777}
+:-ms-input-placeholder{color:#777}
+input:-moz-placeholder{color:#777}

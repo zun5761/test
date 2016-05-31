@@ -1,0 +1,205 @@
+<!-- 톡톡 연동 -->
+<div class="noti_area">
+	<span class="tit">네이버 톡톡 연동</span>
+	<p class="txt">톡톡을 연동하시면<br>
+		별도앱이나 프로그램 설치 없이<br>
+		채팅으로 고객 상담이 가능합니다.</p>
+</div>
+<!-- [D] 비활성 disable 추가 -->
+<div class="noti_area disable">
+	<span class="tit">[문의하기 설정] 오른쪽 편집창에서 설정하세요</span>
+	<p class="txt">글 등록할 때 노출될 안내문를 설정할 수 있습니다<br>
+		등록 글 개수를 설정하여 문의하기를 마감할 수 있습니다</p>
+</div>
+<!-- [D] 비활성 disable 추가 -->
+<div class="inquiry_area disable">
+	<ul class="lst_guide">
+		<!-- [D] 리스트 한개일때 only 클래스 추가 -->
+		<li class=""><span class="spci"></span>궁금하신 사항을 남겨주시면, 24시간 이내에 성심껏 답변 드리겠습니다.</li>
+		<li><span class="spci"></span>예약날짜 선택시 시간까지 입력해 주셔야 예약이 원활하게 진행 됩니다.</li>
+		<li><span class="spci"></span>이름은 반드시 실명으로 입력 해주세요.</li>
+		<li><span class="spci"></span>내용에는 체크인 시 필요한 내용을 미리 입력 해주시면, 더욱 빠른 체크인이 가능합니다.</li>
+		<li><span class="spci"></span>전화번호는 반드시 연락 가능한 번호로 입력 해주시길 부탁드립니다.</li>
+	</ul>
+	<!-- [D] 기본 문구 -->
+	<p class="txt">안내문구를 넣어주세요.</p>
+	<!-- [D] 가로줄 추가용 -->
+	<div class="gray_line"></div>
+
+	<!-- 네이버 아이디 로그인 -->
+	<div class="personal_area">
+		<!-- [D] 로그인 후 -->
+		<div class="author">
+			<span class="author_title">글쓴이</span><span class="name">modo*******</span>
+			<a href="#" class="btn_writing">내글보기<span class="ico_arrow"></span></a>
+		</div>
+	</div>
+	<!-- //네이버 아이디 로그인 -->
+
+	<!-- //[D] 가로줄 추가용 -->
+	<p class="tx_inquiry"><span class="required">필수입력 항목</span> 필수 입력사항 입니다</p>
+	<ul class="lst_inquiry">
+		<li>
+			<p class="tx"><label for="u_cont">연락처</label> <span class="required">필수입력 항목</span></p>
+			<div class="sc">
+				<div class="sc_tx">
+					<input type="text" id="u_cont" class="input_txt">
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="tx"><label for="u_mail">이메일</label></p>
+			<div class="sc">
+				<div class="sc_tx">
+					<input type="text" id="u_mail" class="input_txt">
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="tx"><label for="u_mail">예약날짜</label> <span class="required">필수입력 항목</span></p>
+			<div class="sc sc_time">
+				<div class="sc_tx">
+					<div class="time_sel">
+						<span class="area">
+							<!-- [D] 포커스/선택시 selected 클래스 추가-->
+							<span class="sel v2">
+								<button type="button">2015.09.25</button>
+							</span>
+						</span>
+						<span class="area">
+							<!-- [D] 포커스/선택시 selected 클래스 추가-->
+							<span class="sel v2">
+								<button type="button">오전 09:30</button>
+							</span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="tx"><label for="u_choice">카테고리</label></p>
+			<div class="bd_sc">
+				<!-- [D] 포커스/선택시 selected 클래스 추가-->
+				<div class="sel">
+					<select id="u_choice">
+						<option>예약/취소</option>
+					</select>
+				</div>
+			</div>
+		</li>
+		<li>
+			<p class="tx"><label for="u_choice">인원수</label></p>
+			<div class="sc">
+				<!-- [D] 리스유형일때 클래 v2 추가 -->
+				<ul class="lst_type v2">
+					<li>
+						<input type="radio" id="u_rdo" name="" class="rdo" value="">
+						<label for="u_chk1">1명</label>
+					</li>
+					<li>
+						<input type="radio" id="u_rdo" name="" class="rdo" value="">
+						<label for="u_chk1">2명</label>
+					</li>
+					<li>
+						<input type="radio" id="u_rdo" name="" class="rdo" value="">
+						<label for="u_chk1">3명</label>
+					</li>
+					<li>
+						<input type="radio" id="u_rdo" name="" class="rdo" value="">
+						<label for="u_chk1">4명</label>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<p class="tx"><label for="u_choice">선호룸</label> <span class="required">필수입력 항목</span></p>
+			<div class="sc">
+				<!-- [D] 타일형 -->
+				<ul class="lst_type">
+					<li>
+						<input type="checkbox" id="u_chk" class="ckbox" value="">
+						<label for="u_chk7">탐험가의집</label>
+					</li>
+					<li>
+						<input type="checkbox" id="u_chk" class="ckbox" value="">
+						<label for="u_chk7">로맨틱 뮤즈</label>
+					</li>
+					<li>
+						<input type="checkbox" id="u_chk" class="ckbox" value="">
+						<label for="u_chk7">북유럽스타일</label>
+					</li>
+					<li>
+						<input type="checkbox" id="u_chk" class="ckbox" value="">
+						<label for="u_chk7">수집가의집 </label>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<li class="inquiry_txbox">
+			<p class="tx"><label for="u_content">내용</label> <span class="required">필수입력 항목</span></p>
+			<div class="sc">
+				<div class="sc_tx">
+					<div class="text_area">
+						<textarea rows="1" cols="80" placeholder="내용을 입력해주세요. (3자~3000자)"></textarea>
+						<div class="photo_img">
+							<img src="http://dev.ui.naver.com/tmp/?257x170_pororo_y_FFB4B4_50" width="257" height="170" alt="임시 이미지">
+							<img src="http://dev.ui.naver.com/tmp/?257x170_pororo_y_FFB4B4_50" width="257" height="170" alt="임시 이미지">
+						</div>
+					</div>
+				</div>
+				<div class="photo_upload">
+					<a href="#" class="btn_add">추가</a>
+					<ul class="photo_list">
+						<!-- [D] 사진등록전 노출
+                        <li><span class="first_notice">사진등록(최대 5개)</span></li>
+                        -->
+						<li>
+							<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+							<a href="#" class="delete">삭제</a>
+						</li>
+						<li>
+							<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+							<a href="#" class="delete">삭제</a>
+						</li>
+						<li>
+							<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+							<a href="#" class="delete">삭제</a>
+						</li>
+						<li>
+							<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+							<a href="#" class="delete">삭제</a>
+						</li>
+						<li>
+							<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+							<a href="#" class="delete">삭제</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</li>
+	</ul>
+
+	<div class="chk_area">
+		<span class="area">
+			<!-- [D] 체크시 input, a 에 class="ckbox_on" 추가 -->
+			<input type="checkbox" id="c_sc" class="ckbox ckbox_on">
+			<label for="c_sc" class="blind">개인정보 수집 및 이용에 동의</label>
+			<a href="#" class="ckbox_on">개인정보 수집 및 이용에 동의</a>
+		</span>
+		<span class="area">
+			<!-- [D] 체크시 input, label 에 class="ckbox_on" 추가 -->
+			<input type="checkbox" id="c_sc" class="ckbox">
+			<label for="c_sc">톡톡으로 관리자 댓글, 답글 알림 받기</label>
+		</span>
+	</div>
+
+	<div class="btn_area">
+		<span class="btn_w">
+			<!-- [D] 버튼 활성화일 때 active 클래스 추가 -->
+			<a href="" class="btn b_r active">등록</a>
+		</span>
+		<span class="btn_w">
+			<a href="" class="btn b_c">취소</a>
+		</span>
+	</div>
+</div>

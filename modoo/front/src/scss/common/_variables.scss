@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+$ButtonType: ('set', 'line');
+
+$ThemeColor: (
+	#4f7ce6,
+	#d77182,
+	#31929a,
+	#699b55,
+	#795d49,
+	#986fae,
+	#414851,
+	#bf3235,
+	#e7a536
+);
+
+$ThemeColor-title: (
+	1: (#4f7ce6, #7b9cea, #3d61b3, #6064da, #956ada, #222),
+	2: (#d77182, #e79ba7, #a45663, #df867c, #db7abb, #222),
+	3: (#31929a, #6aa6ab, #216267, #4491b8, #2ca280, #222),
+	4: (#699b55, #91b981, #466839, #a6a854, #3f9179, #222),
+	5: (#795d49, #c19575, #5d3f29, #c2902b, #be703d, #222),
+	6: (#986fae, #af8ac4, #6b4e7b, #bb6e9f, #6d76cb, #222),
+	7: (#3e454d, #7c8fa3, #636e7a, #4e7199, #586f6f, #222),
+	8: (#c13030, #df6868, #9a1f1f, #c15630, #e43c3c, #222),
+	9: (#e9a624, #e9b824, #c09631, #e98a24, #e96e24, #222)
+);
+
+$ThemeColor-banner: (
+	#5586f9,
+	#f68fa0,
+	#41aab3,
+	#41aab3,
+	#b9825b,
+	#ad80c4,
+	#97abc4,
+	#97abc4,
+	#97abc4
+);
+
+$ThemeColor-mask: (
+	#242e47,
+	#382b2d,
+	#2a3131,
+	#262b21,
+	#332d29,
+	#302a33,
+	#1f2327,
+	#322727,
+	#322e27
+);
+
+$ThemeColor-notice: (
+	#f3f6fd,
+	#fcf5f6,
+	#f0f7f8,
+	#f4f8f3,
+	#f6f4f2,
+	#f8f5f9,
+	#f2f2f3,
+	#fbf0f0,
+	#fdf9f0
+);
+
+$TextColor: (
+	#222,
+	#666,
+	#888
+);
+
+//$F- font-family 관련 변수
+$F-base:'helvetica,applesdgothicneo,sans-serif';
+$F-light:'helveticaneue-light,applesdgothicneo-light,sans-serif-light';
+$F-medium-en:'helveticaneue,sans-serif';
+$F-medium-ko:'helveticaneue,applesdgothicneo-thin,sans-serif';
+$F-myriad:'myriad pro,helveticaneue,sans-serif';
+$F-regular:'helveticaneue-light,applesdgothicneo-regular,sans-serif';
+$F-medium:'helveticaneue,applesdgothicneo-medium,sans-serif';
+
+//$P- path 관련 변수
+$P-img:'../img/';
+
+//$B- breakpoint 관련 변수
+$B-tablet:768px;
+
+//디폴트 이미지 배경색상
+$default-imgage-bg:#f3f3f3;

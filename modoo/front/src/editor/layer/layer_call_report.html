@@ -1,0 +1,149 @@
+<html lang="ko"><head>
+    <meta charset="utf-8">
+    <title>모바일에디터 - modoo![모두]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="http://static.naver.net/modoo/publish/css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="../../css/w.css">
+    <link rel="stylesheet" href="../../css/editor.css">
+    <link rel="stylesheet" href="../../_manage/_manage.css">
+    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.datetimepicker.full.js"></script>
+</head>
+<body class="editor basic theme1 btn_type_c btn_set1">
+<div class="layer_info layer_contact_info">
+    <div class="layer_title">통화보고서 <a href="#" class="layer_close">닫기</a></div>
+    <div class="info_report_wrap">
+        <div class="calltrack">
+            <div class="box_report">
+                <dl class="desc_call">
+                    <dt>통화추적번호 : </dt>
+                    <dd class="txt_point">0570-1301-1455</dd>
+                </dl>
+                <dl class="desc_call">
+                    <dt>연결되는 전화번호 : </dt>
+                    <dd>010-7220-1455</dd>
+                </dl>
+            </div>
+            <div class="box_report">
+                <div class="buttons align_c">
+                    <span class="grid"><a href="#" class="btn_line">최근 7일</a></span>
+                    <span class="grid"><a href="#" class="btn_line disabled">최근 30일</a></span>
+                </div>
+                <div class="calendars">
+                    <div class="calendar_box">
+                        <label for="startDay" class="blind">시작일입력</label>
+                        <input type="text" id="startDay" class="input_day" value="2016-04-16">
+                        <a href="#" class="btn_calendar"><span class="blind">달력</span></a>
+                    </div>
+                    <div class="calendar_box">
+                        <label for="endDay" class="blind">종료일입력</label>
+                        <input type="text" id="endDay" class="input_day" value="2016-04-16">
+                        <a href="#" class="btn_calendar"><span class="blind">달력</span></a>
+                    </div>
+                </div>
+                <button type="button" class="btn_enter">조회하기</button>
+            </div>
+            <div class="tbl_area">
+                <table class="tbl_report">
+                <caption class="blind">통화보고서</caption>
+                <colgroup>
+                    <col width="37%">
+                    <col width="21%">
+                    <col width="21%">
+                    <col width="21%">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>일자</th>
+                    <th>통화<br>시도수</th>
+                    <th>통화<br>성공수</th>
+                    <th>평균<br>통화시간</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>전체</th>
+                    <td><span class="txt_num">58</span>회</td>
+                    <td><span class="txt_num">58</span>회</td>
+                    <td><span class="txt_num">58</span>회</td>
+                </tr>
+                </tfoot>
+                <tbody>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">0</span>회</td>
+                    <td><span class="txt_num">5</span>회</td>
+                    <td><span class="txt_num">9999</span>회</td>
+                </tr>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">0</span>회</td>
+                    <td>999회</td>
+                    <td><span class="txt_num">9999</span>회</td>
+                </tr>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">0</span>회</td>
+                    <td><span class="txt_num">12</span>회</td>
+                    <td><span class="txt_num">9999</span>회</td>
+                </tr>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">0</span>회</td>
+                    <td><span class="txt_num">12</span>회</td>
+                    <td>999회</td>
+                </tr>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">12</span>회</td>
+                    <td>999회</td>
+                    <td><span class="txt_num">9999</span>회</td>
+                </tr>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">0</span>회</td>
+                    <td><span class="txt_num">12</span>회</td>
+                    <td><span class="txt_num">9999</span>회</td>
+                </tr>
+                <tr>
+                    <td><span class="txt_num">2016-02-25</span></td>
+                    <td><span class="txt_num">5</span>회</td>
+                    <td>999회</td>
+                    <td><span class="txt_num">9999</span>회</td>
+                </tr>
+                </tbody>
+
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 마크업 확인용 임시 스크립트 -->
+<script>
+    $.datetimepicker.setLocale('ko');
+    jQuery(function(){
+        jQuery('#startDay').datetimepicker({
+            format:'Y-m-d',
+            todayButton:false,
+            onShow:function( ct ){
+                this.setOptions({
+                    maxDate:jQuery('#endDay').val()?jQuery('#endDay').val():false
+                })
+            },
+            timepicker:false
+        });
+        jQuery('#endDay').datetimepicker({
+            format:'Y-m-d',
+            todayButton:false,
+            onShow:function( ct ){
+                this.setOptions({
+                    minDate:jQuery('#startDay').val()?jQuery('#startDay').val():false
+                })
+            },
+            timepicker:false
+        });
+    });
+
+</script>
+</body>
+</html>

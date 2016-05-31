@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+/* import/components/_thmb_view.scss */
+.thmb_view {
+	overflow: hidden;
+	position: relative;
+
+	.thmb {
+		overflow: hidden;
+		float: left;
+		position: relative;
+
+		a {
+			display: block
+		}
+	}
+
+	img {
+		width: 100%;
+		vertical-align: top;
+	}
+
+	//디폴트이미지
+	&.album_default {
+		$min-height: 200px;
+
+		@if $DEVICE == 'pc'{
+			$min-height: 400px;
+		}
+
+		@extend %default-imgage;
+		min-height: $min-height;
+
+		.ico_default {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-gallery_overthrow, both);
+			} @else {
+				@include setSprite($sp_m-gallery_overthrow, both);
+			}
+		}
+	}
+}
+
+//하단 이미지 리스트
+.lst_thmb {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	ul {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		border-top: 1px solid #f2f2f2;
+		border-bottom: 1px solid #f2f2f2;
+		background-color: #f2f2f2;
+		white-space: nowrap;
+		word-wrap: normal;
+
+		&:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
+	}
+
+	li {
+		display: inline-block;
+		position: relative;
+		width: 16.66666666666667%;
+		height: 100%;
+		border-left: 1px solid #f2f2f2;
+		vertical-align: top;
+		white-space: nowrap;
+		word-wrap: normal;
+		box-sizing: border-box;
+	}
+
+	li:first-child {
+		border-left: 0;
+	}
+
+	a {
+		display: block;
+	}
+
+	.border {
+		display:none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		border: 3px solid;
+	}
+
+	.selected .border {
+		display:block;
+	}
+
+	.btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-bottom: 1px solid #f2f2f2;
+		text-align: center;
+
+		a {
+			display: inline-block;
+			height: 100%;
+			text-align: center;
+			color: #fff;
+		}
+
+		a:before {
+			display: inline-block;
+			height: 100%;
+			vertical-align: middle;
+			content: '';
+		}
+	}
+
+	.b_more {
+		.more_area {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.num {
+			@if $DEVICE == 'pc'{
+				margin-bottom: 2px;
+				font-size: 24px;
+				font-family: Tahoma, sans-serif;
+				font-weight: 600;
+				letter-spacing: -0.05em;
+			} @else {
+				font-size: 15px;
+				font-family: #{$F-light}
+			}
+
+			display: inline-block;
+		}
+
+		.txt {
+			@if $DEVICE == 'pc'{
+				font-size: 12px;
+				ine-height: 16px;
+			} @else {
+				font-size: 11px;
+				line-height: 13px;
+			}
+
+			display: block;
+		}
+
+		.spci {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-lst_thmb_icon);
+				margin: 3px 0 0 4px;
+			} @else {
+				@include setSprite($sp_m-lst_thmb_icon);
+				margin: 2px 0 0 2px;
+			}
+
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+}
+
+//카드형
+.narrow .thmb_view .thmb img{
+	width:280px;
+}
+.wide .thmb_view .thmb img{
+	width:320px;
+}
+
+//테마색상
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i} .lst_thmb {
+			.btn {
+				background-color: $color;
+			}
+
+			.selected .border {
+				border-color: $color;
+			}
+		}
+	}
+}

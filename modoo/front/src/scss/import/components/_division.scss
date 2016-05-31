@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+/* import/components/_division.scss */
+.division_line {
+	background-color: #fff;
+
+	//공백
+	.space {
+		width: 100%;
+		height: 10px;
+	}
+
+	//실선
+	.line {
+		@include setBackgroundImage('#{$P-img}line.gif', $repeat: repeat-x, $top: 50%, $size: 3px 1px);
+
+		@if $DEVICE == 'pc'{
+			height: 40px;
+			margin: 0;
+		} @else {
+			height: 20px;
+			margin: 0 12px;
+		}
+	}
+
+	//점선
+	.dot {
+		@if $DEVICE == 'pc' {
+			@include setBackgroundImage('#{$P-img}dot_line_pc.gif', $repeat: repeat-x, $top: 50%);
+		} @else {
+			@include setBackgroundImage('#{$P-img}dot_line.gif', $repeat: repeat-x, $top: 50%, $size: 3px 1px);
+		}
+	}
+}

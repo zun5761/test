@@ -1,0 +1,132 @@
+<!-- [D] 상단이미지형 :horizontal /배경이미지형 vertical 클래스 추가 -->
+<div class="maincard">
+	<!-- 이미지 -->
+	<!-- [D] 상단이미지 없을때 img_none 클래스 추가 -->
+	<div class="gallery_area main_type img_none">
+		<ul>
+			<li>
+				<!-- [D] 상단이미지 없을때 블러처리된 썸네일 이미지 배경이미지로 적용 -->
+				<!-- [D] 모바일 에디터 이미지 수정시 selected 클래스 추가 -->
+				<div class="gallery_img selected" style="background-image:url()">
+					<a href="#">
+						<div class="mask_bg"></div>
+					</a>
+				</div>
+				<div class="spot_section">
+					<div class="spot">
+						<div class="spot_area">
+							<div class="thumb_img">
+								<img src="http://dev.ui.naver.com/tmp/?180x180_none_y_FFB4B4_50" width="90" height="90" alt="임시 이미지">
+							</div>
+							<div class="text_area">
+								<div class="area">
+									<h3 class="spot_title"><span>썸띵디프런트</span></h3>
+									<p class="spot_text">라이프스타일 디자인 브랜드 썸띵 디프런트입니다</p>
+								</div>
+								<div class="blank"></div>
+							</div>
+						</div>
+						<!-- 버튼 -->
+						<div class="btn_wrap">
+							<!-- [D] 에디터 버튼 설정 초기시 5개 노출/최대 5개노출 -->
+							<ul class="btn_list">
+								<li><a href="javascript:layer('layer_maincard_edit')" class="btn"><div class="in">버튼<span class="ic"></span></div></a></li>
+								<li><a href="javascript:layer('layer_maincard_edit')" class="btn"><div class="in">버튼<span class="ic"></span></div></a></li>
+								<li><a href="javascript:layer('layer_maincard_edit')" class="btn"><div class="in">버튼<span class="ic"></span></div></a></li>
+								<li><a href="javascript:layer('layer_maincard_edit')" class="btn"><div class="in">버튼<span class="ic"></span></div></a></li>
+								<li><a href="javascript:layer('layer_maincard_edit')" class="btn"><div class="in">버튼<span class="ic"></span></div></a></li>
+							</ul>
+						</div>
+						<!-- //버튼 -->
+					</div>
+					<div class="blank"></div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<!-- //이미지 -->
+
+	<!-- 한마디 -->
+	<!-- [D] 테마별 컬러색상 설정가능 color1~color6 -->
+	<div class="maintxt_area">
+		<span class="ico_cite"></span>
+		<!-- [D] 큰글자 big_font 추가 -->
+		<p class="dsc_text">
+			<textarea class="edit_text" style="width:100%;height:auto">매일 어떤 순간을 꿈꾸시나요? 누구나 낭만적이고 행복한 시간을 기다립니다. 그런 '꿈'이 이루어지는 곳을 만들고 싶어 로뎀 하우스를 짓기로 마음 먹었습니다.</textarea>
+		</p>
+	</div>
+	<!-- //한마디 -->
+
+	<div class="info_section">
+		<!-- 쿠폰/이벤트 -->
+		<!-- [D] PC 에디터 미리보기 첫화면 -->
+		<div class="coupon_area">
+			<a href="">
+				<div class="coupon_before"></div>
+				<div class="coupon">
+					<div class="coupon_benefit_wrap">
+						<div class="benefit">
+							<span class="b_coupon"></span>
+							<span class="blind">쿠폰</span>
+						</div>
+						<!-- [D] 관리시스템에서 사용자가 직접 등록한 이미지로 노출 시 .img 노출, .bg 비노출 -->
+						<!-- <div class="img"><img src="이미지경로" alt="쿠폰/이벤트명"></div> -->
+						<div class="bg"></div>
+						<div class="mask"></div>
+					</div>
+					<div class="coupon_tit_wrap">
+						<div class="tit_wrap">
+							<strong class="tit"><span class="txt">첫번째 쿠폰이 노출됩니다</span></strong>
+						</div>
+					</div>
+				</div>
+				<div class="coupon_after"></div>
+				<div class="coupon_bg"></div>
+			</a>
+		</div>
+		<!-- //쿠폰/이벤트 -->
+
+		<!-- 지역_모바일 -->
+		<!-- [D] PC 에디터 미리보기 첫화면 -->
+		<div class="zone_area">
+			<span class="ico_zone"></span>
+			<div class="zone_info">
+				<h3 class="zone_title">
+					<span class="text">홈페이지명</span>
+				</h3>
+				<p class="zone_adress">예) 경기도 성남시 분당구<span class="phone">031-000-0000</span></p>
+			</div>
+			<div class="buttons_area">
+				<a href="#" class="btn">길찾기</a><a href="#" class="btn btn_local">네비게이션</a><a href="#" class="btn btn_local">전화</a>
+			</div>
+		</div>
+		<!-- //지역_모바일 -->
+
+		<!-- 스케줄 -->
+		<!-- [D] PC 에디터 미리보기 첫화면 -->
+		<div class="scd_list_area main_type">
+			<ul class="scd_list">
+				<li class="notice">
+					<a href="#">
+						<div class="info">
+							<div class="ic_wrap"><span class="ic"></span></div>
+						</div>
+						<p class="txt v2">
+							<strong class="tit">스케줄 메뉴명</strong>
+							최근 작성한 공지사항이 노출됩니다.
+						</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- //스케줄 -->
+
+		<!-- [D] 에디터 노출 문구 -->
+		<div class="limit_area">
+			<p class="limit_text">하단 쿠폰, 지도, 스케줄 노출정보는<br>
+			PC에서 수정 가능합니다.</p>
+		</div>
+	</div>
+
+</div>
+

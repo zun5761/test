@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Mobile 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/w.css">
+<link rel="stylesheet" href="../_manage/_options.css">
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+
+<div class="layer">
+	<div class="ly_sc">
+		<div class="ly_tit">
+			<h2>글쓰기</h2>
+		</div>
+		<div class="ly_cont">
+			<ul class="lst_w">
+				<!-- [D] 사용자인 경우 -->
+				<li>
+					<strong class="tit"><label for="">글쓴이</label></strong>
+					<div class="sc">
+						<span class="name">modo******</span>
+					</div>
+				</li>
+				<!-- //[D] 사용자인 경우 -->
+				<!-- [D] 관리자인 경우 -->
+				<li>
+					<strong class="tit"><label for="">글쓴이</label></strong>
+					<div class="sc">
+						<span class="name"><span class="ico_m"></span> 관리자</span>
+					</div>
+				</li>
+				<!-- //[D] 관리자인 경우 -->
+				<li>
+					<strong class="tit"><label for="">제목</label></strong>
+					<div class="sc">
+						<!-- [D] 포커스 class="sc_tx sc_on" -->
+						<div class="sc_tx">
+							<input type="text" placeholder="3~50자">
+							<a href="" class="b_dl">삭제</a>
+						</div>
+					</div>
+				</li>
+				<li class="w_con">
+					<strong class="blind"><label for="">내용</label></strong>
+					<!-- [D] window.height 480이상일경우 class="sc sc2" -->
+					<div class="sc">
+						<!-- [D] 포커스 class="sc_tx sc_on" -->
+						<div class="sc_tx">
+							<div class="text_area">
+								<textarea rows="1" cols="80" placeholder=""></textarea>
+								<a href="" class="b_dl">삭제</a>
+								<div class="photo_img">
+									<img src="http://dev.ui.naver.com/tmp/?257x170_pororo_y_FFB4B4_50" width="257" height="170" alt="임시 이미지">
+									<img src="http://dev.ui.naver.com/tmp/?257x170_pororo_y_FFB4B4_50" width="257" height="170" alt="임시 이미지">
+								</div>
+							</div>
+							<p class="f_h"><em>0</em> / 3000</p>
+						</div>
+						<div class="photo_upload">
+							<a href="#" class="btn_add">추가</a>
+							<ul class="photo_list">
+								<!-- [D] 사진등록전 노출
+                                <li><span class="first_notice">사진등록(최대 5개)</span></li>
+                                -->
+								<li>
+									<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+									<a href="#" class="delete">삭제</a>
+								</li>
+								<li>
+									<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+									<a href="#" class="delete">삭제</a>
+								</li>
+								<li>
+									<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+									<a href="#" class="delete">삭제</a>
+								</li>
+								<li>
+									<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+									<a href="#" class="delete">삭제</a>
+								</li>
+								<li>
+									<img src="http://dev.ui.naver.com/tmp/?41x41_pororo_y_FFB4B4_50" width="41" height="41" alt="임시 이미지">
+									<a href="#" class="delete">삭제</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<div class="chk_area">
+				<span class="area">
+					<!-- [D] 체크시 input, label 에 class="ckbox_on" 추가 -->
+					<input type="checkbox" id="c_sc" class="ckbox ckbox_on">
+					<label for="c_sc" class="ckbox_on">비밀글</label>
+				</span>
+				<span class="area">
+					<!-- [D] 체크시 input, label 에 class="ckbox_on" 추가 -->
+					<input type="checkbox" id="c_sc" class="ckbox">
+					<label for="c_sc">톡톡으로 관리자 댓글, 답글 알림 받기</label>
+				</span>
+						</div>
+
+						<div class="btn_area">
+				<span class="btn_w">
+					<!-- [D] 버튼 활성화일 때 active 클래스 추가 -->
+					<a href="" class="btn b_r active">등록</a>
+				</span>
+				<span class="btn_w">
+					<a href="" class="btn b_c">취소</a>
+				</span>
+			</div>
+    	</div>
+		<a href="" class="btn_cls">닫기</a>
+	</div>
+</div>
+
+</body>
+</html>

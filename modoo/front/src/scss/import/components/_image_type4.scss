@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+/* import/components/_image_type4.scss */
+//좌우측 이미지
+.gallery_area {
+	&.type4 {
+		li {
+			@if $DEVICE == 'pc'{
+				padding: 10px 0;
+			} @else {
+				padding: 10px;
+			}
+
+			position: relative;
+			overflow: hidden;
+			border-top: 1px solid #ededed;
+		}
+
+		li:first-child {
+			border-top: 0;
+		}
+
+		li:after {
+			display: block;
+			clear: both;
+			content: '';
+		}
+
+		.gallery_img {
+			@if $DEVICE == 'pc' {
+				$width-height: 160px;
+			} @else {
+				$width-height: 80px;
+			}
+
+			position: absolute;
+			top: 10px;
+			width: $width-height;
+			min-height: $width-height;
+		}
+
+		.gallery_txt {
+			@if $DEVICE == 'pc'{
+				$height: 160px;
+			} @else {
+				$height: 80px;
+			}
+
+			display: table;
+			width: 100%;
+			height: $height;
+		}
+
+		.gallery_txt h3 {
+			@if $DEVICE == 'pc' {
+				font-weight: 600;
+			} @else {
+				font-family: #{$F-medium-ko};
+		}
+
+			overflow: hidden;
+			width: 100%;
+			height: 18px;
+			margin-top: 1px;
+			font-size: 16px;
+			line-height: 19px;
+			white-space: normal;
+			color: #222;
+			letter-spacing: -.05em;
+		}
+
+		.gallery_txt p {
+			@if $DEVICE == 'pc' {
+				max-height: 46px;
+				margin-top: 13px;
+				font-size: 13px;
+				line-height: 25px;
+				letter-spacing: -1px;
+			} @else {
+				max-height: 39px;
+				margin-top: 7px;
+				font-size: 15px;
+				font-family: #{$F-light};
+				line-height: 19px;
+				letter-spacing: -.05em;
+			}
+
+			overflow: hidden;
+			color: #666;
+		}
+
+		.txt_area{
+			@if $DEVICE == 'pc'{
+				padding-left:175px;
+			} @else{
+				padding-left:95px;
+			}
+
+			display:table-cell;
+		}
+	}
+
+	//오른쪽 이미지
+	&.img_rgt {
+		.gallery_img {
+			right: 10px;
+		}
+
+		.txt_area {
+			@if $DEVICE == 'pc'{
+				padding-right: 175px;
+			} @else {
+				padding-right: 95px;
+			}
+
+			padding-left: 0;
+		}
+	}
+}

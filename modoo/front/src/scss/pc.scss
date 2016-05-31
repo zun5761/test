@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+$DEVICE: "pc";
+
+// common
+@import 'common/base_pc';
+@import "common/variables";
+@import "common/mixins";
+@import "common/placeholders";
+
+// sprites
+@import 'import/sprite/sp_pc';
+@import 'import/sprite/sp_pc_button';
+@import 'import/sprite/sp_m';
+@import 'import/sprite/sp_limit';
+
+// layout
+@import 'import/pc/placeholders';
+@import 'import/pc/layout';
+@import 'import/pc/aside';
+@import 'import/pc/aside_notice';
+@import 'import/pc/layer';
+
+// components
+@import 'import/components/components';
+@import 'import/components/button_pc';
+
+// functional pages
+@import 'import/functional_pages/functional_pages';
+@import 'import/functional_pages/board_pc';
+@import 'import/functional_pages/store_pc';
+@import 'import/functional_pages/maincard_pc';

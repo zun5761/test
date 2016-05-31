@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* import/components/_image_default.scss */
+//디폴트 이미지
+.gallery_area {
+	.default {
+		.gallery_img {
+			@extend %default-imgage;
+
+			position: relative;
+			z-index: 1;
+		}
+
+		.gallery_img img {
+			display: none;
+		}
+
+		.gallery_img .ico_default {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-gallery, both);
+			} @else {
+				@include setSprite($sp_m-gallery, both);
+			}
+		}
+	}
+
+	//1단 이미지
+	&.type,
+	&.type5{
+		.default .gallery_img {
+			@if $DEVICE == 'pc'{
+				$min-height: 400px;
+			} @else {
+				$min-height: 200px;
+			}
+
+			min-height: $min-height;
+		}
+	}
+
+	//2단 이미지
+	&.type2{
+		.default .gallery_img {
+			padding-top: 100%;
+		}
+
+		.default .ico_default {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-gallery, both);
+			} @else {
+				@include setSprite($sp_m-gallery_col2, both);
+			}
+		}
+	}
+
+	//3단 이미지
+	&.type3{
+		.default .gallery_img {
+			padding-top: 100%;
+		}
+
+		.default .ico_default {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-gallery_col2, both);
+			} @else if $DEVICE == 'm'{
+				@include setSprite($sp_m-gallery_col3, both);
+			}
+		}
+	}
+
+	//좌우측 이미지
+	&.type4 {
+		.default .ico_default {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-gallery_col2, both);
+			} @else if $DEVICE == 'm'{
+				@include setSprite($sp_m-gallery_col3, both);
+			}
+		}
+	}
+}

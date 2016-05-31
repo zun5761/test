@@ -1,0 +1,75 @@
+<table class="table_type2">
+	<colgroup>
+		<col style="width:100px;">
+		<col>
+	</colgroup>
+	<tbody>
+		<!-- [D] 사용자인 경우 -->
+		<tr>
+			<th>글쓴이</th>
+			<td><span class="name">modo******</span></td>
+		</tr>
+		<!-- //[D] 사용자인 경우 -->
+		<!-- [D] 관리자인 경우 -->
+		<tr>
+			<th>글쓴이</th>
+			<td><span class="spci manager"></span>관리자</td>
+		</tr>
+		<!-- //[D] 관리자인 경우 -->
+		<tr>
+			<th>제목</th>
+			<td>
+				<input type="text" id="" name="" class="input_txt" value="" placeholder="3~50자" style="width:430px">
+				<div class="text_area">
+					내용을 입력해주세요. (3자~3000자)
+					<div class="photo_img">
+						<!-- [D] 이미지 최대 넓이값 438 -->
+						<img src="http://dev.ui.naver.com/tmp/?438x327_pororo_y_FFB4B4_50" width="438" height="327" alt="임시 이미지">
+						<img src="http://dev.ui.naver.com/tmp/?438x327_pororo_y_FFB4B4_50" width="438" height="327" alt="임시 이미지">
+					</div>
+					내용을 입력해주세요. (3자~3000자)
+					<div class="photo_img">
+						<!-- [D] 이미지 최대 넓이값 438 -->
+						<img src="http://dev.ui.naver.com/tmp/?438x327_pororo_y_FFB4B4_50" width="438" height="327" alt="임시 이미지">
+					</div>
+				</div>
+				<div class="photo_upload">
+					<span class="text">사진등록</span>
+					<ul class="photo_list">
+						<li>
+							<a href="#" class="thumb">
+								<img src="http://dev.ui.naver.com/tmp/?50x50_default_y_FFB4B4_50" width="50" height="50" alt="임시 이미지">
+								<span class="delete">삭제</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="thumb">
+								<img src="http://dev.ui.naver.com/tmp/?50x50_default_y_FFB4B4_50" width="50" height="50" alt="임시 이미지">
+								<span class="delete">삭제</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="thumb">
+								<img src="http://dev.ui.naver.com/tmp/?50x50_default_y_FFB4B4_50" width="50" height="50" alt="임시 이미지">
+								<span class="delete">삭제</span>
+							</a>
+						</li>
+					</ul>
+					<!-- [D] 사진 5개 모두 등록시 추가 버튼 미노출 -->
+					<a href="#" class="btn_add">추가</a>
+				</div>
+				<div class="check_area">
+					<input type="checkbox" id="secret"><label for="secret" class="secret">비밀글</label>
+					<!-- [D] 사용자 시에만 노출 -->
+					<input type="checkbox" id="talk"><label for="talk" class="secret">톡톡으로 관리자 댓글, 답글 알림 받기</label>
+					<!-- //[D] 사용자 시에만 노출 -->
+					<span class="text_num">0/3,000</span>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="btn_area">
+	<a href="#" class="btn register">등록</a><a href="#" class="btn cancel">취소</a>
+</div>

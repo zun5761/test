@@ -1,0 +1,99 @@
+<!--
+	[D] 이미지 공통 클래스
+
+	이미지 타입
+	1단 : type
+	2단 : type2
+	3단 type3
+	좌우측이미지형 :type4, 좌측 : img_lft, 우측 : img_rgt
+	단일형 : type5
+
+	텍스트 크기
+	작게 : sma
+	중간 : nor
+	크게 : big
+
+	텍스트 정렬
+	왼쪽 : align_l
+	가운데 : align_c
+	오른쪽 : align_r
+	상단 : v_align_t
+	중앙 : v_align_m
+	하단 : v_align_b
+
+	텍스트 제거 : txt_hide
+
+	단일형 옵션
+	흰색 배경 : white_bg
+	검은 배경 : black_bg
+
+	타이틀상자 : txt_ul
+
+	디폴트 이미지 : default
+-->
+
+<!-- 단수이미지 > 텍스트오버레이이미지 -->
+<!-- [D] 타이틀상자 있을경우 클래스 txt_ul 추가
+	 [D] 타이틀 없을때,타이틀만 사용안할때 클래스 txt_none 추가 -->
+<div class="gallery_area type5 txt_ul txt_none">
+	<ul>
+		<li class="status_edit h3">
+			<div class="gallery_img">
+				<a href="javascript:alert('이미지뷰어')"><img src="http://dev.ui.naver.com/tmp/?292x281_pororo_y_FFB4B4_50" alt="임시 이미지"></a>
+			</div>
+			<div class="mask_bg" style="opacity:0.6;filter:alpha(opacity=60)"></div> <!-- [D] opcitiy 값 최대 60% 인라인으로 값조정 필요 -->
+			<div class="gallery_txt">
+				<div class="w1">
+					<div class="w2">
+						<div class="w3">
+							<h3><span><textarea class="edit_text" style="height:78px">타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀</textarea></span></h3> <!-- [D] 텍스트 라인이 2줄이면 height:78px -->
+							<p><textarea class="edit_text" style="height:70px">내용은 3줄까지 입력 가능하고 최대 글자수 45자내용은 3줄까지 입력 가능</textarea></p> <!-- [D] 텍스트 라인 수 만큼 높이값 지정 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<!-- [D] 에디트모드로 h3, p 안쪽에 input이나 textarea가 생성되면 status_edit 클래스 추가 -->
+		<li class="status_edit">
+			<!-- [D] 모바일 에디터 이미지 수정시 selected 클래스 추가 -->
+			<div class="gallery_img selected">
+				<a href="javascript:alert('사진첩열기')"><img src="http://dev.ui.naver.com/tmp/?292x281_pororo_y_FFB4B4_50" alt="임시 이미지"></a>
+			</div>
+			<div class="mask_bg" style="opacity:0.6;filter:alpha(opacity=60)"></div> <!-- [D] opcitiy 값 최대 60% 인라인으로 값조정 필요 -->
+			<div class="gallery_txt" style="z-index:200"> <!-- [D] 텍스트 클릭시 z-index:200 지정 -->
+				<div class="w1">
+					<div class="w2">
+						<div class="w3">
+							<h3><span><textarea class="edit_text" style="height:78px">타이틀타이틀타이틀타이틀타이틀타이틀타이틀타이틀</textarea></span></h3> <!-- [D] 텍스트 라인이 2줄이면 height:78px -->
+							<p><textarea class="edit_text" style="height:70px">내용은 3줄까지 입력 가능하고 최대 글자수 45자내용은 3줄까지 입력 가능</textarea></p> <!-- [D] 텍스트 라인 수 만큼 높이값 지정 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<!-- 단수이미지 > 텍스트오버레이이미지 -->
+<div class="gallery_area type5"> <!-- [D] 타이틀상자 있을경우 클래스 txt_ul 추가 -->
+	<ul>
+		<!-- [D] 에디트모드로 h3, p 안쪽에 input이나 textarea가 생성되면 status_edit 클래스 추가 -->
+		<li class="status_edit">
+			<!-- [D] 모바일 에디터 이미지 수정시 selected 클래스 추가 -->
+			<div class="gallery_img selected">
+				<a href="javascript:alert('사진첩열기')"><img src="http://dev.ui.naver.com/tmp/?292x281_pororo_y_FFB4B4_50" alt="임시 이미지"></a>
+			</div>
+			<div class="mask_bg" style="opacity:0.6;filter:alpha(opacity=60)"></div> <!-- [D] opcitiy 값 최대 60% 인라인으로 값조정 필요 -->
+			<div class="gallery_txt" style="z-index:200"> <!-- [D] 텍스트 클릭시 z-index:200 지정 -->
+				<div class="w1">
+					<div class="w2">
+						<div class="w3">
+							<h3><span><textarea class="edit_text" style="height:33px">타이틀</textarea></span></h3> <!-- [D] 텍스트 라인 수 만큼 높이값 지정 -->
+							<p><textarea class="edit_text" style="height:70px">내용은 3줄까지 입력 가능하고 최대 글자수 45자내용은 3줄까지 입력 가능</textarea></p> <!-- [D] 텍스트 라인 수 만큼 높이값 지정 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>

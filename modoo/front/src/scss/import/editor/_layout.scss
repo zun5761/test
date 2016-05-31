@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/* import/editor/_layout.scss */
+.editor{height:100%;background-color:#e9ebee}
+.editor.wide .card{margin-top:0}
+.editor .fc_header{position:relative;height:auto;z-index:0}
+.editor .fc_header .fc_btn.aside{display:none}
+.editor .fc_header .fc_btn.plus span{
+	@include setSprite($sp_editor-header_menu_plus, both);
+
+	left:50%;
+	top:50%;
+}
+.editor.btn_type_c .fc_header .fc_btn.plus span,
+.editor.main .fc_header .fc_btn.plus span
+{
+	@include setSprite($sp_editor-header_menu_plus_set, both);
+
+}
+.editor .fc_header h2 .edit_input{padding:0;line-height:24px;text-align:center;letter-spacing:-0.5px}
+.editor .fc_header h2 span{margin:0 80px}
+.editor .fc_header h2 ::-webkit-input-placeholder,
+.editor .fc_header h2 :-moz-placeholder,
+.editor .fc_header h2 ::-moz-placeholder,
+.editor .fc_header h2 :-ms-input-placeholder{text-align:center}
+.editor .fc_header .navigate_bar{display:none}
+.editor .fc_header .balloon_wrapper{display:block;position:relative;top:0}
+.editor .fc_header .balloon .depth{display:inline-block;overflow:hidden;max-width:145px;white-space:nowrap;text-overflow:ellipsis;vertical-align:top}
+.editor .fc_header .balloon .edit_input{line-height:1.25em}
+.editor .fc_header .balloon .page{display:none}
+
+.editor .edit_total .et_header.total,
+.editor .edit_components .et_header.components,
+.editor .edit_composition .et_header.composition{display:block}
+.editor .et_header{display:none;position:fixed;left:0;top:0;right:0;z-index:999;height:50px;box-sizing:border-box}
+.editor .et_header.total{
+	@include backgroundOpacity(#01c73c, 0.96);
+}
+.editor .et_header.components{background:#01c73c}
+.editor .et_header.composition{position:relative;z-index:0;height:auto;padding:28px 0 24px;border-bottom:1px solid #dcdfe5;background:#ebedf0;text-align:center}
+.editor .et_header .title{
+	position:absolute;top:50%;left:50%;margin:-7px 0 0 -25px;
+	&:before{content:'\00a0';}
+}
+.editor .et_header.total .title{
+	@include setSprite($sp_editor-modoo_logo);
+	margin:-11px 0 0 -49px;
+
+	&:before{content:'\00a0';}
+}
+.editor .et_header.components .title{
+	@include setSprite($sp_editor-title_components);
+}
+.editor .et_header.composition .title{
+	display:inline-block;position:static;
+	@include setSprite($sp_editor-title_composition);
+	margin:0;
+}
+.editor .et_header .btn_back{position:absolute;top:0;left:0;width:50px;height:50px}
+.editor .et_header .btn_back:before{
+	display:block;position:absolute;top:50%;left:50%;
+	@include setSprite($sp_editor-btn_ico_back, both);
+	content:'\00a0';
+}
+
+.editor .et_header .btn_save{
+	display:block;position:absolute;top:50%;right:12px;
+	@include setSprite($sp_editor-btn_save);
+	margin-top:-17px;
+
+	&:before{content:'\00a0';}
+}
+
+.editor .et_contents .total{padding:50px 0 54px;background:#eaecee;-webkit-tap-highlight-color:transparent}
+.editor .et_contents .components{padding-top:50px;background:#fff}
+.editor .et_contents .composition{padding-bottom:52px;background:#ebedf0}
+
+.editor .et_footer{display:none;position:fixed;bottom:0;left:0;z-index:980;width:100%;height:53px;border-top:1px solid #d5d9e0;background:#fbfbfb}
+.editor .edit_total .et_footer.total,
+.editor .edit_components .et_footer.components,
+.editor .edit_composition .et_footer.composition{display:block}
+.editor .et_footer .footer_dsc{text-align:center;font-size:15px;color:#fff;line-height:57px}
+.editor .et_footer .buttons{overflow:hidden;background:#f6f7f8}
+.editor .et_footer .buttons [class^="btn"]{display:block;float:left;width:25%;padding:14px 0;text-align:center}
+.editor .et_footer .buttons span{display:inline-block;height:25px}
+.editor .et_footer .buttons span:before{content:'\00a0'}
+.editor .et_footer .buttons .theme_color{
+	@include setSprite($sp_editor-footer_btn_theme);
+}
+.editor .et_footer .buttons .page_new{
+	@include setSprite($sp_editor-footer_btn_page);
+}
+.editor .et_footer .buttons .tmp_new{
+	@include setSprite($sp_editor-footer_btn_tmp);
+}
+.editor .et_footer .buttons .site{
+	@include setSprite($sp_editor-footer_btn_info);
+}
+.editor .et_footer.components,
+.editor .et_footer.composition{position:static;height:auto;border:none}
+.editor .et_footer.components .btn_composition{
+	position:fixed;bottom:19px;right:12px;z-index:20000;
+	@include setSprite($sp_editor-btn_composition);
+	&:before{content:'\00a0'}
+}
+.editor .et_footer.composition .btn_ok{position:fixed;left:0;bottom:0;z-index:20000;width:100%;height:52px;background:#01c73c}
+.editor .et_footer.composition .btn_ok:before{
+	position:absolute;top:50%;left:50%;
+	@include setSprite($sp_editor-btn_ico_confirm, both);
+	content:'\00a0';
+}
+
+// 320해상도 대응
+@media all and (max-width : 320px) {
+	.editor .fc_header{
+		h2 span{
+			margin:0 62px
+		}
+	}
+}

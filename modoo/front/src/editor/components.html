@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>모바일에디터 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/editor.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+</head>
+<body class="editor">
+<div id="wrap" class="edit_components">
+  <div class="et_header components">
+    <h2 class="title"><span class="blind">내용편집</span></h2>
+    <a href="total.html" class="btn btn_back"><span class="blind">편집홈</span></a>
+  </div>
+  <div class="et_contents">
+    <div class="components">
+      <div class="fc_header">
+        <h2>
+          <span><input type="text" class="edit_input" placeholder="메뉴명 입력" value="로뎀하우스로뎀하우스로뎀하우스" maxlength="15"></span>
+        </h2>
+        <div class="buttons">
+            <!-- a href="javascript:layer('layer_contact_info')" class="fc_btn talk"><span>톡톡</span></a -->
+            <!-- [D] 연결정보가 입력되지 않았을 때 -->
+            <a href="javascript:javascript:layer('layer_contact_info')" class="fc_btn other plus"><span>연결정보입력</span></a>
+            <a href="javascript:layer('layer_contact_info')" class="fc_btn other"><span>연결정보수정</span></a>
+        </div>
+        <div class="balloon_wrapper">
+          <div class="balloon">
+            <span class="depth">객실소개객실소개객실소</span><span class="spci"></span><input type="text" class="edit_input" placeholder="페이지명 입력" value="룸타입 A-2" style="width:150px">
+          </div>
+        </div>
+      </div>
+      <!-- components -->
+      <div id="components"></div>
+      <!-- //components -->
+      <!-- [D] 푸터정보가 등록되어 있지않으면 info_none 클래스 추가 -->
+      <div class="adr_area">
+        <a href="javascript:layer('layer_footer_info')" class="btn_set">
+          	<div class="info">
+            		<p>업체명</p><span class="bar"></span>
+            		<p>대표자명</p><span class="bar"></span>
+            		<address>경기도 성남시</address><span class="bar"></span>
+            		<p>사업자등록번호 : 000-00-00000</p><span class="bar"></span>
+            		<p>통신판매업 신고번호 : 제0000-경기성남-000호</p><span class="bar"></span>
+            		<p>전화번호 : 031-000-0000</p><span class="bar"></span>
+            		<p>이메일 : email@domain.com</p><span class="bar"></span>
+            		<p>기타입력</p>
+          	</div>
+        </a>
+        <p class="copy">Powered by NAVER</p>
+      </div>
+    </div>
+  </div>
+  <div class="et_footer components">
+    <a href="composition.html" class="btn_composition"><span class="blind">구성수정</span></a>
+  </div>
+</div>
+</body>
+</html>

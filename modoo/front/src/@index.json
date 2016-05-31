@@ -1,0 +1,346 @@
+{
+  "components": {
+    "title": "구성요소",
+    "type": "components",
+    "list": [
+      {
+        "name": "텍스트 - 타이틀형",
+        "pc": "text_title",
+        "mobile": "text_title",
+        "editor": "text_title"
+      },
+      {
+        "name": "텍스트 - 본문형",
+        "pc": "text",
+        "mobile": "text",
+        "editor": "text"
+      },
+      {
+        "name": "텍스트 - 목록형",
+        "pc": "text_list",
+        "mobile": "text_list",
+        "editor": "text_list"
+      },
+      {
+        "name": "이미지 - 텍스트+이미지",
+        "pc": "image_overlay",
+        "mobile": "image_overlay",
+        "editor": "image_overlay"
+      },
+      {
+        "name": "이미지 - 좌측이미지+텍스트",
+        "pc": "image-float-left_text",
+        "mobile": "image-float-left_text",
+        "editor": "image-float-left_text"
+      },
+      {
+        "name": "이미지 - 우측이미지+텍스트",
+        "pc": "image-float-right_text",
+        "mobile": "image-float-right_text",
+        "editor": "image-float-right_text"
+      },
+      {
+        "name": "이미지 - 상단이미지+텍스트",
+        "pc": "image-col1_text",
+        "mobile": "image-col1_text",
+        "editor": "image-col1_text"
+      },
+      {
+        "name": "이미지 - 2단이미지+텍스트",
+        "pc": "image-col2_text",
+        "mobile": "image-col2_text",
+        "editor": "image-col2_textt"
+      },
+      {
+        "name": "이미지 - 1단",
+        "pc": "image-col1",
+        "mobile": "image-col1",
+        "editor": "image-col1"
+      },
+      {
+        "name": "이미지 - 2단",
+        "pc": "image-col2",
+        "mobile": "image-col2",
+        "editor": "image-col2"
+      },
+      {
+        "name": "이미지 - 3단",
+        "pc": "image-col3",
+        "mobile": "image-col3",
+        "editor": "image-col3"
+      },
+      {
+        "name": "전환효과 이미지",
+        "pc": "image_overthrow",
+        "mobile": "image_overthrow",
+        "editor": "image_overthrow"
+      },
+      {
+        "name": "지도",
+        "pc": "map",
+        "mobile": "map",
+        "editor": "map"
+      },
+      {
+        "name": "버튼 - 네모버튼",
+        "pc": "button_tile",
+        "mobile": "button_tile",
+        "editor": "button_tile"
+      },
+      {
+        "name": "버튼 - 막대버튼",
+        "pc": "button_list",
+        "mobile": "button_list",
+        "editor": "button_list"
+      },
+      {
+        "name": "표",
+        "pc": "table",
+        "mobile": "table",
+        "editor": "table"
+      },
+      {
+        "name": "동영상",
+        "pc": "movie",
+        "mobile": "movie",
+        "editor": "movie"
+      },
+      {
+        "name": "구분선",
+        "pc": "division",
+        "mobile": "division",
+        "editor": "division"
+      },
+      {
+        "name": "인덱스-리스트",
+        "pc": "index_list",
+        "mobile": "index_list",
+        "editor": "index_list"
+      },
+      {
+        "name": "인덱스-이미지",
+        "pc": "index_image",
+        "mobile": "index_image",
+        "editor": "index_list"
+      }
+    ]
+  },
+  "maincard": {
+    "title": "메인카드",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "배경이미지형",
+        "mobile": "maincard",
+        "pc": "maincard_pc",
+        "editor": "maincard"
+      },
+      {
+        "name": "상단이미지형",
+        "mobile": "maincard_horizontal",
+        "pc": "maincard_horizontal_pc",
+        "editor": "maincard"
+      },
+      {
+        "name": "이미지 없음",
+        "mobile": "maincard_none",
+        "pc": "maincard_none_pc",
+        "editor": "maincard"
+      }
+    ]
+  },
+  "board": {
+    "title": "게시판",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "목록",
+        "mobile": "board",
+        "pc": "board_pc",
+        "editor": "board"
+      },
+      {
+        "name": "상세",
+        "layer": "board_view",
+        "pc": "board_view_pc"
+      },
+      {
+        "name": "쓰기",
+        "layer": "board_write",
+        "pc": "board_write_pc"
+      }
+    ]
+  },
+  "inquiery": {
+    "title": "문의하기",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "목록 (관리자 전용)",
+        "mobile": "inquiery",
+        "pc": "inquiery_pc",
+        "editor": "inquiery"
+      },
+      {
+        "name": "상세 (관리자 전용)",
+        "layer": "inquiery_view",
+        "pc": "inquiery_view_pc"
+      },
+      {
+        "name": "쓰기 (사용자 전용)",
+        "mobile": "inquiery_write",
+        "pc": "inquiery_write_pc"
+      }
+    ]
+  },
+  "coupon": {
+    "title": "쿠폰",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "목록",
+        "mobile": "coupon",
+        "pc": "coupon_pc",
+        "editor": "coupon"
+      },
+      {
+        "name": "사용레이어 (Mobile)",
+        "layer": "coupon_layer"
+      },
+      {
+        "name": "수정레이어 (PC)",
+        "layer": "coupon_modify_layer"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "스케줄",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "달력",
+        "mobile": "schedule",
+        "pc": "schedule_pc",
+        "editor": "schedule"
+      },
+      {
+        "name": "상세 (Mobile)",
+        "page": "schedule_view"
+      },
+      {
+        "name": "상세 (PC)",
+        "layer": "schedule_view_pc"
+      },
+      {
+        "name": "쓰기 (Mobile)",
+        "page": "schedule_write"
+      },
+      {
+        "name": "쓰기 (PC)",
+        "layer": "schedule_write_pc"
+      }
+    ]
+  },
+  "store": {
+    "title": "스토어",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "목록",
+        "mobile": "store",
+        "pc": "store_pc",
+        "editor": "store"
+      }
+    ]
+  },
+  "etc": {
+    "title": "기타",
+    "type": "functional_pages",
+    "list": [
+      {
+        "name": "성인인증안내",
+        "pc": "adult",
+        "mobile": "adult"
+      },
+      {
+        "name": "게시중단안내",
+        "pc": "blocked_page",
+        "mobile": "blocked_page"
+      },
+      {
+        "name": "이미지 뷰어 (mobile)",
+        "layer": "viewer"
+      },
+      {
+        "name": "이미지 뷰어 (PC)",
+        "layer": "viewer_pc"
+      },
+      {
+        "name": "공통팝업 (Mobile)",
+        "layer": "ly_common"
+      },
+      {
+        "name": "공통팝업 (PC)",
+        "layer": "ly_common_pc"
+      },
+      {
+        "name": "개인정보 수집 및 이용에 대한 안내 (Mobile)",
+        "layer": "ly_privacy_m"
+      },
+      {
+        "name": "개인정보 수집 및 이용에 대한 안내 (PC)",
+        "layer": "ly_privacy_pc"
+      },
+      {
+        "name": "개인정보 취급(처리)방침 (Mobile)",
+        "layer": "ly_personal_m"
+      },
+      {
+        "name": "개인정보 취급(처리)방침 (PC)",
+        "layer": "ly_personal_pc"
+      },
+      {
+        "name": "오류 페이지 (PC/Mobile)",
+        "layer": "error_notice"
+      },
+      {
+        "name": "상단 연결정보 (Mobile)",
+        "layer": "layer_contact_info"
+      }
+    ]
+  },
+  "editor": {
+    "title": "에디터",
+    "type": "editor",
+    "list": [
+      {
+        "name": "편집홈",
+        "layout": "total"
+      },
+      {
+        "name": "내용편집",
+        "layout": "components"
+      },
+      {
+        "name": "구성편집",
+        "layout": "composition"
+      },
+      {
+        "name": "코치마크",
+        "layer": "layer_editor_coach"
+      },
+      {
+        "name": "가이드",
+        "layer": "layer_editor_guide"
+      },
+      {
+        "name": "통화추적기능안내 (Mobile)",
+        "layer": "layer_calltrack"
+      },
+      {
+        "name": "통화추적보고서 (Mobile)",
+        "layer": "layer_call_report"
+      }
+    ]
+  }
+}

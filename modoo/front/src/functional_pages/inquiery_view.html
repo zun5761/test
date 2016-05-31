@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>Mobile 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/w.css">
+<link rel="stylesheet" href="../_manage/_options.css">
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+
+<div class="layer">
+	<div class="ly_sc">
+		<div class="ly_tit">
+			<h2>문의하기 </h2>
+		</div>
+		<div class="ly_cont">
+			<div class="ly_info">
+				<p class="info">
+					<!-- 1) 확인시 -->
+					<span class="mv_st">확인</span>
+					<!-- 2) 미확인시 -->
+					<span class="mv_st_not">미확인</span>
+					<span class="f_h">modo****** <span class="bar"></span> 2013.01.01 00:59</span>
+				</p>
+			</div>
+
+			<ul class="lst_iq">
+				<li><span class="tit">연락처</span><span class="f_h">010-1234-8282</span></li>
+				<li><span class="tit">날짜</span><span class="tx_n">입력안함</span></li>
+				<li><span class="tit">복수선택복수선택</span><span class="f_h">검색 / 지인소개 / 신문광고 / 인터넷 / 방문전화</span></li>
+				<!-- [D] 내용일때 클래스 v2 추가 -->
+				<li><span class="tit">상담내용</span><span class="f_h v2">문의 드리겠습니다. 부산에서 서울로 이사합니다. 다음 달 중으로 부산에서 서울로 이사를 가려고 합니다.</span></li>
+			</ul>
+
+			<div class="c_b">
+				<a href="" class="btn b_p">이전글</a>
+				<a href="" class="btn b_n">다음글</a>
+				<!--
+                <span class="btn b_p">이전글</span>
+                <span class="btn b_n">다음글</span>
+                -->
+				<!-- [D] 스케줄 등록/확인처리 관리자일때만 노출 -->
+	<span class="side_area">
+		<!-- [D] 확인일 때 selected 클래스 추가 -->
+		<span class="sorting selected">
+			<select>
+				<option value="확인">확인</option>
+				<option value="미확인">미확인</option>
+			</select>
+			<span class="ico_arrow spci"></span>
+		</span>
+		<a href="" class="btn b_d"><span class="blind">삭제</span></a>
+	</span>
+				<a href="#" class="btn schedule"><span class="ico_schedule spci"></span>스케줄에 바로 등록</a>
+			</div>
+
+			<div class="rp_area">
+				<div class="lst_rp">
+					<p class="rp_dsc">댓글 <strong class="f_h">3</strong>건</p>
+					<ul class="lst">
+						<!-- 관리자 댓글 수정 시 -->
+						<li>
+							<div class="write_rp">
+								<div class="item">
+									<div class="insert">
+										<textarea rows="20" cols="80">아무래도 부티크 호텔이라 서비스에 대한 큰 기대는 안하고 갔는데요. 특급 호텔만큼의 서비스를 받은는낌이들어서 너무 좋았습니다.^^</textarea>
+										<span class="wr_byte">0/300</span>
+									</div>
+									<div class="insert">
+										<a href="" class="btn">취소</a>
+										<a href="" class="btn_reg active">확인</a>
+									</div>
+								</div>
+							</div>
+							<p class="info"><span class="ic"></span> 관리자</p>
+							<a href="" class="b_dl">삭제</a>
+						</li>
+						<!-- //관리자 댓글 수정 시 -->
+						<!-- 사용자 댓글 수정 시 -->
+						<li>
+							<div class="write_rp">
+								<div class="item">
+									<div class="insert">
+										<textarea rows="20" cols="80">아무래도 부티크 호텔이라 서비스에 대한 큰 기대는 안하고 갔는데요. 특급 호텔만큼의 서비스를 받은는낌이들어서 너무 좋았습니다.^^</textarea>
+										<span class="wr_byte">0/300</span>
+									</div>
+									<div class="insert">
+										<a href="" class="btn">취소</a>
+										<a href="" class="btn_reg active">확인</a>
+									</div>
+								</div>
+							</div>
+							<p class="info">ddur******</p>
+							<a href="" class="b_dl">삭제</a>
+						</li>
+						<!-- //사용자 댓글 수정 시 -->
+						<li>
+							<p class="tx">전화번호 입력이 잘못되어 통화실패 후 이틀 뒤, 고객으로부터 직접 전화 옴.</p>
+							<p class="info"><span class="name"><span class="ico_manager"></span>관리자</span> <span class="bar">|</span> <em class="f_h">1</em>시간 전</p>
+							<a href="" class="b_ed">수정</a>
+							<span class="bar">|</span>
+							<a href="" class="b_dl">삭제</a>
+						</li>
+					</ul>
+				</div>
+				<!-- [D] 댓글 등록 시 사용자 로그인 후 노출 -->
+				<div class="write_rp">
+					<div class="item">
+						<div class="insert">
+							<textarea rows="20" cols="80" placeholder="댓글을 입력해주세요"></textarea>
+							<span class="wr_byte">0/300</span>
+						</div>
+						<div class="insert">
+							<span class="name">modo*****</span>
+							<!-- [D] 버튼 활성화일 때 active 클래스 추가 -->
+							<a href="" class="btn_reg">등록</a>
+						</div>
+					</div>
+				</div>
+				<!-- [D] 댓글 등록 시 관리자 로그인 후 노출 -->
+				<div class="write_rp">
+					<div class="item">
+						<div class="insert">
+							<textarea rows="20" cols="80" placeholder="댓글을 입력해주세요"></textarea>
+							<span class="wr_byte">0/300</span>
+						</div>
+						<div class="insert">
+							<span class="name"><span class="ico_manager"></span>관리자</span>
+							<!-- [D] 버튼 활성화일 때 active 클래스 추가 -->
+							<a href="" class="btn_reg active">등록</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="chk_area">
+					<!-- [D] 관리자 로그인 후 노출 -->
+					<span class="area">
+						<!-- [D] 체크시 input, label class="ckbox_on" 추가 -->
+						<input type="checkbox" id="c_sc" class="ckbox ckbox_on">
+						<label for="c_sc" class="ckbox_on">글쓴이에게 톡톡 글 알림 보내기</label>
+					</span>
+					<!-- //[D] 관리자 로그인 후 노출 -->
+					<!-- [D] 사용자 로그인 후 노출 -->
+					<span class="area">
+						<!-- [D] 체크시 input, label class="ckbox_on" 추가 -->
+						<input type="checkbox" id="c_sc" class="ckbox">
+						<label for="c_sc">톡톡으로 관리자 댓글, 답글 알림 받기</label>
+					</span>
+					<!-- //[D] 사용자 로그인 후 노출 -->
+				</div>
+			</div>
+		</div>
+		<a href="" class="btn_cls">닫기</a>
+	</div>
+</div>
+
+</body>
+</html>

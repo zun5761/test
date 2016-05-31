@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+/* import/components/_image_type.scss */
+//1단 이미지
+.gallery_area {
+	&.type {
+		li {
+			margin-bottom: 2px;
+		}
+
+		.gallery_txt {
+			@if $DEVICE == 'pc'{
+				padding: 0 0 15px 0;
+			} @else {
+				padding: 0 14px 15px 13px;
+			}
+
+			border-bottom: 1px solid #ededed;
+		}
+
+		.gallery_txt h3 {
+			@if $DEVICE == 'pc'{
+				font-size: 16px;
+				font-weight: 600;
+				color: #222;
+			} @else{
+				font-size: 17px;
+			}
+
+			padding: 14px 0 9px;
+		}
+
+		.gallery_txt p {
+			@if $DEVICE == 'pc' {
+				font-size: 13px;
+				color: #666;
+			} @else {
+				font-size: 16px;
+			}
+
+			overflow: hidden;
+			padding-bottom: 11px;
+			line-height: 24px;
+			letter-spacing: -0.05em;
+		}
+	}
+}

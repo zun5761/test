@@ -1,0 +1,1261 @@
+@charset "utf-8";
+
+/* import/functional_pages/_maincard.scss */
+.android .gallery_area.main_type .spot_title{
+  ont-weight:bold
+}
+
+.main{
+  &.narrow .fc_content{
+    padding-top:50px;
+  }
+  &.wide .fc_content{
+    padding-top:50px;
+  }
+  .fc_content{
+    padding-top:0;
+  }
+}
+
+.maincard{
+  background-color:#e9ecef;
+
+  //쿠폰
+  .coupon_area{
+    padding:7px 6px 0;
+    .coupon_before{
+      left:-1px
+    }
+    .coupon_after{
+      right:-1px
+    }
+    .coupon{
+      height:100%;
+    }
+    > a{
+      height:85px;
+      border-color:#e1e4e7;
+      box-shadow:none;
+      .coupon_tit_wrap{
+        padding:10px 100px 10px 23px;
+        box-sizing:border-box;
+        .tit_wrap{
+          margin-top:11px;
+          .tit{
+            display:table;
+            vertical-align:middle;
+            .txt{
+              font-size:15px;
+              line-height:19px;
+              letter-spacing:-0.5px;
+            }
+          }
+        }
+      }
+      .coupon_benefit_wrap{
+        overflow:hidden;
+        width:62px;
+        height:62px;
+        margin-right:20px;
+        .mask{
+          @if $DEVICE == 'pc'{
+            @include setSprite($sp_pc-coupon_maincard_mask);
+          } @else{
+            @include setSprite($sp_m-coupon_maincard_mask);
+          }
+        }
+        .img
+        img{
+          width:62px;
+          height:62px;
+        }
+        .bg{
+          opacity:1;
+        }
+        .b_one_plus_one{
+          @if $DEVICE == 'pc'{
+            @include setSprite($sp_pc-coupon_maincard_oneplus);
+          } @else{
+            @include setSprite($sp_m-coupon_maincard_oneplus);
+          }
+        }
+        .b_free{
+          @if $DEVICE == 'pc'{
+            @include setSprite($sp_pc-coupon_maincard_free);
+          } @else{
+            @include setSprite($sp_m-coupon_maincard_free);
+          }
+        }
+        .b_event{
+          @if $DEVICE == 'pc'{
+            @include setSprite($sp_pc-coupon_maincard_event);
+          } @else{
+            @include setSprite($sp_m-coupon_maincard_event);
+          }
+        }
+        .b_coupon{
+          @if $DEVICE == 'pc'{
+            @include setSprite($sp_pc-coupon_maincard_coupon);
+          } @else{
+            @include setSprite($sp_m-coupon_maincard_coupon);
+          }
+        }
+        .percent{
+          @if $DEVICE == 'pc'{
+            @include setSprite($sp_pc-coupon_maincard_percent);
+          } @else{
+            @include setSprite($sp_m-coupon_maincard_percent);
+          }
+          margin:4px -5px -4px 0;
+        }
+        .no{
+          @if $DEVICE == 'm'{
+            &.no0{ @include setSprite($sp_m-coupon_maincard_no0) }
+            &.no1{ @include setSprite($sp_m-coupon_maincard_no1) }
+            &.no2{ @include setSprite($sp_m-coupon_maincard_no2) }
+            &.no3{ @include setSprite($sp_m-coupon_maincard_no3) }
+            &.no4{ @include setSprite($sp_m-coupon_maincard_no4) }
+            &.no5{ @include setSprite($sp_m-coupon_maincard_no5) }
+            &.no6{ @include setSprite($sp_m-coupon_maincard_no6) }
+            &.no7{ @include setSprite($sp_m-coupon_maincard_no7) }
+            &.no8{ @include setSprite($sp_m-coupon_maincard_no8) }
+            &.no9{ @include setSprite($sp_m-coupon_maincard_no9) }
+          }
+        }
+      }
+    }
+  }
+
+  //이미지
+  .gallery_area.main_type{
+    .mask_bg{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      top:0;
+      background-color:rgba(22, 22, 22, 0.5);
+      z-index:10;
+    }
+    .spot_section{
+      position:absolute;
+      left:0;
+      top:0;
+      text-align:center;
+      z-index:10;
+      .spot_area{
+        margin-bottom:9px;
+      }
+      .thumb_img{
+        overflow:hidden;
+        width:90px;
+        height:90px;
+        margin:0 auto;
+        border-radius:50px;
+        img{
+          border-radius:50px;
+        }
+      }
+      .text_area{
+        padding:0 50px;
+      }
+      .spot_title{
+        margin-top:18px;
+        font-size:23px;
+        font-family:#{$F-medium};
+        font-weight:normal;
+        color:#fff;
+        letter-spacing:-0.75px;
+        line-height:25px;
+      }
+      .spot_text{
+        margin-top:5px;
+        font-size:15px;
+        color:rgba(255, 255, 255, 0.7);
+        letter-spacing:-0.75px;
+        line-height:19px;
+      }
+    }
+    .btn_wrap{
+      width:100%;
+      margin-top:33px;
+      text-align:center;
+      .btn_list{
+        display:inline-block;
+        &:after{
+          display:block;
+          clear:both;
+          content:'';
+        }
+        > li{
+          float:left;
+          vertical-align:top;
+          .btn{
+            display:block;
+            overflow:hidden;
+            width:60px;
+            height:66px;
+            word-break:break-all;
+            .ic{
+              @include setSprite($sp_m_button-maincard_button_line);
+              position:absolute;
+              left:50%;
+              top:0;
+              width:44px;
+              height:44px;
+              margin-left:-22px;
+            }
+            &.btn_ic1 .ic{ @include setSprite($sp_m_button-maincard_button_line1) }
+          ;
+            &.btn_ic2 .ic{ @include setSprite($sp_m_button-maincard_button_line2) }
+          ;
+            &.btn_ic3 .ic{ @include setSprite($sp_m_button-maincard_button_line3) }
+          ;
+            &.btn_ic4 .ic{ @include setSprite($sp_m_button-maincard_button_line4) }
+          ;
+            &.btn_ic5 .ic{ @include setSprite($sp_m_button-maincard_button_line5) }
+          ;
+            &.btn_ic6 .ic{ @include setSprite($sp_m_button-maincard_button_line6) }
+          ;
+            &.btn_ic7 .ic{ @include setSprite($sp_m_button-maincard_button_line7) }
+          ;
+            &.btn_ic8 .ic{ @include setSprite($sp_m_button-maincard_button_line8) }
+          ;
+            &.btn_ic9 .ic{ @include setSprite($sp_m_button-maincard_button_line9) }
+          ;
+            &.btn_ic10 .ic{ @include setSprite($sp_m_button-maincard_button_line10) }
+          ;
+            &.btn_ic11 .ic{ @include setSprite($sp_m_button-maincard_button_line11) }
+          ;
+            &.btn_ic12 .ic{ @include setSprite($sp_m_button-maincard_button_line12) }
+          ;
+            &.btn_ic13 .ic{ @include setSprite($sp_m_button-maincard_button_line13) }
+          ;
+            &.btn_ic14 .ic{ @include setSprite($sp_m_button-maincard_button_line14) }
+          ;
+            &.btn_ic15 .ic{ @include setSprite($sp_m_button-maincard_button_line15) }
+          ;
+            &.btn_ic16 .ic{ @include setSprite($sp_m_button-maincard_button_line16) }
+          ;
+            &.btn_ic17 .ic{ @include setSprite($sp_m_button-maincard_button_line17) }
+          ;
+            &.btn_ic18 .ic{ @include setSprite($sp_m_button-maincard_button_line18) }
+          ;
+            &.btn_ic19 .ic{ @include setSprite($sp_m_button-maincard_button_line19) }
+          ;
+            &.btn_ic20 .ic{ @include setSprite($sp_m_button-maincard_button_line20) }
+          ;
+            &.btn_ic21 .ic{ @include setSprite($sp_m_button-maincard_button_line21) }
+          ;
+            &.btn_ic22 .ic{ @include setSprite($sp_m_button-maincard_button_line22) }
+          ;
+            &.btn_ic23 .ic{ @include setSprite($sp_m_button-maincard_button_line23) }
+          ;
+            &.btn_ic24 .ic{ @include setSprite($sp_m_button-maincard_button_line24) }
+          ;
+            &.btn_ic25 .ic{ @include setSprite($sp_m_button-maincard_button_line25) }
+          ;
+            &.btn_ic26 .ic{ @include setSprite($sp_m_button-maincard_button_line26) }
+          ;
+            &.btn_ic27 .ic{ @include setSprite($sp_m_button-maincard_button_line27) }
+          ;
+            &.btn_ic28 .ic{ @include setSprite($sp_m_button-maincard_button_line28) }
+          ;
+            &.btn_ic29 .ic{ @include setSprite($sp_m_button-maincard_button_line29) }
+          ;
+            &.btn_ic30 .ic{ @include setSprite($sp_m_button-maincard_button_line30) }
+          ;
+            &.btn_ic31 .ic{ @include setSprite($sp_m_button-maincard_button_line31) }
+          ;
+            &.btn_ic32 .ic{ @include setSprite($sp_m_button-maincard_button_line32) }
+          ;
+            &.btn_ic33 .ic{ @include setSprite($sp_m_button-maincard_button_line33) }
+          ;
+            &.btn_ic34 .ic{ @include setSprite($sp_m_button-maincard_button_line34) }
+          ;
+            &.btn_ic35 .ic{ @include setSprite($sp_m_button-maincard_button_line35) }
+          ;
+            &.btn_ic36 .ic{ @include setSprite($sp_m_button-maincard_button_line36) }
+          ;
+            &.btn_ic37 .ic{ @include setSprite($sp_m_button-maincard_button_line37) }
+          ;
+            &.btn_ic38 .ic{ @include setSprite($sp_m_button-maincard_button_line38) }
+          ;
+            &.btn_ic39 .ic{ @include setSprite($sp_m_button-maincard_button_line39) }
+          ;
+            &.btn_ic40 .ic{ @include setSprite($sp_m_button-maincard_button_line40) }
+          ;
+            &.btn_ic41 .ic{ @include setSprite($sp_m_button-maincard_button_line41) }
+          ;
+            &.btn_ic42 .ic{ @include setSprite($sp_m_button-maincard_button_line42) }
+          ;
+            &.btn_ic43 .ic{ @include setSprite($sp_m_button-maincard_button_line43) }
+          ;
+            &.btn_ic44 .ic{ @include setSprite($sp_m_button-maincard_button_line44) }
+          ;
+            .in{
+              display:block;
+              position:relative;
+              padding-top:49px;
+              font-size:13px;
+              color:rgba(255, 255, 255, 0.7);
+              letter-spacing:-0.5px;
+            }
+          }
+        }
+      }
+    }
+    &.img_none{
+      .spot_section{
+        display:table;
+        width:100%;
+        height:425px;
+        .spot{
+          display:table-cell;
+          vertical-align:middle;
+        }
+      }
+      .mask_bg{
+        opacity:0.5;
+      }
+      .gallery_img{
+        height:425px;
+        background-position:50% 0;
+        background-size:cover;
+        img{
+          display:none;
+        }
+      }
+    }
+  }
+
+  //한마디
+  .maintxt_area{
+    position:relative;
+    padding:22px 20px 21px 30px;
+    .dsc_text{
+      font-size:15px;
+      color:#fff;
+      letter-spacing:-0.75px;
+      line-height:20px;
+      word-break:break-all;
+      word-wrap:break-word;
+      &:after{
+        @if $DEVICE == 'pc'{
+          @include setSprite($sp_pc-spot_ico_cite_end);
+        } @else{
+          @include setSprite($sp_m-spot_ico_cite_end);
+        }
+
+        display:inline-block;
+        margin:2px 0 -2px 1px;
+        vertical-align:top;
+        content:'';
+      }
+    }
+    .big_font{
+      font-size:16px;
+    }
+    .ico_cite{
+      @if $DEVICE == 'pc'{
+        @include setSprite($sp_pc-spot_ico_cite);
+      } @else{
+        @include setSprite($sp_m-spot_ico_cite);
+      }
+
+      position:absolute;
+      left:16px;
+      top:24px;
+    }
+  }
+
+  //지역
+  .zone_area{
+    position:relative;
+    margin:7px 6px 0;
+    border-radius:3px;
+    background-color:#fff;
+    border:1px solid #e1e4e7;
+    .ico_zone{
+      position:relative;
+      float:left;
+      margin:25px 16px 0 20px;
+      @if $DEVICE == 'pc'{
+        @include setSprite($sp_pc-zone_ico_line);
+      } @else{
+        @include setSprite($sp_m-zone_ico_line);
+      }
+    }
+    .zone_info{
+      overflow:hidden;
+      padding:20px 20px 15px 0;
+      .zone_title{
+        display:block;
+        margin-bottom:2px;
+        font-size:17px;
+        font-weight:normal;
+        color:#000;
+        line-height:25px;
+        letter-spacing:-0.5px;
+      }
+      .zone_adress{
+        font-size:15px;
+        color:#999;
+        line-height:20px;
+        letter-spacing:-0.25px;
+        .phone{
+          display:block;
+          margin-top:1px;
+        }
+      }
+    }
+    .buttons_area{
+      display:-webkit-box;
+      display:-webkit-flex;
+      display:-ms-flex;
+      display:flex;
+      background-color:#f6f8fc;
+      border-top:1px solid #e8edf1;
+      border-radius:0 0 3px 3px;
+      line-height:36px;
+      .btn{
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flex;
+        display:flex;
+        -webkit-box-orient:vertical;
+        -webkit-flex-flow:column;
+        flex-flow:column;
+        -webkit-box-flex:1;
+        -webkit-flex:auto;
+        flex:auto;
+        width:100%;
+        text-align:center;
+        font-size:14px;
+        color:#666;
+        letter-spacing:-0.25px;
+        + .btn{
+          border-left:1px solid #e8edf1;
+        }
+      }
+    }
+    &:after{ display:block; clear:both; content:'' }
+  }
+
+  //스케줄
+  .scd_list_area.main_type{
+    margin:7px 6px 0;
+    border-radius:3px;
+    background-color:#fff;
+    border:1px solid #e1e4e7;
+    .notice{
+      position:relative;
+      > a{
+        display:block;
+        padding:0 20px 22px 0;
+      }
+      .info{
+        float:left;
+        margin:24px 16px 0 20px;
+      }
+      .txt{
+        overflow:hidden;
+        padding-top:20px;
+        font-size:15px;
+        color:#999;
+        line-height:20px;
+        letter-spacing:-0.5px;
+        .tit{
+          display:block;
+          margin-bottom:2px;
+          font-size:17px;
+          font-weight:normal;
+          color:#000;
+          line-height:25px;
+        }
+      }
+    }
+    .notice .ic{
+      @if $DEVICE == 'pc'{
+        @include setSprite($sp_pc-schedule_ico_line);
+      } @else{
+        @include setSprite($sp_m-schedule_ico_line);
+      }
+
+      display:inline-block;
+      position:relative;
+      overflow:hidden;
+      margin:1px 0 -1px;
+    }
+  }
+
+  //세로형
+  &.vertical{
+
+    .gallery_img{
+      height:425px;
+      background-position:50% 0;
+      background-size:cover;
+      img{
+        display:none;
+      }
+    }
+    .spot_section{
+      display:table;
+      width:100%;
+      height:425px;
+      .spot{
+        display:table-cell;
+        width:100%;
+        vertical-align:middle;
+      }
+    }
+  }
+
+  //가로형
+  &.horizontal{
+
+    //이미지
+    .gallery_area.main_type{
+      background-color:#fff;
+      .gallery_img{
+        overflow:hidden;
+        height:160px;
+        background-color:rgba(22, 22, 22, 0.3);
+      }
+      .mask_bg{
+        background-color:rgba(22, 22, 22, 0.3);
+      }
+      .spot_section{
+        position:relative;
+        top:inherit;
+        padding-bottom:23px;
+        z-index:inherit;
+        .thumb_img{
+          margin-top:-45px;
+          position:relative;
+          z-index:10;
+        }
+        .spot_title{
+          color:#000
+        }
+        .spot_text{
+          color:#999;
+        }
+        .bar{
+          opacity:0.5;
+        }
+        .btn_wrap{
+          margin-top:26px;
+          .btn_list{
+            > li{
+              .btn{
+                .ic{
+                  @include setSprite($sp_m_button-maincard_button_set);
+                  position:absolute;
+                }
+                &.btn_ic1 .ic{ @include setSprite($sp_m_button-maincard_button_set1) }
+              ;
+                &.btn_ic2 .ic{ @include setSprite($sp_m_button-maincard_button_set2) }
+              ;
+                &.btn_ic3 .ic{ @include setSprite($sp_m_button-maincard_button_set3) }
+              ;
+                &.btn_ic4 .ic{ @include setSprite($sp_m_button-maincard_button_set4) }
+              ;
+                &.btn_ic5 .ic{ @include setSprite($sp_m_button-maincard_button_set5) }
+              ;
+                &.btn_ic6 .ic{ @include setSprite($sp_m_button-maincard_button_set6) }
+              ;
+                &.btn_ic7 .ic{ @include setSprite($sp_m_button-maincard_button_set7) }
+              ;
+                &.btn_ic8 .ic{ @include setSprite($sp_m_button-maincard_button_set8) }
+              ;
+                &.btn_ic9 .ic{ @include setSprite($sp_m_button-maincard_button_set9) }
+              ;
+                &.btn_ic10 .ic{ @include setSprite($sp_m_button-maincard_button_set10) }
+              ;
+                &.btn_ic11 .ic{ @include setSprite($sp_m_button-maincard_button_set11) }
+              ;
+                &.btn_ic12 .ic{ @include setSprite($sp_m_button-maincard_button_set12) }
+              ;
+                &.btn_ic13 .ic{ @include setSprite($sp_m_button-maincard_button_set13) }
+              ;
+                &.btn_ic14 .ic{ @include setSprite($sp_m_button-maincard_button_set14) }
+              ;
+                &.btn_ic15 .ic{ @include setSprite($sp_m_button-maincard_button_set15) }
+              ;
+                &.btn_ic16 .ic{ @include setSprite($sp_m_button-maincard_button_set16) }
+              ;
+                &.btn_ic17 .ic{ @include setSprite($sp_m_button-maincard_button_set17) }
+              ;
+                &.btn_ic18 .ic{ @include setSprite($sp_m_button-maincard_button_set18) }
+              ;
+                &.btn_ic19 .ic{ @include setSprite($sp_m_button-maincard_button_set19) }
+              ;
+                &.btn_ic20 .ic{ @include setSprite($sp_m_button-maincard_button_set20) }
+              ;
+                &.btn_ic21 .ic{ @include setSprite($sp_m_button-maincard_button_set21) }
+              ;
+                &.btn_ic22 .ic{ @include setSprite($sp_m_button-maincard_button_set22) }
+              ;
+                &.btn_ic23 .ic{ @include setSprite($sp_m_button-maincard_button_set23) }
+              ;
+                &.btn_ic24 .ic{ @include setSprite($sp_m_button-maincard_button_set24) }
+              ;
+                &.btn_ic25 .ic{ @include setSprite($sp_m_button-maincard_button_set25) }
+              ;
+                &.btn_ic26 .ic{ @include setSprite($sp_m_button-maincard_button_set26) }
+              ;
+                &.btn_ic27 .ic{ @include setSprite($sp_m_button-maincard_button_set27) }
+              ;
+                &.btn_ic28 .ic{ @include setSprite($sp_m_button-maincard_button_set28) }
+              ;
+                &.btn_ic29 .ic{ @include setSprite($sp_m_button-maincard_button_set29) }
+              ;
+                &.btn_ic30 .ic{ @include setSprite($sp_m_button-maincard_button_set30) }
+              ;
+                &.btn_ic31 .ic{ @include setSprite($sp_m_button-maincard_button_set31) }
+              ;
+                &.btn_ic32 .ic{ @include setSprite($sp_m_button-maincard_button_set32) }
+              ;
+                &.btn_ic33 .ic{ @include setSprite($sp_m_button-maincard_button_set33) }
+              ;
+                &.btn_ic34 .ic{ @include setSprite($sp_m_button-maincard_button_set34) }
+              ;
+                &.btn_ic35 .ic{ @include setSprite($sp_m_button-maincard_button_set35) }
+              ;
+                &.btn_ic36 .ic{ @include setSprite($sp_m_button-maincard_button_set36) }
+              ;
+                &.btn_ic37 .ic{ @include setSprite($sp_m_button-maincard_button_set37) }
+              ;
+                &.btn_ic38 .ic{ @include setSprite($sp_m_button-maincard_button_set38) }
+              ;
+                &.btn_ic39 .ic{ @include setSprite($sp_m_button-maincard_button_set39) }
+              ;
+                &.btn_ic40 .ic{ @include setSprite($sp_m_button-maincard_button_set40) }
+              ;
+                &.btn_ic41 .ic{ @include setSprite($sp_m_button-maincard_button_set41) }
+              ;
+                &.btn_ic42 .ic{ @include setSprite($sp_m_button-maincard_button_set42) }
+              ;
+                &.btn_ic43 .ic{ @include setSprite($sp_m_button-maincard_button_set43) }
+              ;
+                &.btn_ic44 .ic{ @include setSprite($sp_m_button-maincard_button_set44) }
+              ;
+                .in{
+                  color:#888;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //지역
+    .zone_area{
+      .ico_zone{
+        @if $DEVICE == 'pc'{
+          @include setSprite($sp_pc-zone_ico_set);
+        } @else{
+          @include setSprite($sp_m-zone_ico_set);
+        }
+      }
+    }
+
+    //스케줄
+    .scd_list_area.main_type{
+      .notice .ic{
+        @if $DEVICE == 'pc'{
+          @include setSprite($sp_pc-schedule_ico_set);
+        } @else{
+          @include setSprite($sp_m-schedule_ico_set);
+        }
+      }
+    }
+  }
+}
+
+.editor{
+  &.main{
+    .fc_header{
+      z-index:20
+    }
+    .info_section{
+      position:relative;
+
+      .limit_area{
+        position:absolute;
+        left:7px;
+        top:7px;
+        right:7px;
+        bottom:0;
+        padding:0;
+        border-radius:2px;
+        background-color:rgba(184,186,188,0.8);
+        font-size:15px;
+        line-height:21px;
+        letter-spacing:-0.4px;
+        z-index:110;
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:center;
+      }
+      & p:before{
+        display:none;
+      }
+    }
+  }
+  .spot_section{
+    .text_area{
+      .area{
+        background-color:transparent;
+      }
+    }
+  }
+  .maintxt_area{
+    .dsc_text{
+      .edit_text{
+        font-size:15px;
+        color:#fff;
+        line-height:21px;
+        letter-spacing:-0.75px;
+      }
+      .big_font .edit_text{
+        font-size:16px;
+      }
+    }
+  }
+  .pages .page.maincard .btn_area{
+    top:0;
+    bottom:0;
+  }
+  .btn_maincard_edit{
+    .area{
+      border:1px solid #dde0e4;
+      background-color:#fff;
+    }
+    .notice_list{
+      padding:13px 10px 13px 20px;
+      border-top:1px solid #e7e9ec;
+      > li{
+        padding-left:18px;
+        text-indent:-19px;
+        font-size:13px;
+        color:#999;
+        letter-spacing:-0.4px;
+        line-height:18px;
+        + li{
+          margin-top:4px;
+        }
+        .ico_notice{
+          @include setSprite($sp_editor-ico_memo);
+          display:inline-block;
+          margin:1px 0 -1px;
+          vertical-align:top;
+        }
+      }
+    }
+    .btn_area{
+      .btn{
+        .disabled{
+          background-color:#d9dee2;
+        }
+      }
+    }
+    .btn_wrap{
+      margin:0 10px 15px;
+      .btn_list{
+        .desc_call {
+          position:relative;
+          width:42px;
+          margin:8px auto 0;
+          font-size:13px;
+          color:#999;
+          white-space:nowrap;
+        }
+        .btn_call {
+          display:inline-block;
+          padding:0 5px 0 7px;
+          margin:0 4px 0 -14px;
+          background:#00c626;
+          border:1px solid #01b323;
+          font-size:14px;
+          line-height:22px;
+          color:#fff;
+          letter-spacing:-1px;
+
+          .ico_arr{
+            @include setSprite($sp-editor_ico_arr_green);
+
+            display:inline-block;
+            margin:-2px 0 0 4px;
+            vertical-align:middle;
+          }
+          .ico_new {
+            @include setSprite($sp-editor_ico_n);
+
+            position:absolute;
+            left:-24px;
+            top:-5px;
+          }
+          &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            z-index: 4;
+            margin-left:-7px;
+            border-style: solid;
+            border-width: 6px;
+            border-color: transparent transparent #01b323 transparent
+          }
+          &:before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            z-index: 5;
+            margin-left:-6px;
+            border-style: solid;
+            border-width: 5px 5px 6px 5px;
+            border-color: transparent transparent #00c626 transparent
+          }
+        }
+        &:after{
+          display:block;
+          clear:both;
+          content:'';
+        }
+        &.default{
+          >li{
+            height:auto;
+          }
+          .selected{
+            .btn:before{
+              display:none;
+            }
+          }
+          .btn{
+            background-color:transparent;
+            border:1px solid #dadfe3;
+            .in{
+              color:#bcc1c5;
+            }
+          }
+          [class*="btn_ic"]{
+            border:0;
+          }
+          [class*="btn_ic"] .ic{
+            background-color:#dadfe3;
+          }
+          .btn_edit{
+            display:none;
+          }
+          .disabled{
+            .btn_plus .ic{
+              @include setSprite($sp_editor-ico_plus_disabled, both);
+            }
+          }
+        }
+        > li{
+          position:relative;
+          float:left;
+          width:20%;
+          height:71px;
+          margin-top:12px;
+          text-align:center;
+          vertical-align:top;
+          .btn{
+            display:-webkit-box;
+            -webkit-box-pack:center;
+            -webkit-box-align:center;
+            position:relative;
+            width:44px;
+            min-height:44px;
+            margin:0 auto;
+            box-sizing:border-box;
+            word-break:break-all;
+            background-color:#dadfe3;
+            border-radius:100%;
+            .ic{
+              position:absolute;
+              left:0;
+              top:0;
+              width:44px;
+              height:44px;
+              text-align:center;
+              border-radius:100%;
+              overflow:hidden;
+            }
+            &.btn_ic1 .ic{@include setSprite($sp_m_button-maincard_button_set1);border-radius:0}
+            &.btn_ic2 .ic{@include setSprite($sp_m_button-maincard_button_set2);border-radius:0}
+            &.btn_ic3 .ic{@include setSprite($sp_m_button-maincard_button_set3);border-radius:0}
+            &.btn_ic4 .ic{@include setSprite($sp_m_button-maincard_button_set4);border-radius:0}
+            &.btn_ic5 .ic{@include setSprite($sp_m_button-maincard_button_set5);border-radius:0}
+            &.btn_ic6 .ic{@include setSprite($sp_m_button-maincard_button_set6);border-radius:0}
+            &.btn_ic7 .ic{@include setSprite($sp_m_button-maincard_button_set7);border-radius:0}
+            &.btn_ic8 .ic{@include setSprite($sp_m_button-maincard_button_set8);border-radius:0}
+            &.btn_ic9 .ic{@include setSprite($sp_m_button-maincard_button_set9);border-radius:0}
+            &.btn_ic10 .ic{@include setSprite($sp_m_button-maincard_button_set10);border-radius:0}
+            &.btn_ic11 .ic{@include setSprite($sp_m_button-maincard_button_set11);border-radius:0}
+            &.btn_ic12 .ic{@include setSprite($sp_m_button-maincard_button_set12);border-radius:0}
+            &.btn_ic13 .ic{@include setSprite($sp_m_button-maincard_button_set13);border-radius:0}
+            &.btn_ic14 .ic{@include setSprite($sp_m_button-maincard_button_set14);border-radius:0}
+            &.btn_ic15 .ic{@include setSprite($sp_m_button-maincard_button_set15);border-radius:0}
+            &.btn_ic16 .ic{@include setSprite($sp_m_button-maincard_button_set16);border-radius:0}
+            &.btn_ic17 .ic{@include setSprite($sp_m_button-maincard_button_set17);border-radius:0}
+            &.btn_ic18 .ic{@include setSprite($sp_m_button-maincard_button_set18);border-radius:0}
+            &.btn_ic19 .ic{@include setSprite($sp_m_button-maincard_button_set19);border-radius:0}
+            &.btn_ic20 .ic{@include setSprite($sp_m_button-maincard_button_set20);border-radius:0}
+            &.btn_ic21 .ic{@include setSprite($sp_m_button-maincard_button_set21);border-radius:0}
+            &.btn_ic22 .ic{@include setSprite($sp_m_button-maincard_button_set22);border-radius:0}
+            &.btn_ic23 .ic{@include setSprite($sp_m_button-maincard_button_set23);border-radius:0}
+            &.btn_ic24 .ic{@include setSprite($sp_m_button-maincard_button_set24);border-radius:0}
+            &.btn_ic25 .ic{@include setSprite($sp_m_button-maincard_button_set25);border-radius:0}
+            &.btn_ic26 .ic{@include setSprite($sp_m_button-maincard_button_set26);border-radius:0}
+            &.btn_ic27 .ic{@include setSprite($sp_m_button-maincard_button_set27);border-radius:0}
+            &.btn_ic28 .ic{@include setSprite($sp_m_button-maincard_button_set28);border-radius:0}
+            &.btn_ic29 .ic{@include setSprite($sp_m_button-maincard_button_set29);border-radius:0}
+            &.btn_ic30 .ic{@include setSprite($sp_m_button-maincard_button_set30);border-radius:0}
+            &.btn_ic31 .ic{@include setSprite($sp_m_button-maincard_button_set31);border-radius:0}
+            &.btn_ic32 .ic{@include setSprite($sp_m_button-maincard_button_set32);border-radius:0}
+            &.btn_ic33 .ic{@include setSprite($sp_m_button-maincard_button_set33);border-radius:0}
+            &.btn_ic34 .ic{@include setSprite($sp_m_button-maincard_button_set34);border-radius:0}
+            &.btn_ic35 .ic{@include setSprite($sp_m_button-maincard_button_set35);border-radius:0}
+            &.btn_ic36 .ic{@include setSprite($sp_m_button-maincard_button_set36);border-radius:0}
+            &.btn_ic37 .ic{@include setSprite($sp_m_button-maincard_button_set37);border-radius:0}
+            &.btn_ic38 .ic{@include setSprite($sp_m_button-maincard_button_set38);border-radius:0}
+            &.btn_ic39 .ic{@include setSprite($sp_m_button-maincard_button_set39);border-radius:0}
+            &.btn_ic40 .ic{@include setSprite($sp_m_button-maincard_button_set40);border-radius:0}
+            &.btn_ic41 .ic{@include setSprite($sp_m_button-maincard_button_set41);border-radius:0}
+            &.btn_ic42 .ic{@include setSprite($sp_m_button-maincard_button_set42);border-radius:0}
+            &.btn_ic43 .ic{@include setSprite($sp_m_button-maincard_button_set43);border-radius:0}
+            &.btn_ic44 .ic{@include setSprite($sp_m_button-maincard_button_set44);border-radius:0}
+            &[class*="btn_ic"] .in{ color:transparent; }
+            .in{
+              font-size:12px;
+              color:#fff;
+              letter-spacing:-0.5px;
+              line-height:13px;
+            }
+            &.btn_plus
+            .ic{
+              @include setSprite($sp_editor-ico_plus, both);
+              left:50%;
+              top:50%;
+            }
+          }
+          .btn_edit{
+            display:inline-block;
+            padding:0 5px;
+            margin-top:6px;
+            border:1px solid #dadfe3;
+            text-align:center;
+            font-size:14px;
+            line-height:19px;
+            color:#666;
+            letter-spacing:-0.5px;
+          }
+
+        }
+        .selected{
+          .btn:before{
+            position:absolute;
+            left:-3px;
+            top:-3px;
+            right:-3px;
+            bottom:-3px;
+            border:1px solid #01c73c;
+            border-radius:100%;
+            content:'';
+            z-index:10;
+            z-index:10;
+          }
+          .btn_edit{
+            display:none;
+          }
+          .top_arrow{
+            @include setSprite($sp_editor-top_arrow);
+
+            position:absolute;
+            left:50%;
+            bottom:-6px;
+            margin-left:-15px;
+            content:'';
+          }
+        }
+      }
+    }
+
+    .option_box{
+      &.open{
+        display:block;
+      }
+      display:none;
+      margin:5px -3px 0;
+      border:1px solid #01c73c;
+      .option_area{
+        &:after{
+          display:block;
+          clear:both;
+          content:'';
+        }
+        height:45px;
+        line-height:45px;
+        + .option_area{
+          border-top:1px solid #e8edf1;
+        }
+        .icon_choice{
+          &:after{
+            @include setSprite($sp_editor-ico_arrow);
+
+            position:absolute;
+            right:0;
+            top:50%;
+            margin-top:-3px;
+            content:'';
+          }
+          position:relative;
+          float:left;
+          width:103px;
+          padding-left:19px;
+          margin-right:29px;
+          box-sizing:border-box;
+          font-size:16px;
+          color:#c8ced4;
+          letter-spacing:-0.5px;
+          .ico{
+            &.ic{
+              &:before{content:'\00a0';}
+            }
+            &.ic{@include setSprite($sp_m_button-editor_button_set)}
+            &.ic2{@include setSprite($sp_m_button-editor_button_set2)}
+            &.ic3{@include setSprite($sp_m_button-editor_button_set3)}
+            &.ic4{@include setSprite($sp_m_button-editor_button_set4)}
+            &.ic5{@include setSprite($sp_m_button-editor_button_set5)}
+            &.ic6{@include setSprite($sp_m_button-editor_button_set6)}
+            &.ic7{@include setSprite($sp_m_button-editor_button_set7)}
+            &.ic8{@include setSprite($sp_m_button-editor_button_set8)}
+            &.ic9{@include setSprite($sp_m_button-editor_button_set9)}
+            &.ic10{@include setSprite($sp_m_button-editor_button_set10)}
+            &.ic11{@include setSprite($sp_m_button-editor_button_set11)}
+            &.ic12{@include setSprite($sp_m_button-editor_button_set12)}
+            &.ic13{@include setSprite($sp_m_button-editor_button_set13)}
+            &.ic14{@include setSprite($sp_m_button-editor_button_set14)}
+            &.ic15{@include setSprite($sp_m_button-editor_button_set15)}
+            &.ic16{@include setSprite($sp_m_button-editor_button_set16)}
+            &.ic17{@include setSprite($sp_m_button-editor_button_set17)}
+            &.ic18{@include setSprite($sp_m_button-editor_button_set18)}
+            &.ic19{@include setSprite($sp_m_button-editor_button_set19)}
+            &.ic20{@include setSprite($sp_m_button-editor_button_set20)}
+            &.ic21{@include setSprite($sp_m_button-editor_button_set21)}
+            &.ic22{@include setSprite($sp_m_button-editor_button_set22)}
+            &.ic23{@include setSprite($sp_m_button-editor_button_set23)}
+            &.ic24{@include setSprite($sp_m_button-editor_button_set24)}
+            &.ic25{@include setSprite($sp_m_button-editor_button_set25)}
+            &.ic26{@include setSprite($sp_m_button-editor_button_set26)}
+            &.ic27{@include setSprite($sp_m_button-editor_button_set27)}
+            &.ic28{@include setSprite($sp_m_button-editor_button_set28)}
+            &.ic29{@include setSprite($sp_m_button-editor_button_set29)}
+            &.ic30{@include setSprite($sp_m_button-editor_button_set30)}
+            &.ic31{@include setSprite($sp_m_button-editor_button_set31)}
+            &.ic32{@include setSprite($sp_m_button-editor_button_set32)}
+            &.ic33{@include setSprite($sp_m_button-editor_button_set33)}
+            &.ic34{@include setSprite($sp_m_button-editor_button_set34)}
+            &.ic35{@include setSprite($sp_m_button-editor_button_set35)}
+            &.ic36{@include setSprite($sp_m_button-editor_button_set36)}
+            &.ic37{@include setSprite($sp_m_button-editor_button_set37)}
+            &.ic38{@include setSprite($sp_m_button-editor_button_set38)}
+            &.ic39{@include setSprite($sp_m_button-editor_button_set39)}
+            &.ic40{@include setSprite($sp_m_button-editor_button_set40)}
+            &.ic41{@include setSprite($sp_m_button-editor_button_set41)}
+            &.ic42{@include setSprite($sp_m_button-editor_button_set42)}
+            display:none;
+            margin-top:5px;
+          }
+          &.selected{
+            .text{
+              display:none;
+            }
+            .ico{
+              display:block;
+            }
+          }
+        }
+        .input_area{
+          display:block;
+          overflow:hidden;
+        }
+        .input_text{
+          border:0;
+          width:100%;
+          height:25px;
+          font-size:16px;
+          line-height:25px;
+          color:#222;
+          -webkit-appearance:none;
+          letter-spacing:-0.5px;
+          &::-webkit-input-placeholder{color:#c8ced4}
+          &:-ms-input-placeholder{color:#c8ced4}
+          &::-ms-input-placeholder{color:#c8ced4}
+          &:-moz-placeholder{color:#c8ced4}
+          &::-moz-placeholder{color:#c8ced4}
+        }
+        .type_list{
+          position:relative;
+          float:left;
+          width:103px;
+          padding-left:13px;
+          margin-right:23px;
+          box-sizing:border-box;
+          font-size:16px;
+          &:after{
+            @include setSprite($sp_editor-ico_arrow);
+
+            position:absolute;
+            right:0;
+            top:50%;
+            margin-top:-3px;
+            content:'';
+          }
+          &.selected .page_select{
+            color:#222;
+          }
+        }
+        .type_area{
+          overflow:hidden;
+          position:relative;
+          .type_list{
+            width:100%;
+            padding:0;
+            &:after{
+              right:15px;
+            }
+          }
+          .input_text{
+            margin-left:5px;
+          }
+        }
+        .page_select{
+          width:100%;
+          height:45px;
+          border:0;
+          font-size:16px;
+          background:none;
+          -webkit-appearance:none;
+          color:#c8ced4;
+          box-sizing:border-box;
+          letter-spacing:-0.5px;
+        }
+      }
+      .btn_delete{
+        display:block;
+        height:42px;
+        border-top:1px solid #e8edf1;
+        background-color:#f6f8fc;
+        line-height:42px;
+        text-align:center;
+        font-size:14px;
+        color:#666;
+        &:before{
+          @include setSprite($sp_editor-btn_ico_delete);
+
+          display:inline-block;
+          vertical-align:top;
+          line-height:45px;
+          margin:13px 6px -13px 0;
+          content:'';
+        }
+      }
+    }
+  }
+}
+
+//테마색상
+@each $type in $ButtonType {
+  @each $color in $ThemeColor {
+    $i: index($ThemeColor, $color);
+    .btn_#{$type}#{$i} {
+      .maincard.horizontal .gallery_area.main_type{
+        .btn_wrap .btn_list > li .ic{
+          background-color: $color;
+        }
+      }
+
+      &.editor{
+        .btn_wrap .btn_list .on .btn .ic{
+          background-color: $color;
+        }
+      }
+
+      .main_type.scd_list_area .notice .ic,
+      .maincard .zone_area .ico_zone{
+        background-color: $color;
+      }
+
+      .maintxt_area {
+        background-color: $color;
+      }
+    }
+  }
+
+  @each $color in $ThemeColor-mask {
+    $i: index($ThemeColor-mask, $color);
+    .btn_#{$type}#{$i} {
+      .maincard .gallery_area.main_type.img_none .mask_bg{
+        background-color: $color;
+      }
+    }
+  }
+
+  @each $color in $ThemeColor-banner {
+    $i: index($ThemeColor-banner, $color);
+    .btn_#{$type}#{$i} {
+      .maincard .footer_banner .cont_banner .sitename{
+        color: $color;
+      }
+    }
+  }
+
+  @each $number, $colors in $ThemeColor-title {
+    @each $color in $colors {
+      $i: index($colors, $color);
+      .btn_#{$type}#{$number} {
+        .color#{$i}.maintxt_area {
+          background-color: $color;
+        }
+      }
+    }
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio:3),
+only screen and (min-device-pixel-ratio:3),
+only screen and (min-resolution:3dppx) {
+  .maincard{
+    .coupon_area > a .coupon_benefit_wrap{
+      .bg, .mask, .img img{
+        border-radius:200px;
+      }
+    }
+    .scd_list_area.main_type .notice .ic:after,
+    .zone_area .ico_zone:after{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      top:0;
+      border:1px solid #F2F3F6;
+      border-radius:100%;
+      content:'';
+    }
+  }
+}

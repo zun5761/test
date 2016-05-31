@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>통화추적기능안내 - modoo![모두]</title>
+    <link rel="stylesheet" href="../../css/editor.css">
+    <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body class="editor">
+<div class="layer_calltrack_info">
+    <h1 class="blind">모두 통화추적기능안내</h1>
+    <div class="about_calltrack1">
+        <div class="blind">
+            <h2>통화추적번호는 어떤 기능인가요?</h2>
+            <p>네이버 modoo에 비즈캐쳐 통화추적번호를 노출하여, modoo를 통해 걸려오는 고객 전화를 확인할 수 있는 기능입니다</p>
+        </div>
+    </div>
+    <div class="about_calltrack2">
+        <h2 class="blind">비즈캐쳐 통화추적번호 주요특징</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ">
+                    <div class="inner_slide bg_slide1">
+                        <span class="blind">고객 전화를 놓치지 않도록 도와줍니다.통화연결음으로 고객의 전화를 알려주고, 40초 이내 미 응답시 2차 착신번호로 연결해줍니다."</span>
+                    </div>
+                </div>
+                <div class="swiper-slide ">
+                    <div class="inner_slide bg_slide2">
+                        <span class="blind">홍보 효과를 확인할 수 있습니다.modoo를 통한 통화 시도수, 통화 성공수, 평균 통화시간 정보를 확인할 수 있습니다."</span>
+                    </div>
+                </div>
+                <div class="swiper-slide ">
+                    <div class="inner_slide bg_slide3">
+                        <span class="blind">고유번호로 발급되어 영구 사용 가능합니다.통화추적번호는 내 업체 번호에 영구적으로 발급되기 때문에, 고객이 저장 및 사용해도 문제 없습니다."</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <a href="#" class="btn_close"><span class="blind">닫기</span></a>
+</div>
+
+<!-- ui 확인용 임시 스크립트 -->
+<script type="text/javascript" src="http://www.modoo.at/application/static/script/home/idangerous.swiper.min.js"></script>
+<script>
+
+    $(function(){
+        //롤링슬라이드 세팅
+        var evt_swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            speed: 500,
+            loop: false,
+            autoplay: 7000,
+            autoplayDisableOnInteraction: false
+        });
+
+        $('.evt_info1 .inner  strong').on('click', function(){
+            $('.evt_info1 .inner  strong').show();
+            $(this).hide();
+        } )
+    })
+
+</script>
+
+</body>
+</html>

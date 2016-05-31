@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<title>PC 프론트 - modoo![모두]</title>
+<link rel="stylesheet" href="../css/pc.css">
+<link rel="stylesheet" href="../_manage/_manage.css">
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../_manage/_manage.js"></script>
+
+<style>
+.hn1,.hn2{position:relative;z-index:1100;margin:15px 10px 10px;color:#fff;line-height:1.5;}
+.hn1{font-size:18px;}
+.hn2{font-size:14px;}
+.layer_pc{margin:10px;}
+</style>
+</head>
+
+<body>
+<!-- [D] @개발팀 
+	dimmed 는 이전에 안병진님께서 사용하신 것이 있어요.
+	.layer_pc 만 가져가셔서 사용하시면 됩니다.
+-->
+
+<!-- 딤드처리 -->
+<div class="dimmed"></div>
+
+<h1 class="hn1">레이어 목록</h1>
+
+<!-- 레이어 기본 -->
+<h2 class="hn2">기본형식</h2>
+
+<div class="layer_pc">
+	<div class="l_tit">
+		<h1 class="title">제목</h1>
+	</div>
+	<div class="l_cont">
+		<div class="lc_inner">
+			컨텐츠영역
+		</div>
+	</div>
+	<div class="l_btns">
+		<a href="#" class="btn btn_theme">확인</a>
+		<a href="#" class="btn">취소</a>
+	</div>
+</div>
+
+<div class="layer_pc">
+	<div class="l_cont">
+		<div class="lc_inner center">
+			<p class="lc_tt">제목없는 레이어</p>
+			<p class="lc_ts">굵은 폰트와 기본 폰트가 있는 레이어</p>
+		</div>
+	</div>
+	<div class="l_btns">
+		<a href="#" class="btn btn_theme">확인</a>
+	</div>
+</div>
+<!-- //레이어 기본 -->
+
+<!-- 쿠폰수정 -->
+<h2 class="hn2">쿠폰수정</h2>
+
+<div class="layer_pc">
+	<div class="l_tit">
+		<h1 class="title">쿠폰수정</h1>
+	</div>
+	<div class="l_cont">
+		<div class="lc_inner center">
+			<p class="lc_ts">
+				홈페이지에 노출 중인 쿠폰을 수정하면, <br>
+				쿠폰 사용 수 및 해당 쿠폰을 썼던 고객정보가 초기화 됩니다<br>
+				수정하시겠어요?
+			</p>
+		</div>
+	</div>
+	<div class="l_btns">
+		<a href="#" class="btn btn_theme">확인</a>
+		<a href="#" class="btn">취소</a>
+	</div>
+</div>
+<!-- //쿠폰수정 -->
+
+<!-- 사진등록 -->
+<h2 class="hn2">사진등록</h2>
+
+<div class="layer_pc" style="width:500px">
+	<div class="l_tit">
+		<h1 class="title">사진등록</h1>
+	</div>
+	<div class="l_cont">
+		<div class="lc_inner v2">
+			<ul class="notice_list">
+				<li>사진 파일은 5개, 총합 25MB까지 올릴 수 있습니다.</li>
+				<li>파일 확장자가 JPG, GIF, PNG, BMP인 이미지만 올릴 수 있습니다.</li>
+				<li>음란물, 저작권 침해 등의 불법적인 이미지를 올릴 경우 사전 경고 없이 삭제될 수 있으며,<br>
+				동의하신 약관에 의거하여 서비스 이용이 제한 될 수 있습니다.</li>
+			</ul>
+			<div class="photo_upload">
+				<ul class="photo_list">
+					<li>
+						<a href="#" class="thumb">
+							<img src="http://dev.ui.naver.com/tmp/?70x70_default_y_FFB4B4_50" width="70" height="70" alt="임시 이미지">
+							<span class="delete">삭제</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="thumb">
+							<img src="http://dev.ui.naver.com/tmp/?70x70_default_y_FFB4B4_50" width="70" height="70" alt="임시 이미지">
+							<span class="delete">삭제</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="thumb">
+							<img src="http://dev.ui.naver.com/tmp/?70x70_default_y_FFB4B4_50" width="70" height="70" alt="임시 이미지">
+							<span class="delete">삭제</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="thumb">
+							<img src="http://dev.ui.naver.com/tmp/?70x70_default_y_FFB4B4_50" width="70" height="70" alt="임시 이미지">
+							<span class="delete">삭제</span>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="thumb">
+							<img src="http://dev.ui.naver.com/tmp/?70x70_default_y_FFB4B4_50" width="70" height="70" alt="임시 이미지">
+							<span class="delete">삭제</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#" class="btn_add">추가</a>
+			</div>
+		</div>
+	</div>
+	<div class="l_btns">
+		<a href="#" class="btn btn_theme">등록</a>
+		<a href="#" class="btn">취소</a>
+	</div>
+</div>
+<!-- //사진등록 -->
+
+<!-- 스케줄선택 -->
+<h2 class="hn2">스케줄선택</h2>
+<!-- 3줄 이하일 때 최소높이값 설정된 화면 -->
+<div class="layer_pc" style="width:398px">
+	<div class="l_tit">
+		<h1 class="title">스케줄선택</h1>
+	</div>
+	<div class="l_cont">
+		<div class="ly_schdslt">
+			<div class="ls_inner">
+				<span class="ls_i"><input type="radio" name="schdsltA" id="schdsltA1"> <label for="schdsltA1">스케줄 메뉴명 (페이지1)</label></span>
+				<span class="ls_i"><input type="radio" name="schdsltA" id="schdsltA2"> <label for="schdsltA2">스케줄 메뉴명 (페이지2)</label></span>
+				<span class="ls_i"><input type="radio" name="schdsltA" id="schdsltA3"> <label for="schdsltA3">스케줄 메뉴명 (페이지3)</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="footer_buttons">
+		<a href="#" class="btn btn_theme">확인</a>
+		<a href="#" class="btn btn_white">취소</a>
+	</div>
+</div>
+
+<!-- 선택 최대 10개 -->
+<div class="layer_pc" style="width:398px">
+	<div class="l_tit">
+		<h1 class="title">스케줄선택</h1>
+	</div>
+	<div class="l_cont">
+		<div class="ly_schdslt">
+			<div class="ls_inner">
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt1"> <label for="schdslt1">스케줄 메뉴명 (페이지1)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt2"> <label for="schdslt2">스케줄 메뉴명 (페이지2)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt3"> <label for="schdslt3">스케줄 메뉴명 (페이지3)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt4"> <label for="schdslt4">스케줄 메뉴명 (페이지4)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt5"> <label for="schdslt5">스케줄 메뉴명 (페이지5)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt6"> <label for="schdslt6">스케줄 메뉴명 (페이지6)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt7"> <label for="schdslt7">스케줄 메뉴명 (페이지7)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt8"> <label for="schdslt8">스케줄 메뉴명 (페이지8)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt9"> <label for="schdslt9">스케줄 메뉴명 (페이지9)</label></span>
+				<span class="ls_i"><input type="radio" name="schdslt" id="schdslt10"> <label for="schdslt10">스케줄 메뉴명 (페이지10)</label></span>
+			</div>
+		</div>
+	</div>
+	<div class="footer_buttons">
+		<a href="#" class="btn btn_theme">확인</a>
+		<a href="#" class="btn btn_white">취소</a>
+	</div>
+</div>
+<!-- //스케줄선택 -->
+</body>
+</html>

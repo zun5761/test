@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+$DEVICE: 'm';
+
+// common
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/placeholders';
+
+// 기본폰트 사이트관리 기본폰트로 재설정
+$F-base: 'inherit';
+$F-light: 'inherit';
+$F-medium-en: 'inherit';
+$F-medium-ko: 'inherit';
+$F-myriad: 'inherit';
+$F-regular: 'inherit';
+$F-medium: 'inherit';
+
+// sprites
+@import 'import/sprite/sp_m';
+@import 'import/sprite/sp_m_button';
+@import 'import/sprite/sp_pc';
+@import 'import/sprite/sp_editor';
+@import 'import/sprite/sp_limit';
+
+// front mobile layout
+@import 'import/mobile/header';
+@import 'import/mobile/layout';
+
+// components
+@import 'import/components/components';
+@import 'import/components/button';
+
+// functional pages
+@import 'import/functional_pages/inquiry';
+@import 'import/functional_pages/coupon';
+@import 'import/functional_pages/schedule';
+@import 'import/functional_pages/board';
+@import 'import/functional_pages/store';
+@import 'import/functional_pages/maincard';

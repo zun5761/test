@@ -1,0 +1,139 @@
+<div class="map_area">
+	<!-- [D] 지도 선택 시 selected 클래스 추가 -->
+	<div class="map selected" onclick="selectAddress()">
+		<img src="http://dev.ui.naver.com/tmp/?320x240_map_y_FFB4B4_50" alt="임시 이미지">
+		<a href="" class="btn btn_modify"><span class="blind">핀위치 수정</span></a>
+		<!-- [D] 수정이 일어났을 때 완료 버튼으로 변경 -->
+		<!-- <a href="" class="btn btn_save"><span class="blind">완료</span></a> -->
+		<div class="zoom">
+			<a href="" class="zoom_in"><span class="blind">확대</span></a>
+			<a href="" class="zoom_out"><span class="blind">축소</span></a>
+		</div>
+	</div>
+	<div class="map_adr">
+		<h3><input type="text" class="edit_input" value="NAVER LIBRARY"></h3>
+		<p>
+			<!-- [D] 텍스트 라인 수 만큼 높이값 지정 -->
+			<!-- [D] 버그해결을 위해 ios 계열 디바이스에서만 padding-left:0 적용 -->
+			<textarea class="edit_text" style="height:46px;padding-left:0">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</textarea>
+		</p>
+		<!-- [D] 기능 없이 모양만 나오면 되므로 a에 href 제거 -->
+		<div class="map_ico_btn_wrap">
+			<a href="" class="btn_map">지도 자세히 보기</a>
+			<a href="" class="btn_roadmap">길찾기</a>
+			<a href="" class="btn_navi">네비게이션</a>
+		</div>
+	</div>
+</div>
+
+<!-- 데이터 등록 전 -->
+<div class="map_area map_default">
+	<!-- [D] 지도 선택 시 selected 클래스 추가 -->
+	<div class="map selected" onclick="selectAddress()">
+		<span class="ico_default"></span>
+		<!-- <a href="" class="btn btn_modify"><span class="blind">핀위치 수정</span></a> -->
+		<!-- [D] 수정이 일어났을 때 완료 버튼으로 변경 -->
+		<a href="" class="btn btn_save"><span class="blind">완료</span></a>
+	</div>
+	<div class="map_adr">
+		<h3><input type="text" class="edit_input" value="NAVER LIBRARY"></h3>
+		<p>
+			<!-- [D] 텍스트 라인 수 만큼 높이값 지정 -->
+			<!-- [D] 버그해결을 위해 ios 계열 디바이스에서만 padding-left:0 적용 -->
+			<textarea class="edit_text" style="height:46px;padding-left:0">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</textarea>
+		</p>
+		<!-- [D] 기능 없이 모양만 나오면 되므로 a에 href 제거 -->
+		<div class="map_ico_btn_wrap">
+			<a href="" class="btn_map">지도 자세히 보기</a>
+			<a href="" class="btn_roadmap">길찾기</a>
+			<a href="" class="btn_navi">네비게이션</a>
+		</div>
+	</div>
+</div>
+<!-- //데이터 등록 전 -->
+
+<!-- 지도 구성요소 수정 관련 레이어 -->
+<!-- [D] 디바이스 높이값 계산 -->
+<div class="edit_map">
+	<div class="search_box_wrap">
+		<div class="search_box">
+			<input type="text" placeholder="장소 또는 주소를 입력 해주세요">
+			<a href="" class="btn_search"><span class="blind">검색</span></a>
+		</div>
+	</div>
+	<div class="result_list_wrap" style="height:{{height}}px">
+		<p class="count">검색결과 <em>286</em>건</p>
+		<ul class="result_list">
+		<li>
+			<a href="">
+				<div class="tit">NAVER(그린팩토리)</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<!-- [D] 선택시 li에 selected 클래스 추가 -->
+		<li class="selected">
+			<a href="">
+				<div class="tit">NAVER Business Platform</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NAVER I&amp;S</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NHN NEXT</div>
+				<div class="addr">경기도 성남시 분당구 판교역로 235 에이치 스퀘어 엔동 </div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NAVER STORE</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NAVER(그린팩토리)</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NAVER Business Platform</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NAVER I&amp;S</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NHN NEXT</div>
+				<div class="addr">경기도 성남시 분당구 판교역로 23518181818 에이치 스퀘어 엔동 </div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="tit">NAVER STORE</div>
+				<div class="addr">경기도 성남시 분당구 불정로 6 NAVER 그린팩토리</div>
+			</a>
+		</li>
+		</ul>
+		<div class="no_data" style="display:none">
+			<p><strong>검색결과가 없습니다.</strong></p>
+			<p>단어의 철자가 정확한지 확인한 후,<br>다시 한번 <em>검색</em> 해주세요.</p>
+		</div>
+	</div>
+	<div class="btn_area">
+		<span class="btn"><a href="" class="confirm">확인</a></span>
+	</div>
+	<a href="" class="layer_close">닫기</a>
+</div>
+<!-- //지도 구성요소 수정 관련 레이어 -->

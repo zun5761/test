@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+/* import/components/_table.scss */
+.view_table {
+	@if $DEVICE == 'pc' {
+		margin: 0;
+	} @else {
+		margin: 0 10px;
+	}
+
+	position: relative;
+
+	.ico_zoom {
+		@if $DEVICE == 'pc' {
+			@include setSprite($sp_pc-table_ico_zoom);
+		} @else {
+			@include setSprite($sp_m-table_ico_zoom);
+		}
+
+		overflow: hidden;
+		position: absolute;
+		bottom: 7px;
+		right: 7px;
+		line-height: 1000px;
+	}
+}
+
+//디폴트이미지
+.table_default {
+	$min-height: 200px;
+
+	@if $DEVICE == 'pc' {
+		$min-height: 400px;
+	}
+
+	@extend %default-imgage;
+	min-height: $min-height;
+
+	.ico_default {
+		@if $DEVICE == 'pc' {
+			@include setSprite($sp_pc-table, both);
+		} @else {
+			@include setSprite($sp_m-table, both);
+		}
+	}
+}
+
+//표
+.bdr_table {
+	table {
+		width: 100%;
+		border: 0;
+		border-bottom: 1px solid #cdcdcd;
+		border-right: 1px solid #cdcdcd;
+		border-spacing: 0;
+	}
+
+	th, td{
+		width: 34px;
+		height: 26px;
+		border: 0;
+		border-top: 1px solid #cdcdcd;
+		border-left: 1px solid #cdcdcd;
+		background-color: #fff;
+		font-size: 11px;
+		line-height: 14px;
+		color: #666;
+		text-align: center;
+		word-break: break-all;
+	}
+
+	.tx_big td{
+		font-size: 20px;
+		line-height: 22px;
+	}
+
+	.tx_a_l td {
+		text-align: left;
+	}
+
+	.tx_a_c td {
+		text-align: center;
+	}
+
+	.tx_a_r td {
+		text-align: right;
+	}
+
+	.tx_v_t td {
+		vertical-align: top;
+	}
+	.tx_v_m td {
+		vertical-align: middle;
+	}
+
+	.tx_v_b td {
+		vertical-align: bottom;
+	}
+
+	.t_bg {
+		background-color: #f4f4f7;
+	}
+
+	.emphasis {
+		color: #6587df;
+	}
+
+	.selected {
+		background-color: #eff3fc;
+	}
+}

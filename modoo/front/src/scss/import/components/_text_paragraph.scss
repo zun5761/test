@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* import/components/_text_paragraph.scss */
+// 본문형
+.txt_component {
+	p {
+		@if $DEVICE == 'pc'{
+			padding: 3px 0 4px;
+			font-size: 13px;
+			line-height: 25px;
+			letter-spacing: -0.025em;
+		} @else {
+			padding: 1px 0 0;
+			font-size: 15px;
+			font-family: #{$F-light};
+			line-height: 21px;
+			letter-spacing: -0.05em;
+		}
+	}
+
+	//하단간격
+	&.b_space p {
+		padding-bottom: 10px;
+	}
+}
+
+//테마색상
+@each $color in $TextColor{
+	$i:index($TextColor, $color);
+	.txt_component.color#{$i} p{
+		color: $color;
+	}
+}

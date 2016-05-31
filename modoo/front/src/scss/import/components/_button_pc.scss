@@ -1,0 +1,299 @@
+@charset "utf-8";
+
+$sp-pc-setBtn: ();
+$sp-pc-lineBtn: ();
+
+/* import/components/_button_pc.scss */
+.empty_top {
+  margin-top: 10px;
+}
+.btn_wrap {
+  &{
+    background-color: #fff;
+  }
+   .endOfRow {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.btn_wrap + .btn_wrap [class*=btn_theme] li,
+.r + .r .btn_wrap [class*=btn_theme] li {
+  border-top: 0;
+}
+
+.r + .r .btn_wrap.empty_top [class*=btn_theme] li {
+  border-top: 1px solid #ebecee;
+}
+
+//ie8 대응
+.ie8 .btn_wrap li {
+  border: 1px solid #cacccf;
+
+  & + li{
+    border-left: 0;
+  }
+}
+
+.btn_theme {
+  &{
+    display: flex;
+    display: -webkit-box;
+  }
+
+  li {
+    &{
+        flex: 1;
+        -webkit-box-flex: 1;
+        position: relative;
+        float: left;
+        width: 33.33%;
+        border: 1px solid rgba(0, 0, 0, .07);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .btn {
+      display: block;
+      position: relative;
+      height: 65px;
+      padding: 0 30px 0 70px;
+      font-weight: 600;
+      text-align: left;
+      color: #000;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 65px;
+      letter-spacing: -0.5px;
+    }
+
+    .in {
+      overflow: hidden;
+      font-size: 14px;
+    }
+  }
+}
+
+.btn_theme,
+[class*=btn_theme_]{
+  &:after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+[class*=btn_theme] {
+  li + li {
+    border-left: 0;
+  }
+
+  &:first-child {
+    @if $DEVICE == 'pc' {
+
+    } @else {
+      border-left: 0;
+    }
+  }
+  &:last-of-type,
+  &:only-child {
+    @if $DEVICE == 'pc' {
+
+    } @else {
+      border-right: 0;
+    }
+  }
+}
+
+
+
+// 리스트형
+[class*=btn_theme_] {
+  &{
+    display: -webkit-box;
+    -webkit-box-orient: vertical
+  }
+
+  &.btn_type_v2 {
+    -webkit-box-orient: horizontal;
+
+    li {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  li {
+    &{
+      position: relative;
+      width: 100%;
+      border: 1px solid #ebecee;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box
+    }
+
+    .btn {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      height: 65px;
+      padding: 0 30px 0 70px;
+      font-weight: 600;
+      text-align: left;
+      white-space: nowrap;
+      line-height: 64px;
+      color: #000;
+      letter-spacing: -0.5px
+    }
+
+    .in {
+      overflow: hidden;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .ic {
+      margin-left: 1px;
+    }
+  }
+}
+
+.btn_type_l [class*=btn_theme] li .btn {
+  background-color: #fff;
+}
+
+
+// 아이콘 없음_리스트형
+.btn_theme_v2 .btn.icon_none {
+  padding: 0 30px 0 20px
+}
+
+.btn_theme_v2 .icon_none .ic {
+  display: none
+}
+
+// main 버튼 스타일
+.main {
+  .r + .r {
+    .btn_wrap {
+      border-radius: 0;
+      [class*=btn_theme] li {
+        border-top: 1px solid #e9ecef
+      }
+    }
+  }
+  .r:first-of-type {
+    .btn_wrap {
+      border-radius: 2px 2px 0 0;
+    }
+  }
+  .r:only-of-type {
+    .btn_wrap {
+      border-radius: 2px;
+    }
+  }
+  .r:last-of-type {
+    .btn_wrap {
+      border-radius: 0 0 2px 2px;
+    }
+  }
+  .r + .r .btn_wrap.empty_top {
+    li {
+      border-top: 0;
+    }
+  }
+  .btn_wrap {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    .btn {
+      padding-left: 75px;
+    }
+    li {
+      border: 0;
+    }
+    li + li {
+      border-left: 1px solid #e9ecef
+    }
+  }
+}
+
+// 아이콘 없음_리스트형
+.btn_theme_v2 .btn.icon_none {
+  padding: 0 30px 0 20px
+}
+
+.btn_theme_v2 .icon_none .ic {
+  display: none
+}
+
+// 아이콘 공통이미지
+.btn_theme .btn .ic,
+.btn_theme_v2 .btn .ic {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+
+  @extend %sp_pc_button;
+}
+
+// _sp_pc_button.scss 의 변수값을 map 형태로 저장
+@each $sprite_btn in $sp_pc_button-sprites {
+  @if str-slice(nth($sprite_btn, 10) , 14, 16) == "set" {
+    $sp-pc-setBtn: map-merge($sp-pc-setBtn, (nth($sprite_btn, 10) : $sprite_btn));
+  } @else {
+    $sp-pc-lineBtn: map-merge($sp-pc-lineBtn, (nth($sprite_btn, 10) : $sprite_btn));
+  }
+}
+
+// 아이콘 - 꽉찬형
+// btn_theme 는 타일형
+// btn_theme_v2 는 리스트형
+// main horizontal 메인카드 상단이미지형
+.maincard.horizontal .btn_ic .ic,
+.btn_theme .btn_ic .ic,
+.btn_theme_v2 .btn_ic .ic,
+.btn_type_l .btn_theme_v2 .theme_a .btn_ic .ic {
+  @include spritePosition($sp_pc_button-set);
+}
+
+@for $i from 2 through length($sp-pc-setBtn) {
+  $btnIndex: 'sp_pc_button-set#{$i}';
+  .maincard.horizontal .btn_ic#{$i} .ic,
+  .btn_theme .btn_ic#{$i} .ic,
+  .btn_theme_v2 .btn_ic#{$i} .ic,
+  .btn_type_l .btn_theme_v2 .theme_a .btn_ic#{$i} .ic {
+    @include spritePosition(map-get($sp-pc-setBtn, $btnIndex));
+  }
+}
+
+// 아이콘 - 라인형
+// main vertical 메인카드 배경이미지형
+.maincard .btn_ic .ic,
+.btn_type_l .btn_ic .ic,
+.btn_theme_v2 .theme_a .btn_ic .ic {
+  @include spritePosition($sp_pc_button-line);
+}
+
+@for $i from 2 through length($sp-pc-lineBtn) {
+  $btnIndex: 'sp_pc_button-line#{$i}';
+  .maincard .btn_ic#{$i} .ic,
+  .btn_type_l .btn_ic#{$i} .ic,
+  .btn_theme_v2 .theme_a .btn_ic#{$i} .ic {
+    @include spritePosition(map-get($sp-pc-lineBtn, $btnIndex));
+  }
+}
+
+// 테마색상
+@each $type in $ButtonType {
+  @each $color in $ThemeColor {
+    $i: index($ThemeColor, $color);
+    .btn_#{$type}#{$i} {
+      [class*=btn_theme] .btn .ic {
+        background-color: $color;
+      }
+    }
+  }
+}

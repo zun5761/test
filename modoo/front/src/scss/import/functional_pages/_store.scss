@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+/* import/functional_pages/_store.scss */
+.store_section{padding-bottom:10px}
+.store_section:after{display:block;clear:both;content:''}
+.sorting_area .sorting_select{margin:10px 9px 7px;border:1px solid #e1e4e7;box-sizing:border-box}
+.sorting_area .sorting_select:after{display:block;clear:both;content:''}
+.sorting_area .category_area{position:relative;float:left;width:50%;height:38px;box-sizing:border-box}
+.sorting_area .category_area + .category_area{border-left:1px solid #e1e4e7}
+.sorting_area .btn_category{display:block;padding:0 30px 0 12px;line-height:38px;color:#222}
+.sorting_area .btn_category:after{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_down_arrow);
+	} @else {
+		@include setSprite($sp_m-store_down_arrow);
+	}
+
+	position:absolute;right:13px;top:50%;margin-top:-2px;content:''
+}
+.sorting_area .selected .btn_category:after{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_up_arrow);
+	} @else {
+		@include setSprite($sp_m-store_up_arrow);
+	}
+}
+
+.sorting_area .category_lst{display:none;position:absolute;left:-1px;right:-1px;top:38px;border:1px solid #e1e4e7;box-sizing:border-box;background-color:#fff;z-index:100}
+.sorting_area .category_lst li+li{border-top:1px solid #e1e4e7}
+.sorting_area .category_lst li a{display:block;padding-left:12px;line-height:38px;color:#222}
+.sorting_area .selected .category_lst{display:block}
+
+.pd_area{position:relative;margin:0 9px 10px}
+.pd_area:after{display:block;clear:both;content:''}
+.pd_area .type_list{}
+.pd_area .type_list .pd_list{}
+.pd_area .pd_list>li{position:relative;height:120px;margin-bottom:8px}
+.pd_area .pd_list>li:after{display:block;clear:both;content:''}
+.pd_area .pd_list>li a{display:block;height:118px;border:1px solid #e1e4e7;background-color:#fff}
+.pd_area .pd_list .img_area{position:relative;float:left;margin:-1px 0 -1px -1px;line-height:0}
+.pd_area .pd_list .img_area:after{display:block;position:absolute;top:0;right:0;left:0;bottom:0;border:1px solid rgba(0,0,0,.07);background-color:rgba(0,0,0,.0);content:''}
+.pd_area .pd_list .txt_area{overflow:hidden;position:relative;padding:15px 11px}
+.pd_area .pd_list .txt_area .tit{display:-webkit-box;display:box;overflow:hidden;white-space:normal;-webkit-box-orient:vertical;-webkit-line-clamp:2;word-wrap:break-word;font-size:13px;font-weight:normal;color:#444}
+.pd_area .pd_list .mon{position:absolute;left:132px;bottom:16px;font-size:16px;font-family:HelveticaNeue-Bold;vertical-align:top}
+.pd_area .pd_list .mon em{position:relative;top:-1px;padding-left:1px;font-family:'나눔고딕',NanumGothic,AppleSDGothicNeo-Regular;font-size:14px;vertical-align:0}
+.pd_area .pd_list .price_sale{position:absolute;right:12px;bottom:19px}
+
+// flag
+.pd_area .flag{display:block;overflow:hidden;position:absolute;top:10px;left:-3px;z-index:10;color:#fff}
+.pd_area .flag>span{overflow:hidden;height:22px;padding:0 9px;font-size:11px;font-weight:500;line-height:20px}
+.btn_set1 .pd_area .flag,.btn_line1 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set1);
+	} @else {
+		@include setSprite($sp_m-store_best_set1);
+	}
+}
+.btn_set2 .pd_area .flag,.btn_line2 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set2);
+	} @else {
+		@include setSprite($sp_m-store_best_set2);
+	}
+}
+.btn_set3 .pd_area .flag,.btn_line3 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set3);
+	} @else {
+		@include setSprite($sp_m-store_best_set3);
+	}
+}
+.btn_set4 .pd_area .flag,.btn_line4 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set4);
+	} @else {
+		@include setSprite($sp_m-store_best_set4);
+	}
+}
+.btn_set5 .pd_area .flag,.btn_line5 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set5);
+	} @else {
+		@include setSprite($sp_m-store_best_set5);
+	}
+}
+.btn_set6 .pd_area .flag,.btn_line6 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set6);
+	} @else {
+		@include setSprite($sp_m-store_best_set6);
+	}
+}
+.btn_set7 .pd_area .flag,.btn_line7 .pd_area .flag{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_best_set7);
+	} @else {
+		@include setSprite($sp_m-store_best_set7);
+	}
+}
+
+// band
+.pd_area .band{display:block;overflow:hidden;position:absolute;right:0;left:0;bottom:0;height:30px;background:rgba(0,0,0,.3)}
+.pd_area .band .txt{display:block;overflow:hidden;height:12px;margin:9px auto;text-indent:102%;white-space:nowrap}
+.pd_area .band .txt_soldout{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-store_soldout);
+	} @else {
+		@include setSprite($sp_m-store_soldout);
+	}
+}
+
+// goodsinfo_data
+.pd_area .goodsinfo_data{overflow:hidden;height:15px;margin-top:3px;font-size:13px;line-height:15px;font-family:'나눔고딕',NanumGothic,HelveticaNeue-Light,AppleSDGothicNeo-Light;color:#999}
+.pd_area .goodsinfo_data ul{display:-webkit-box;display:-webkit-flex;display:-ms-flex;display:flex}
+.pd_area .goodsinfo_data li{overflow:hidden;position:relative;max-width:50%;font-size:12px;white-space:nowrap}
+.pd_area .goodsinfo_data li:last-child{max-width:none;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}
+.pd_area .goodsinfo_data li:before{float:left;margin:0 5px;color:#ddd;vertical-align:top;content:'·'}
+.pd_area .goodsinfo_data li:first-child:before{margin:0;content:''}
+
+.pd_area .goodsinfo_data li>em,.goodsinfo_data li>span{display:inline-block;position:relative;height:100%;vertical-align:top}
+.pd_area .goodsinfo_data li>em{font-size:12px}
+.pd_area .goodsinfo_data li:first-child>em{font-size:13px}
+.pd_area .goodsinfo_data li>span{display:inline;margin-left:-2px;font-weight:400;font-size:13px;letter-spacing:-.03em}
+.pd_area .data_ico{display:inline-block;overflow:hidden;position:relative;margin-top:2px;text-indent:102%;vertical-align:top;white-space:nowrap}
+.pd_area .data_ico_review{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-data_ico_review);
+	} @else {
+		@include setSprite($sp_m-data_ico_review);
+	}
+	margin-right:2px;
+}
+
+// number
+.pd_area .price_sale .num{display:inline-block;position:relative;margin-right:-1px;vertical-align:middle}
+@if $DEVICE == 'pc' {
+	.pd_area .price_sale .num0{@include setSprite($sp_pc-price_num0)}
+	.pd_area .price_sale .num1{@include setSprite($sp_pc-price_num1)}
+	.pd_area .price_sale .num2{@include setSprite($sp_pc-price_num2)}
+	.pd_area .price_sale .num3{@include setSprite($sp_pc-price_num3)}
+	.pd_area .price_sale .num4{@include setSprite($sp_pc-price_num4)}
+	.pd_area .price_sale .num5{@include setSprite($sp_pc-price_num5)}
+	.pd_area .price_sale .num6{@include setSprite($sp_pc-price_num6)}
+	.pd_area .price_sale .num7{@include setSprite($sp_pc-price_num7)}
+	.pd_area .price_sale .num8{@include setSprite($sp_pc-price_num8)}
+	.pd_area .price_sale .num9{@include setSprite($sp_pc-price_num9)}
+	.pd_area .price_sale .per{@include setSprite($sp_pc-price_per)}
+} @else {
+	.pd_area .price_sale .num0{@include setSprite($sp_m-price_num0)}
+	.pd_area .price_sale .num1{@include setSprite($sp_m-price_num1)}
+	.pd_area .price_sale .num2{@include setSprite($sp_m-price_num2)}
+	.pd_area .price_sale .num3{@include setSprite($sp_m-price_num3)}
+	.pd_area .price_sale .num4{@include setSprite($sp_m-price_num4)}
+	.pd_area .price_sale .num5{@include setSprite($sp_m-price_num5)}
+	.pd_area .price_sale .num6{@include setSprite($sp_m-price_num6)}
+	.pd_area .price_sale .num7{@include setSprite($sp_m-price_num7)}
+	.pd_area .price_sale .num8{@include setSprite($sp_m-price_num8)}
+	.pd_area .price_sale .num9{@include setSprite($sp_m-price_num9)}
+	.pd_area .price_sale .per{@include setSprite($sp_m-price_per)}
+}
+
+
+@media all and (min-width:768px){
+	.pd_area .type_list>ul>li{float:left;width:50%}
+	.narrow .pd_area .type_list>ul>li,.wide .pd_area .type_list>ul>li{float:none;width:100%}
+}
+// 상품없음
+.store_section .product_none{padding:110px 0 120px;text-align:center}
+.store_section .product_none:before{
+	@if $DEVICE == 'pc' {
+		@include setSprite($sp_pc-board_ico_empty);
+	} @else {
+		@include setSprite($sp_m-board_ico_empty);
+	}
+
+	display:block;margin:0 auto 20px;content:''
+}
+.store_section .product_none .txt{font-size:15px;font-weight:600;color:#222;letter-spacing:-0.06em}
+
+// pc 에디터
+.store_editor{margin:20px 0}
+.store_editor .notice_area{}
+.store_editor .notice_area .img_store{display:block;text-align:center}
+.store_editor .noti_area{background:#fafafa}
+.store_editor .noti_area .txt{letter-spacing:-0.06em}
+
+// 모바일 에디터
+.editor .sorting_area,.editor .pd_area,.editor .store_editor{display:none}
+.editor .store_text{
+	font-size:15px;
+	letter-spacing:0;
+	&:before{
+		@include setSprite($sp_limit-img_store);
+	}
+}
+
+.editor .store_notice{margin-top:5px;font-size:14px;color:#999;line-height:18px;letter-spacing:0}
+.editor .store_notice:before{display:none}
+.editor .link_store{display:inline-block;position:relative;height:37px;padding:0 13px;margin:12px auto 0;border:1px solid rgba(0,0,0,.1);border-radius:2px;background:#01c73c;text-align:center;font-size:12px;color:#fff;line-height:37px;letter-spacing:0}
+.editor .link_store:after{
+	@include setSprite($sp_editor-link_arrow);
+
+	display:inline-block;margin:14px 0 -14px 5px;vertical-align:top;content:''
+}
+
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i} {
+			.pd_area .pd_list .mon{
+				color: $color;
+			};
+			.pd_area .price_sale .num{
+				background-color: $color;
+			}
+		}
+	}
+}

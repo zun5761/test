@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* import/components/_text_list.scss */
+// 목록형
+.txt_component {
+	li {
+		@if $DEVICE == 'pc'{
+			padding-left: 13px;
+			margin-top: 1px;
+			font-size: 13px;
+			text-indent: -13px;
+			letter-spacing: -0.05em;
+			line-height: 24px;
+		} @else {
+			padding-left: 16px;
+			margin-top: 10px;
+			font-size: 16px;
+			font-family: #{$F-light};
+			text-indent: -16px;
+			color: #454549;
+			letter-spacing: -.05em;
+			line-height: 23px;
+		}
+
+		position: relative;
+	}
+
+	li:first-child {
+		padding-top: 1px;
+		margin-top: 0;
+	}
+
+	//번호형
+	&.num {
+		li {
+			padding-left: 14px;
+			text-indent: -14px;
+		}
+
+		.f_h {
+			margin-right: 5px;
+		}
+	}
+
+	//기호형
+	&.dot {
+		li {
+			padding-left: 14px;
+			text-indent: -11px;
+		}
+
+		.f_h {
+			@if $DEVICE == 'pc'{
+				@include setSprite($sp_pc-text_bullet_dot);
+
+				margin:-3px 5px 3px 0;
+			} @else {
+				@include setSprite($sp_m-text_bullet_dot);
+
+				margin: -4px 6px 4px 0;
+			}
+
+			display: inline-block;
+			line-height: 1000px;
+		}
+	}
+}
+
+//테마색상
+@each $type in $ButtonType {
+	@each $color in $ThemeColor {
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i} .txt_component {
+			&.dot .f_h {
+				background-color: $color;
+			}
+
+			&.num .f_h {
+				color: $color;
+			}
+		}
+	}
+}

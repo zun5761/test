@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+$DEVICE: 'm';
+
+// common
+@import 'common/base';
+@import 'common/variables';
+@import 'common/mixins';
+@import 'common/placeholders';
+
+// sprites
+@import 'import/sprite/sp_m';
+@import 'import/sprite/sp_m_button';
+@import 'import/sprite/sp_pc';
+@import 'import/sprite/sp_limit';
+@import 'import/sprite/sp_editor';
+
+// layout
+@import 'import/mobile/layout';
+@import 'import/mobile/aside';
+@import 'import/mobile/header';
+@import 'import/mobile/card';
+@import 'import/mobile/layer';
+
+// components
+@import 'import/components/components';
+@import 'import/components/button';
+
+// functional pages
+@import 'import/functional_pages/functional_pages';
+@import 'import/functional_pages/board';
+@import 'import/functional_pages/store';
+@import 'import/functional_pages/maincard';

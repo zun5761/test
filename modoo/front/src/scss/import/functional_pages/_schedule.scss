@@ -1,0 +1,2347 @@
+@charset "utf-8";
+
+/* import/functional_pages/_schedule.scss */
+@if $DEVICE == "m"{
+
+	// M 스케줄선택 레이어
+	.layer_m{
+		.footer_buttons{
+			clear:both;
+			overflow:hidden;
+			text-align:center;
+
+			.btn{
+				display:block;
+				height:50px;
+				font-size:14px;
+				font-weight:600;
+				line-height:50px;
+				color:#5c6676;
+				letter-spacing:-0.06em;
+				vertical-align:top;
+				box-sizing:border-box;
+			}
+
+			.btn:hover, .btn:focus{
+				text-decoration:none;
+			}
+
+			.btn_theme{
+				border:0;
+				color:#fff;
+
+				&.btn_chk{
+					position:relative;
+					overflow:hidden;
+					line-height:1000px;
+
+					&::after{
+						@include setSprite($sp_m-layer_m_btn_chk, both);
+
+						position:absolute;
+						top:50%;
+						left:50%;
+						content:'';
+					}
+				}
+			}
+		}
+
+		.ly_schdslt{
+			overflow-y:auto;
+			min-height:86px;
+			max-height:251px;
+			padding:15px 17px 20px;
+
+			input{
+				vertical-align:middle;
+			}
+
+			.ls_inner{
+				margin:-10px 0;
+				font-size:14px;
+				line-height:34px;
+			}
+
+			.ls_i{
+				display:block;
+
+				input[type=radio]{
+					position:absolute;
+					opacity:0.01;
+
+					&:checked + label{
+						&::before{
+							@include setSprite($sp_m-ico_schd_rdo_on);
+						}
+					}
+				}
+
+				label{
+					&::before{
+						@include setSprite($sp_m-ico_schd_rdo_off);
+
+						content:'';
+						display:inline-block;
+						margin-right:6px;
+						vertical-align:middle;
+					}
+				}
+			}
+		}
+
+		.ly_schdslt_date{
+			overflow:hidden;
+			padding:12px 8.5px;
+
+			.lsd_selbox{
+				float:left;
+				width:33.3333%;
+				padding:0 3.5px;
+				box-sizing:border-box;
+
+				.lsd_selbox_wrap{
+					overflow:hidden;
+					height:131px;
+					padding:0 9px;
+					border:1px solid #e4e4e4;
+					border-radius:2px;
+					background-color:#fafafa;
+
+					ul{
+						margin-top:-1px;
+					}
+
+					.lsd_selbox_item{
+						display:block;
+						position:relative;
+						height:44px;
+						line-height:44px;
+						font-size:23px;
+						color:#ccc;
+						text-align:center;
+						cursor: pointer;
+
+						&::after{
+							content:'';
+							position:absolute;
+							top:0;
+							left:0;
+							width:100%;
+							border-top:1px solid #e4e4e4;
+						}
+
+						&.selected{
+							color:#222;
+						}
+					}
+				}
+			}
+		}
+
+		.ly_schdslt_time{
+			overflow:hidden;
+			padding:12px 18.5%;
+
+			.lst_selbox{
+				float:left;
+				width:50%;
+				padding:0 3.5px;
+				box-sizing:border-box;
+
+				.lst_selbox_wrap{
+					overflow:hidden;
+					height:131px;
+					padding:0 9px;
+					border:1px solid #e4e4e4;
+					border-radius:2px;
+					background-color:#fafafa;
+
+					ul{
+						margin-top:-1px;
+					}
+
+					.lst_selbox_item{
+						display:block;
+						position:relative;
+						height:44px;
+						line-height:44px;
+						font-size:23px;
+						color:#ccc;
+						text-align:center;
+						cursor: pointer;
+
+						&::after{
+							content:'';
+							position:absolute;
+							top:0;
+							left:0;
+							width:100%;
+							border-top:1px solid #e4e4e4;
+						}
+
+						&.selected{
+							color:#222;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.schedule_area{
+		background:#f0f2f4;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		// webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+		.component_schedule{
+			margin:20px 0 0;
+			text-align:center;
+			background:#fff;
+
+			img{
+				vertical-align:top
+			}
+		}
+
+		.calendar_area{
+			border-bottom:1px solid #e1e1e1;
+			background:#fff;
+
+			.controls{
+				position:relative;
+				margin:0 18px;
+				border-bottom:1px solid #f1f1f1;
+				text-align:center;
+
+				.btn_today{
+					position:absolute;
+					left:0;
+					top:22px;
+					font-size:15px;
+					color:#333;
+				}
+
+				.date{
+					display:block;
+					height:60px;
+					font-family:HelveticaNeue,sans-serif;
+					font-size:22px;
+					letter-spacing:-0.5px;
+					line-height:60px;
+				}
+				.btn_prev_month{
+					display:block;
+					position:absolute;
+					top:50%;
+					left:48px;
+					width:34px;
+					height:34px;
+					margin-top:-17px;
+
+					&:after{
+						@include setSprite($sp_m-scd_btn_prev_month, both);
+
+						position:absolute;
+						top:50%;
+						left:50%;
+						content:'';
+					}
+
+				}
+				.btn_next_month{
+					display:block;
+					position:absolute;
+					top:50%;
+					right:49px;
+					width:34px;
+					height:34px;
+					margin-top:-17px;
+
+					&:after{
+						@include setSprite($sp_m-scd_btn_next_month, both);
+
+						position:absolute;
+						top:50%;
+						left:50%;
+						content:'';
+					}
+				}
+				.btn_reg_scd{
+					display:block;
+					position:absolute;
+					top:50%;
+					right:-6px;
+					width:32px;
+					height:32px;
+					margin-top:-16px;
+					border:1px solid #ccc;
+					border-radius:34px;
+					box-sizing:border-box;
+
+					&:after{
+						@include setSprite($sp_m-scd_btn_plus, both);
+
+						position:absolute;
+						top:50%;
+						left:50%;
+						content:'';
+					}
+				}
+
+				.btn_inquiry{
+					display:block;
+					position:absolute;
+					top:50%;
+					right:0;
+					width:50px;
+					height:34px;
+					margin-top:-17px;
+					border:1px solid #ccc;
+					border-radius:34px;
+					font-family:AppleSDGothicNeo-Regular,sans-serif;
+					font-size:15px;
+					color:#333;
+					letter-spacing:-0.5px;
+					line-height:34px;
+					box-sizing:border-box;
+				}
+			}
+			.day_container{
+				padding:24px 7px 25px 6px;
+
+				.dayofweek{
+					overflow:hidden;
+
+					.day{
+						float:left;
+						width:14.28%;
+						font-family:sans-serif;
+						font-size:13px;
+						color:#999;
+						text-align:center;
+					}
+				}
+				.days{
+					overflow:hidden;
+					margin-top:5px;
+
+					.day_wrap{
+						float:left;
+						width:14.28%;
+						margin-top:13px;
+
+						.day_num{
+							display:block;
+							position:relative;
+							width:32px;
+							height:32px;
+							margin:0 auto;
+							border-radius:32px;
+							font-family:HelveticaNeue-Light,sans-serif-light;
+							font-size:17px;
+							color:#222;
+							letter-spacing:-0.5px;
+							line-height:32px;
+							text-align:center;
+
+							&.another_month{
+								color:#ccc;
+
+								&.holiday{
+									color:#f89d9d;
+								}
+							}
+
+							&.has_scd:after{
+								display:block;
+								position:absolute;
+								bottom:4px;
+								left:50%;
+								width:3px;
+								height:3px;
+								margin-left:-1px;
+								border-radius:5px;
+								background:#ff4848;
+								content:'';
+							}
+						}
+
+						.today{
+							background:#eee;
+
+						}
+
+						.selected{
+							// 테마컬러(background)
+							color:#fff;
+
+							&.has_scd:after{
+								bottom:4px;
+								background:#fff
+							}
+						}
+
+						.deadline{
+							background:#b6b6b6;
+							font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+							font-size:12px;
+							color:#fff;
+							letter-spacing:-0.4px;
+							line-height:34px;
+						}
+
+						.holiday{
+							color:#f92424;
+						}
+
+						.selected.holiday{
+							color:#fff
+						}
+					}
+				}
+			}
+		}
+
+		.scd_list_area{
+			.scd_list{
+				padding:0 9px 9px;
+
+				li{
+					position:relative;
+					margin-top:6px;
+					padding:0 16px;
+					border:1px solid #e1e1e1;
+					border-top-color:#e6ecf0;
+					border-bottom-color:#dfe4ea;
+					border-radius:3px;
+					background:#fff;
+					box-shadow:0 0 1px #dfe4ea;
+
+					&:first-child{
+						margin-top:9px;
+					}
+
+					.info{
+						padding:19px 0 9px;
+
+						.ic_wrap{
+							// 테마컬러(border-color,background)
+							display:inline-block;
+							height:20px;
+							padding:0 8px;
+							border-radius:20px;
+							font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+							font-size:11px;
+							color:#fff;
+							letter-spacing:-0.5px;
+							line-height:22px;
+							box-sizing:border-box;
+
+							.ic{
+								@include setSprite($sp_m-scd_ico_notice);
+
+								display:inline-block;
+								margin:5px 3px -5px 0;
+								line-height:22px;
+								vertical-align:top;
+							}
+
+							&.status{
+								// 테마컬러(color)
+								background:#fff;
+
+								&.status_reject{
+									border-color:#d6d6d6;
+									color:#c6c6c6;
+								}
+							}
+						}
+
+						.datetime{
+							font-family:HelveticaNeue,AppleSDGothicNeo-Medium,sans-serif;
+							font-size:17px;
+							color:#333;
+							letter-spacing:-0.6px;
+							white-space:nowrap
+						}
+					}
+
+					.txt{
+						padding:0 0 17px;
+						font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,sans-serif-light;
+						font-size:15px;
+						color:#555;
+						letter-spacing:-0.5px;
+						line-height:23px;
+
+						&.v2{
+							padding-top:0;
+							border-top:0;
+						}
+					}
+
+					.info2{
+						padding:0 0 12px;
+
+						.bar{
+							display:inline-block;
+							width:1px;
+							height:10px;
+							margin:-2px 5px 0;
+							background:#d5d5d5;
+						}
+
+						.user_name{
+							font-family:HelveticaNeue-Light,AppleSDGothicNeo-Regular,sans-serif;
+							font-size:13px;
+							color:#999;
+
+							.ic{
+								@include setSprite($sp_m-board_ico_manager);
+
+								display:none;
+								margin:-3px 4px 0 0;
+								vertical-align:middle;
+							}
+						}
+
+						.user_phone{
+							font-family:HelveticaNeue-Light,sans-serif-light;
+							font-size:13px;
+							color:#999;
+						}
+
+						&.admin{
+							.user_name{
+								.ic{
+									display:inline-block;
+								}
+							}
+						}
+					}
+
+					.btn_area{
+						position:relative;
+						padding:13px 0;
+						border-top:1px solid #f0f0f0;
+						text-align:center;
+
+						> a{
+							display:inline-block;
+							position:relative;
+							width:68px;
+							height:31px;
+							border-radius:31px;
+							background:#fff;
+							font-family:AppleSDGothicNeo-Regular,sans-serif;
+							font-size:14px;
+							color:#666;
+							letter-spacing:-0.5px;
+							line-height:32px;
+							box-sizing:border-box;
+
+							.ic{
+								display:inline-block;
+								margin:-3px 3px 0 0;
+								vertical-align:middle;
+
+							}
+
+							&:after{
+								display:block;
+								position:absolute;
+								top:0;
+								left:0;
+								width:100%;
+								height:100%;
+								border:1px solid #dedede;
+								border-radius:31px;
+								box-sizing:border-box;
+								content:'';
+							}
+						}
+
+						.btn_modify{
+							.ic{
+								@include setSprite($sp_m-scd_ico_modify);
+							}
+						}
+
+						.btn_delete{
+							.ic{
+								@include setSprite($sp_m-scd_ico_delete);
+							}
+						}
+
+						.btn_confirm{
+							// 테마컬러(background)
+							color:#fff;
+
+							.ic{
+								@include setSprite($sp_m-scd_ico_confirm);
+							}
+
+							&:after{
+								border:1px solid rgba(0, 0, 0, 0.1);
+							}
+						}
+					}
+
+					&.notice{
+						background:#fffee2;
+
+						.info{
+							padding:14px 0 7px;
+						}
+
+						.btn_area{
+							border-top-color:#edecce;
+
+							> a{
+								background:#fffee2;
+
+								&:after{
+									border-color:#c2c1ac;
+								}
+							}
+
+							.btn_notice{
+								width:92px;
+
+								.ic{
+									@include setSprite($sp_m-scd_ico_modify);
+								}
+							}
+
+							.btn_modify{
+								.ic{
+									@include setSprite($sp_m-scd_ico_modify);
+								}
+							}
+
+							.btn_delete{
+								.ic{
+									@include setSprite($sp_m-scd_ico_delete);
+								}
+							}
+						}
+
+						&.none{
+							height:129px;
+							padding:33px 17px 28px;
+							box-sizing:border-box;
+
+							.txt{
+								margin-top:0;
+								padding:0;
+								border:none;
+								text-align:center;
+								font-size:16px;
+							}
+
+							.btn_area{
+								margin-top:13px;
+								padding:0;
+								border:none;
+							}
+						}
+					}
+
+				}
+				// 예약형
+				&.v2{
+					li{
+						.txt{
+							overflow:hidden;
+							padding:10px 35px 10px 0;
+							text-overflow:ellipsis;
+							white-space:nowrap;
+						}
+
+						.info2{
+							display:none;
+						}
+
+						.btn_area{
+							display:none;
+						}
+
+						.btn_fold{
+							display:block;
+							position:absolute;
+							bottom:6px;
+							right:13px;
+							width:31px;
+							height:31px;
+
+							&:after{
+								@include setSprite($sp_m-scd_btn_open, both);
+
+								display:block;
+								position:absolute;
+								top:50%;
+								left:50%;
+								content:'';
+							}
+						}
+
+						&.open{
+							.txt{
+								overflow:visible;
+								padding:10px 0;
+								text-overflow:clip;
+								white-space:normal;
+							}
+
+							.info2{
+								display:block;
+							}
+
+							.btn_area{
+								display:block;
+							}
+
+							.btn_fold{
+								bottom:13px;
+
+								&:after{
+									@include setSprite($sp_m-scd_btn_fold, both);
+								}
+							}
+						}
+
+						&.reject{
+							.info *{
+								color:#c1c1c1;
+							}
+
+							.txt{
+								color:#999;
+							}
+						}
+
+						&.secret{
+							.txt{
+								color:#999;
+							}
+						}
+					}
+				}
+			}
+
+			h2.tit{
+				padding:12px 18px 3px;
+				font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+				font-size:17px;
+				color:#000;
+			}
+		}
+
+		// 비로그인 메시지
+		.login_message_area{
+			padding:0 9px 10px;
+
+			.inner{
+				padding:25px 0;
+				border:1px solid #e3e9ed;
+				border-top-color:#e6ecf0;
+				border-bottom-color:#dfe4ea;
+				border-radius:2px;
+				background:#fff;
+				box-shadow:0 0 1px #dfe4ea;
+
+				.txt{
+					font-family:HelveticaNeue-Light,AppleSDGithicNeo-Light,sans-serif-light;
+					font-size:15px;
+					color:#444;
+					letter-spacing:-0.5px;
+					line-height:24px;
+					text-align:center;
+
+					em{
+						color:#00c73c;
+					}
+				}
+
+				.btn_area{
+					margin-top:9px;
+					text-align:center;
+
+					.btn_login{
+						display:inline-block;
+						width:75px;
+						height:31px;
+						border:1px solid #05bc3c;
+						border-radius:31px;
+						background:#00c73c;
+						font-family:AppleSDGothicNeo-Regular,sans-serif;
+						font-size:14px;
+						color:#fff;
+						letter-spacing:-0.5px;
+						line-height:31px;
+						text-align:center;
+						box-sizing:border-box;
+					}
+				}
+			}
+		}
+
+		.btn_res{
+			// 테마컬러(background)
+			display:block;
+			position:relative;
+			height:50px;
+			margin:0 10px 18px;
+			border-radius:2px;
+			font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+			font-size:16px;
+			color:#fff;
+			line-height:50px;
+			text-align:center;
+			box-sizing:border-box;
+
+			&:after{
+				display:block;
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:50px;
+				border:1px solid rgba(0, 0, 0, 0.2);
+				border-radius:2px;
+				box-sizing:border-box;
+				content:'';
+			}
+		}
+
+		// 스케줄 상세
+		&.v2{
+			padding-top:47px;
+
+			.calendar_area{
+				position:fixed;
+				top:0;
+				left:0;
+				z-index:10;
+				width:100%;
+
+				.controls{
+					margin:0;
+					border-bottom:0;
+
+					.date{
+						height:47px;
+						font-size:19px;
+						color:#fff;
+						line-height:47px;
+					}
+
+					.btn_reg_scd{
+						right:12px;
+						border-color:#fff;
+
+						&:after{
+							@include setSprite($sp_m-scd_btn_plus2, both);
+						}
+					}
+
+					.btn_back{
+						display:block;
+						position:absolute;
+						top:50%;
+						left:6px;
+						width:34px;
+						height:34px;
+						margin-top:-17px;
+
+						&:after{
+							@include setSprite($sp_m-scd_btn_back2, both);
+
+							position:absolute;
+							top:50%;
+							left:50%;
+							content:'';
+						}
+					}
+
+					.btn_inquiry{
+						right:12px;
+					}
+				}
+
+				.day_container{
+					padding:12px 10px 15px;
+
+					.days{
+						margin-top:2px;
+
+						.day_wrap{
+							margin-top:0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// 스케줄 쓰기
+	.schedule_write{
+		// 스케줄 날짜 선택
+		.input_box{
+			position:relative;
+			float:left;
+			width:50%;
+			margin-right:1%;
+
+			label{
+				position:absolute;
+				top:0;
+				left:10px;
+				font-family:AppleSDGothicNeo-Light,sans-serif-light;
+				font-size:15px;
+				color:#999;
+				line-height:35px;
+			}
+
+			input[type=date],
+			input[type=time],
+			input[type=text]{
+				display:block;
+				width:100%;
+				height:35px;
+				padding:0 10px;
+				border:1px solid #d0d0d0;
+				border-radius:0;
+				font-family:helvetica,AppleSDGothicNeo-Light,sans-serif-light;
+				font-size:15px;
+				color:#333;
+				line-height:35px;
+				box-sizing:border-box;
+				-webkit-appearance:none;
+				letter-spacing:0.06em;
+			}
+
+			&:after{
+				// 테마컬러(border-color)
+				display:block;
+				position:absolute;
+				top:50%;
+				right:11px;
+				width:0;
+				height:0;
+				margin-top:-2px;
+				border-style:solid;
+				border-width:4px 4px 0 4px;
+				border-color:#aaa transparent transparent transparent;
+				content:'';
+			}
+
+			&.selected{
+			}
+
+			&.disabled{
+				label{
+					color:#c1c1c1;
+				}
+
+				&:after{
+					border-color:#d4d4d4 transparent transparent transparent;
+				}
+			}
+
+			&.v2{
+				width:48%;
+			}
+		}
+
+		.title_area{
+			position:relative;
+			height:43px;
+			border-bottom:1px solid #666;
+			background:#f8f8f8;
+
+			h2.tit{
+				font-family:AppleSDGothicNeo-Medium,sans-serif;
+				font-size:16px;
+				color:#111;
+				letter-spacing:-0.5px;
+				line-height:44px;
+				text-align:center;
+			}
+
+			.btn_back{
+				display:block;
+				position:absolute;
+				top:50%;
+				left:6px;
+				width:34px;
+				height:34px;
+				margin-top:-17px;
+
+				&:after{
+					@include setSprite($sp_m-scd_btn_back, both);
+
+					position:absolute;
+					top:50%;
+					left:50%;
+					content:'';
+				}
+			}
+		}
+
+		.write_area{
+			padding:20px 18px 18px;
+			background:#fff;
+
+			.item{
+				border:1px solid #d0d0d0;
+
+				textarea{
+					display:block;
+					width:100%;
+					height:183px;
+					padding:10px;
+					border:none;
+					font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,sans-serif-light;
+					font-size:15px;
+					color:#666;
+					letter-spacing:-0.5px;
+					line-height:23px;
+					box-sizing:border-box;
+					resize:none;
+					-webkit-appearance:none;
+				}
+
+				input[type=text]{
+					display:block;
+					width:100%;
+					height:35px;
+					padding:0 10px;
+					border:1px solid #d0d0d0;
+					border-radius:0;
+					font-family:AppleSDGothicNeo-Light,sans-serif-light;
+					font-size:15px;
+					color:#666;
+					line-height:35px;
+					box-sizing:border-box;
+					-webkit-appearance:none;
+				}
+
+				select{
+					display:block;
+					width:100%;
+					height:35px;
+					border:1px solid #d0d0d0;
+					border-radius:0;
+					font-family:AppleSDGothicNeo-Light,sans-serif-light;
+					font-size:15px;
+					color:#666;
+					line-height:35px;
+					box-sizing:border-box;
+					-webkit-appearance:none;
+
+				}
+
+				.limit{
+					padding:10px;
+					font-family:HelveticaNeue-Light,sans-serif;
+					font-size:15px;
+					color:#999;
+					text-align:right;
+				}
+
+				.memo{
+					margin-top:4px;
+					font-family:HelveticaNeue-Light,AppleSDGothicNeo-Regular,sans-serif;
+					font-size:13px;
+					color:#ff4848;
+					letter-spacing:-0.5px;
+				}
+
+				& + .item{
+					margin-top:15px;
+				}
+
+				&.item_phone{
+					.inner{
+						overflow:hidden;
+					}
+
+					.select_box{
+						position:relative;
+						float:left;
+						width:32%;
+						height:35px;
+						padding-right:10px;
+						border:1px solid #d0d0d0;
+						background:#fff;
+						box-sizing:border-box;
+
+						select{
+							height:100%;
+							border:none;
+						}
+
+						&:after{
+							// 테마컬러(border-color)
+							display:block;
+							position:absolute;
+							top:50%;
+							right:10px;
+							width:0;
+							height:0;
+							margin-top:-2px;
+							border-style:solid;
+							border-width:4px 4px 0 4px;
+							border-color:#aaa transparent transparent transparent;
+							content:'';
+						}
+					}
+
+					input{
+						width:32%;
+						float:left;
+						margin-left:2%;
+					}
+				}
+
+				&.item_agree{
+					position:relative;
+					margin-top:30px;
+					margin-bottom:30px;
+
+					input[type=checkbox]{
+						position:absolute;
+						top:0;
+						left:-50px;
+
+						& + label{
+							font-family:AppleSDGothicNeo-Regular,sans-serif;
+							font-size:15px;
+							color:#222;
+							letter-spacing:-0.5px;
+
+							&:before{
+								@include setSprite($sp_m-scd_check_off);
+
+								display:inline-block;
+								margin:-2px 9px 0 0;
+								vertical-align:middle;
+								content:'';
+							}
+						}
+
+						&:checked + label{
+							&:before{
+								@include setSprite($sp_m-scd_check_on);
+							}
+						}
+					}
+				}
+			}
+
+			.set_option{
+				margin-top:10px;
+
+				.row{
+					overflow:hidden;
+					position:relative;
+					margin-top:4px;
+					padding-right:70px;
+
+					.btn_all_time{
+						display:block;
+						position:absolute;
+						top:0;
+						right:0;
+						width:70px;
+						height:35px;
+						border:1px solid #d0d0d0;
+						font-family:AppleSDGothicNeo-Regular,sans-serif;
+						font-size:15px;
+						color:#999;
+						line-height:35px;
+						text-align:center;
+						box-sizing:border-box;
+
+						.ic{
+							display:inline-block;
+							margin:-3px 5px 0 0;
+							background:#ccc;
+							vertical-align:middle;
+
+							&:before{
+								@include setSprite($sp_m-scd_ico_select);
+
+								display:block;
+								content:'';
+							}
+						}
+
+						&.active{
+							// 테마컬러(border-color, color)
+						}
+					}
+
+					// 대비용
+					//.select_box{
+					//	padding-right:10px;
+					//	border:1px solid #d0d0d0;
+					//	background:#fff;
+					//	box-sizing:border-box;
+          //
+					//	select{
+					//		display:block;
+					//		width:100%;
+					//		height:35px;
+					//		border:none;
+					//		border-radius:0;
+					//		font-size:15px;
+					//		color:#666;
+					//		box-sizing:border-box;
+					//		-webkit-appearance:none;
+					//	}
+          //
+					//	&:after{
+					//		display:block;
+					//		position:absolute;
+					//		top:50%;
+					//		right:10px;
+					//		width:0;
+					//		height:0;
+					//		margin-top:-2px;
+					//		border-style:solid;
+					//		border-width:4px 4px 0 4px;
+					//		border-color:#4971d0 transparent transparent transparent;
+					//		content:'';
+					//    }
+					//}
+				}
+			}
+			.btn_reg{
+				// 테마컬러(background)
+				display:block;
+				position:relative;
+				height:50px;
+				margin-top:20px;
+				border-radius:2px;
+				background:#c2c4c6;
+				font-family:AppleSDGothicNeo-SemiBold,sans-serif;
+				font-size:16px;
+				color:#fff;
+				line-height:52px;
+				text-align:center;
+				box-sizing:border-box;
+
+				&:after{
+					display:block;
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:50px;
+					border:1px solid rgba(0, 0, 0, 0.2);
+					border-radius:2px;
+					box-sizing:border-box;
+					content:'';
+				}
+			}
+		}
+	}
+	// 스케줄 테마컬러 적용
+	@each $type in $ButtonType{
+		@each $color in $ThemeColor{
+			$i: index($ThemeColor, $color);
+
+			.btn_#{$type}#{$i}{
+				.schedule_area .calendar_area .day_container .days .day_wrap .selected{
+					@include backgroundOpacity($color, 0.9);
+				}
+
+				.schedule_area .scd_list_area .scd_list li .info .ic_wrap{
+					@include backgroundOpacity($color, 0.85);
+				}
+
+				.schedule_area.v2 .calendar_area{
+					background: $color;
+				}
+
+				.schedule_area .scd_list_area .scd_list li .info .ic_wrap.status{
+					background:#fff;
+					color: $color;
+				}
+
+				.layer_m .ly_schdslt .ls_i input[type=radio]:checked + label:before{
+					background-color: $color;
+				}
+
+				.schedule_write .write_area .item.item_phone .select_box.selected:after,
+				.schedule_write .input_box.selected:after{
+					border-color: $color transparent transparent transparent;
+				}
+
+				.schedule_write .input_box.selected input,
+				.layer_m .l_btns .btn.btn_theme{
+					border-color: $color;
+				}
+
+				.schedule_write .input_box.disabled:after{
+					border-color:#d4d4d4 transparent transparent transparent;
+				}
+
+				.schedule_write .write_area .set_option .row .btn_all_time.active{
+					border-color: $color;
+					color: $color;
+
+					.ic{
+						background: $color;
+					}
+				}
+
+				.schedule_area .scd_list_area .scd_list li .btn_area .btn_confirm,
+				.schedule_area .btn_res,
+				.schedule_write .write_area .btn_reg.active,
+				.layer_m .btn_theme{
+					background: $color;
+				}
+			}
+		}
+	}
+
+} @else if $DEVICE == "pc"{
+
+	// PC 스케줄선택 레이어
+	.layer_pc{
+
+		.footer_buttons{
+			padding:20px 0;
+			border-top:1px solid #dedede;
+			text-align:center;
+
+			.btn{
+				display:inline-block;
+				height:35px;
+				padding:0 22px;
+				margin:0 2px;
+				box-sizing:border-box;
+				background:#fff;
+				border:1px solid #d8dbde;
+				font-size:14px;
+				font-weight:600;
+				line-height:35px;
+				color:#5c6676;
+				letter-spacing:-0.06em;
+				vertical-align:top;
+			}
+
+			.btn:hover, .btn:focus{
+				text-decoration:none;
+			}
+
+			.btn_theme{
+				border:0;
+				color:#fff;
+			}
+		}
+
+		.ly_schdslt{
+			min-height:102px;
+			padding:25px 30px 30px;
+
+			input{
+				vertical-align:middle;
+			}
+
+			.ls_inner{
+				margin:-10px 0;
+				font-size:14px;
+				line-height:34px;
+			}
+
+			.ls_i{
+				display:block;
+
+				// input[type=radio]{
+				// 	position:absolute;
+				// 	opacity:0.01;
+
+				// 	&:checked + label{
+				// 		&::before{
+				// 	    	@include setSprite($sp_pc-ico_schd_rdo_on);
+				// 		}
+				// 	}
+				// }
+
+				// label{
+				// 	&::before{
+				//     	@include setSprite($sp_pc-ico_schd_rdo_off);
+
+				//     	content:'';
+				//     	display:inline-block;
+				//     	margin-right:6px;
+				//     	vertical-align:middle;
+				// 	}
+				// }
+			}
+		}
+	}
+
+	.schedule_area{
+		.calendar_area{
+			.controls{
+				position:relative;
+				text-align:center;
+
+				.date{
+					font-family:Tahoma,sans-serif;
+					font-size:33px;
+					font-weight:bold;
+					color:#000;
+					letter-spacing:-0.5px;
+					line-height:60px;
+
+				}
+				.btn_today{
+					display:block;
+					position:absolute;
+					top:13px;
+					left:0;
+					height:32px;
+					padding:0 13px;
+					border:1px solid #c5c5c5;
+					font-size:12px;
+					color:#333;
+					line-height:32px;
+					letter-spacing:-0.5px
+				}
+				.btn_prev_month{
+					display:block;
+				;
+					position:absolute;
+					top:18px;
+					left:50%;
+					margin-left:-128px;
+
+					@include setSprite($sp_pc-scd_btn_prev_month);
+
+				}
+				.btn_next_month{
+					display:block;
+					position:absolute;
+					top:18px;
+					left:50%;
+					margin-left:116px;
+
+					@include setSprite($sp_pc-scd_btn_next_month);
+
+				}
+				.btn_reg_scd{
+					display:block;
+					position:absolute;
+					top:13px;
+					right:0;
+					width:85px;
+					height:34px;
+					border:1px solid #c5c5c5;
+					background:#fefefe;
+					color:#333;
+					letter-spacing:-0.5px;
+					line-height:32px;
+					text-align:center;
+					box-sizing:border-box;
+
+					.ic{
+						display:inline-block;
+						margin-top:-2px;
+						margin-right:6px;
+						vertical-align:middle;
+
+						@include setSprite($sp_pc-scd_btn_plus);
+
+					}
+				}
+			}
+			.day_container{
+				margin-top:20px;
+				border-top:1px solid #ddd;
+
+				.dayofweek{
+					overflow:hidden;
+
+					.day{
+						float:left;
+						width:91px;
+						font-size:14px;
+						color:#999;
+						line-height:40px;
+						text-align:center;
+
+					}
+				}
+				.days{
+					border-bottom:1px solid #e3e3e3;
+
+					.day_wrap{
+						float:left;
+						width:91px;
+						height:94px;
+						box-sizing:border-box;
+
+						.day_num{
+							display:block;
+							width:100%;
+							height:100%;
+							padding:9px 11px 11px;
+							border:1px solid #ececec;
+							border-right-color:#fff;
+							border-bottom-color:#fff;
+							font-family:Tahoma,sans-serif;
+							font-size:13px;
+							color:#222;
+							box-sizing:border-box;
+
+							&.another_month{
+								color:#ccc;
+
+								&.holiday{
+									color:#f89d9d;
+
+								}
+							}
+							&.holiday{
+								color:#f92424;
+
+							}
+							&.selected{
+								position:relative;
+
+								&:after{
+									//테마컬러 (border-color)
+									display:block;
+									position:absolute;
+									top:-1px;
+									left:-1px;
+									right:-1px;
+									bottom:-1px;
+									border-width:1px;
+									border-style:solid;
+									content:'';
+
+								}
+							}
+							&.today{
+								border-right-color:#f8f8f8;
+								border-bottom-color:#f8f8f8;
+								background:#f8f8f8;
+
+							}
+							&.first{
+								border-left-color:#fff;
+
+							}
+							&.first_week{
+								border-top-color:#e3e3e3;
+
+							}
+							.scd{
+								display:block;
+								margin-top:7px;
+								font-size:12px;
+								font-family:'나눔고딕',NanumGothic,'돋움',dotum,helvetica,sans-serif;
+								color:#666;
+
+								em{
+									//테마컬러 (border)
+									margin-left:4px;
+									font-family:Tahoma,sans-serif;
+									font-weight:bold;
+
+
+								}
+							}
+						}
+					}
+					&:after{
+						display:block;
+						clear:both;
+						content:'';
+
+					}
+				}
+			}
+		}
+		.scd_list_area{
+			margin-top:30px;
+
+			.scd_list{
+				li:first-child{
+					margin-top:0;
+
+				}
+				li{
+					margin-top:14px;
+					padding:25px 20px 24px;
+					border:1px solid #ddd;
+					background:#fff;
+
+					.info{
+						.ic_wrap{
+							//테마컬러(border-color, background)
+							display:inline-block;
+							width:56px;
+							height:22px;
+							border-radius:22px;
+							font-size:12px;
+							color:#fff;
+							letter-spacing:-0.5px;
+							line-height:22px;
+							text-align:center;
+							box-sizing:border-box;
+
+							.ic{
+								display:inline-block;
+								margin:6px 3px -6px 0;
+								vertical-align:top;
+								line-height:22px;
+
+								@include setSprite($sp_pc-scd_ico_notice);
+
+							}
+						}
+						.datetime{
+							font-size:16px;
+							font-weight:600;
+							color:#20232c;
+							letter-spacing:-0.5px;
+
+						}
+					}
+					.txt{
+						margin-top:9px;
+						font-size:14px;
+						color:#666;
+						letter-spacing:-0.5px;
+						line-height:24px;
+
+					}
+					.btn_area{
+						margin:0;
+						margin-bottom:-10px;
+						margin-top:24px;
+						padding-top:14px;
+						border-top:1px solid #eee;
+
+						> a{
+							display:inline-block;
+							height:26px;
+							padding:0 16px;
+							border:1px solid #c5c5c5;
+							border-radius:26px;
+							background:#fff;
+							font-size:12px;
+							color:#666;
+							letter-spacing:-0.5px;
+							line-height:24px;
+							box-sizing:border-box;
+
+							&.btn_notice{
+								width:81px;
+
+							}
+						}
+					}
+					&.notice{
+						padding:25px 24px 24px;
+						border-color:#eae9ca;
+						background:#fffee2;
+
+						.btn_area{
+							border-top-color:#edecce;
+
+							> a{
+								border-color:#c2c1ac;
+								background:#fffee2;
+
+							}
+						}
+						&.none{
+							padding:58px 0 52px;
+
+							.txt{
+								font-size:16px;
+								font-weight:600;
+								text-align:center;
+
+							}
+							.btn_area{
+								margin-top:17px;
+								padding-top:0;
+								border:none;
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.layer_schedule_view{
+		position:relative;
+		width:600px;
+
+		.ly_sc{
+			.ly_tit{
+				h2{
+					margin:0;
+					padding:24px 25px;
+				}
+
+				.btn_reg_scd{
+					display:block;
+					position:absolute;
+					top:20px;
+					left:32px;
+					width:85px;
+					height:34px;
+					border:1px solid #c5c5c5;
+					background:#fefefe;
+					color:#333;
+					letter-spacing:-0.5px;
+					line-height:32px;
+					text-align:center;
+					box-sizing:border-box;
+
+					.ic{
+						@include setSprite($sp_pc-scd_btn_plus);
+
+						display:inline-block;
+						margin-top:-2px;
+						margin-right:6px;
+						vertical-align:middle;
+					}
+				}
+			}
+
+			.ly_cont{
+				overflow-y:auto;
+				height:546px;
+
+				.scd_list_area{
+					margin:30px;
+				}
+			}
+		}
+	}
+
+	.layer_schedule_write{
+		position:relative;
+		width:600px;
+
+		// 스케줄 날짜 선택
+		.input_box{
+			display:inline-block;
+			position:relative;
+			width:128px;
+			margin-right:3px;
+			vertical-align:top;
+
+			select{
+				width:100%;
+				height:26px;
+
+				&:focus{
+					//테마컬러(border-color)
+					outline:none;
+				}
+
+				&:disabled{
+					border-color:#e2e3ea;
+					background:#fafafa;
+					color:#aaa;
+				}
+			}
+
+			&.v2{
+				width:108px;
+			}
+		}
+
+		.ly_sc{
+			.ly_tit{
+				h2{
+					padding:24px 0;
+					margin:0;
+
+				}
+			}
+
+			.wave{
+				display:inline-block;
+				margin-right:4px;
+				line-height:26px;
+				vertical-align:top;
+			}
+
+			.ly_cont{
+				padding:30px 30px 20px;
+
+				.item{
+					border:1px solid #bebec1;
+
+					textarea{
+						display:block;
+						width:100%;
+						height:203px;
+						padding:9px 10px;
+						border:none;
+						box-sizing:border-box;
+						outline:none;
+						resize:none;
+						line-height:16px
+					}
+
+					.limit{
+						padding:10px;
+						color:#999;
+					}
+				}
+
+				.set_option{
+					margin-top:12px;
+
+					.row{
+						margin-top:6px;
+
+						&:after{
+							display:block;
+							clear:both;
+							content:'';
+						}
+
+						.input_box{
+							width:108px;
+						}
+
+						.btn_all_time{
+							display:inline-block;
+							width:64px;
+							height:26px;
+							margin-left:-1px;
+							border:1px solid #d7d8dd;
+							color:#999;
+							letter-spacing:-0.5px;
+							line-height:24px;
+							text-align:center;
+							box-sizing:border-box;
+							vertical-align:top;
+
+							.ic{
+								@include setSprite($sp_pc-scd_ico_select);
+
+								display:inline-block;
+								margin:-2px 4px 0 0;
+								vertical-align:middle;
+							}
+
+							&.active{
+								//테마컬러(border-color, color)
+							}
+						}
+					}
+
+					& + .btn_area{
+						margin-top:36px;
+						margin-bottom:0;
+						padding-top:20px;
+						border-top:1px solid #eee;
+					}
+				}
+
+				.btn_area{
+					margin:0;
+					padding-top:20px;
+
+					.btn_reg{
+						display:inline-block;
+						position:relative;
+						width:65px;
+						height:34px;
+						background:#c2c4c6;
+						color:#fff;
+						letter-spacing:-0.5px;
+						line-height:32px;
+						box-sizing:border-box;
+
+						&:after{
+							display:block;
+							position:absolute;
+							top:0;
+							left:0;
+							width:100%;
+							height:34px;
+							border:1px solid rgba(0, 0, 0, 0.1);
+							box-sizing:border-box;
+							content:'';
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//디자인 셀렉트박스 (selectric, http://lcdsantos.github.io/jQuery-Selectric/demo.html)
+	.selectric-wrapper{
+		position:relative;
+		cursor:pointer;
+	}
+
+	.selectric-responsive{
+		width:100%;
+	}
+
+	.selectric{
+		position:relative;
+		border:1px solid #d7d8dd;
+		background:#fff;
+		text-align:left;
+	}
+
+	.btn_area .selectric{
+		border:1px solid rgba(0, 0, 0, 0.2);
+	}
+
+	.selectric .label{
+		display:block;
+		overflow:hidden;
+		height:24px;
+		margin:0 24px 0 9px;
+		font-size:12px;
+		color:#222;
+		line-height:24px;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+
+	.btn_area .selectric .label{
+		height:32px;
+		line-height:32px;
+	}
+
+	.selectric .button, .input_box .button{
+		@include setSprite($sp_pc-scd_ico_selectbox);
+
+		display:block;
+		position:absolute;
+		top:50%;
+		right:8px;
+		margin-top:-2px;
+	}
+
+	.selectric-open{
+		z-index:9999;
+	}
+
+	.selectric-open .selectric{
+		//테마컬러(border-color)
+	}
+
+	.selectric-open .selectric-items{
+		display:block;
+		text-align:left;
+	}
+
+	.selectric-disabled{
+		filter:alpha(opacity=50);
+		opacity:0.5;
+		cursor:default;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+	}
+
+	.selectric-disabled .selectric{
+		background:#fafafa;
+	}
+
+	.selectric-disabled .label{
+		color:#aaa;
+	}
+
+	.selectric-disabled .button{
+		@include setSprite($sp_pc-scd_ico_selectbox_disabled);
+	}
+
+	.selectric-hide-select{
+		overflow:hidden;position:relative;width:0;height:0;
+	}
+
+	.selectric-hide-select select{
+		display:none;position:absolute;left:-100%;
+	}
+
+	.selectric-input{
+		overflow:hidden !important;
+		position:absolute !important;
+		top:0 !important;
+		left:0 !important;
+		width:1px !important;
+		height:1px !important;
+		margin:0 !important;
+		padding:0 !important;
+		border:none !important;
+		background:none !important;
+		clip:rect(0, 0, 0, 0) !important;
+		outline:none !important;
+	}
+
+	.selectric-temp-show{
+		display:block !important;
+		visibility:hidden !important;
+		position:absolute !important;
+	}
+
+
+	// Items box
+	.selectric-items{
+		display:none;
+		position:absolute;
+		top:100%;
+		left:0;
+		border:1px solid #666;
+		border-top:0;
+		background:#fff;
+	}
+
+	.selectric-items .selectric-scroll{
+		overflow:auto;
+		height:100%;
+	}
+
+	.selectric-above .selectric-items{
+		top:auto;
+		bottom:100%;
+	}
+
+	.selectric-items ul,
+	.selectric-items li{
+		line-height:24px;
+	}
+
+	.selectric-items li{
+		display:block;padding:0 9px;color:#222;cursor:pointer;
+	}
+
+	.selectric-items li.selected{
+		//테마컬러(background)
+		color:#fff;
+	}
+
+	.selectric-items .disabled{
+		filter:alpha(opacity=50);opacity:0.5;
+		cursor:default !important;
+		background:none !important;
+		color:#666 !important;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+	}
+
+	.selectric-items .selectric-group .selectric-group-label{
+		padding-left:10px;
+		background:none;
+		font-weight:bold;
+		color:#444;
+		cursor:default;
+		-webkit-user-select:none;
+		-moz-user-select:none;
+		-ms-user-select:none;
+		user-select:none;
+	}
+
+	.selectric-items .selectric-group.disabled li{
+		filter:alpha(opacity=100);
+		opacity:1;
+	}
+
+	.selectric-items .selectric-group li{
+		padding-left:25px;
+	}
+
+	.input_box .input_date{
+		position:relative;
+		width:100%;
+		height:26px;
+		border:1px solid #d7d8dd;
+		background:#fff;
+		line-height:26px;
+		text-indent:9px;
+		box-sizing:border-box;
+		//z-index:20030;
+	}
+
+	// 달력 api 스타일 재정의
+	.input_box .xdsoft_datetimepicker{
+		//z-index:20010;
+		border-color:#666;
+		box-shadow:none;
+
+		.xdsoft_calendar th,
+		.xdsoft_calendar td{
+			border:0;
+			background:none;
+			text-align:center;
+		}
+
+		.xdsoft_calendar th{
+			font-weight:normal;
+			color:#a1a1a1;
+		}
+
+		.xdsoft_calendar td{
+			color:#222;
+		}
+
+		.xdsoft_calendar td > div{
+			padding-right:0;
+		}
+
+		.xdsoft_calendar td.xdsoft_current,
+		.xdsoft_calendar td.xdsoft_current:hover{
+			box-shadow:none;
+			background:none !important;
+			font-weight:normal;
+			color:#fff !important;
+		}
+
+		.xdsoft_calendar td.xdsoft_current > div{
+			width:24px;
+			height:24px;
+			margin:0 auto;
+			background:#4f7ce6;
+			border-radius:32px;
+			line-height:24px;
+		}
+
+		.xdsoft_calendar td:hover{
+			background:none !important;
+			color:#222 !important;
+		}
+
+		.xdsoft_label{
+			display:inline-block;
+			float:none;
+		}
+
+		.xdsoft_month,
+		.xdsoft_year{
+			position:absolute;
+			top:0;
+			width:auto;
+			text-align:center;
+		}
+
+		.xdsoft_year{
+			left:57px;
+		}
+
+		.xdsoft_month{
+			left:116px;
+		}
+
+		.xdsoft_label i{
+			margin-left:3px;
+		}
+
+		.xdsoft_label:hover>span{
+			text-decoration:none;
+		}
+
+		.xdsoft_prev,
+		.xdsoft_next{
+			position:absolute;
+			top:0;
+			float:none;
+			vertical-align:top;
+			opacity:1;
+		}
+
+		.xdsoft_prev{
+			@include setSprite($sp_pc-calendar_arrow_prev);
+
+			left:48px;
+			margin:9px 12px -9px 0;
+		}
+
+		.xdsoft_next{
+			@include setSprite($sp_pc-calendar_arrow_next);
+
+			right:48px;
+			margin:9px 0 -9px 11px;
+		}
+	}
+
+	//메인 스케줄
+	.main{
+		.calendar_area{
+			padding:0 21px;
+			background-color:#fff;
+		}
+		.scd_list_area.main_type{
+			display:block;
+		}
+	}
+
+	.scd_list_area.main_type{
+		display:none;
+		margin:10px 0 0;
+		border-radius:2px;
+		background-color:#fff;
+		box-shadow:0 0 2px rgba(0,0,0,0.1);
+
+		.notice{
+			position:relative;
+			> a{
+				display:block;
+				padding:21px 20px 22px 76px;
+			}
+			.info{
+				position:absolute;
+				left:20px;
+				top:26px;
+
+				.ic{
+					display:block;
+				}
+			}
+
+			.txt{
+				font-size:12px;
+				color:#888;
+				line-height:20px;
+				letter-spacing:-0.25px;
+				.tit{
+					display:block;
+					margin-bottom:3px;
+					font-size:14px;
+					font-weight:600;
+					color:#000;
+					line-height:22px;
+					letter-spacing:-0.5px;
+				}
+			}
+		}
+	}
+
+	.horizontal .main_type.scd_list_area .notice .ic{
+		@include setSprite($sp_pc-schedule_ico_set);
+	}
+
+	.main_type.scd_list_area .notice .ic{
+		@include setSprite($sp_pc-schedule_ico_line);
+	}
+
+	// 스케줄 테마컬러 적용
+	@each $type in $ButtonType{
+		@each $color in $ThemeColor{
+			$i: index($ThemeColor, $color);
+
+			.btn_#{$type}#{$i}{
+				.schedule_area .scd_list_area .scd_list li .info .ic_wrap{
+					@include backgroundOpacity($color, 0.85);
+				}
+
+				.schedule_area .calendar_area .day_container .days .day_wrap .day_num.selected:after,
+					//.input_box select:focus,
+				.selectric-open .selectric,
+				.selected .selectric,
+				.input_box.selected .input_date{
+					border-color: $color;
+				}
+
+				.schedule_area .calendar_area .day_container .days .day_wrap .day_num .scd em,
+				.input_box .xdsoft_datetimepicker .xdsoft_month,
+				.input_box .xdsoft_datetimepicker .xdsoft_year{
+					color: $color;
+				}
+
+				.layer_schedule_write .set_option .row .btn_all_time.active{
+					border-color: $color;
+					color: $color;
+
+					.ic{
+
+						@include setSprite($sp_pc-scd_ico_select_theme);
+
+						background-color: $color;
+					}
+				}
+
+				.layer_schedule_write .btn_area .btn_reg.active,
+				.layer_pc .btn_theme,
+				.selectric-items li.selected,
+				.input_box .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current > div{
+					background: $color;
+				}
+
+				.selectric-open .button,
+				.input_box.selected .button{
+
+					@include setSprite($sp_pc-scd_ico_selectbox_theme);
+
+					background-color: $color;
+				}
+				.main_type.scd_list_area .notice .ic{
+					background-color: $color;
+				}
+			}
+
+			.layer_schedule_write .btn_area .btn_reg.active,
+			.selectric-items li.selected{
+				background: $color;
+			}
+
+			.selectric-open .button,
+			.input_box.selected .button{
+
+				@include setSprite($sp_pc-scd_ico_selectbox_theme);
+
+				background-color: $color;
+			}
+
+			.selectric-open .selectric,
+			.input_box.selected .input_date{
+				border-color: $color;
+			}
+
+			.selectric-items li.selected{
+				background: $color;
+			}
+
+			.input_box .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current > div,
+			.main_type.scd_list_area .info .ic{
+
+				background-color: $color;
+			}
+		}
+	}
+}
+
+// 모바일 에디터 편집불가
+.editor .schedule_area{display:none}
+.editor .schedule_text{
+	&:before{
+		@include setSprite($sp_limit-img_schedule);
+	}
+}
+
+@media screen and (min-width:320px){
+	.schedule_area .scd_list_area .scd_list li .info .datetime{font-size:16px}
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+	.schedule_area .calendar_area .day_container .dayofweek .day,
+	.schedule_area .calendar_area .day_container .days .day_wrap{width:14.222%}
+}

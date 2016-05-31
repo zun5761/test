@@ -1,0 +1,124 @@
+<div class="layer_info layer_contact_info">
+	<div class="layer_title">연결정보수정 <a href="#" class="layer_close">닫기</a></div>
+	<div class="info_list_wrap">
+		<ul class="contact_info_list">
+			<!-- [D] 노출(ON)일때 active 클래스 추가 -->
+			<li class="active">
+				<!-- [D] 데이터 있을경우 on 클래스 추가 -->
+				<div class="item on">
+					<div class="item_tel"></div>
+				</div>
+				<div class="info on">
+					<div class="txt_title"><input type="text" placeholder="전화" maxlength="10" value="예약문의"></div>
+					<div class="txt_info"><input type="tel" placeholder="전화번호 입력" value="010-1234-1234"></div>
+					<div class="txt_point">통화추적번호 : 0570-1302-1455</div>
+				</div>
+				<div class="form_input">
+					<!-- [D] 노출일경우 클래스 on 추가 -->
+					<input type="checkbox" name="phone" id="show" class="input_check on"><label for="show" class="option_label">노출</label>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<div class="item_sms"></div>
+				</div>
+				<div class="info">
+					<div class="txt_title"><input type="text" placeholder="문자" maxlength="10" value=""></div>
+					<div class="txt_info"><input type="tel" placeholder="전화번호 입력" value=""></div>
+				</div>
+				<div class="form_input">
+					<input type="checkbox" name="phone" id="hide" class="input_check"><label for="hide" class="option_label">비노출</label>
+				</div>
+			</li>
+			<li class="calltrack">
+				<div class="info">
+					<div class="txt_title">통화추적번호
+						<a href="#none" class="ico_help"><span class="blind">도움말</span></a>
+						<span class="txt_bar"></span>
+						<span class="txt_point">사용중</span>
+					</div>
+					<div class="txt_info">modoo! 홈페이지에서 걸려온 전화를 알려드립니다(무료)</div>
+					<p class="desc_info">
+						"modoo!가 연결해 드립니다" 통화 연결음으로, 홈페이지에서 오는 전화<br>
+						를 구분할 수 있고, 통화 통계를 확인할 수 있는 무료 기능입니다.
+					</p>
+					<div class="buttons">
+						<a href="#" class="btn_line disabled">통화추적번호 사용하기<span class="ico_arrow"></span></a>
+					</div>
+					<div class="buttons">
+						<a href="#" class="btn_line">통화추적번호 사용하기<span class="ico_arrow"></span></a>
+					</div>
+				</div>
+			</li>
+			<li class="calltrack">
+				<div class="info">
+					<div class="txt_title">통화추적번호
+						<a href="#none" class="ico_help"><span class="blind">도움말</span></a>
+						<span class="txt_bar"></span>
+						<span class="txt_point">사용중</span>
+					</div>
+					<div class="box_info">
+						<dl class="desc_call">
+							<dt>modoo! 통화추적번호</dt>
+							<dd>0570-1301-1455</dd>
+						</dl>
+						<dl class="desc_call">
+							<dt>연결되는 전화번호</dt>
+							<dd>010-1301-1455</dd>
+						</dl>
+						<dl class="desc_call">
+							<dt>통화중이거나 미 수신시</dt>
+							<dd class="txt_none">미등록</dd>
+							<dd class="buttons"><a href="#" class="btn_line">등록하기<span class="ico_arrow"></span></a></dd>
+						</dl>
+						<dl class="desc_call">
+							<dt>통화중이거나 미 수신시</dt>
+							<dd>010-5591-1455</dd>
+							<dd class="buttons"><a href="#" class="btn_line">수정하기<span class="ico_arrow"></span></a></dd>
+						</dl>
+					</div>
+					<div class="buttons align_c">
+						<span class="grid"><a href="#" class="btn_line">사용 취소</a></span>
+						<span class="grid"><a href="#" class="btn_line">통화 보고서<span class="ico_arrow"></span></a></span>
+					</div>
+					<ul class="list_notice">
+						<li>modoo! 통화추적번호는 실제 고객에게 보이는 번호입니다.</li>
+						<li>전화번호 재 설정 시, 통화추적 번호 사용이 자동으로 끊어집니다.</li>
+						<li>통화 보고서에서 연결횟수, 평균 통화시간을 확인할 수 있습니다.</li>
+						<li>180일 이내에 통화추적번호를 재연결 할 경우, 기존 사용번호를 그 대로 사용하게 됩니다</li>
+					</ul>
+				</div>
+			</li>
+			<!-- [D] talk 클래스 추가 -->
+			<li class="talk">
+				<div class="item">
+					<div class="item_talk"></div>
+				</div>
+				<div class="info">
+					<div class="txt_title">톡톡/톡톡친구</div>
+					<div class="buttons">
+						<!-- [D] 톡톡 미연결시 노출 -->
+                        <a href="#" class="btn_line">사용하기<span class="ico_arrow"></span></a>
+					</div>
+				</div>
+			</li>
+			<li class="talk active">
+				<div class="item">
+					<div class="item_talk"></div>
+				</div>
+				<div class="info">
+					<div class="txt_title">톡톡</div>
+					<div class="buttons">
+						<a href="#" class="btn_line">연결끊기<span class="ico_arrow"></span></a>
+						<a href="#" class="btn_line">톡톡관리<span class="ico_arrow"></span></a>
+					</div>
+				</div>
+				<p class="talk_notice">앱, 친구 추가 없이 바로 고객과 상담할 수 있습니다.<br>
+					사용시 자동 이용되는 톡톡친구로 무료 단체메시지를 전하세요.</p>
+			</li>
+		</ul>
+		<div class="btn_area">
+			<a href="" class="btn_save"><span class="blind">저장</span></a>
+		</div>
+	</div>
+</div>

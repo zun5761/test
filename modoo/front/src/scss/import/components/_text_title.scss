@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* import/components/_text_title.scss */
+// 타이틀형
+.txt_component {
+	h4 {
+		@if $DEVICE == 'pc'{
+			padding-top: 3px;
+			padding-bottom: 3px;
+			font-size: 24px;
+			font-weight: 600;
+			line-height: 36px;
+		} @else {
+			padding-top: 11px;
+			font-size: 22px;
+			font-family: #{$F-medium-ko};
+			line-height: 30px;
+			letter-spacing: -.05em;
+		}
+	}
+
+	//작게
+	&.sma h4 {
+		@if $DEVICE == 'pc'{
+			font-weight: 600;
+			line-height: 30px;
+		} @else {
+			padding: 0;
+			line-height: 25px;
+		}
+
+		font-size: 15px;
+	}
+
+	//하단간격
+	&.b_space h4 {
+		padding-bottom: 8px;
+	}
+}
+
+//테마색상
+@each $type in $ButtonType {
+	@each $number, $colors in $ThemeColor-title {
+		@each $color in $colors {
+			$i: index($colors, $color);
+			.btn_#{$type}#{$number} .txt_component {
+				&.color#{$i} h4 {
+					color: $color;
+				}
+			}
+		}
+	}
+}

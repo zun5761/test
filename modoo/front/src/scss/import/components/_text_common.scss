@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/* import/components/_text_common.scss */
+.txt_box{}
+.txt_component {
+	overflow: hidden;
+	color: #222;
+	word-break: break-all;
+	word-wrap: break-word;
+
+	@if $DEVICE == 'pc'{
+		margin: 0;
+	} @else {
+		margin: 0 12px;
+	}
+
+	&.align_l {
+		text-align: left;
+	}
+
+	&.align_c {
+		text-align: center;
+	}
+
+	&.align_r {
+		text-align: right;
+	}
+}

@@ -1,0 +1,275 @@
+@charset "utf-8";
+
+/* import/mobile/_aside.scss */
+.fc_aside{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:10000;
+	width:270px;
+	height:100%;
+	background-color:#f7f7f7;
+	transform-style:preserve-3d;
+	transition:0.25s ease-in-out;
+	-webkit-transition:0.25s ease-in-out;
+	transform:translate3d(-270px, 0, 0);
+	-webkit-transform:translate3d(-270px, 0, 0);
+}
+
+//홈페이지 기본정보
+.welcome_box{
+	position:relative;
+	min-height:213px;
+	padding-bottom:20px;
+
+	.link{
+		display:block;
+		padding-top:27px;
+	}
+
+	.logo,.menu{
+		display:none
+	}
+
+	.thmb{
+		width:90px;
+		height:90px;
+		margin:0 auto 11px;
+		border:1px solid #fff;
+		border-radius:100%;
+
+		img{
+			width:90px;
+			height:90px;
+			border-radius:100%;
+		}
+	}
+
+	[class^=c_]{
+		overflow:hidden;
+		padding:0 30px;
+		text-align:center;
+		color:#fff;
+		word-break: break-all;
+		line-height:17px;
+
+		&:before{
+			display:inline-block;
+			height:100%;
+			vertical-align:middle;
+			content:'';
+		}
+
+		.txt{
+			display:inline-block;
+			vertical-align:middle;
+		}
+	}
+
+	.c_t{
+		height:42px;
+		font-size:18px;
+		line-height:20px;
+	}
+
+	.c_tx{
+		height:35px;
+		font-size:14px;
+	}
+}
+
+//월간리포트
+.welcome_report{
+	position:relative;
+	margin-top:10px;
+
+	.report_link{
+		display:block;
+		position:relative;
+		width:101px;
+		padding-top:1px;
+		margin:0 auto;
+		border:1px solid rgba(255,255,255,0.4);
+		border-radius:14px;
+		font-size:13px;
+		text-align:center;
+		color:#fff;
+		line-height:26px;
+
+		&:before{
+			@include setSprite($sp_m-aside_report_before);
+
+			display:inline-block;
+			margin-right:2px;
+			vertical-align:-2px;
+			content:'';
+		}
+
+		.ico_new{
+			@include setSprite($sp_m-aside_report_new);
+
+			overflow:hidden;
+			position:absolute;
+			top:-5px;
+			right:-2px;
+			text-indent:150%;
+			white-space:nowrap;
+		}
+	}
+
+	.ly_tooltip{
+		position:absolute;
+		top:100%;
+		left:41px;
+		z-index:10;
+		width:193px;
+		margin:10px auto 0;
+		padding:11px 0;
+		text-align:center;
+
+		.btn_close{
+			top:8px;
+			right:7px;
+		}
+
+		.edge.edge_top{
+			left:0;
+			right:0;
+			margin:auto;
+		}
+	}
+}
+
+//메뉴
+.navigate_box{
+	.s_m{
+		margin-bottom:24px;
+		background-color:#fff;
+
+		> li{
+			position:relative;
+			border-bottom:1px solid #eaeaea;
+		}
+
+		a{
+			display:block;
+			overflow:hidden;
+			padding:0 20px;
+			font-size:15px;
+			text-overflow:ellipsis;
+			color:#222;
+			line-height:49px;
+			white-space:nowrap
+		}
+	}
+
+	.depth{
+		&:after{
+			@include setSprite($sp_m-aside_menu_on);
+			position:absolute;
+			right:20px;
+			top:20px;
+			background-color:#b5b5b5;
+			content:'';
+		}
+
+		&.on:after{
+			@include setSprite($sp_m-aside_menu_off);
+		}
+
+		a{
+			padding:0 40px 0 20px;
+		}
+	}
+
+	.menu_name{
+		display:block;
+		margin-right:21px;
+		white-space:nowrap;
+
+		.text{
+			display:inline-block;
+			overflow:hidden;
+			max-width:100%;
+			text-overflow:ellipsis;
+			vertical-align:top;
+		}
+	}
+
+	.sub_menu{
+		border-top:1px solid #eaeaea;
+		background-color:#f8f8f8;
+
+		a{
+			padding:0;
+			margin:0 20px;
+			border-top:1px solid #eaeaea;
+			color:#666;
+		}
+
+		li:first-child a{
+			border-top:none;
+		}
+	}
+
+	.ico_new{
+		@include setSprite($sp_m-ico_new);
+		display:inline-block;
+		margin:18px 0 -18px 6px;
+		vertical-align:top;
+	}
+
+	.ico_npay{
+		@include setSprite($sp_m-aside_ico_npay);
+		display:inline-block;
+		margin:2px 0 -2px 7px;
+	}
+}
+
+//하단 버튼
+.aside_btn{
+	padding-bottom:26px;
+
+	>a{
+		display:block;
+		margin:6px 20px;
+		border:1px solid #e3e3e3;
+		background-color:#fff;
+		text-align:center;
+		color:#666;
+		line-height:35px;
+	}
+
+	.text:before{
+		display:inline-block;
+		margin:0 5px 2px 0;
+		vertical-align:middle;
+		content:'';
+	}
+
+	.accusation .text:before{
+		@include setSprite($sp_m-aside_accusation);
+	}
+
+	.edit_mymodoo{
+		border:1px solid #01c73c;
+		color:#01c73c;
+
+		.text:before{
+			@include setSprite($sp_m-aside_edit_mymodoo);
+		}
+	}
+}
+
+//테마색상
+@each $type in $ButtonType{
+	@each $color in $ThemeColor{
+		$i: index($ThemeColor, $color);
+		.btn_#{$type}#{$i}{
+			.welcome_box,
+			.s_m .depth.on:after{
+				background-color: $color;
+			}
+		}
+	}
+}

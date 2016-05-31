@@ -1,0 +1,136 @@
+<!-- 스케줄 달력 -->
+<div class="schedule_area">
+	<div class="calendar_area">
+		<div class="controls">
+			<a href="" class="btn_today">오늘</a>
+			<span class="date">2015. 10</span>
+			<a href="" class="btn_prev_month"><span class="blind">지난달</span></a>
+			<a href="" class="btn_next_month"><span class="blind">다음달</span></a>
+			<!-- [D] 관리자일 때 -->
+			<a href="" class="btn_reg_scd"><span class="ic"></span>일정쓰기</a>
+			<!-- [D] 사용자(예약형)일 때 -->
+			<!-- <a href="" class="btn_inquiry">문의</a> -->
+		</div>
+		<div class="day_container">
+			<div class="dayofweek">
+				<div class="day">일</div>
+				<div class="day">월</div>
+				<div class="day">화</div>
+				<div class="day">수</div>
+				<div class="day">목</div>
+				<div class="day">금</div>
+				<div class="day">토</div>
+			</div>
+			<div class="days">
+				<!-- 지난달 또는 다음달 날짜이면 another_month 클래스 추가 -->
+				<!-- 일요일, 공휴일이면 holiday 클래스 추가 -->
+				<!-- 오늘이면 today 클래스 추가 -->
+				<!-- 선택이면 selected 클래스 추가 -->
+				<!-- 예) 오늘 일정이 있고 선택되었으면 day_num today selected 순으로 적용되어야 함 -->
+				<!-- 일요일이면 first 클래스 추가 -->
+				<!-- 첫번째 주 이면 first_week 클래스 추가 -->
+				<div class="day_wrap"><a href="" class="day_num another_month first first_week holiday">27</a></div>
+				<div class="day_wrap"><a href="" class="day_num another_month first_week">28</a></div>
+				<div class="day_wrap"><a href="" class="day_num another_month first_week">29</a></div>
+				<div class="day_wrap"><a href="" class="day_num another_month first_week">30</a></div>
+				<div class="day_wrap"><a href="" class="day_num first_week">1</a></div>
+				<div class="day_wrap"><a href="" class="day_num first_week">2</a></div>
+				<div class="day_wrap"><a href="" class="day_num first_week holiday">3</a></div>
+				<div class="day_wrap"><a href="" class="day_num first holiday">4</a></div>
+				<div class="day_wrap"><a href="" class="day_num">5</a></div>
+				<div class="day_wrap"><a href="" class="day_num">6</a></div>
+				<div class="day_wrap"><a href="" class="day_num">7</a></div>
+				<div class="day_wrap">
+					<a href="" class="day_num">8
+						<span class="scd">일정<em>1</em></span>
+					</a>
+				</div>
+				<div class="day_wrap">
+					<a href="" class="day_num holiday">9
+						<span class="scd">일정<em>1</em></span>
+					</a>
+				</div>
+				<div class="day_wrap"><a href="" class="day_num">10</a></div>
+				<div class="day_wrap"><a href="" class="day_num first holiday">11</a></div>
+				<div class="day_wrap"><a href="" class="day_num today">12</a></div>
+				<div class="day_wrap"><a href="" class="day_num">13</a></div>
+				<div class="day_wrap">
+					<a href="" class="day_num selected">14
+						<span class="scd">일정<em>1</em></span>
+					</a>
+				</div>
+				<div class="day_wrap">
+					<a href="" class="day_num">15
+						<span class="scd">일정<em>4</em></span>
+					</a>
+				</div>
+				<div class="day_wrap">
+					<a href="" class="day_num">16
+						<span class="scd">일정<em>2</em></span>
+					</a>
+				</div>
+				<div class="day_wrap">
+					<a href="" class="day_num">17
+						<span class="scd">일정<em>3</em></span>
+					</a>
+				</div>
+				<div class="day_wrap"><a href="" class="day_num holiday first">18</a></div>
+				<div class="day_wrap"><a href="" class="day_num">19</a></div>
+				<div class="day_wrap"><a href="" class="day_num">20</a></div>
+				<div class="day_wrap"><a href="" class="day_num">21</a></div>
+				<div class="day_wrap"><a href="" class="day_num">22</a></div>
+				<div class="day_wrap"><a href="" class="day_num">23</a></div>
+				<div class="day_wrap"><a href="" class="day_num">24</a></div>
+				<div class="day_wrap">
+					<a href="" class="day_num first holiday">25
+						<span class="scd">일정<em>3</em></span>
+					</a>
+				</div>
+				<div class="day_wrap"><a href="" class="day_num">26</a></div>
+				<div class="day_wrap">
+					<a href="" class="day_num">27
+						<span class="scd">일정<em>3</em></span>
+					</a>
+				</div>
+				<div class="day_wrap"><a href="" class="day_num">28</a></div>
+				<div class="day_wrap"><a href="" class="day_num">29</a></div>
+				<div class="day_wrap"><a href="" class="day_num">30</a></div>
+				<div class="day_wrap"><a href="" class="day_num">31</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- [D] 공지 있을 때 노출 -->
+	<div class="scd_list_area">
+		<ul class="scd_list">
+			<!-- 관리자 - 버튼(.btn_area) 노출 -->
+			<li class="notice">
+				<div class="info">
+					<div class="ic_wrap"><span class="ic"></span>공지</div>
+				</div>
+				<p class="txt v2">
+					10월 월/수/금 오전 레슨은 마감되었습니다.<br>추석 연휴(9/26~19)기간에는 단체 레슨을 진행하지 않습니다.
+				</p>
+				<div class="btn_area">
+					<a href="" class="btn_modify"><span class="ic"></span>수정</a>
+					<a href="" class="btn_delete"><span class="ic"></span>삭제</a>
+				</div>
+			</li>
+			<!-- 사용자 -->
+			<li class="notice">
+				<div class="info">
+					<div class="ic_wrap"><span class="ic"></span>공지</div>
+				</div>
+				<p class="txt v2">
+					10월 월/수/금 오전 레슨은 마감되었습니다.<br>추석 연휴(9/26~19)기간에는 단체 레슨을 진행하지 않습니다.
+				</p>
+			</li>
+			<!-- 관리자 공지없음 -->
+			<li class="notice none">
+				<p class="txt">등록된 공지가 없습니다</p>
+				<div class="btn_area">
+					<a href="" class="btn_notice">공지쓰기</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

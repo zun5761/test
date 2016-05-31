@@ -1,0 +1,357 @@
+@charset "utf-8";
+
+/* import/mobile/_header.scss */
+.fc_header{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:3000;
+	width:100%;
+	height:50px;
+	border-bottom:1px solid #dbdee1;
+	background-color:#fff;
+
+	h2{
+		height:48px;
+		padding:11px 0 9px;
+		font-family:#{$F-medium};
+		font-size:17px;
+		font-weight:normal;
+		color:#111;
+		line-height:28px;
+		text-align:center;
+		box-sizing:border-box;
+
+		a,span{
+			display:block;
+			overflow:hidden;
+			position:relative;
+			margin:0 50px;
+			box-sizing:border-box;
+			color:inherit;
+			white-space:nowrap;
+			letter-spacing:-0.5px;
+		}
+
+		.logo_npay{
+			@include setSprite($sp_m-header_logo_npay);
+
+			display:inline-block;
+			margin:2px 0 -2px 7px;
+			line-height:1000px;
+		}
+	}
+
+	.buttons{
+		position:absolute;
+		right:5px;
+		top:0;
+
+		&:after{
+			display:block;
+			clear:both;
+			content:'';
+		}
+	}
+
+	.fc_btn{
+		float:left;
+		position:relative;
+		width:35px;
+		height:48px;
+
+		span{
+			overflow:hidden;
+			position:absolute;
+			line-height:1000px;
+		}
+
+		&.other, &.talk{
+			span{
+				left:50%;
+				top:50%;
+			}
+		}
+
+		&.aside{
+			position:absolute;
+			left:0;
+			top:0;
+			width:48px;
+
+			.ico_new{
+				@include setSprite($sp_m-header_ico_new);
+
+				overflow:hidden;
+				position:absolute;
+				right:5px;
+				top:13px;
+				line-height:1000px;
+			}
+		}
+	}
+
+	.navigate_bar{
+		position:absolute;
+		left:0;
+		bottom:-1px;
+		width:100%;
+		height:3px;
+
+		.shim{
+			position:absolute;
+			height:2px;
+			background-color:rgba(255,255,255,0.6);
+		}
+	}
+}
+
+//라인형
+.btn_type_l .fc_header{
+	background:#fff;
+
+	h2 .logo_npay{
+		@include setSprite($sp_m-header_logo_npay_line);
+	}
+
+	.fc_btn{
+		&.aside{
+			span{
+				@include setSprite($sp_m-header_menu_aside);
+			}
+		}
+		&.other{
+			span{
+				@include setSprite($sp_m-header_menu_other, both);
+			}
+		}
+		&.talk{
+			span{
+				@include setSprite($sp_m-header_menu_talk, both);
+			}
+		}
+	}
+}
+
+//꽉찬형
+.btn_type_c .fc_header{
+	border-bottom:none;
+
+	h2{
+		a,span{
+			color:#fff;
+		}
+	}
+
+	//header 아이콘
+	.fc_btn{
+		&.aside{
+			span{
+				@include setSprite($sp_m-header_menu_aside2);
+			}
+		}
+
+		&.other{
+			span{
+				@include setSprite($sp_m-header_menu_other2, both);
+			}
+		}
+
+		&.talk{
+			span{
+				@include setSprite($sp_m-header_menu_talk2, both);
+			}
+		}
+	}
+}
+
+//세로형
+.vertical .fc_header{
+	position:relative;
+}
+
+// 카드형
+.card .balloon_wrapper{display:none}
+.narrow .card .balloon_wrapper,
+.wide .card .balloon_wrapper{display:block;position:static}
+
+//path
+.balloon_wrapper{
+	position:absolute;
+	top:2px;
+	left:0;
+	width:100%;
+	border-bottom:1px solid rgba(0, 0, 0, 0.08);
+	opacity:1;
+
+	.balloon{
+		overflow:hidden;
+		z-index:3000;
+		height:37px;
+		padding:0 50px 0 10px;
+		background:#fff;
+		font-family:#{$F-light};
+		line-height:38px;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+
+		.spci{
+			display:inline-block;
+			@include setSprite($sp_m-header_balloon_icon);
+			margin:-1px 7px 0;
+			vertical-align:middle;
+		}
+
+		.depth{
+			font-size:15px;
+			color:#222;
+		}
+
+		.page{
+			position:absolute;
+			top:0;
+			right:10px;
+			font-family:#{$F-light};
+			font-size:15px;
+			color:#222;
+
+			.f_h{
+				display:inline;
+				margin:0 2px;
+			}
+
+			strong{
+				font-weight:normal;
+			}
+		}
+	}
+}
+
+// 메인카드
+.main{
+	.fc_wrap .fc_header{
+		background-color:transparent;
+	}
+	.fc_header{
+		.navigate_bar{
+			display:none;
+		}
+		h2{
+			display:none;
+		}
+	}
+
+	//카트형
+	&.wide,&.narrow{
+		.fc_header{
+			h2{
+				display:block;
+			}
+		}
+	}
+
+	//라인형
+	&.btn_type_l{
+		&.wide,&.narrow{
+			.fc_header{
+				background-color:#fff;
+			}
+		}
+		.fc_header{
+			border-bottom:0;
+
+			.fc_btn{
+				&.aside{
+					span{
+						@include setSprite($sp_m-header_menu_aside2);
+					}
+				}
+
+				&.other{
+					span{
+						@include setSprite($sp_m-header_menu_other2, both);
+					}
+				}
+
+				&.talk{
+					span{
+						@include setSprite($sp_m-header_menu_talk2, both);
+					}
+				}
+			}
+		}
+	}
+
+	//스크롤시
+	&.scroll{
+		&.btn_type_l,&.btn_line{
+			.fc_header{
+				background-color:#fff;
+
+				.fc_btn{
+					&.aside{
+						span{
+							@include setSprite($sp_m-header_menu_aside);
+						}
+					}
+
+					&.other{
+						span{
+							@include setSprite($sp_m-header_menu_other, both);
+						}
+					}
+
+					&.talk{
+						span{
+							@include setSprite($sp_m-header_menu_talk, both);
+						}
+					}
+				}
+			}
+		}
+		h2{
+			display:block;
+		}
+	}
+}
+
+//320해상도 대응
+@media all and (max-width : 320px) {
+	.fc_header{
+		.fc_btn.talk,
+		.fc_btn.other{
+			width:24px
+		}
+		.fc_btn.plus{
+			width:31px
+		}
+	}
+}
+
+//테마색상
+@each $type in $ButtonType{
+	@each $color in $ThemeColor{
+		$i:index($ThemeColor, $color);
+
+		//꽉찬형
+		.btn_set#{$i}{
+			.fc_header{
+				background-color:$color;
+			}
+
+			//메인카드 스크롤시 배경 색상
+			&.scroll.main{
+				.fc_header{
+					background-color:$color;
+				}
+			}
+		}
+
+		//라인형
+		.btn_line#{$i}{
+			.shim{
+				background-color:$color;
+			}
+		}
+	}
+}
